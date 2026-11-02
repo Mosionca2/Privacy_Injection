@@ -46,6 +46,7 @@
   },
   "same_tasks_cases_prompts_scoring_and_decoding": true,
   "schema_version": 1,
+  "selected_batch_size": 16,
   "shared_files": {
     "data/dev.jsonl": "fffea11822f77fd223d414d0cdd6ddd62d711fd4b060b52aaeae14fb9e947dc1",
     "data/test.jsonl": "63a5d36e4d3b0b15e79e1b1ab25e0b423b546f9de6c67122e97e77d8eed381da",
@@ -55,6 +56,6 @@
     "privacy_study/record.py": "ad2865f90299a5604bd5581c87bcadbf38e2539bbdaa74b45dbc1bb318a9f1a1",
     "privacy_study/run.py": "1cb5bbb7cd7373d52aeaca60d10088b980122199cead75fb40464f4466510e52"
   },
-  "status": "prepared_before_extension_inference",
+  "status": "calibration_complete",
   "study_id": "qwen3-1.7b"
 }

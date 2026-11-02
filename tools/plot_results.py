@@ -6,7 +6,8 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('--reports',default='reports/formal');a=p.parse_args()
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--reports',default='reports/formal')
+p.add_argument('--model-label',default='Local Qwen3-8B');a=p.parse_args()
 root=Path(a.reports)
 with (root/'summary.csv').open() as f: rows=list(csv.DictReader(f))
 if len(rows)!=4 or any(int(r['n_cases'])!=96 for r in rows):raise SystemExit('Expected four complete 96-case formal conditions.')
@@ -15,7 +16,7 @@ fig,ax=plt.subplots(figsize=(7,5))
 for row,color in zip(rows,colors):
     x=100*float(row['leak']);y=100*float(row['safe_utility'])
     ax.scatter(x,y,s=90,color=color);ax.annotate(row['defense'],(x,y),xytext=(7,5),textcoords='offset points')
-ax.set(xlabel='Attack-query leakage (%) — lower is better',ylabel='Safe task success under attack (%)',title='Local Qwen3-8B: 96 paired cases')
+ax.set(xlabel='Attack-query leakage (%) — lower is better',ylabel='Safe task success under attack (%)',title=f'{a.model_label}: 96 paired cases')
 ax.grid(alpha=.2);ax.margins(x=.15,y=.15);fig.tight_layout()
 for ext in ('png','svg'):fig.savefig(root/f'privacy-utility.{ext}',dpi=180)
 plt.close(fig)

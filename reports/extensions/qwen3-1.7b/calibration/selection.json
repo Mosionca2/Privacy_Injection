@@ -1,0 +1,46 @@
+{
+  "candidates": [
+    {
+      "batch_size": 16,
+      "changed_outputs": 0,
+      "changed_scores": 0,
+      "inference_seconds": 7.912913426756859,
+      "n_generations": 192,
+      "output_cap_count": 0,
+      "peak_reserved_gib": 4.591796875,
+      "samples_per_second": 24.26413504674119
+    },
+    {
+      "batch_size": 64,
+      "changed_outputs": 1,
+      "changed_scores": 1,
+      "inference_seconds": 4.042541543021798,
+      "n_generations": 192,
+      "output_cap_count": 0,
+      "peak_reserved_gib": 6.912109375,
+      "samples_per_second": 47.49487369682788
+    },
+    {
+      "batch_size": 128,
+      "changed_outputs": 1,
+      "changed_scores": 1,
+      "inference_seconds": 3.788623615168035,
+      "n_generations": 192,
+      "output_cap_count": 0,
+      "peak_reserved_gib": 10.125,
+      "samples_per_second": 50.67803495478247
+    },
+    {
+      "batch_size": 192,
+      "changed_outputs": 3,
+      "changed_scores": 2,
+      "inference_seconds": 3.666787790134549,
+      "n_generations": 192,
+      "output_cap_count": 0,
+      "peak_reserved_gib": 12.865234375,
+      "samples_per_second": 52.3619066575311
+    }
+  ],
+  "selected_batch_size": 16,
+  "selection_basis": "Development-only throughput, restricted to exact output/score agreement with batch16."
+}
