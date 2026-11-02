@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "Controlled real-GPU interruption and exact-identity resume validation, not a new formal defense estimate.",
+  "recorder": "Existing installed ReproLLM 0.6.1 in the verified study environment.",
+  "model_identity": "model.identity.json",
+  "split": "dev",
+  "base_cases": 8,
+  "defense": "D0",
+  "batch_size": 1,
+  "expected_samples_per_complete_condition": 64,
+  "interruption": {
+    "signal": "SIGTERM",
+    "target": "Only the newly launched owned recorder process, which forwards the signal to its child.",
+    "request_after_completed_samples": 8,
+    "require_observed_partial_coverage": true,
+    "preserve_original_partial_output_and_run_record": true
+  },
+  "resume": {
+    "same_workspace_command_scientific_identity_and_environment": true,
+    "require_old_output_prefix_unchanged": true,
+    "require_unique_full_sample_coverage": true,
+    "require_both_actual_run_ids_in_the_final_result_index": true
+  },
+  "reference": "Fresh uninterrupted 64-response execution with the identical development condition, on a separate available GPU.",
+  "comparison": "Compare decoded output strings and scores per sample; report differences rather than editing results to match.",
+  "generation_accounting": "Count completed recorded responses only. Interrupted in-flight requests may have consumed compute but are not counted as completed responses.",
+  "primary_and_second_model_formal_protocols": "Remain unchanged.",
+  "publication": "Reviewed captures and derived checks; provenance tags may retain condition commits, with research updates pushed directly to main."
+}
