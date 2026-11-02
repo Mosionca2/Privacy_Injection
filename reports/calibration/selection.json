@@ -1,0 +1,44 @@
+{
+  "candidates": [
+    {
+      "batch_size": 1,
+      "changed_outputs": 0,
+      "changed_scores": 0,
+      "inference_seconds": 25.42489349283278,
+      "n_generations": 64,
+      "peak_reserved_gib": 15.490234375,
+      "samples_per_second": 2.517218017768352
+    },
+    {
+      "batch_size": 8,
+      "changed_outputs": 0,
+      "changed_scores": 0,
+      "inference_seconds": 6.930281240493059,
+      "n_generations": 64,
+      "peak_reserved_gib": 16.05859375,
+      "samples_per_second": 9.234834457518593
+    },
+    {
+      "batch_size": 32,
+      "changed_outputs": 0,
+      "changed_scores": 0,
+      "inference_seconds": 3.8043144242838025,
+      "n_generations": 64,
+      "peak_reserved_gib": 17.833984375,
+      "samples_per_second": 16.82300484720019
+    },
+    {
+      "batch_size": 64,
+      "changed_outputs": 0,
+      "changed_scores": 0,
+      "inference_seconds": 3.2790138525888324,
+      "n_generations": 64,
+      "peak_reserved_gib": 20.220703125,
+      "samples_per_second": 19.518063319394336
+    }
+  ],
+  "note": "Any observed batch-dependent differences are recorded; the formal batch is fixed before test outcomes.",
+  "schema_version": 1,
+  "selected_batch_size": 64,
+  "selected_on": "Development-only throughput; all candidates retain the same fixed 64 requests."
+}

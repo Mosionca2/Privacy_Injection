@@ -82,3 +82,12 @@ class ProtocolTests(unittest.TestCase):
         with self.assertRaises(ValueError): c.paired_interval(left,{},'leak')
 
 if __name__=='__main__': unittest.main()
+
+class AssetTests(unittest.TestCase):
+    def test_local_asset_changes_are_detected_independently_of_tool_freshness(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'config.json'; path.write_text('{}')
+            identity={'files':[{'name':'config.json','size':2,'sha256':c.digest(path)}]}
+            self.assertEqual(c.asset_state(folder,identity)['config.json'][0],2)
+            path.write_text('[]')
+            with self.assertRaises(ValueError): c.asset_state(folder,identity)

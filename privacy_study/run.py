@@ -48,6 +48,7 @@ def run(args):
     disable_progress_bar()
     if not torch.cuda.is_available(): raise RuntimeError('Real CUDA inference is required.')
     set_seed(protocol['run_seed'])
+    model_state=c.asset_state(args.model,model_identity)
     start=time.perf_counter()
     tokenizer=AutoTokenizer.from_pretrained(args.model,local_files_only=True,trust_remote_code=False,padding_side='left')
     if tokenizer.pad_token_id is None: tokenizer.pad_token=tokenizer.eos_token
@@ -87,6 +88,7 @@ def run(args):
             except Exception as error:
                 stream.write(json.dumps({'type':'failure','sample_ids':[j[2] for j in batch_jobs],'error_type':type(error).__name__})+'\n')
                 stream.flush(); raise
+    if model_state!=c.asset_state(args.model,model_identity): raise ValueError('Model assets changed during inference.')
     summary=dict(schema_version=1,defense=args.defense,split=args.split,batch_size=args.batch_size,
                  expected=len(jobs),new_generations=new_count,load_seconds=load_seconds,
                  inference_seconds=time.perf_counter()-inference_start,

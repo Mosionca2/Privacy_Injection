@@ -172,5 +172,17 @@ def paired_interval(left, right, metric, repetitions=2000):
 def csv_file(path, rows):
     path = Path(path); path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('w', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(dict.fromkeys(k for row in rows for k in row)))
+        writer = csv.DictWriter(stream, fieldnames=list(dict.fromkeys(k for row in rows for k in row)), lineterminator="\n")
         writer.writeheader(); writer.writerows(rows)
+
+
+def asset_state(model_path, identity, verify_large=False):
+    """Check file coverage/metadata and preserve a mutation guard for large weights."""
+    root=Path(model_path); state={}
+    for entry in identity['files']:
+        file=root/entry['name']; stat=file.stat()
+        if stat.st_size!=entry['size']: raise ValueError('Model asset size changed.')
+        if (verify_large or not file.name.endswith('.safetensors')) and digest(file)!=entry['sha256']:
+            raise ValueError('Model asset content changed.')
+        state[entry['name']]=(stat.st_size,stat.st_mtime_ns)
+    return state

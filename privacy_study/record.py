@@ -120,4 +120,6 @@ def publish_evidence(work,destination):
                          ('raw/recording.json','recording.json'),('reprollm.yaml','reprollm.yaml'),
                          ('reprollm.lock','reprollm.lock'),('.reprollm/project-rules.yaml','project-rules.yaml')]:
         shutil.copyfile(work/source,destination/name)
+        if name=='audit.json':
+            target=destination/name; target.write_text(target.read_text().rstrip()+'\n')
     return recording

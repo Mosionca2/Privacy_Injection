@@ -1,0 +1,11 @@
+{
+  "device_identifier_redaction_files": [
+    "evidence/calibration/b32/run/run.json",
+    "evidence/calibration/b8/run/run.json",
+    "evidence/calibration/b64/run/run.json",
+    "evidence/calibration/b1/run/run.json"
+  ],
+  "original_records_retained_privately": true,
+  "schema_version": 1,
+  "publication_scope": "Actual execution records and derived metrics"
+}

@@ -35,3 +35,9 @@ python -m privacy_study.run --model assets/model --defense D0 --split dev --batc
 Result files contain independent per-response scores and actual ReproLLM run IDs. Interrupted conditions resume only when scientific identity, software versions, case selection, and batch size match. A completed file does not trigger a new inference job. Each recorded condition retains its own manifest, lock, rules, capture warnings, and selected-run export.
 
 Formal execution additionally requires `protocol.freeze.json`. Changing code, test data, protocol, model identity, dependency versions, or batch size invalidates that frozen experiment. Analysis rejects incomplete case clusters, missing defense conditions, duplicate successes, and mixed scientific identities.
+
+## Initial throughput calibration
+
+Four real ReproLLM-recorded development runs each generated the same 64 responses. Batch sizes 1, 8, 32, and 64 produced identical output strings and scores in this bounded comparison. Batch 64 reached about 19.5 responses/s versus 2.5 for batch 1, with approximately 20.2 GiB peak reserved CUDA memory. This is a small calibration result, not a guarantee for every batch or workload. Detailed measurements and recordings are under `reports/calibration/` and `evidence/calibration/`.
+
+ReproLLM 0.6.1 `lock --check` checks changes to the manifest and project rules; it does not rehash referenced local model content. This study separately records full model-file SHA-256 identities, checks metadata before/after inference, and rechecks full model identity before formal-result publication. Default local-model locks without `--hash-large-files` are explicitly partial weight evidence. Public run copies remove device UUIDs; original records remain available privately.
