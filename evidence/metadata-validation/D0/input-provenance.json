@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "defense": "D0",
+  "run_id": "20261102T083226Z-4d45fa",
+  "recorded_commit": "ea420b451a1f8b2176813cb2b8eb266e1602596d",
+  "recorded_commit_url": "https://github.com/Mosionca2/Privacy_Injection/tree/ea420b451a1f8b2176813cb2b8eb266e1602596d",
+  "scope": "Historical input declaration for the existing 64-response metadata validation, not a new model run.",
+  "path_context": "Manifest and lock paths are relative to the repository root at recorded_commit. This evidence directory is an archive, not a standalone execution workspace.",
+  "main_configuration": "The active root manifest, lock and shared runtime declarations remain those already accepted on main. Historical defenses coexist under separate evidence directories.",
+  "files": {
+    "reprollm.yaml": {
+      "source_path": "reprollm.yaml",
+      "sha256": "fc1dd170fbd32b382810ef50b6b2ac725366538ebf18e23fc5247c5bf88709f9"
+    },
+    "reprollm.lock": {
+      "source_path": "reprollm.lock",
+      "sha256": "719241b1c4a215ea53064077721a4f830551848b880eaaee76ecaec28b3d5131"
+    },
+    "project-rules.yaml": {
+      "source_path": ".reprollm/project-rules.yaml",
+      "sha256": "0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b"
+    },
+    ".python-version": {
+      "source_path": ".python-version",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    "requirements.runtime.txt": {
+      "source_path": "requirements.runtime.txt",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "formal_generations": 6144,
+  "real_gpu_runs": 30,
+  "real_model_generations_published": 10496,
+  "schema_version": 1,
+  "scope": "Two exact local model/tokenizer snapshots in one agent-assisted study; CPU-only fixtures and initial environment smoke checks are excluded.",
+  "studies": [
+    {
+      "completion": "reports/completion.json",
+      "generations": 5120,
+      "gpu_runs": 17,
+      "model_label": "Local Qwen3-8B"
+    },
+    {
+      "completion": "reports/extensions/qwen3-1.7b/completion.json",
+      "generations": 5376,
+      "gpu_runs": 13,
+      "model_label": "Local Qwen3-1.7B"
+    }
+  ]
+}

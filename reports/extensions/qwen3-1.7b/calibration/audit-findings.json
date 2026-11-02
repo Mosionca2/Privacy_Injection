@@ -1,0 +1,61 @@
+{
+  "conditions": [
+    {
+      "condition": "b128",
+      "critical_failures": 0,
+      "git_commit": "ea8b01e853578cf994981489c4be30bb1d8e772c",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T091758Z-2a12e8"
+    },
+    {
+      "condition": "b16",
+      "critical_failures": 0,
+      "git_commit": "e311365f7b5f2206b7596436f0879d1cdd2d01a4",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T091758Z-22b9ad"
+    },
+    {
+      "condition": "b192",
+      "critical_failures": 0,
+      "git_commit": "127d3dd8d87ac86f03097b134af591d90d945333",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T091758Z-8742d0"
+    },
+    {
+      "condition": "b64",
+      "critical_failures": 0,
+      "git_commit": "7c998b7ec695a9620f2252fee4c9d58750a67fdc",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T091758Z-94264f"
+    }
+  ],
+  "critical_failures": 0
+}
