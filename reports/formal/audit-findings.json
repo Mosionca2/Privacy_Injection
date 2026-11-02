@@ -1,0 +1,126 @@
+{
+  "findings": [
+    {
+      "defense": "D0",
+      "message": "Missing fields: privacy.mechanism.params",
+      "rule": "privacy.mechanism_declared",
+      "severity": "CRITICAL"
+    },
+    {
+      "defense": "D0",
+      "message": "2 untracked non-ignored file(s): reprollm.lock, reprollm.yaml",
+      "rule": "code.no_untracked",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D0",
+      "message": "torch is used but not pinned to an exact version (suggestion: torch==2.5.1+cu121)",
+      "rule": "env.llm_critical_deps_pinned",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D0",
+      "message": "no Python version requirement is declared",
+      "rule": "env.python_version_declared",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D0",
+      "message": "declared profile 'inference' has no detection evidence in this repository",
+      "rule": "exec.profile_detection_mismatch",
+      "severity": "INFO"
+    },
+    {
+      "defense": "D2",
+      "message": "Missing fields: privacy.mechanism.params",
+      "rule": "privacy.mechanism_declared",
+      "severity": "CRITICAL"
+    },
+    {
+      "defense": "D2",
+      "message": "2 untracked non-ignored file(s): reprollm.lock, reprollm.yaml",
+      "rule": "code.no_untracked",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D2",
+      "message": "torch is used but not pinned to an exact version (suggestion: torch==2.5.1+cu121)",
+      "rule": "env.llm_critical_deps_pinned",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D2",
+      "message": "no Python version requirement is declared",
+      "rule": "env.python_version_declared",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D2",
+      "message": "declared profile 'inference' has no detection evidence in this repository",
+      "rule": "exec.profile_detection_mismatch",
+      "severity": "INFO"
+    },
+    {
+      "defense": "D1",
+      "message": "Missing fields: privacy.mechanism.params",
+      "rule": "privacy.mechanism_declared",
+      "severity": "CRITICAL"
+    },
+    {
+      "defense": "D1",
+      "message": "2 untracked non-ignored file(s): reprollm.lock, reprollm.yaml",
+      "rule": "code.no_untracked",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D1",
+      "message": "torch is used but not pinned to an exact version (suggestion: torch==2.5.1+cu121)",
+      "rule": "env.llm_critical_deps_pinned",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D1",
+      "message": "no Python version requirement is declared",
+      "rule": "env.python_version_declared",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D1",
+      "message": "declared profile 'inference' has no detection evidence in this repository",
+      "rule": "exec.profile_detection_mismatch",
+      "severity": "INFO"
+    },
+    {
+      "defense": "D3",
+      "message": "Missing fields: privacy.mechanism.params",
+      "rule": "privacy.mechanism_declared",
+      "severity": "CRITICAL"
+    },
+    {
+      "defense": "D3",
+      "message": "2 untracked non-ignored file(s): reprollm.lock, reprollm.yaml",
+      "rule": "code.no_untracked",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D3",
+      "message": "torch is used but not pinned to an exact version (suggestion: torch==2.5.1+cu121)",
+      "rule": "env.llm_critical_deps_pinned",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D3",
+      "message": "no Python version requirement is declared",
+      "rule": "env.python_version_declared",
+      "severity": "WARNING"
+    },
+    {
+      "defense": "D3",
+      "message": "declared profile 'inference' has no detection evidence in this repository",
+      "rule": "exec.profile_detection_mismatch",
+      "severity": "INFO"
+    }
+  ],
+  "interpretation": "Original findings are retained. Missing mechanism params is a declaration gap, not an inference failure; separate corrected-declaration validation follows.",
+  "schema_version": 1
+}

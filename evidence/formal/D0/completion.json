@@ -1,0 +1,13 @@
+{
+  "batch_size": 64,
+  "defense": "D0",
+  "expected": 768,
+  "inference_seconds": 33.452832830138505,
+  "load_seconds": 38.548701755702496,
+  "new_generations": 768,
+  "peak_allocated_gib": 19.33622121810913,
+  "peak_reserved_gib": 21.69921875,
+  "reprollm_run_id": "20261102T081423Z-47d411",
+  "schema_version": 1,
+  "split": "test"
+}

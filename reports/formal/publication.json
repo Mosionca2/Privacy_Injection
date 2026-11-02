@@ -1,0 +1,11 @@
+{
+  "device_identifier_redaction_files": [
+    "evidence/formal/D0/run/run.json",
+    "evidence/formal/D2/run/run.json",
+    "evidence/formal/D1/run/run.json",
+    "evidence/formal/D3/run/run.json"
+  ],
+  "original_records_retained_privately": true,
+  "publication_scope": "Actual execution records and derived metrics",
+  "schema_version": 1
+}

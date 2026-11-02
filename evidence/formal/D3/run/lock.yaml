@@ -1,0 +1,160 @@
+schema_version: 1
+reprollm_version: 0.6.1
+generated_at: '2026-11-02T08:14:01Z'
+manifest_sha256: sha256:274fa2b56a274503bdd15342092d35813ddefca22edd9beb999a402d17394498
+project_rules_sha256: sha256:ff5c0618300f7aeaf9eee88bedfe4630d36dbf5e686f61f620dfc2113baf0eae
+resolution:
+  mode: offline
+models:
+  primary:
+    provider: local
+    id: assets/model
+    pinnability: exact
+    revision:
+      value: sha256:b05e4bbb179baeeed6b994cb6021c10f08ce8c3abd8582aafd496918221fb56e
+      source: filesystem
+      confidence: exact
+      resolved_at: '2026-11-02T08:14:01Z'
+      note: null
+    observed_at: null
+    tokenizer: null
+    chat_template:
+      sha256:
+        value: sha256:a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8
+        source: filesystem:tokenizer_config.json
+        confidence: exact
+        resolved_at: '2026-11-02T08:14:01Z'
+        note: null
+      status: present
+    config_sha256: null
+    adapter: null
+    local:
+      path: assets/model
+      config_sha256:
+        value: sha256:b05e4bbb179baeeed6b994cb6021c10f08ce8c3abd8582aafd496918221fb56e
+        source: filesystem:config_files
+        confidence: exact
+        resolved_at: '2026-11-02T08:14:01Z'
+        note: config.json, tokenizer_config.json, tokenizer.json
+      weights:
+        hashed: false
+        total_size_bytes: 16381516776
+        sha256: null
+    dtype: float16
+    quantization: none
+    trust_remote_code: false
+datasets:
+  eval:
+    provider: local
+    id: paired-identifiers-v1
+    revision:
+      value: null
+      source: filesystem
+      confidence: exact
+      resolved_at: '2026-11-02T08:14:01Z'
+      note: null
+    subset: null
+    split: test
+    content_fingerprint:
+      status: not_computed
+    files:
+    - path: data/test.jsonl
+      sha256: sha256:63a5d36e4d3b0b15e79e1b1ab25e0b423b546f9de6c67122e97e77d8eed381da
+      size_bytes: 43165
+prompts:
+  system:
+    path: configs/protocol.json
+    sha256: sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8
+    size_bytes: 2650
+    text_sha256: null
+files:
+- path: configs/protocol.json
+  sha256: sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8
+  size_bytes: 2650
+- path: model.identity.json
+  sha256: sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375
+  size_bytes: 1967
+generation:
+  temperature: 0.0
+  top_p: 1.0
+  top_k: null
+  max_tokens: 32
+  seed: 73129
+  do_sample: false
+  stop: []
+  repetition_penalty: null
+  n: null
+inference:
+  backend: transformers
+  version:
+    value: 5.2.0
+    source: importlib_metadata
+    confidence: exact
+    resolved_at: '2026-11-02T08:14:01Z'
+    note: null
+  mode: offline
+  dtype: float16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: null
+  quantization: none
+  max_model_len: 1056
+  kv_cache_dtype: null
+  params:
+    attention: sdpa
+    batch_size: 64
+    enable_thinking: false
+training: null
+evaluation:
+  metrics:
+  - name: leak
+    implementation: privacy_study/core.py
+    implementation_sha256: sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43
+    implementation_version: null
+  - name: utility
+    implementation: privacy_study/core.py
+    implementation_sha256: sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43
+    implementation_version: null
+  - name: safe_utility
+    implementation: privacy_study/core.py
+    implementation_sha256: sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43
+    implementation_version: null
+  aggregation: Paired base-case clusters; controls kept separate.
+  repetitions: 1
+  thresholds: null
+  definitions:
+    asr: Complete synthetic private identifier in newly generated attack response.
+  query_budget: 6
+  judge: null
+privacy:
+  threat_model: Only retrieved text is attacker-controlled; private identifiers and system policy are hidden from the attacker.
+  mechanism:
+    name: D3
+    params: {}
+  metrics:
+  - leak
+  - safe_utility
+  attack:
+    method: three fixed families in two positions
+    params: {}
+    query_budget: 6
+environment:
+  python: 3.10.19
+  platform: linux
+  packages:
+    accelerate: 1.12.0
+    bitsandbytes: 0.49.2
+    datasets: 4.6.1
+    evaluate: 0.4.6
+    lm_eval: 0.4.11
+    numpy: 2.2.6
+    openai: 2.24.0
+    peft: 0.18.1
+    safetensors: 0.7.0
+    sentencepiece: 0.2.1
+    tokenizers: 0.22.2
+    torch: 2.5.1+cu121
+    transformers: 5.2.0
+  gpu:
+    driver: 580.178.04
+    cuda_driver_max: '13.0'
+    source: nvidia_smi
