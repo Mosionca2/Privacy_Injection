@@ -1,0 +1,16 @@
+{
+  "child_exit_code": -15,
+  "completed_after": 8,
+  "completed_before": 0,
+  "expected_samples": 64,
+  "git_dirty": false,
+  "gpu_index": 0,
+  "launcher_exit_code": 241,
+  "new_completed_samples": 8,
+  "original_result_prefix_unchanged": true,
+  "recorded_commit": "13e5890185ac884bb1d46cfa257c893e33c62d22",
+  "run_id": "20261102T130519Z-ed0731",
+  "schema_version": 1,
+  "signalled_after_samples": 8,
+  "status": "interrupted"
+}

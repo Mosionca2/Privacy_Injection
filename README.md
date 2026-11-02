@@ -66,10 +66,16 @@ Read [the complete report and figures](REPORT.md), [ReproLLM case study](docs/re
 
 The separately frozen Local Qwen3-1.7B study completed another 3,072 formal responses and a 768-response fresh repeat. Its larger calibration batches changed a few greedy outputs and scores, so the predeclared agreement rule retained batch16. All 13 extension runs used clean committed inputs and have zero CRITICAL audit failures. Original primary-study findings remain retained.
 
-Read the [second-model report, charts and cross-model comparisons](reports/extensions/qwen3-1.7b/REPORT.md). Across both exact local snapshots, the [repository execution ledger](reports/execution-ledger.json) records **10,496 real generations in 30 GPU runs**, including **6,144 formal responses**. This is one agent-assisted study; upstream model provenance, parameter-count effects and general security are not established.
+Read the [second-model report, charts and cross-model comparisons](reports/extensions/qwen3-1.7b/REPORT.md). The two original study campaigns comprise **10,496 real generations in 30 GPU runs**, including **6,144 formal responses**. The [repository execution ledger](reports/execution-ledger.json) also counts subsequent bounded workflow validation separately. This is one agent-assisted study; upstream model provenance, parameter-count effects and general security are not established.
 
 ## ReproLLM upstream documentation contribution
 
 A concrete isolated-condition recording guide has been submitted from [Mosionca2/ReproLLM](https://github.com/Mosionca2/ReproLLM) as [Docs Issue #11](https://github.com/EnumaElish123/ReproLLM/issues/11) and [Draft PR #12](https://github.com/EnumaElish123/ReproLLM/pull/12). Its four documentation files cover independent workspaces, local/offline lock scope, bindings, explicit cross-workspace diff and selected historical export. The proposal is awaiting maintainer review.
 
-[Local validation evidence](reports/reprollm-contribution-validation.json) records four CPU-only command rehearsals across released 0.6.1 and source 0.7.0, plus link/navigation checks. The scientific generation count remains 10,496. Upstream CI currently reports `action_required`; no CI success or upstream acceptance is claimed.
+[Local validation evidence](reports/reprollm-contribution-validation.json) records four CPU-only command rehearsals across released 0.6.1 and source 0.7.0, plus link/navigation checks. These CPU rehearsals add no model generations; current model-response totals are in the repository execution ledger. Upstream CI currently reports `action_required`; no CI success or upstream acceptance is claimed.
+
+## Real-GPU interruption and recovery
+
+A controlled 0.6.1 SIGTERM case retained 8 completed responses and resumed with 56 new responses, with full unique 64-sample coverage. The recovered outputs and scores differ from a fresh uninterrupted 64-response reference in 0 and 0 rows respectively. The [validation report](reports/recovery-validation/REPORT.md) preserves the interrupted record, both actual attempt IDs, provenance tags and explicit limits.
+
+The repository now contains **10,624 completed model responses across 33 GPU captures**: 32 completed and one intentionally interrupted. Formal results remain 6,144 responses. Research updates continue directly on main; historical recording tags are provenance, not integration branches.

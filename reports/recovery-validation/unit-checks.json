@@ -1,0 +1,12 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "exit_code": 0,
+  "files": {
+    "tests/test_gpu_resume.py": "640cc59449d9167ffad87d684659ff1c9f9315decc9106e07c20b07243908adb",
+    "tools/validate_gpu_resume.py": "0a73a99faf3406e3af32d4bdded1f9c8df0e8afd1d733c47c45d5440976a6417"
+  },
+  "schema_version": 1,
+  "scope": "Research repository controller and existing scientific guards; not the upstream ReproLLM product suite.",
+  "source_commit": "45cfef4f0674dd9946938a900079df9239aef349",
+  "tests_passed": 20
+}

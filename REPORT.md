@@ -76,7 +76,7 @@ The generation-loop times below include response scoring and JSONL writes, exclu
 | D2 | 33.69 | 39.70 | 19.35 | 24.43 |
 | D3 | 38.22 | 38.29 | 20.06 | 23.57 |
 
-The D0 repeat used the same scientific identity, software, batch and case set, with a fresh result file and a distinct ReproLLM run. It generated 768 new responses with **0 changed strings and 0 changed scores**. This is same-environment repeatability, not a cross-hardware bitwise guarantee. The code also rejects mixed result identities and duplicate successes; interruption of a GPU job was not deliberately exercised.
+The D0 repeat used the same scientific identity, software, batch and case set, with a fresh result file and a distinct ReproLLM run. It generated 768 new responses with **0 changed strings and 0 changed scores**. This is same-environment repeatability, not a cross-hardware bitwise guarantee. The code also rejects mixed result identities and duplicate successes. GPU interruption was not part of that original study; a later [bounded real-GPU recovery validation](reports/recovery-validation/REPORT.md) now records a controlled SIGTERM/resume case separately.
 
 ## ReproLLM findings and corrected declarations
 
@@ -99,4 +99,4 @@ The study produced a reusable recording recipe and evidence-backed usage boundar
 
 ## Separately frozen second-model follow-up
 
-This report above describes the original primary snapshot and its 5,120-generation ledger. A subsequent Local Qwen3-1.7B extension completed the same four-defense, 96-case formal design under its own model identity and batch16 freeze. Its results, copying controls, fresh repeat and cross-model limitations are in [the extension report](reports/extensions/qwen3-1.7b/REPORT.md). The [combined ledger](reports/execution-ledger.json) records 10,496 real generations in 30 GPU runs, including 6,144 formal responses. The scientific code and original protocol remain unchanged.
+This report above describes the original primary snapshot and its 5,120-generation ledger. A subsequent Local Qwen3-1.7B extension completed the same four-defense, 96-case formal design under its own model identity and batch16 freeze. Its results, copying controls, fresh repeat and cross-model limitations are in [the extension report](reports/extensions/qwen3-1.7b/REPORT.md). The two original study campaigns comprise 10,496 real generations in 30 GPU runs, including 6,144 formal responses. The [combined ledger](reports/execution-ledger.json) counts later workflow-validation responses separately; see the [GPU recovery report](reports/recovery-validation/REPORT.md). The scientific code and original protocol remain unchanged.

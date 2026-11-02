@@ -1,9 +1,11 @@
 {
+  "completed_gpu_runs": 32,
   "formal_generations": 6144,
-  "real_gpu_runs": 30,
-  "real_model_generations_published": 10496,
+  "interrupted_gpu_runs": 1,
+  "real_gpu_runs": 33,
+  "real_model_generations_published": 10624,
   "schema_version": 1,
-  "scope": "Two exact local model/tokenizer snapshots in one agent-assisted study; CPU-only fixtures and initial environment smoke checks are excluded.",
+  "scope": "Two exact local model/tokenizer study campaigns plus a controlled GPU recovery validation. Counts include completed published model responses only; CPU-only fixtures, initial environment smoke and interrupted in-flight work are excluded.",
   "studies": [
     {
       "completion": "reports/completion.json",
@@ -16,6 +18,17 @@
       "generations": 5376,
       "gpu_runs": 13,
       "model_label": "Local Qwen3-1.7B"
+    }
+  ],
+  "validation_campaigns": [
+    {
+      "completed_gpu_runs": 2,
+      "completed_responses": 128,
+      "completion": "reports/recovery-validation/comparison.json",
+      "gpu_runs": 3,
+      "interrupted_gpu_runs": 1,
+      "label": "Controlled SIGTERM interruption/resume with fresh reference",
+      "model_label": "Local Qwen3-8B"
     }
   ]
 }
