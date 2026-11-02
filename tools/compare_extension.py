@@ -2,6 +2,7 @@
 import argparse
 import json
 from pathlib import Path
+import statistics
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +38,8 @@ def compare(study, output):
             raise ValueError(f'Unplanned cross-model scientific drift: {key}')
     if identities['primary']['D0']['model'] != c.read_json(ROOT / 'model.identity.json'):
         raise ValueError('Primary model identity mismatch.')
+    if identities['primary']['D0']['protocol'] != c.digest(ROOT / 'configs/protocol.json'):
+        raise ValueError('Primary protocol mismatch.')
     if identities['extension']['D0']['model'] != c.read_json(study / 'model.identity.json'):
         raise ValueError('Extension model identity mismatch.')
     if identities['extension']['D0']['protocol'] != c.digest(study / 'protocol.json'):
@@ -54,12 +57,26 @@ def compare(study, output):
         analysis = c.read_json(path)
         combined += [dict(model=identities[label]['D0']['model']['model_label'], **row) for row in analysis['summary']]
     c.csv_file(output / 'cross-model-summary.csv', combined)
+    common = {case['id'] for case in cases if all(
+        grouped[label]['D0'][case['id']]['clean_acc'] and
+        grouped[label]['D0'][case['id']]['auth_recall'] for label in sources)}
+    common_rows = []
+    if common:
+        for label in sources:
+            for defense in c.DEFENSES:
+                common_rows.append(dict(model=identities[label]['D0']['model']['model_label'],
+                    defense=defense, n_cases=len(common), **{
+                        metric: statistics.mean(grouped[label][defense][i][metric] for i in common)
+                        for metric in ('clean_acc', 'auth_recall', 'leak', 'safe_utility')}))
+        c.csv_file(output / 'common-capability-summary.csv', common_rows)
     c.write_json(output / 'cross-model-comparison.json', {
         'schema_version': 1, 'case_count_per_model': len(cases),
         'formal_generations': 6144, 'direction': 'extension minus primary',
         'scope': 'Exploratory paired comparison across two exact local model/tokenizer snapshots. Primary-model test outcomes were already known. This does not isolate parameter count or establish a scaling law.',
         'batch_sizes': {label: identities[label]['D0']['batch_size'] for label in sources},
         'model_identities': {label: identities[label]['D0']['model'] for label in sources},
+        'common_capability_cohort': {'n_cases': len(common), 'case_ids': sorted(common),
+            'definition': 'D0 clean task and authorized-copy control both succeed in both models. The same intersection is used for every defense.'},
         'shared_input_checks_passed': True, 'paired_differences': rows,
     })
     return combined

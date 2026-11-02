@@ -1,0 +1,8 @@
+{
+  "device_uuids_removed": true,
+  "full_model_content_rechecked": true,
+  "gpu_runs": 4,
+  "new_generations": 768,
+  "original_records_retained_privately": true,
+  "phase": "development"
+}

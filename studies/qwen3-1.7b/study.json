@@ -17,6 +17,10 @@
     "model files and tokenizer",
     "protocol_id and model_label metadata only"
   ],
+  "cross_model_analysis": {
+    "common_capability_cohort": "Intersection of cases with successful D0 clean and authorized controls in both models, held fixed for all defenses.",
+    "scope": "Exploratory paired comparisons on the same 96 cases; primary-model test outcomes already known."
+  },
   "development": {
     "cases": 24,
     "defenses": [
@@ -56,6 +60,6 @@
     "privacy_study/record.py": "ad2865f90299a5604bd5581c87bcadbf38e2539bbdaa74b45dbc1bb318a9f1a1",
     "privacy_study/run.py": "1cb5bbb7cd7373d52aeaca60d10088b980122199cead75fb40464f4466510e52"
   },
-  "status": "calibration_complete",
+  "status": "development_complete_formal_protocol_frozen",
   "study_id": "qwen3-1.7b"
 }

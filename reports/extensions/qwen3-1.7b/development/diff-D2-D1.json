@@ -1,0 +1,138 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "D1",
+      "b": "D2",
+      "note": null,
+      "path": "privacy.mechanism.name",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": false,
+      "b": true,
+      "note": null,
+      "path": "privacy.mechanism.params.trusted_tail_reminder",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "D1",
+      "b": "D2",
+      "note": null,
+      "path": "custom.defense",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "0d693dd1da1b608f92fcd8b38197f26c6d1fae19",
+      "b": "daf6502469b8ecd4d1ae4aad9629d1cf3698924f",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "<GPU_DEVICE>",
+      "b": "<GPU_DEVICE>",
+      "note": null,
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D1",
+        "--split",
+        "dev",
+        "--batch-size",
+        "16"
+      ],
+      "b": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D2",
+        "--split",
+        "dev",
+        "--batch-size",
+        "16"
+      ],
+      "note": null,
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python -m privacy_study.run --model assets/model --defense D1 --split dev --batch-size 16",
+      "b": "python -m privacy_study.run --model assets/model --defense D2 --split dev --batch-size 16",
+      "note": null,
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "records/qwen3-1.7b/development/D1",
+      "b": "records/qwen3-1.7b/development/D2",
+      "note": null,
+      "path": "code.branch",
+      "severity": "LOW",
+      "status": "changed"
+    },
+    {
+      "a": 73.647285,
+      "b": 72.765071,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-02T09:24:23Z",
+      "b": "2026-11-02T09:24:22Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261102T092310Z-72bcb3",
+      "b": "20261102T092310Z-475c6e",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.6.1",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 1,
+      "MEDIUM": 7,
+      "MEDIUM_HIGH": 0,
+      "NONE": 3
+    },
+    "highest": "MEDIUM",
+    "same": 121
+  }
+}
