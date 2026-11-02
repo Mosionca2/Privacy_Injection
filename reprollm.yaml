@@ -26,9 +26,9 @@
     }
   },
   "custom": {
-    "batch_size": 64,
+    "batch_size": 1,
     "dataset_split": "dev",
-    "defense": "D3"
+    "defense": "D0"
   },
   "datasets": {
     "eval": {
@@ -72,7 +72,7 @@
     "repetitions": 1
   },
   "execution": {
-    "command": "python -m privacy_study.run --model assets/model --defense D3 --split dev --batch-size 64 --limit 8",
+    "command": "python -m privacy_study.run --model assets/model --defense D0 --split dev --batch-size 1 --limit 8",
     "config_files": [
       ".python-version",
       "configs/protocol.json",
@@ -82,7 +82,7 @@
     "seed": 73129
   },
   "experiment": {
-    "name": "dev-D3-b64",
+    "name": "gpu-recovery-recovered",
     "profiles": [
       "inference",
       "evaluation",
@@ -104,7 +104,7 @@
     "mode": "offline",
     "params": {
       "attention": "sdpa",
-      "batch_size": 64,
+      "batch_size": 1,
       "enable_thinking": false
     },
     "quantization": "none",
@@ -129,10 +129,10 @@
       "query_budget": 6
     },
     "mechanism": {
-      "name": "D3",
+      "name": "D0",
       "params": {
-        "external_boundary": true,
-        "per_line_origin_labels": true,
+        "external_boundary": false,
+        "per_line_origin_labels": false,
         "shared_policy_source": "configs/protocol.json:system",
         "trusted_tail_reminder": false
       }
