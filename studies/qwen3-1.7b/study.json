@@ -1,0 +1,60 @@
+{
+  "baseline_commit": "8e0356b815cfc1c0cdb99962181fcc149baf96fa",
+  "calibration": {
+    "batch_candidates": [
+      16,
+      64,
+      128,
+      192
+    ],
+    "cases": 24,
+    "defense": "D0",
+    "reference_batch": 16,
+    "selection": "Highest measured inference-loop throughput among candidates with exactly matching outputs and scores to reference batch16; formal batch frozen after development.",
+    "split": "dev"
+  },
+  "changed_scientific_inputs": [
+    "model files and tokenizer",
+    "protocol_id and model_label metadata only"
+  ],
+  "development": {
+    "cases": 24,
+    "defenses": [
+      "D0",
+      "D1",
+      "D2",
+      "D3"
+    ]
+  },
+  "formal": {
+    "cases": 96,
+    "defenses": [
+      "D0",
+      "D1",
+      "D2",
+      "D3"
+    ],
+    "expected_generations": 3072,
+    "requests_per_case": 8
+  },
+  "interpretation": "Exploratory second local snapshot comparison, not a model-size scaling law or an independent unseen benchmark. Primary-model test outcomes were already known when this extension was planned. No prompt tuning using second-model test outcomes.",
+  "model_label": "Local Qwen3-1.7B",
+  "repeat": {
+    "defense": "D0",
+    "expected_generations": 768,
+    "fresh_execution": true
+  },
+  "same_tasks_cases_prompts_scoring_and_decoding": true,
+  "schema_version": 1,
+  "shared_files": {
+    "data/dev.jsonl": "fffea11822f77fd223d414d0cdd6ddd62d711fd4b060b52aaeae14fb9e947dc1",
+    "data/test.jsonl": "63a5d36e4d3b0b15e79e1b1ab25e0b423b546f9de6c67122e97e77d8eed381da",
+    "privacy_study/__init__.py": "632b1314cfa742acdc3967874a0a03915ecb51c764c038a9b1639574918b0fe4",
+    "privacy_study/analyze.py": "23b80a7b7958c29b4399ae383c9296eede3b16dfb49819b622e9f9d9d0422bba",
+    "privacy_study/core.py": "d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43",
+    "privacy_study/record.py": "ad2865f90299a5604bd5581c87bcadbf38e2539bbdaa74b45dbc1bb318a9f1a1",
+    "privacy_study/run.py": "1cb5bbb7cd7373d52aeaca60d10088b980122199cead75fb40464f4466510e52"
+  },
+  "status": "prepared_before_extension_inference",
+  "study_id": "qwen3-1.7b"
+}
