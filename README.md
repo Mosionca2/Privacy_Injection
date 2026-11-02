@@ -21,3 +21,17 @@ python -m unittest discover -s tests -v
 ```
 
 Model weights and machine-specific configuration are not distributed here. Execution and ReproLLM integration are added as independently validated stages. Published results will identify completed generations, failures, exact software versions, and limitations; this initial implementation contains no experimental outcome claim.
+
+## Recorded execution
+
+`privacy_study.record` prepares separate condition workspaces, declares relative local-model assets, adds project rules, creates an offline lock, and wraps genuine GPU inference with ReproLLM. On filesystems supporting hard links, existing local weights can be shared without duplicating their bytes. Model assets remain ignored by Git.
+
+The inference entry point is:
+
+```sh
+python -m privacy_study.run --model assets/model --defense D0 --split dev --batch-size 1
+```
+
+Result files contain independent per-response scores and actual ReproLLM run IDs. Interrupted conditions resume only when scientific identity, software versions, case selection, and batch size match. A completed file does not trigger a new inference job. Each recorded condition retains its own manifest, lock, rules, capture warnings, and selected-run export.
+
+Formal execution additionally requires `protocol.freeze.json`. Changing code, test data, protocol, model identity, dependency versions, or batch size invalidates that frozen experiment. Analysis rejects incomplete case clusters, missing defense conditions, duplicate successes, and mixed scientific identities.
