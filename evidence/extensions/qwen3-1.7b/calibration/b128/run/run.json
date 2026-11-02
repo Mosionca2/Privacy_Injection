@@ -1,0 +1,224 @@
+{
+  "artifacts": [
+    {
+      "path": "raw/completion.json",
+      "sha256": "sha256:bd7d50b85a05fcc29670b4cf0da56b2feeae4776bb1033b39447ef90f9329a9f",
+      "size_bytes": 330
+    },
+    {
+      "path": "raw/results.jsonl",
+      "sha256": "sha256:7df6e95b0f3de88c6809dad5e04d5417d66f3f59c8c694de7a8d1e1e0e2598df",
+      "size_bytes": 115437
+    }
+  ],
+  "bindings_observed": {
+    "custom.batch_size": [
+      {
+        "source": {
+          "key": "--batch-size",
+          "path": null,
+          "type": "cli"
+        },
+        "value": 128
+      }
+    ],
+    "custom.dataset_split": [
+      {
+        "source": {
+          "key": "--split",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "dev"
+      }
+    ],
+    "custom.defense": [
+      {
+        "source": {
+          "key": "--defense",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "D0"
+      }
+    ],
+    "generation.max_tokens": [
+      {
+        "source": {
+          "key": "max_new_tokens",
+          "path": "configs/protocol.json",
+          "type": "config"
+        },
+        "value": 32
+      }
+    ],
+    "generation.seed": [
+      {
+        "source": {
+          "key": "run_seed",
+          "path": "configs/protocol.json",
+          "type": "config"
+        },
+        "value": 73129
+      }
+    ],
+    "models.primary.id": [
+      {
+        "source": {
+          "key": "--model",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "assets/model"
+      }
+    ]
+  },
+  "code": {
+    "branch": "records/qwen3-1.7b/calibration/b128",
+    "commit": "ea8b01e853578cf994981489c4be30bb1d8e772c",
+    "dirty": false,
+    "modified_count": 0,
+    "patch_file": null,
+    "patch_sha256": null,
+    "remote": "https://github.com/Mosionca2/Privacy_Injection.git",
+    "untracked_count": 0
+  },
+  "command": {
+    "argv": [
+      "python",
+      "-m",
+      "privacy_study.run",
+      "--model",
+      "assets/model",
+      "--defense",
+      "D0",
+      "--split",
+      "dev",
+      "--batch-size",
+      "128"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": 92.757262,
+  "ended_at": "2026-11-02T09:19:31Z",
+  "environment": {
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "<GPU_DEVICE>",
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HUB_OFFLINE": "1",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "LC_CTYPE": "C.UTF-8",
+      "PATH": "<REDACTED:path>",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "TRANSFORMERS_OFFLINE": "1"
+    },
+    "env_capture": "allowlist",
+    "hostname_sha256": "sha256:32e83e92d45d71f69dcf9d214688f0375542108631b45d344e5df2eb91c11566",
+    "os": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "accelerate": "1.12.0",
+      "bitsandbytes": "0.49.2",
+      "datasets": "4.6.1",
+      "evaluate": "0.4.6",
+      "lm_eval": "0.4.11",
+      "numpy": "2.2.6",
+      "openai": "2.24.0",
+      "peft": "0.18.1",
+      "safetensors": "0.7.0",
+      "sentencepiece": "0.2.1",
+      "tokenizers": "0.22.2",
+      "torch": "2.5.1+cu121",
+      "transformers": "5.2.0"
+    },
+    "platform": "linux",
+    "python": "3.10.19"
+  },
+  "exit_code": 0,
+  "files": [
+    {
+      "origin": "declared",
+      "path": ".python-version",
+      "redacted": false,
+      "sha256": "sha256:8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+      "size_bytes": 8,
+      "snapshot": "files/8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "origin": "declared",
+      "path": "configs/protocol.json",
+      "redacted": false,
+      "sha256": "sha256:9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298",
+      "size_bytes": 2845,
+      "snapshot": "files/9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298"
+    },
+    {
+      "origin": "declared",
+      "path": "model.identity.json",
+      "redacted": false,
+      "sha256": "sha256:a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+      "size_bytes": 1710,
+      "snapshot": "files/a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367"
+    },
+    {
+      "origin": "declared",
+      "path": "requirements.runtime.txt",
+      "redacted": false,
+      "sha256": "sha256:be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+      "size_bytes": 112,
+      "snapshot": "files/be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    }
+  ],
+  "hardware": {
+    "cpu_count": 128,
+    "cuda_driver_max": "13.0",
+    "driver": "580.178.04",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:b77fcc7a2e1a4023818a073834292073f171fd266f8728642c58ab76b8a00474"
+      },
+      {
+        "index": 1,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:6bf6ca98feeeb523c3a0618bc893039e071d13bb6c9304ced089fc7ad18e3e9f"
+      },
+      {
+        "index": 2,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:cb5f06cdb7d0686193268437b847b20606aaa98bc7ff5cb138ecad1e1b2e42fb"
+      },
+      {
+        "index": 3,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:a6ba9cf25912f91d84baab1d169fd6446de16b53a3cd655596bb5a24b377b7a1"
+      }
+    ],
+    "source": "nvidia_smi"
+  },
+  "lock": {
+    "path": "reprollm.lock",
+    "sha256": "sha256:55153843d753684495976b8eb42e8622e70530f60ebcafc542879baed51e12bb",
+    "snapshot": "lock.yaml"
+  },
+  "manifest": {
+    "path": "reprollm.yaml",
+    "sha256": "sha256:a3c632a09ee01359a0f62cb02820300293ea58d9d881ca3eebb4ed9833962f93",
+    "snapshot": "manifest.yaml"
+  },
+  "name": "qwen3-1.7b-calibration-b128",
+  "reprollm_version": "0.6.1",
+  "run_id": "20261102T091758Z-2a12e8",
+  "scheduler": null,
+  "schema_version": 1,
+  "started_at": "2026-11-02T09:17:58Z",
+  "status": "completed",
+  "warnings": []
+}

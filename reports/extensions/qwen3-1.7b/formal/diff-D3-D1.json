@@ -1,0 +1,130 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "D1",
+      "b": "D3",
+      "note": null,
+      "path": "privacy.mechanism.name",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": false,
+      "b": true,
+      "note": null,
+      "path": "privacy.mechanism.params.per_line_origin_labels",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "D1",
+      "b": "D3",
+      "note": null,
+      "path": "custom.defense",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "6612274eafdef50d08752e4e5144e1d312451812",
+      "b": "7586e344890ff5480aeb74cded49e65f66224b31",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "<GPU_DEVICE>",
+      "b": "<GPU_DEVICE>",
+      "note": null,
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D1",
+        "--split",
+        "test",
+        "--batch-size",
+        "16"
+      ],
+      "b": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D3",
+        "--split",
+        "test",
+        "--batch-size",
+        "16"
+      ],
+      "note": null,
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python -m privacy_study.run --model assets/model --defense D1 --split test --batch-size 16",
+      "b": "python -m privacy_study.run --model assets/model --defense D3 --split test --batch-size 16",
+      "note": null,
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "records/qwen3-1.7b/formal/D1",
+      "b": "records/qwen3-1.7b/formal/D3",
+      "note": null,
+      "path": "code.branch",
+      "severity": "LOW",
+      "status": "changed"
+    },
+    {
+      "a": 146.68714,
+      "b": 147.361307,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261102T092835Z-d8e9df",
+      "b": "20261102T092835Z-376e61",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.6.1",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 1,
+      "MEDIUM": 7,
+      "MEDIUM_HIGH": 0,
+      "NONE": 2
+    },
+    "highest": "MEDIUM",
+    "same": 122
+  }
+}

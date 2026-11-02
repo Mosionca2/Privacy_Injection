@@ -1,0 +1,73 @@
+{
+  "additional_generations": 256,
+  "conditions": [
+    {
+      "branch": "records/metadata-D0",
+      "critical_failures": 0,
+      "defense": "D0",
+      "generations": 64,
+      "git_commit": "ea420b451a1f8b2176813cb2b8eb266e1602596d",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T083226Z-4d45fa"
+    },
+    {
+      "branch": "records/metadata-D1",
+      "critical_failures": 0,
+      "defense": "D1",
+      "generations": 64,
+      "git_commit": "cc2f07407e2e4504b2217a03c60e1b1b54445ad4",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T083215Z-c2064e"
+    },
+    {
+      "branch": "records/metadata-D2",
+      "critical_failures": 0,
+      "defense": "D2",
+      "generations": 64,
+      "git_commit": "88e8e277f33e0b60deb4daaa56295eea9af16de9",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T083215Z-34409a"
+    },
+    {
+      "branch": "records/metadata-D3",
+      "critical_failures": 0,
+      "defense": "D3",
+      "generations": 64,
+      "git_commit": "fb7a2f28867dfbb4fc9946860172632656fa3825",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T083226Z-ca1c49"
+    }
+  ],
+  "critical_failures": 0,
+  "original_formal_records_unchanged": true,
+  "schema_version": 1,
+  "scope": "Separate 8-case-per-defense genuine GPU validation of completed declarations; not a replacement for the held-out experiment."
+}

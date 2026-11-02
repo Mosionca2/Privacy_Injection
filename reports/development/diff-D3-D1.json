@@ -25,8 +25,8 @@
       "status": "changed"
     },
     {
-      "a": "GPU-d445f9a6-6fd8-e2ce-8785-0cb8d87aa09a",
-      "b": "GPU-990f58a4-518a-b8c8-0926-09d3ce05e716",
+      "a": "<GPU_DEVICE>",
+      "b": "<GPU_DEVICE>",
       "note": null,
       "path": "environment.env.CUDA_VISIBLE_DEVICES",
       "severity": "MEDIUM",
