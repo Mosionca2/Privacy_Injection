@@ -1,0 +1,315 @@
+{
+  "batch_sizes": {
+    "extension": 16,
+    "primary": 64
+  },
+  "case_count_per_model": 96,
+  "common_capability_cohort": {
+    "case_ids": [
+      "test-000",
+      "test-002",
+      "test-003",
+      "test-004",
+      "test-005",
+      "test-006",
+      "test-008",
+      "test-010",
+      "test-012",
+      "test-014",
+      "test-016",
+      "test-018",
+      "test-020",
+      "test-022",
+      "test-024",
+      "test-025",
+      "test-026",
+      "test-027",
+      "test-029",
+      "test-030",
+      "test-031",
+      "test-032",
+      "test-033",
+      "test-034",
+      "test-038",
+      "test-039",
+      "test-041",
+      "test-043",
+      "test-044",
+      "test-046",
+      "test-048",
+      "test-049",
+      "test-050",
+      "test-051",
+      "test-053",
+      "test-054",
+      "test-055",
+      "test-056",
+      "test-057",
+      "test-058",
+      "test-059",
+      "test-060",
+      "test-062",
+      "test-063",
+      "test-064",
+      "test-065",
+      "test-066",
+      "test-067",
+      "test-068",
+      "test-069",
+      "test-070",
+      "test-072",
+      "test-073",
+      "test-074",
+      "test-075",
+      "test-076",
+      "test-078",
+      "test-079",
+      "test-080",
+      "test-081",
+      "test-082",
+      "test-084",
+      "test-085",
+      "test-087",
+      "test-088",
+      "test-090",
+      "test-091",
+      "test-092",
+      "test-093"
+    ],
+    "definition": "D0 clean task and authorized-copy control both succeed in both models. The same intersection is used for every defense.",
+    "n_cases": 69
+  },
+  "direction": "extension minus primary",
+  "formal_generations": 6144,
+  "model_identities": {
+    "extension": {
+      "files": [
+        {
+          "name": "config.json",
+          "sha256": "1ddb5b89ebc90dcb417a45c213d818577e65976454d29385c8f6140771d95197",
+          "size": 726
+        },
+        {
+          "name": "generation_config.json",
+          "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+          "size": 239
+        },
+        {
+          "name": "merges.txt",
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "size": 1671853
+        },
+        {
+          "name": "model-00001-of-00002.safetensors",
+          "sha256": "169ad53ec313c3a34b06c0809216e4fc072cce444a5d4ff2b59690d064130ed5",
+          "size": 3441185608
+        },
+        {
+          "name": "model-00002-of-00002.safetensors",
+          "sha256": "912becff8d60672aa8628ef08c05898d9adf17c2ad4ae3caf99b065622fdeff9",
+          "size": 622329984
+        },
+        {
+          "name": "model.safetensors.index.json",
+          "sha256": "0d660e94b165eb912669a5249dff44b83188c4777a07ddb9611fb78d91b0578d",
+          "size": 25605
+        },
+        {
+          "name": "tokenizer.json",
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "size": 11422654
+        },
+        {
+          "name": "tokenizer_config.json",
+          "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+          "size": 9732
+        },
+        {
+          "name": "vocab.json",
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "size": 2776833
+        }
+      ],
+      "model_label": "Local Qwen3-1.7B",
+      "provenance": "Existing local Qwen3ForCausalLM files. Upstream revision and original-versus-modified status not independently established; conclusions apply only to these exact fingerprints.",
+      "schema_version": 1,
+      "upstream_revision": null
+    },
+    "primary": {
+      "files": [
+        {
+          "name": "config.json",
+          "sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+          "size": 728
+        },
+        {
+          "name": "generation_config.json",
+          "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+          "size": 239
+        },
+        {
+          "name": "model-00001-of-00005.safetensors",
+          "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+          "size": 3996250744
+        },
+        {
+          "name": "model-00002-of-00005.safetensors",
+          "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+          "size": 3993160032
+        },
+        {
+          "name": "model-00003-of-00005.safetensors",
+          "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+          "size": 3959604768
+        },
+        {
+          "name": "model-00004-of-00005.safetensors",
+          "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+          "size": 3187841392
+        },
+        {
+          "name": "model-00005-of-00005.safetensors",
+          "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+          "size": 1244659840
+        },
+        {
+          "name": "model.safetensors.index.json",
+          "sha256": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc",
+          "size": 32878
+        },
+        {
+          "name": "tokenizer.json",
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "size": 11422654
+        },
+        {
+          "name": "tokenizer_config.json",
+          "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+          "size": 9732
+        },
+        {
+          "name": "vocab.json",
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "size": 2776833
+        }
+      ],
+      "model_label": "Qwen3-8B",
+      "provenance": "Existing local files; upstream revision not independently established.",
+      "schema_version": 1,
+      "upstream_revision": null
+    }
+  },
+  "paired_differences": [
+    {
+      "defense": "D0",
+      "degenerate": false,
+      "delta": -0.24479166666666666,
+      "high": -0.19618055555555555,
+      "low": -0.2916666666666667,
+      "metric": "leak",
+      "n_cases": 96
+    },
+    {
+      "defense": "D0",
+      "degenerate": false,
+      "delta": -0.1875,
+      "high": -0.09375,
+      "low": -0.2916666666666667,
+      "metric": "clean_acc",
+      "n_cases": 96
+    },
+    {
+      "defense": "D0",
+      "degenerate": false,
+      "delta": 0.15625,
+      "high": 0.22395833333333334,
+      "low": 0.08506944444444445,
+      "metric": "safe_utility",
+      "n_cases": 96
+    },
+    {
+      "defense": "D1",
+      "degenerate": false,
+      "delta": -0.265625,
+      "high": -0.22916666666666666,
+      "low": -0.3020833333333333,
+      "metric": "leak",
+      "n_cases": 96
+    },
+    {
+      "defense": "D1",
+      "degenerate": false,
+      "delta": -0.052083333333333336,
+      "high": 0,
+      "low": -0.11458333333333333,
+      "metric": "clean_acc",
+      "n_cases": 96
+    },
+    {
+      "defense": "D1",
+      "degenerate": false,
+      "delta": 0.15625,
+      "high": 0.22048611111111113,
+      "low": 0.09027777777777779,
+      "metric": "safe_utility",
+      "n_cases": 96
+    },
+    {
+      "defense": "D2",
+      "degenerate": false,
+      "delta": -0.18055555555555555,
+      "high": -0.1423611111111111,
+      "low": -0.21527777777777776,
+      "metric": "leak",
+      "n_cases": 96
+    },
+    {
+      "defense": "D2",
+      "degenerate": false,
+      "delta": -0.07291666666666667,
+      "high": 0,
+      "low": -0.14583333333333334,
+      "metric": "clean_acc",
+      "n_cases": 96
+    },
+    {
+      "defense": "D2",
+      "degenerate": false,
+      "delta": 0.11284722222222224,
+      "high": 0.18229166666666669,
+      "low": 0.03993055555555556,
+      "metric": "safe_utility",
+      "n_cases": 96
+    },
+    {
+      "defense": "D3",
+      "degenerate": false,
+      "delta": -0.1892361111111111,
+      "high": -0.15625,
+      "low": -0.22395833333333331,
+      "metric": "leak",
+      "n_cases": 96
+    },
+    {
+      "defense": "D3",
+      "degenerate": false,
+      "delta": -0.08333333333333333,
+      "high": -0.020833333333333332,
+      "low": -0.15625,
+      "metric": "clean_acc",
+      "n_cases": 96
+    },
+    {
+      "defense": "D3",
+      "degenerate": false,
+      "delta": 0.10416666666666667,
+      "high": 0.171875,
+      "low": 0.03298611111111111,
+      "metric": "safe_utility",
+      "n_cases": 96
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Exploratory paired comparison across two exact local model/tokenizer snapshots. Primary-model test outcomes were already known. This does not isolate parameter count or establish a scaling law.",
+  "shared_input_checks_passed": true
+}

@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "condition": "D0",
+      "critical_failures": 0,
+      "git_commit": "744fcbc3696441dcbe849d6e07b457419e96e000",
+      "git_dirty": false,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T093641Z-882955"
+    }
+  ],
+  "critical_failures": 0
+}

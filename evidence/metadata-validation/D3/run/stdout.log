@@ -1,0 +1,3 @@
+{"event": "model_loaded", "load_seconds": 16.27763400040567, "batch_size": 64}
+{"event": "batch_complete", "new_samples": 64, "total_pending": 64}
+{"event": "completed", "schema_version": 1, "defense": "D3", "split": "dev", "batch_size": 64, "expected": 64, "new_generations": 64, "load_seconds": 16.27763400040567, "inference_seconds": 2.971691634505987, "peak_allocated_gib": 20.271538257598877, "peak_reserved_gib": 21.265625, "reprollm_run_id": "20261102T083226Z-ca1c49"}

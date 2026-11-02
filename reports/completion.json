@@ -1,0 +1,75 @@
+{
+  "corrected_declaration_critical_failures": 0,
+  "cpu_contract_checks": 9,
+  "extensions": [
+    "reports/extensions/qwen3-1.7b/completion.json"
+  ],
+  "formal_cases": 96,
+  "formal_completed": true,
+  "formal_generations": 3072,
+  "fresh_repeat_changed_outputs": 0,
+  "fresh_repeat_changed_scores": 0,
+  "model_label": "Local Qwen3-8B",
+  "original_audit_gap": "Original manifests omitted privacy.mechanism.params; originals retained.",
+  "phases": [
+    {
+      "gpu_runs": 4,
+      "new_generations": 256,
+      "phase": "calibration",
+      "run_ids": [
+        "20261102T075410Z-f3a8e9",
+        "20261102T075409Z-ec0f5b",
+        "20261102T075409Z-a6e1a4",
+        "20261102T075410Z-632a24"
+      ]
+    },
+    {
+      "gpu_runs": 4,
+      "new_generations": 768,
+      "phase": "development",
+      "run_ids": [
+        "20261102T080638Z-7467ff",
+        "20261102T080638Z-1f2640",
+        "20261102T080638Z-a9ca9e",
+        "20261102T080638Z-092ebf"
+      ]
+    },
+    {
+      "gpu_runs": 4,
+      "new_generations": 3072,
+      "phase": "formal",
+      "run_ids": [
+        "20261102T081423Z-47d411",
+        "20261102T081423Z-febde1",
+        "20261102T081423Z-7497cb",
+        "20261102T081423Z-4500d4"
+      ]
+    },
+    {
+      "gpu_runs": 1,
+      "new_generations": 768,
+      "phase": "repeat",
+      "run_ids": [
+        "20261102T082017Z-228844"
+      ]
+    },
+    {
+      "gpu_runs": 4,
+      "new_generations": 256,
+      "phase": "metadata-validation",
+      "run_ids": [
+        "20261102T083226Z-4d45fa",
+        "20261102T083215Z-c2064e",
+        "20261102T083215Z-34409a",
+        "20261102T083226Z-ca1c49"
+      ]
+    }
+  ],
+  "plotting_library": "matplotlib 3.10.8",
+  "real_gpu_runs": 17,
+  "real_model_generations_published": 5120,
+  "repository_execution_ledger": "reports/execution-ledger.json",
+  "schema_version": 1,
+  "scientific_freeze_still_matches": true,
+  "scope": "Primary Qwen3-8B study only; extension runs are counted separately."
+}

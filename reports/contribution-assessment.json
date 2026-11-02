@@ -1,0 +1,22 @@
+{
+  "candidate": "Documentation recipe for isolated concurrent local-model recording, content verification, clean declarations and historical exports.",
+  "confirmed_upstream_product_bugs": 0,
+  "evidence": [
+    "REPORT.md",
+    "docs/reprollm-case-study.md",
+    "reports/reprollm-validation.json",
+    "reports/metadata-validation.json",
+    "reports/extensions/qwen3-1.7b/REPORT.md"
+  ],
+  "fork_status": "not_created_no_upstream_code_change",
+  "interpretation": "Reviewed scope boundaries matched the installed tool contract; the initial CRITICAL finding was a study declaration gap.",
+  "issue_status": "not_submitted_no_confirmed_bug",
+  "pull_request_status": "not_submitted",
+  "schema_version": 1,
+  "second_model_followup": {
+    "batch_sensitivity": "Observed configuration-dependent decoded output/score differences, correctly captured; no upstream defect established.",
+    "completed": true,
+    "gpu_runs": 13,
+    "real_generations": 5376
+  }
+}

@@ -1,7 +1,7 @@
 schema_version: 1
 reprollm_version: 0.6.1
 generated_at: '2026-11-02T08:32:01Z'
-manifest_sha256: sha256:ea6f98df9145b2b3b5539b18d354a1a43ffbc0b70487f9906714768ef117f1ac
+manifest_sha256: sha256:a1fc2b362a72a2a62a67ed22ba311bef35e27a3a8eec8e6a5cc4e7588c5f7a21
 project_rules_sha256: sha256:0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b
 resolution:
   mode: offline
@@ -134,10 +134,10 @@ evaluation:
 privacy:
   threat_model: Only retrieved text is attacker-controlled; private identifiers and system policy are hidden from the attacker.
   mechanism:
-    name: D1
+    name: D3
     params:
       external_boundary: true
-      per_line_origin_labels: false
+      per_line_origin_labels: true
       shared_policy_source: configs/protocol.json:system
       trusted_tail_reminder: false
   metrics:
