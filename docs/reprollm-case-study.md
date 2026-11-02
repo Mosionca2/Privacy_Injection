@@ -26,7 +26,7 @@ Actual run IDs link rows to captures; accepted CLI bindings detected intentional
 - Capture evidence is collected mainly after the child exits. Keep scientific inputs immutable and isolate concurrent manifests.
 - The selected synthetic secret patterns were redacted in tool-owned persistence. This is not a general guarantee for arbitrary secrets or user-created output files.
 
-No confirmed upstream defect was inferred from these cases. A documentation recipe explaining these verified boundaries is a potential contribution; no Issue or PR is claimed as submitted. Any future upstream patch must follow the upstream contribution scope and applicable validation gates.
+No confirmed upstream defect was inferred from these cases. The resulting documentation proposal is now submitted as [Docs Issue #11](https://github.com/EnumaElish123/ReproLLM/issues/11) and [Draft PR #12](https://github.com/EnumaElish123/ReproLLM/pull/12) from [the research owner's Fork](https://github.com/Mosionca2/ReproLLM). The PR contains only the isolated-recording tutorial, navigation and changelog. Maintainer placement/content review is pending.
 
 
 ## Second-snapshot follow-up
@@ -34,3 +34,12 @@ No confirmed upstream defect was inferred from these cases. A documentation reci
 A separately frozen local Qwen3-1.7B snapshot completed another 3,072 formal generations and a 768-response immediate fresh repeat. Its upstream revision and original-versus-modified status remain unverified; evidence binds exact local fingerprints. This is follow-up work within the same agent-assisted study, not an independent adopter or long-term deployment. Full records and controls are in [the second-model report](../reports/extensions/qwen3-1.7b/REPORT.md).
 
 Development calibration showed that changing batch size altered a few decoded greedy outputs and scores, despite the shared seed and decoding mode. The predeclared selection rule retained batch16. ReproLLM captured the actual batch binding and distinct configuration records; it does not certify numerical equivalence. Every extension run used complete committed declarations, full local-weight hashing and an isolated workspace, with zero CRITICAL audit failures. The original primary-run audit findings remain intact. Public diff references and device identifiers are reviewed publication copies; original records stay private.
+
+
+## Submitted upstream documentation contribution
+
+The [Fork](https://github.com/Mosionca2/ReproLLM) branch `m9/t11-isolated-recording-recipe` supplies the concrete tutorial in [Draft PR #12](https://github.com/EnumaElish123/ReproLLM/pull/12), linked to [Issue #11](https://github.com/EnumaElish123/ReproLLM/issues/11). Proposed placement and content remain under maintainer review; no acceptance or merge is asserted. The contribution does not modify product behavior or publish private research documents.
+
+Local checks recorded two independent CPU fixture conditions with released 0.6.1 (run schema 1) and two with source 0.7.0 at `8772904` (schema 2). Both check declared/observed condition and batch values, a child configuration-consumption witness, explicit cross-workspace diff, stale-lock exit after a declaration edit and selected historical export without rewriting run bytes. Five tutorial links/anchors and two navigation links pass. These four CPU recordings are separate from the 10,496 scientific model generations. The existing installed environment was not changed.
+
+Per upstream's documentation-only validation exception, product full-suite and five-project/resource gates are NOT_APPLICABLE, not passed. [The evidence summary](../reports/reprollm-contribution-validation.json) retains version boundaries and the initial fixture-input correction. [Upstream CI](https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597) currently reports `action_required`; local document checks do not replace that CI result.

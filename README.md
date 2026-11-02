@@ -67,3 +67,9 @@ Read [the complete report and figures](REPORT.md), [ReproLLM case study](docs/re
 The separately frozen Local Qwen3-1.7B study completed another 3,072 formal responses and a 768-response fresh repeat. Its larger calibration batches changed a few greedy outputs and scores, so the predeclared agreement rule retained batch16. All 13 extension runs used clean committed inputs and have zero CRITICAL audit failures. Original primary-study findings remain retained.
 
 Read the [second-model report, charts and cross-model comparisons](reports/extensions/qwen3-1.7b/REPORT.md). Across both exact local snapshots, the [repository execution ledger](reports/execution-ledger.json) records **10,496 real generations in 30 GPU runs**, including **6,144 formal responses**. This is one agent-assisted study; upstream model provenance, parameter-count effects and general security are not established.
+
+## ReproLLM upstream documentation contribution
+
+A concrete isolated-condition recording guide has been submitted from [Mosionca2/ReproLLM](https://github.com/Mosionca2/ReproLLM) as [Docs Issue #11](https://github.com/EnumaElish123/ReproLLM/issues/11) and [Draft PR #12](https://github.com/EnumaElish123/ReproLLM/pull/12). Its four documentation files cover independent workspaces, local/offline lock scope, bindings, explicit cross-workspace diff and selected historical export. The proposal is awaiting maintainer review.
+
+[Local validation evidence](reports/reprollm-contribution-validation.json) records four CPU-only command rehearsals across released 0.6.1 and source 0.7.0, plus link/navigation checks. The scientific generation count remains 10,496. Upstream CI currently reports `action_required`; no CI success or upstream acceptance is claimed.

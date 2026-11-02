@@ -1,22 +1,41 @@
 {
-  "candidate": "Documentation recipe for isolated concurrent local-model recording, content verification, clean declarations and historical exports.",
+  "candidate": "Submitted documentation recipe for isolated concurrent local-model recording and historical evidence.",
   "confirmed_upstream_product_bugs": 0,
+  "contribution_commit": "5ddbf4b37a1d8fd69567e7aba40aaee61725cb9a",
+  "contribution_kind": "documentation_only",
   "evidence": [
     "REPORT.md",
     "docs/reprollm-case-study.md",
     "reports/reprollm-validation.json",
     "reports/metadata-validation.json",
-    "reports/extensions/qwen3-1.7b/REPORT.md"
+    "reports/extensions/qwen3-1.7b/REPORT.md",
+    "reports/reprollm-contribution-validation.json"
   ],
-  "fork_status": "not_created_no_upstream_code_change",
-  "interpretation": "Reviewed scope boundaries matched the installed tool contract; the initial CRITICAL finding was a study declaration gap.",
-  "issue_status": "not_submitted_no_confirmed_bug",
-  "pull_request_status": "not_submitted",
+  "fork_status": "created",
+  "fork_url": "https://github.com/Mosionca2/ReproLLM",
+  "interpretation": "No product defect is alleged. A concrete documentation improvement based on actual agent-assisted use was submitted for review; local documentation acceptance does not imply upstream CI or maintainer acceptance.",
+  "issue_status": "open_documentation_proposal",
+  "issue_url": "https://github.com/EnumaElish123/ReproLLM/issues/11",
+  "maintainer_acceptance": "not_yet_observed",
+  "pull_request_status": "draft_open_awaiting_maintainer_review",
+  "pull_request_url": "https://github.com/EnumaElish123/ReproLLM/pull/12",
   "schema_version": 1,
   "second_model_followup": {
     "batch_sensitivity": "Observed configuration-dependent decoded output/score differences, correctly captured; no upstream defect established.",
     "completed": true,
     "gpu_runs": 13,
     "real_generations": 5376
-  }
+  },
+  "upstream_base_commit": "8772904e0f6baeefbc0499e02a27e303c995e64e",
+  "upstream_branch": "m9/t11-isolated-recording-recipe",
+  "upstream_ci": {
+    "conclusion": "action_required",
+    "head_commit": "5ddbf4b37a1d8fd69567e7aba40aaee61725cb9a",
+    "passed": false,
+    "run_id": 41445173597,
+    "scope": "Upstream CI is separate from the completed local documentation checks.",
+    "status": "completed",
+    "url": "https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597"
+  },
+  "validation_report": "reports/reprollm-contribution-validation.json"
 }

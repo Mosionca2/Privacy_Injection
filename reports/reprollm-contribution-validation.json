@@ -1,0 +1,103 @@
+{
+  "all_passed": true,
+  "contribution_commit": "5ddbf4b37a1d8fd69567e7aba40aaee61725cb9a",
+  "engines": [
+    {
+      "changed_manifest_lock_stale_exit": 1,
+      "conditions": [
+        {
+          "child_consumption_witness_checked": true,
+          "child_exit_code": 0,
+          "declared_and_observed_bindings_agree": true,
+          "defense": "D0",
+          "git_dirty": false,
+          "recorded_commit": "8761edb20be166c730f2f27ee637224f364fb97f",
+          "run_id": "20261102T122236Z-09192f",
+          "run_schema_version": 1
+        },
+        {
+          "child_consumption_witness_checked": true,
+          "child_exit_code": 0,
+          "declared_and_observed_bindings_agree": true,
+          "defense": "D1",
+          "git_dirty": false,
+          "recorded_commit": "e3ff5517220eb093bea6cbac592768d7a6c4d94a",
+          "run_id": "20261102T122340Z-9ceea5",
+          "run_schema_version": 1
+        }
+      ],
+      "cross_workspace_defense_diff_detected": true,
+      "engine": "released",
+      "original_run_bytes_unchanged": true,
+      "scope": "CPU-only fixture command; no model inference, GPU allocation or paid/API requests.",
+      "selected_historical_export_preserves_model_identity": true,
+      "version": "reprollm 0.6.1"
+    },
+    {
+      "changed_manifest_lock_stale_exit": 1,
+      "conditions": [
+        {
+          "child_consumption_witness_checked": true,
+          "child_exit_code": 0,
+          "declared_and_observed_bindings_agree": true,
+          "defense": "D0",
+          "git_dirty": false,
+          "recorded_commit": "9a3c4e5b3d32c53db4139eb9932d4c2502ab7361",
+          "run_id": "20261102T122520Z-195af1",
+          "run_schema_version": 2
+        },
+        {
+          "child_consumption_witness_checked": true,
+          "child_exit_code": 0,
+          "declared_and_observed_bindings_agree": true,
+          "defense": "D1",
+          "git_dirty": false,
+          "recorded_commit": "ea0909fb2d21f1a950428a3f42601b17accc2253",
+          "run_id": "20261102T122624Z-06d235",
+          "run_schema_version": 2
+        }
+      ],
+      "cross_workspace_defense_diff_detected": true,
+      "engine": "source",
+      "original_run_bytes_unchanged": true,
+      "scope": "CPU-only fixture command; no model inference, GPU allocation or paid/API requests.",
+      "selected_historical_export_preserves_model_identity": true,
+      "version": "reprollm 0.7.0"
+    }
+  ],
+  "five_project_gate_a": "NOT_APPLICABLE: no product behavior, schema, configuration or dependency change.",
+  "generated_document_freshness": "NOT_APPLICABLE: no generator, CLI, rule or profile inputs changed.",
+  "initial_fixture_attempt": {
+    "cause": "Fixture project.name contained spaces; corrected only the private fixture to the manifest name grammar.",
+    "exit_code": 2,
+    "failed_attempt_retained_privately": true,
+    "product_source_changed": false,
+    "status": "rejected_before_any_recording"
+  },
+  "installed_distribution_version": "0.6.1",
+  "navigation_links_checked": 2,
+  "new_document_links_checked": 5,
+  "new_model_generations": 0,
+  "product_quality_gate": "NOT_APPLICABLE: documentation/navigation/changelog only, validation workflow section 3.",
+  "real_cpu_recordings": 4,
+  "resource_gate_b": "NOT_APPLICABLE: no milestone/release or model execution in this contribution.",
+  "schema_version": 1,
+  "source_base_commit": "8772904e0f6baeefbc0499e02a27e303c995e64e",
+  "source_cli_selected_via_pythonpath_without_changing_existing_environment": true,
+  "upstream_ci": {
+    "conclusion": "action_required",
+    "head_commit": "5ddbf4b37a1d8fd69567e7aba40aaee61725cb9a",
+    "passed": false,
+    "run_id": 41445173597,
+    "scope": "Upstream CI is separate from the completed local documentation checks.",
+    "status": "completed",
+    "url": "https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597"
+  },
+  "upstream_issue": "https://github.com/EnumaElish123/ReproLLM/issues/11",
+  "upstream_pull_request": "https://github.com/EnumaElish123/ReproLLM/pull/12",
+  "validation_limits": [
+    "CPU command rehearsal is not model inference.",
+    "No oversized real-model weights were revalidated by this rehearsal.",
+    "Historical scientific evidence uses released 0.6.1, not the current source writer."
+  ]
+}
