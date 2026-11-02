@@ -27,3 +27,10 @@ Actual run IDs link rows to captures; accepted CLI bindings detected intentional
 - The selected synthetic secret patterns were redacted in tool-owned persistence. This is not a general guarantee for arbitrary secrets or user-created output files.
 
 No confirmed upstream defect was inferred from these cases. A documentation recipe explaining these verified boundaries is a potential contribution; no Issue or PR is claimed as submitted. Any future upstream patch must follow the upstream contribution scope and applicable validation gates.
+
+
+## Second-snapshot follow-up
+
+A separately frozen local Qwen3-1.7B snapshot completed another 3,072 formal generations and a 768-response immediate fresh repeat. Its upstream revision and original-versus-modified status remain unverified; evidence binds exact local fingerprints. This is follow-up work within the same agent-assisted study, not an independent adopter or long-term deployment. Full records and controls are in [the second-model report](../reports/extensions/qwen3-1.7b/REPORT.md).
+
+Development calibration showed that changing batch size altered a few decoded greedy outputs and scores, despite the shared seed and decoding mode. The predeclared selection rule retained batch16. ReproLLM captured the actual batch binding and distinct configuration records; it does not certify numerical equivalence. Every extension run used complete committed declarations, full local-weight hashing and an isolated workspace, with zero CRITICAL audit failures. The original primary-run audit findings remain intact. Public diff references and device identifiers are reviewed publication copies; original records stay private.

@@ -95,3 +95,8 @@ Public evidence copies remove raw device UUIDs. Original tool records remain pri
 This is one agent-assisted study of one local model snapshot, two short synthetic tasks, three fixed non-adaptive attack families and a literal disclosure metric. The sample supports visible paired effects, not fine distinctions of one or two percentage points or universal safety claims. Prompt lengths differ across interventions. Exact upstream model provenance and cross-platform repeatability remain unverified. ReproLLM recording, hash equality and semantic diff do not by themselves prove that a defense caused a model outcome.
 
 The study produced a reusable recording recipe and evidence-backed usage boundaries. No product bug was confirmed from the reviewed behaviors: original declaration omissions were study integration gaps, while freshness and diff exit behavior matched the installed contract. A generic documentation contribution is therefore a more appropriate candidate than a speculative Bug Issue. No upstream Issue or PR is represented as submitted. See [the reusable case study](docs/reprollm-case-study.md).
+
+
+## Separately frozen second-model follow-up
+
+This report above describes the original primary snapshot and its 5,120-generation ledger. A subsequent Local Qwen3-1.7B extension completed the same four-defense, 96-case formal design under its own model identity and batch16 freeze. Its results, copying controls, fresh repeat and cross-model limitations are in [the extension report](reports/extensions/qwen3-1.7b/REPORT.md). The [combined ledger](reports/execution-ledger.json) records 10,496 real generations in 30 GPU runs, including 6,144 formal responses. The scientific code and original protocol remain unchanged.

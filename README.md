@@ -61,3 +61,9 @@ The formal study completed **3,072 generations**. Attack-query leakage was 44.44
 A fresh D0 repeat generated 768 additional responses with no changed output strings or scores. Original recording audits exposed a missing mechanism-parameter declaration; those findings remain published. Four subsequent 64-response validations of completed, committed declarations have zero CRITICAL findings.
 
 Read [the complete report and figures](REPORT.md), [ReproLLM case study](docs/reprollm-case-study.md), and [execution ledger](reports/completion.json). The ledger contains 5,120 real model generations across 17 GPU runs, with separate CPU-only tool checks.
+
+## Second local snapshot extension
+
+The separately frozen Local Qwen3-1.7B study completed another 3,072 formal responses and a 768-response fresh repeat. Its larger calibration batches changed a few greedy outputs and scores, so the predeclared agreement rule retained batch16. All 13 extension runs used clean committed inputs and have zero CRITICAL audit failures. Original primary-study findings remain retained.
+
+Read the [second-model report, charts and cross-model comparisons](reports/extensions/qwen3-1.7b/REPORT.md). Across both exact local snapshots, the [repository execution ledger](reports/execution-ledger.json) records **10,496 real generations in 30 GPU runs**, including **6,144 formal responses**. This is one agent-assisted study; upstream model provenance, parameter-count effects and general security are not established.

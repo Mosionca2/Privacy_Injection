@@ -1,6 +1,9 @@
 {
   "corrected_declaration_critical_failures": 0,
   "cpu_contract_checks": 9,
+  "extensions": [
+    "reports/extensions/qwen3-1.7b/completion.json"
+  ],
   "formal_cases": 96,
   "formal_completed": true,
   "formal_generations": 3072,
@@ -65,6 +68,8 @@
   "plotting_library": "matplotlib 3.10.8",
   "real_gpu_runs": 17,
   "real_model_generations_published": 5120,
+  "repository_execution_ledger": "reports/execution-ledger.json",
   "schema_version": 1,
-  "scientific_freeze_still_matches": true
+  "scientific_freeze_still_matches": true,
+  "scope": "Primary Qwen3-8B study only; extension runs are counted separately."
 }

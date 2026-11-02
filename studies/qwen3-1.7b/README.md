@@ -20,4 +20,4 @@ python tools/prepare_extension.py --study studies/qwen3-1.7b --destination /path
 
 The destination is an independent clone outside this research checkout. For formal runs use `--split test` only after the extension freeze has been created. Full file hashes must match. In each condition workspace, create the offline lock with `--hash-large-files`, commit the manifest/lock/runtime declarations and project rules, then execute the declared real command with ReproLLM. The original top-level freeze is replaced only inside these separate extension workspaces. Model assets and raw host records are excluded from Git.
 
-Status and results are updated after each completed stage.
+Completed: 5,376 real generations in 13 GPU runs, including 3,072 formal responses. Batch16 was retained because larger calibration batches changed some outputs and scores. See [the full extension report](../../reports/extensions/qwen3-1.7b/REPORT.md) and [completion ledger](../../reports/extensions/qwen3-1.7b/completion.json).

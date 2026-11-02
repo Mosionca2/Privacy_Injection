@@ -1,0 +1,299 @@
+{
+  "all_recording_inputs_committed_and_clean": true,
+  "batch_size": 16,
+  "critical_audit_failures": 0,
+  "extension_freeze_still_matches": true,
+  "failure_rows": 0,
+  "formal_cases": 96,
+  "formal_completed": true,
+  "formal_generations": 3072,
+  "fresh_repeat_changed_outputs": 0,
+  "fresh_repeat_changed_scores": 0,
+  "model_label": "Local Qwen3-1.7B",
+  "output_cap_events": 0,
+  "phases": [
+    {
+      "gpu_runs": 4,
+      "new_generations": 768,
+      "phase": "calibration",
+      "run_ids": [
+        "20261102T091758Z-2a12e8",
+        "20261102T091758Z-22b9ad",
+        "20261102T091758Z-8742d0",
+        "20261102T091758Z-94264f"
+      ]
+    },
+    {
+      "gpu_runs": 4,
+      "new_generations": 768,
+      "phase": "development",
+      "run_ids": [
+        "20261102T092310Z-0ddcb7",
+        "20261102T092310Z-72bcb3",
+        "20261102T092310Z-475c6e",
+        "20261102T092310Z-0a4180"
+      ]
+    },
+    {
+      "gpu_runs": 4,
+      "new_generations": 3072,
+      "phase": "formal",
+      "run_ids": [
+        "20261102T092835Z-289164",
+        "20261102T092835Z-d8e9df",
+        "20261102T092835Z-65f6c7",
+        "20261102T092835Z-376e61"
+      ]
+    },
+    {
+      "gpu_runs": 1,
+      "new_generations": 768,
+      "phase": "repeat",
+      "run_ids": [
+        "20261102T093641Z-882955"
+      ]
+    }
+  ],
+  "primary_scientific_freeze_unchanged": true,
+  "real_gpu_runs": 13,
+  "real_model_generations_published": 5376,
+  "runs": [
+    {
+      "condition": "b128",
+      "critical_failures": 0,
+      "generations": 192,
+      "git_commit": "ea8b01e853578cf994981489c4be30bb1d8e772c",
+      "git_dirty": false,
+      "inference_seconds": 3.788623615168035,
+      "phase": "calibration",
+      "recorded_duration_seconds": 92.757262,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T091758Z-2a12e8"
+    },
+    {
+      "condition": "b16",
+      "critical_failures": 0,
+      "generations": 192,
+      "git_commit": "e311365f7b5f2206b7596436f0879d1cdd2d01a4",
+      "git_dirty": false,
+      "inference_seconds": 7.912913426756859,
+      "phase": "calibration",
+      "recorded_duration_seconds": 97.285486,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T091758Z-22b9ad"
+    },
+    {
+      "condition": "b192",
+      "critical_failures": 0,
+      "generations": 192,
+      "git_commit": "127d3dd8d87ac86f03097b134af591d90d945333",
+      "git_dirty": false,
+      "inference_seconds": 3.666787790134549,
+      "phase": "calibration",
+      "recorded_duration_seconds": 92.272667,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T091758Z-8742d0"
+    },
+    {
+      "condition": "b64",
+      "critical_failures": 0,
+      "generations": 192,
+      "git_commit": "7c998b7ec695a9620f2252fee4c9d58750a67fdc",
+      "git_dirty": false,
+      "inference_seconds": 4.042541543021798,
+      "phase": "calibration",
+      "recorded_duration_seconds": 92.971639,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T091758Z-94264f"
+    },
+    {
+      "condition": "D0",
+      "critical_failures": 0,
+      "generations": 192,
+      "git_commit": "c02e010507da540b964dcbaae01bb9d304cde45e",
+      "git_dirty": false,
+      "inference_seconds": 7.985663237050176,
+      "phase": "development",
+      "recorded_duration_seconds": 73.849331,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T092310Z-0ddcb7"
+    },
+    {
+      "condition": "D1",
+      "critical_failures": 0,
+      "generations": 192,
+      "git_commit": "0d693dd1da1b608f92fcd8b38197f26c6d1fae19",
+      "git_dirty": false,
+      "inference_seconds": 7.4366660341620445,
+      "phase": "development",
+      "recorded_duration_seconds": 73.647285,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T092310Z-72bcb3"
+    },
+    {
+      "condition": "D2",
+      "critical_failures": 0,
+      "generations": 192,
+      "git_commit": "daf6502469b8ecd4d1ae4aad9629d1cf3698924f",
+      "git_dirty": false,
+      "inference_seconds": 7.3031745152547956,
+      "phase": "development",
+      "recorded_duration_seconds": 72.765071,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T092310Z-475c6e"
+    },
+    {
+      "condition": "D3",
+      "critical_failures": 0,
+      "generations": 192,
+      "git_commit": "8e9175f25ce03140d00f308819522540357c6514",
+      "git_dirty": false,
+      "inference_seconds": 5.908971487544477,
+      "phase": "development",
+      "recorded_duration_seconds": 72.995905,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T092310Z-0a4180"
+    },
+    {
+      "condition": "D0",
+      "critical_failures": 0,
+      "generations": 768,
+      "git_commit": "3ba16f38f5be62c9aa44a031fc59e3f1277e10a4",
+      "git_dirty": false,
+      "inference_seconds": 24.984308595769107,
+      "phase": "formal",
+      "recorded_duration_seconds": 151.649432,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T092835Z-289164"
+    },
+    {
+      "condition": "D1",
+      "critical_failures": 0,
+      "generations": 768,
+      "git_commit": "6612274eafdef50d08752e4e5144e1d312451812",
+      "git_dirty": false,
+      "inference_seconds": 20.680887744762003,
+      "phase": "formal",
+      "recorded_duration_seconds": 146.68714,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T092835Z-d8e9df"
+    },
+    {
+      "condition": "D2",
+      "critical_failures": 0,
+      "generations": 768,
+      "git_commit": "9f45444356bd32ecba5687c3402e41c1ecc61c9c",
+      "git_dirty": false,
+      "inference_seconds": 22.077118542976677,
+      "phase": "formal",
+      "recorded_duration_seconds": 148.489124,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T092835Z-65f6c7"
+    },
+    {
+      "condition": "D3",
+      "critical_failures": 0,
+      "generations": 768,
+      "git_commit": "7586e344890ff5480aeb74cded49e65f66224b31",
+      "git_dirty": false,
+      "inference_seconds": 21.46098335273564,
+      "phase": "formal",
+      "recorded_duration_seconds": 147.361307,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T092835Z-376e61"
+    },
+    {
+      "condition": "D0",
+      "critical_failures": 0,
+      "generations": 768,
+      "git_commit": "744fcbc3696441dcbe849d6e07b457419e96e000",
+      "git_dirty": false,
+      "inference_seconds": 24.24852921254933,
+      "phase": "repeat",
+      "recorded_duration_seconds": 116.558708,
+      "remaining_findings": [
+        {
+          "message": "declared profile 'inference' has no detection evidence in this repository",
+          "rule": "exec.profile_detection_mismatch",
+          "severity": "INFO"
+        }
+      ],
+      "run_id": "20261102T093641Z-882955"
+    }
+  ],
+  "schema_version": 1,
+  "study_id": "qwen3-1.7b",
+  "upstream_revision_verified": false
+}
