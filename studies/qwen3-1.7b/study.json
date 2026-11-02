@@ -60,6 +60,6 @@
     "privacy_study/record.py": "ad2865f90299a5604bd5581c87bcadbf38e2539bbdaa74b45dbc1bb318a9f1a1",
     "privacy_study/run.py": "1cb5bbb7cd7373d52aeaca60d10088b980122199cead75fb40464f4466510e52"
   },
-  "status": "development_complete_formal_protocol_frozen",
+  "status": "formal_complete_fresh_repeat_pending",
   "study_id": "qwen3-1.7b"
 }
