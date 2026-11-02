@@ -1,0 +1,27 @@
+{
+  "bindings": {
+    "custom.defense": {
+      "cli": "--defense"
+    }
+  },
+  "custom": {
+    "defense": "D0"
+  },
+  "experiment": {
+    "name": "cpu-contract-checks",
+    "profiles": [
+      "inference"
+    ]
+  },
+  "models": {
+    "primary": {
+      "dtype": "float16",
+      "id": "assets/model",
+      "provider": "local"
+    }
+  },
+  "project": {
+    "name": "ReproLLM_fixture_validation"
+  },
+  "schema_version": 1
+}

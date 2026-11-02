@@ -1,0 +1,86 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261102T081119Z-23d0b2/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261102T081131Z-5ed69e/run.json"
+  },
+  "changes": [
+    {
+      "a": "D0",
+      "b": "D3",
+      "note": "b has inconsistent sources (see audit)",
+      "path": "custom.defense",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "-c",
+        "import os; print(os.environ[\"HF_TOKEN\"])",
+        "--defense",
+        "D0"
+      ],
+      "b": [
+        "python",
+        "-c",
+        "print(\"intentional binding mismatch\")",
+        "--defense",
+        "D3"
+      ],
+      "note": null,
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 1.061639,
+      "b": 1.0694,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-02T08:11:20Z",
+      "b": "2026-11-02T08:11:32Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261102T081119Z-23d0b2",
+      "b": "20261102T081131Z-5ed69e",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-02T08:11:19Z",
+      "b": "2026-11-02T08:11:31Z",
+      "note": null,
+      "path": "started_at",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.6.1",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 2,
+      "MEDIUM_HIGH": 0,
+      "NONE": 4
+    },
+    "highest": "MEDIUM",
+    "same": 60
+  }
+}

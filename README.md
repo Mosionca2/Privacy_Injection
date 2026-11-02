@@ -47,3 +47,9 @@ ReproLLM 0.6.1 `lock --check` checks changes to the manifest and project rules; 
 The four defense conditions completed 768 real development generations without infrastructure failures or output-cap events. Authorized-copy recall was 100% in each condition. Clean-task accuracy ranged from 79.2% to 87.5%; the fixed D0 capability cohort contains 20 of the 24 cases. These are development results, not held-out estimates. Actual cross-condition ReproLLM diffs and paired summaries are under `reports/development/`.
 
 The formal protocol fixes batch size 64, all scientific source files, 96 held-out cases, model content identity, and the actual dependency versions before any formal generation. No attack template or scoring rule is selected from formal outcomes.
+
+## ReproLLM contract checks
+
+Nine bounded CPU fixture checks cover offline locking, manifest freshness, the limited scope of local-asset freshness, synthetic credential redaction, CRITICAL custom-parameter conflicts, preserved nonzero exits, failed launch status, explicit historical export, and recorded-state diff. Their source is `tools/verify_reprollm.py`; results and owned capture artifacts are in `reports/reprollm-validation.json` and `evidence/tool-validation/`. These fixture executions are not counted as model generations.
+
+The declared-field presence rule and runtime consistency rule are distinct: a present `custom.defense` can pass its project rule while a contradictory observed flag correctly fails `consistency.custom_fields` at CRITICAL. Diff comparisons without an exit threshold omit `--fail-on`; `NONE` is the lowest drift severity, not a switch disabling failure.
