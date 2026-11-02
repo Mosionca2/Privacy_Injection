@@ -1,0 +1,24 @@
+{
+  "batch_size": 64,
+  "files": {
+    "configs/protocol.json": "69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+    "data/test.jsonl": "63a5d36e4d3b0b15e79e1b1ab25e0b423b546f9de6c67122e97e77d8eed381da",
+    "model.identity.json": "aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+    "privacy_study/__init__.py": "632b1314cfa742acdc3967874a0a03915ecb51c764c038a9b1639574918b0fe4",
+    "privacy_study/analyze.py": "23b80a7b7958c29b4399ae383c9296eede3b16dfb49819b622e9f9d9d0422bba",
+    "privacy_study/core.py": "d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43",
+    "privacy_study/record.py": "ad2865f90299a5604bd5581c87bcadbf38e2539bbdaa74b45dbc1bb318a9f1a1",
+    "privacy_study/run.py": "1cb5bbb7cd7373d52aeaca60d10088b980122199cead75fb40464f4466510e52"
+  },
+  "protocol_id": "local-privacy-v1",
+  "schema_version": 1,
+  "scientific_source_commit": "b4c0756a4f4f0d85489b5a12661953bd0933d60d",
+  "versions": {
+    "accelerate": "1.12.0",
+    "reprollm": "0.6.1",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.5.1+cu121",
+    "transformers": "5.2.0"
+  }
+}

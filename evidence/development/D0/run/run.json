@@ -1,0 +1,208 @@
+{
+  "artifacts": [
+    {
+      "path": "raw/completion.json",
+      "sha256": "sha256:2dbb871d2e612a9bacfe508b423bc241ba1b546997112e2dd2ff05211becd4e1",
+      "size_bytes": 335
+    },
+    {
+      "path": "raw/results.jsonl",
+      "sha256": "sha256:fdcde1e7b4d59e254b931c6b22bbcdd028b96f497aac0e6abdc108bb76116abb",
+      "size_bytes": 116845
+    }
+  ],
+  "bindings_observed": {
+    "custom.batch_size": [
+      {
+        "source": {
+          "key": "--batch-size",
+          "path": null,
+          "type": "cli"
+        },
+        "value": 64
+      }
+    ],
+    "custom.dataset_split": [
+      {
+        "source": {
+          "key": "--split",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "dev"
+      }
+    ],
+    "custom.defense": [
+      {
+        "source": {
+          "key": "--defense",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "D0"
+      }
+    ],
+    "generation.max_tokens": [
+      {
+        "source": {
+          "key": "max_new_tokens",
+          "path": "configs/protocol.json",
+          "type": "config"
+        },
+        "value": 32
+      }
+    ],
+    "generation.seed": [
+      {
+        "source": {
+          "key": "run_seed",
+          "path": "configs/protocol.json",
+          "type": "config"
+        },
+        "value": 73129
+      }
+    ],
+    "models.primary.id": [
+      {
+        "source": {
+          "key": "--model",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "assets/model"
+      }
+    ]
+  },
+  "code": {
+    "branch": "main",
+    "commit": "b4c0756a4f4f0d85489b5a12661953bd0933d60d",
+    "dirty": false,
+    "modified_count": 0,
+    "patch_file": null,
+    "patch_sha256": null,
+    "remote": "https://github.com/Mosionca2/Privacy_Injection.git",
+    "untracked_count": 2
+  },
+  "command": {
+    "argv": [
+      "python",
+      "-m",
+      "privacy_study.run",
+      "--model",
+      "assets/model",
+      "--defense",
+      "D0",
+      "--split",
+      "dev",
+      "--batch-size",
+      "64"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": 162.330506,
+  "ended_at": "2026-11-02T08:09:20Z",
+  "environment": {
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "<GPU_DEVICE>",
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HUB_OFFLINE": "1",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "LC_CTYPE": "C.UTF-8",
+      "PATH": "<REDACTED:path>",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "TRANSFORMERS_OFFLINE": "1"
+    },
+    "env_capture": "allowlist",
+    "hostname_sha256": "sha256:32e83e92d45d71f69dcf9d214688f0375542108631b45d344e5df2eb91c11566",
+    "os": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "accelerate": "1.12.0",
+      "bitsandbytes": "0.49.2",
+      "datasets": "4.6.1",
+      "evaluate": "0.4.6",
+      "lm_eval": "0.4.11",
+      "numpy": "2.2.6",
+      "openai": "2.24.0",
+      "peft": "0.18.1",
+      "safetensors": "0.7.0",
+      "sentencepiece": "0.2.1",
+      "tokenizers": "0.22.2",
+      "torch": "2.5.1+cu121",
+      "transformers": "5.2.0"
+    },
+    "platform": "linux",
+    "python": "3.10.19"
+  },
+  "exit_code": 0,
+  "files": [
+    {
+      "origin": "declared",
+      "path": "configs/protocol.json",
+      "redacted": false,
+      "sha256": "sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+      "size_bytes": 2650,
+      "snapshot": "files/69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8"
+    },
+    {
+      "origin": "declared",
+      "path": "model.identity.json",
+      "redacted": false,
+      "sha256": "sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+      "size_bytes": 1967,
+      "snapshot": "files/aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375"
+    }
+  ],
+  "hardware": {
+    "cpu_count": 128,
+    "cuda_driver_max": "13.0",
+    "driver": "580.178.04",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:b77fcc7a2e1a4023818a073834292073f171fd266f8728642c58ab76b8a00474"
+      },
+      {
+        "index": 1,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:6bf6ca98feeeb523c3a0618bc893039e071d13bb6c9304ced089fc7ad18e3e9f"
+      },
+      {
+        "index": 2,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:cb5f06cdb7d0686193268437b847b20606aaa98bc7ff5cb138ecad1e1b2e42fb"
+      },
+      {
+        "index": 3,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:a6ba9cf25912f91d84baab1d169fd6446de16b53a3cd655596bb5a24b377b7a1"
+      }
+    ],
+    "source": "nvidia_smi"
+  },
+  "lock": {
+    "path": "reprollm.lock",
+    "sha256": "sha256:653958a945e55c2e05f5df8ab63ba4f7a091753eb8e6551a24ae16d66cabaf2e",
+    "snapshot": "lock.yaml"
+  },
+  "manifest": {
+    "path": "reprollm.yaml",
+    "sha256": "sha256:4e423faa4cd7512c420e5a7efe677c05f5077ced88dcd3a282c70b554768d3bd",
+    "snapshot": "manifest.yaml"
+  },
+  "name": "dev-D0-b64",
+  "reprollm_version": "0.6.1",
+  "run_id": "20261102T080638Z-7467ff",
+  "scheduler": null,
+  "schema_version": 1,
+  "started_at": "2026-11-02T08:06:38Z",
+  "status": "completed",
+  "warnings": []
+}

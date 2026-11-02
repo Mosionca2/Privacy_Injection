@@ -1,0 +1,106 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261102T080638Z-1f2640/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "D1",
+      "b": "D2",
+      "note": null,
+      "path": "privacy.mechanism.name",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "D1",
+      "b": "D2",
+      "note": null,
+      "path": "custom.defense",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "GPU-d445f9a6-6fd8-e2ce-8785-0cb8d87aa09a",
+      "b": "GPU-4fc31990-f9ba-2467-8cd0-dac0407ca876",
+      "note": null,
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D1",
+        "--split",
+        "dev",
+        "--batch-size",
+        "64"
+      ],
+      "b": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D2",
+        "--split",
+        "dev",
+        "--batch-size",
+        "64"
+      ],
+      "note": null,
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python -m privacy_study.run --model assets/model --defense D1 --split dev --batch-size 64",
+      "b": "python -m privacy_study.run --model assets/model --defense D2 --split dev --batch-size 64",
+      "note": null,
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 164.444247,
+      "b": 164.525987,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261102T080638Z-1f2640",
+      "b": "20261102T080638Z-a9ca9e",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.6.1",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 5,
+      "MEDIUM_HIGH": 0,
+      "NONE": 2
+    },
+    "highest": "MEDIUM",
+    "same": 118
+  }
+}

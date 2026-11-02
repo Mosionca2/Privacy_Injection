@@ -20,7 +20,7 @@ python -c 'from privacy_study.core import prepare; prepare(".")'
 python -m unittest discover -s tests -v
 ```
 
-Model weights and machine-specific configuration are not distributed here. Execution and ReproLLM integration are added as independently validated stages. Published results will identify completed generations, failures, exact software versions, and limitations; this initial implementation contains no experimental outcome claim.
+Model weights and machine-specific configuration are not distributed here. Execution and ReproLLM integration are added as independently validated stages. Published results will identify completed generations, failures, exact software versions, and limitations; completed stages and their evidence are reported below.
 
 ## Recorded execution
 
@@ -41,3 +41,9 @@ Formal execution additionally requires `protocol.freeze.json`. Changing code, te
 Four real ReproLLM-recorded development runs each generated the same 64 responses. Batch sizes 1, 8, 32, and 64 produced identical output strings and scores in this bounded comparison. Batch 64 reached about 19.5 responses/s versus 2.5 for batch 1, with approximately 20.2 GiB peak reserved CUDA memory. This is a small calibration result, not a guarantee for every batch or workload. Detailed measurements and recordings are under `reports/calibration/` and `evidence/calibration/`.
 
 ReproLLM 0.6.1 `lock --check` checks changes to the manifest and project rules; it does not rehash referenced local model content. This study separately records full model-file SHA-256 identities, checks metadata before/after inference, and rechecks full model identity before formal-result publication. Default local-model locks without `--hash-large-files` are explicitly partial weight evidence. Public run copies remove device UUIDs; original records remain available privately.
+
+## Development completion and formal freeze
+
+The four defense conditions completed 768 real development generations without infrastructure failures or output-cap events. Authorized-copy recall was 100% in each condition. Clean-task accuracy ranged from 79.2% to 87.5%; the fixed D0 capability cohort contains 20 of the 24 cases. These are development results, not held-out estimates. Actual cross-condition ReproLLM diffs and paired summaries are under `reports/development/`.
+
+The formal protocol fixes batch size 64, all scientific source files, 96 held-out cases, model content identity, and the actual dependency versions before any formal generation. No attack template or scoring rule is selected from formal outcomes.

@@ -1,0 +1,114 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261102T080638Z-7467ff/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "D0",
+      "b": "D1",
+      "note": null,
+      "path": "privacy.mechanism.name",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "D0",
+      "b": "D1",
+      "note": null,
+      "path": "custom.defense",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "GPU-52586c87-bfd4-0ad8-992a-3181e771a0ab",
+      "b": "GPU-d445f9a6-6fd8-e2ce-8785-0cb8d87aa09a",
+      "note": null,
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D0",
+        "--split",
+        "dev",
+        "--batch-size",
+        "64"
+      ],
+      "b": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D1",
+        "--split",
+        "dev",
+        "--batch-size",
+        "64"
+      ],
+      "note": null,
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python -m privacy_study.run --model assets/model --defense D0 --split dev --batch-size 64",
+      "b": "python -m privacy_study.run --model assets/model --defense D1 --split dev --batch-size 64",
+      "note": null,
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 162.330506,
+      "b": 164.444247,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-02T08:09:20Z",
+      "b": "2026-11-02T08:09:22Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261102T080638Z-7467ff",
+      "b": "20261102T080638Z-1f2640",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.6.1",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 5,
+      "MEDIUM_HIGH": 0,
+      "NONE": 3
+    },
+    "highest": "MEDIUM",
+    "same": 117
+  }
+}

@@ -1,0 +1,36 @@
+schema_version: 1
+rules:
+- id: project.defense
+  field: custom.defense
+  severity: CRITICAL
+  reason: This declared value must agree with actual execution.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-02T08:04:19Z'
+  bindings:
+    cli: --defense
+    config: null
+    env: null
+- id: project.dataset_split
+  field: custom.dataset_split
+  severity: CRITICAL
+  reason: This declared value must agree with actual execution.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-02T08:04:26Z'
+  bindings:
+    cli: --split
+    config: null
+    env: null
+- id: project.batch_size
+  field: custom.batch_size
+  severity: CRITICAL
+  reason: This declared value must agree with actual execution.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-02T08:04:34Z'
+  bindings:
+    cli: --batch-size
+    config: null
+    env: null
+ignored_candidates: []
