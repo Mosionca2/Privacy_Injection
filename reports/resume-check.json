@@ -1,0 +1,8 @@
+{
+  "actual_event": "already_complete",
+  "completed_condition": "formal/D0",
+  "new_generations": 0,
+  "result_bytes_unchanged": true,
+  "schema_version": 1,
+  "scope": "Completed condition skip; interrupted GPU recovery was not deliberately exercised."
+}

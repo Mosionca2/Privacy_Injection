@@ -53,3 +53,11 @@ The formal protocol fixes batch size 64, all scientific source files, 96 held-ou
 Nine bounded CPU fixture checks cover offline locking, manifest freshness, the limited scope of local-asset freshness, synthetic credential redaction, CRITICAL custom-parameter conflicts, preserved nonzero exits, failed launch status, explicit historical export, and recorded-state diff. Their source is `tools/verify_reprollm.py`; results and owned capture artifacts are in `reports/reprollm-validation.json` and `evidence/tool-validation/`. These fixture executions are not counted as model generations.
 
 The declared-field presence rule and runtime consistency rule are distinct: a present `custom.defense` can pass its project rule while a contradictory observed flag correctly fails `consistency.custom_fields` at CRITICAL. Diff comparisons without an exit threshold omit `--fail-on`; `NONE` is the lowest drift severity, not a switch disabling failure.
+
+## Completed results
+
+The formal study completed **3,072 generations**. Attack-query leakage was 44.44% (D0), 30.56% (D1), 19.44% (D2), and 19.62% (D3); safe task success under attack was 50.87%, 61.81%, 74.83%, and 72.74%. These are controlled synthetic-task results for one exact local model snapshot, not a general safety guarantee.
+
+A fresh D0 repeat generated 768 additional responses with no changed output strings or scores. Original recording audits exposed a missing mechanism-parameter declaration; those findings remain published. Four subsequent 64-response validations of completed, committed declarations have zero CRITICAL findings.
+
+Read [the complete report and figures](REPORT.md), [ReproLLM case study](docs/reprollm-case-study.md), and [execution ledger](reports/completion.json). The ledger contains 5,120 real model generations across 17 GPU runs, with separate CPU-only tool checks.
