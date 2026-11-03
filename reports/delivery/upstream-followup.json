@@ -1,0 +1,12 @@
+{
+  "adoption_metrics_updated": false,
+  "author": "Mosionca2",
+  "comment_url": "https://github.com/EnumaElish123/ReproLLM/issues/11#issuecomment-6593163665",
+  "created_at_utc": "2026-11-03T01:39:47Z",
+  "evidence_commit": "62a0d3e617e2c09c30d8bfeb4484ad04f687e30c",
+  "issue": "https://github.com/EnumaElish123/ReproLLM/issues/11",
+  "new_issue_or_pull_request_created": false,
+  "proposal": "Link one public agent-assisted research use case from a dated case/evidence index.",
+  "schema_version": 1,
+  "status": "submitted_pending_maintainer_decision"
+}
