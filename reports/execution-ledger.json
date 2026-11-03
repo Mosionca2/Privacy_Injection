@@ -1,11 +1,11 @@
 {
-  "completed_gpu_runs": 32,
+  "completed_gpu_runs": 36,
   "formal_generations": 6144,
   "interrupted_gpu_runs": 1,
-  "real_gpu_runs": 33,
-  "real_model_generations_published": 10624,
+  "real_gpu_runs": 37,
+  "real_model_generations_published": 10880,
   "schema_version": 1,
-  "scope": "Two exact local model/tokenizer study campaigns plus a controlled GPU recovery validation. Counts include completed published model responses only; CPU-only fixtures, initial environment smoke and interrupted in-flight work are excluded.",
+  "scope": "Two exact local-model study campaigns plus separately scoped GPU recovery and source-recorder validations. Counts include completed responses only; CPU fixtures, skips and interrupted in-flight work are excluded.",
   "studies": [
     {
       "completion": "reports/completion.json",
@@ -29,6 +29,15 @@
       "interrupted_gpu_runs": 1,
       "label": "Controlled SIGTERM interruption/resume with fresh reference",
       "model_label": "Local Qwen3-8B"
+    },
+    {
+      "completed_gpu_runs": 4,
+      "completed_responses": 256,
+      "completion": "reports/source-recorder-validation/comparison.json",
+      "gpu_runs": 4,
+      "interrupted_gpu_runs": 0,
+      "label": "Pinned source recorder GPU compatibility and input-change probe",
+      "model_label": "Local Qwen3-1.7B"
     }
   ]
 }

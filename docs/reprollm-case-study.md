@@ -52,3 +52,7 @@ The [released-0.6.1 GPU recovery case](../reports/recovery-validation/REPORT.md)
 ## Later workspace preparation
 
 After committed recording metadata became part of the source checkout, a bounded check reproduced an adapter failure caused by repeated initialization. `tools/prepare_extension.py` now reuses existing matching rules, adds missing rules, rejects conflicts and discards the source condition's inherited lock. A real local-asset setup and full offline-lock check passed, with 25 repository tests and no frozen scientific changes. The [validation report](../reports/workspace-preparation/REPORT.md) distinguishes this study integration repair from upstream product findings; it adds no inference or capture counts.
+
+## Pinned-source GPU follow-up
+
+The later [source-recorder GPU check](../reports/source-recorder-validation/REPORT.md) adds three actual schema-2 source captures and one released reference. It verifies pre-child baselines, post-child auxiliary-input drift and an unchanged historical capture after current-file restoration. Source module version 0.7.0 is kept distinct from the unchanged installed distribution 0.6.1. This adds 256 development responses, without changing the formal scientific results. Source GPU interruption and hard-kill recovery remain untested.

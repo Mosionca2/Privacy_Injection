@@ -1,0 +1,134 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261103T015543Z-14ba74/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "D0",
+      "b": "D1",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "privacy.mechanism.name",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": false,
+      "b": true,
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "privacy.mechanism.params.external_boundary",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "D0",
+      "b": "D1",
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "custom.defense",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "20392a241a8453e359b30c8a27ba23f48c4363ee",
+      "b": "c2418e5f3976f7d7ddf46071a6173a09b39c211e",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "0",
+      "b": "1",
+      "note": "a: inherited_environment/pre_child; child unverified; b: inherited_environment/pre_child; child unverified",
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D0",
+        "--split",
+        "dev",
+        "--batch-size",
+        "1",
+        "--limit",
+        "8"
+      ],
+      "b": [
+        "python",
+        "-m",
+        "privacy_study.run",
+        "--model",
+        "assets/model",
+        "--defense",
+        "D1",
+        "--split",
+        "dev",
+        "--batch-size",
+        "1",
+        "--limit",
+        "8"
+      ],
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python -m privacy_study.run --model assets/model --defense D0 --split dev --batch-size 1 --limit 8",
+      "b": "python -m privacy_study.run --model assets/model --defense D1 --split dev --batch-size 1 --limit 8",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 81.523097,
+      "b": 80.133878,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T01:57:05Z",
+      "b": "2026-11-03T01:57:04Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261103T015543Z-14ba74",
+      "b": "20261103T015543Z-59cc35",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.7.0",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 7,
+      "MEDIUM_HIGH": 0,
+      "NONE": 3
+    },
+    "highest": "MEDIUM",
+    "same": 124
+  }
+}

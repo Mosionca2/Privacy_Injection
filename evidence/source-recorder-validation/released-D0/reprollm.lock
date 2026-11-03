@@ -1,0 +1,173 @@
+schema_version: 1
+reprollm_version: 0.6.1
+generated_at: '2026-11-03T01:54:42Z'
+manifest_sha256: sha256:d6bc850c4a75f97c90a332300170f1fcf19f796f9eb59a90237cbdea66c29afa
+project_rules_sha256: sha256:0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b
+resolution:
+  mode: offline
+models:
+  primary:
+    provider: local
+    id: assets/model
+    pinnability: exact
+    revision:
+      value: sha256:54b9259d64ca9c410c55e276443b52164cef93f1d76cae3c072ef4112bc76ccb
+      source: filesystem
+      confidence: exact
+      resolved_at: '2026-11-03T01:54:42Z'
+      note: null
+    observed_at: null
+    tokenizer: null
+    chat_template:
+      sha256:
+        value: sha256:a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8
+        source: filesystem:tokenizer_config.json
+        confidence: exact
+        resolved_at: '2026-11-03T01:54:42Z'
+        note: null
+      status: present
+    config_sha256: null
+    adapter: null
+    local:
+      path: assets/model
+      config_sha256:
+        value: sha256:54b9259d64ca9c410c55e276443b52164cef93f1d76cae3c072ef4112bc76ccb
+        source: filesystem:config_files
+        confidence: exact
+        resolved_at: '2026-11-03T01:54:42Z'
+        note: config.json, tokenizer_config.json, tokenizer.json
+      weights:
+        hashed: true
+        total_size_bytes: 4063515592
+        sha256: sha256:aaf02e75c53380d6dd0e9b99d6d086ccf0adabda5952dcea9e169880a4b9afe4
+    dtype: float16
+    quantization: none
+    trust_remote_code: false
+datasets:
+  eval:
+    provider: local
+    id: paired-identifiers-v1
+    revision:
+      value: null
+      source: filesystem
+      confidence: exact
+      resolved_at: '2026-11-03T01:54:42Z'
+      note: null
+    subset: null
+    split: dev
+    content_fingerprint:
+      status: not_computed
+    files:
+    - path: data/dev.jsonl
+      sha256: sha256:fffea11822f77fd223d414d0cdd6ddd62d711fd4b060b52aaeae14fb9e947dc1
+      size_bytes: 10621
+prompts:
+  system:
+    path: configs/protocol.json
+    sha256: sha256:9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298
+    size_bytes: 2845
+    text_sha256: null
+files:
+- path: .python-version
+  sha256: sha256:8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8
+  size_bytes: 8
+- path: configs/protocol.json
+  sha256: sha256:9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298
+  size_bytes: 2845
+- path: model.identity.json
+  sha256: sha256:a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367
+  size_bytes: 1710
+- path: recorder-source.json
+  sha256: sha256:fb932c0b001d00fc3b8af3847c6bf082d5d127a08ad59c979d2b80c9d243e5b8
+  size_bytes: 166
+- path: requirements.runtime.txt
+  sha256: sha256:be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00
+  size_bytes: 112
+generation:
+  temperature: 0.0
+  top_p: 1.0
+  top_k: null
+  max_tokens: 32
+  seed: 73129
+  do_sample: false
+  stop: []
+  repetition_penalty: null
+  n: null
+inference:
+  backend: transformers
+  version:
+    value: 5.2.0
+    source: importlib_metadata
+    confidence: exact
+    resolved_at: '2026-11-03T01:54:42Z'
+    note: null
+  mode: offline
+  dtype: float16
+  tensor_parallel_size: 1
+  gpu_memory_utilization: null
+  quantization: none
+  max_model_len: 1056
+  kv_cache_dtype: null
+  params:
+    attention: sdpa
+    batch_size: 1
+    enable_thinking: false
+training: null
+evaluation:
+  metrics:
+  - name: leak
+    implementation: privacy_study/core.py
+    implementation_sha256: sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43
+    implementation_version: null
+  - name: utility
+    implementation: privacy_study/core.py
+    implementation_sha256: sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43
+    implementation_version: null
+  - name: safe_utility
+    implementation: privacy_study/core.py
+    implementation_sha256: sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43
+    implementation_version: null
+  aggregation: Paired base-case clusters; controls kept separate.
+  repetitions: 1
+  thresholds: null
+  definitions:
+    asr: Complete synthetic private identifier in newly generated attack response.
+  query_budget: 6
+  judge: null
+privacy:
+  threat_model: Only retrieved text is attacker-controlled; private identifiers and system policy are hidden from the attacker.
+  mechanism:
+    name: D0
+    params:
+      external_boundary: false
+      per_line_origin_labels: false
+      shared_policy_source: configs/protocol.json:system
+      trusted_tail_reminder: false
+  metrics:
+  - leak
+  - safe_utility
+  attack:
+    method: three fixed families in two positions
+    params: {}
+    query_budget: 6
+environment:
+  python: 3.10.19
+  platform: linux
+  packages:
+    accelerate: 1.12.0
+    bitsandbytes: 0.49.2
+    datasets: 4.6.1
+    evaluate: 0.4.6
+    lm_eval: 0.4.11
+    numpy: 2.2.6
+    openai: 2.24.0
+    peft: 0.18.1
+    safetensors: 0.7.0
+    sentencepiece: 0.2.1
+    tokenizers: 0.22.2
+    torch: 2.5.1+cu121
+    transformers: 5.2.0
+  gpu:
+    driver: 580.178.04
+    cuda_driver_max: '13.0'
+    source: nvidia_smi

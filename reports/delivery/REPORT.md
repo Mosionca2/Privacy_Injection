@@ -9,11 +9,12 @@ This checkpoint brings together the published experiments, functional checks and
 | Primary local 8B study, including calibration, development, repeat and corrected declarations | 5,120 | 17 | 3,072 |
 | Second local 1.7B study, including calibration, development and repeat | 5,376 | 13 | 3,072 |
 | Controlled interruption/resume and fresh reference | 128 | 3 | 0 |
-| Total | **10,624** | **33** | **6,144** |
+| Source-recorder compatibility/input-check campaign | 256 | 4 | 0 |
+| Total | **10,880** | **37** | **6,144** |
 
-There are 32 completed captures and one deliberately interrupted capture. The interrupted child's eight retained responses and the resumed child's 56 new responses count once each. The separate reference contributes 64. CPU fixtures and completed-condition skips add no model responses.
+There are 36 completed captures and one deliberately interrupted capture. The interrupted child's eight retained responses and the resumed child's 56 new responses count once each. The separate reference contributes 64. CPU fixtures and completed-condition skips add no model responses.
 
-The [offline evidence verification](evidence-verification.json) checks all 33 published capture directories, 10,632 result-row appearances and 172 input-snapshot hashes. Eight unchanged rows appear in both the interrupted and resumed snapshots, leaving **10,624 distinct completed responses**. It recomputes stored scores from published synthetic truth, checks case coverage, declared/observed conditions, child outcomes, selected-run export references, per-phase ledgers and repository totals. Recovery prefix bytes and reference comparisons also agree.
+The [offline evidence verification](evidence-verification.json) checks all 37 published capture directories, 10,888 result-row appearances and 201 input-snapshot hashes. Eight unchanged rows appear in both the interrupted and resumed snapshots, leaving **10,880 distinct completed responses**. It recomputes stored scores from published synthetic truth, checks case coverage, declared/observed conditions, child outcomes, selected-run export references, per-phase ledgers and repository totals. Recovery prefix bytes and reference comparisons also agree.
 
 Four initial calibration captures precede the scientific freeze. Their differing scientific source files match recorded commit `8aa388b0992bee09cf90a3aa10361d00b7eafd12`. The scorer's syntax tree matches the frozen scorer. Historical source is read from Git without executing it. The primary and extension formal freezes still match their scientific inputs.
 
@@ -32,7 +33,7 @@ Four initial calibration captures precede the scientific freeze. Their differing
 | Redaction | Tested synthetic patterns absent from tool-owned persistence; reviewed publication copies remove device identifiers | [Bounded contract check](../reprollm-validation.json), [publication boundary](../formal/publication.json) |
 | Version-scoped documentation | Released 0.6.1 and source 0.7.0 command rehearsals, with source/input-phase differences retained | [Contribution receipt](../reprollm-contribution-validation.json) |
 
-The scientific campaigns and GPU recovery used installed **ReproLLM 0.6.1**. Source 0.7.0 was exercised by CPU documentation rehearsals. The existing environment was preserved. Schema-1 records retain their original input-phase limitations; this verification does not retroactively give them the source-0.7.0 capture contract.
+The scientific campaigns and GPU recovery used installed **ReproLLM 0.6.1**. Source 0.7.0 was first exercised by CPU documentation rehearsals and later by three [bounded GPU conditions](../source-recorder-validation/REPORT.md), alongside a released reference. The source-module version and installed-distribution metadata are recorded separately. The existing environment was preserved. Schema-1 records retain their original input-phase limitations; this verification does not retroactively give them the source-0.7.0 capture contract.
 
 ## Practical feedback and contribution outcome
 
@@ -58,7 +59,7 @@ python -m unittest discover -s tests -v
 ## Remaining boundaries
 
 - Local upstream revisions and original-versus-modified status remain unverified; conclusions bind exact published fingerprints. Four A100 80GB devices were used, without a test under a 5–8GB hardware limit.
-- Current-source 0.7.0 GPU execution, hard-kill/power-loss recovery and corrupted-output repair remain untested.
+- Current-source GPU interruption, hard-kill/power-loss recovery and corrupted-output repair remain untested; the bounded source GPU execution/input-phase check is recorded separately.
 - A neutral-tail ablation and commercial-model extension have not been run. They would require separately specified conditions and evidence.
 - Original environment and completed-condition-skip receipts describe their historical checkpoints. Their initial pending/untested labels remain intact; the later version-scoped receipts establish the subsequent results.
 

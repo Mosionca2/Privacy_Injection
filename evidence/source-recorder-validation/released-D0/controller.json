@@ -1,0 +1,20 @@
+{
+  "changed_after_observed_samples": null,
+  "child_exit_code": 0,
+  "completed_after": 64,
+  "completed_before": 0,
+  "expected_input_changes": [],
+  "expected_samples": 64,
+  "git_dirty": false,
+  "inputs_clean_before_launch": true,
+  "launcher_exit_code": 0,
+  "new_completed_samples": 64,
+  "observed_input_changes": null,
+  "recorded_commit": "12a5b95b74585faebb4ef6b304103a2db92245b4",
+  "recorder_module_version": "0.6.1",
+  "run_id": "20261103T015540Z-3d33c7",
+  "run_schema_version": 1,
+  "schema_version": 1,
+  "source_payload_unchanged": false,
+  "status": "completed"
+}

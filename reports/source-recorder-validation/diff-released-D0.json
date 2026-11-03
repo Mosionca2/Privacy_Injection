@@ -1,0 +1,90 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261103T015543Z-14ba74/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "sha256:c780c078b177212d5b031b478f02b9b38509262507410793ac2804961f29d52e",
+      "b": "sha256:fb932c0b001d00fc3b8af3847c6bf082d5d127a08ad59c979d2b80c9d243e5b8",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/unknown; child unverified",
+      "path": "files.recorder-source.json.sha256",
+      "severity": "HIGH",
+      "status": "changed"
+    },
+    {
+      "a": "20392a241a8453e359b30c8a27ba23f48c4363ee",
+      "b": "12a5b95b74585faebb4ef6b304103a2db92245b4",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "0",
+      "b": "3",
+      "note": "a: inherited_environment/pre_child; child unverified; b: inherited_environment/pre_child; child unverified",
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "assets/recorder-source",
+      "b": null,
+      "note": "a: inherited_environment/pre_child; child unverified",
+      "path": "environment.env.PYTHONPATH",
+      "severity": "MEDIUM",
+      "status": "removed"
+    },
+    {
+      "a": 81.523097,
+      "b": 79.46257,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T01:57:05Z",
+      "b": "2026-11-03T01:57:00Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261103T015543Z-14ba74",
+      "b": "20261103T015540Z-3d33c7",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T01:55:43Z",
+      "b": "2026-11-03T01:55:40Z",
+      "note": null,
+      "path": "started_at",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.7.0",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 1,
+      "LOW": 0,
+      "MEDIUM": 3,
+      "MEDIUM_HIGH": 0,
+      "NONE": 4
+    },
+    "highest": "HIGH",
+    "same": 126
+  }
+}

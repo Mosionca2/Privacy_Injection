@@ -1,0 +1,43 @@
+{
+  "child_exit_code": 0,
+  "cli_exit_code": 0,
+  "missing_candidates": [
+    {
+      "after": {
+        "availability": "missing",
+        "sha256": null,
+        "size_bytes": null
+      },
+      "before": {
+        "availability": "missing",
+        "sha256": null,
+        "size_bytes": null
+      },
+      "change": "unchanged",
+      "origin": "declared",
+      "path": "Only synthetic examples are used."
+    },
+    {
+      "after": {
+        "availability": "missing",
+        "sha256": null,
+        "size_bytes": null
+      },
+      "before": {
+        "availability": "missing",
+        "sha256": null,
+        "size_bytes": null
+      },
+      "change": "unchanged",
+      "origin": "declared",
+      "path": "Return an exact matching identifier."
+    }
+  ],
+  "model_generations": 0,
+  "module_version": "0.7.0",
+  "run_id": "20261103T020604Z-e891a5",
+  "run_schema_version": 2,
+  "schema_version": 1,
+  "scope": "CPU-only synthetic reproduction; no model load, paid call or model inference.",
+  "source_commit": "ad8b2c7057b6473072b65102eaf8e122b647acec"
+}

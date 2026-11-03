@@ -80,8 +80,14 @@ A concrete isolated-condition recording guide from [Mosionca2/ReproLLM](https://
 
 A controlled 0.6.1 SIGTERM case retained 8 completed responses and resumed with 56 new responses, with full unique 64-sample coverage. The recovered outputs and scores differ from a fresh uninterrupted 64-response reference in 0 and 0 rows respectively. The [validation report](reports/recovery-validation/REPORT.md) preserves the interrupted record, both actual attempt IDs, provenance tags and explicit limits.
 
-The repository now contains **10,624 completed model responses across 33 GPU captures**: 32 completed and one intentionally interrupted. Formal results remain 6,144 responses. Research updates continue directly on main; historical recording tags are provenance, not integration branches.
+At the recovery checkpoint, the repository contained **10,624 completed model responses across 33 GPU captures**: 32 completed and one intentionally interrupted. Formal results remain 6,144 responses. Research updates continue directly on main; historical recording tags are provenance, not integration branches.
 
 ## Preparing later recording workspaces
 
 The extension adapter now supports source checkouts with committed recording metadata and protects conflicting rules and existing condition directories. A real local-asset preparation and full offline-lock check passed alongside 25 repository tests. This setup check adds no model generations or run captures. Read the [workspace preparation validation](reports/workspace-preparation/REPORT.md) before preparing a later model study.
+
+## Source recorder GPU validation
+
+Three pinned-source 0.7.0 GPU conditions and a released-0.6.1 reference completed 256 new responses. Schema-2 baselines preserve the original diagnostic input while post-child checks detect its deliberate change. Installed distribution metadata remains 0.6.1; no environment upgrade occurred. [The report](reports/source-recorder-validation/REPORT.md) records source identity, actual run IDs, diffs, historical exports and limits.
+
+Current repository totals are **10,880 completed responses and 37 GPU captures**, with **6,144 formal responses** unchanged. All 37 repository tests and the full published-evidence consistency check pass.

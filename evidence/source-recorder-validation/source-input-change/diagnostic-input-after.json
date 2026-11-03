@@ -1,0 +1,5 @@
+{
+  "role": "Declared diagnostic input; not read by the scientific runner.",
+  "schema_version": 1,
+  "stage": "after-child-start"
+}

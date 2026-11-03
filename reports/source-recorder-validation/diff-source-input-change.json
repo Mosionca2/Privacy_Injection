@@ -1,0 +1,119 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261103T015543Z-14ba74/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": null,
+      "b": "sha256:e385c2c4f0443ed2b837c1724eeb467c5a6d795874aaed5c6c863d74ad903e46",
+      "note": "b: input_file/pre_child; child unverified",
+      "path": "files.probe/declared-input.json.sha256",
+      "severity": "HIGH",
+      "status": "added"
+    },
+    {
+      "a": "20392a241a8453e359b30c8a27ba23f48c4363ee",
+      "b": "b2015996359429776753228a23d71f7ce5e5853b",
+      "note": "working tree was dirty on b",
+      "path": "code.commit",
+      "severity": "HIGH",
+      "status": "changed"
+    },
+    {
+      "a": false,
+      "b": true,
+      "note": null,
+      "path": "code.dirty",
+      "severity": "HIGH",
+      "status": "changed"
+    },
+    {
+      "a": 0,
+      "b": 1,
+      "note": null,
+      "path": "code.modified_count",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": null,
+      "b": "patch.diff",
+      "note": null,
+      "path": "code.patch_file",
+      "severity": "MEDIUM",
+      "status": "added"
+    },
+    {
+      "a": null,
+      "b": "sha256:eb3aa9fc9c23ff1de23be5a623ced17cb96cd4782e5495dbf386bd371f15b06a",
+      "note": null,
+      "path": "code.patch_sha256",
+      "severity": "MEDIUM",
+      "status": "added"
+    },
+    {
+      "a": "0",
+      "b": "2",
+      "note": "a: inherited_environment/pre_child; child unverified; b: inherited_environment/pre_child; child unverified",
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        ".python-version",
+        "configs/protocol.json",
+        "model.identity.json",
+        "recorder-source.json",
+        "requirements.runtime.txt"
+      ],
+      "b": [
+        ".python-version",
+        "configs/protocol.json",
+        "model.identity.json",
+        "probe/declared-input.json",
+        "recorder-source.json",
+        "requirements.runtime.txt"
+      ],
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "execution.config_files",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 81.523097,
+      "b": 81.402667,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261103T015543Z-14ba74",
+      "b": "20261103T015543Z-4272d6",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.7.0",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 3,
+      "LOW": 0,
+      "MEDIUM": 5,
+      "MEDIUM_HIGH": 0,
+      "NONE": 2
+    },
+    "highest": "HIGH",
+    "same": 127
+  }
+}

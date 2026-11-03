@@ -1,0 +1,11 @@
+diff --git a/probe/declared-input.json b/probe/declared-input.json
+index 5d5f4e1..4f92d55 100644
+--- a/probe/declared-input.json
++++ b/probe/declared-input.json
+@@ -1,5 +1,5 @@
+ {
+   "role": "Declared diagnostic input; not read by the scientific runner.",
+   "schema_version": 1,
+-  "stage": "before-child-start"
++  "stage": "after-child-start"
+ }
