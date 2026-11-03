@@ -54,6 +54,9 @@ def verify_source(root, name, digest, commit):
 
 def check_capture(root, directory):
     root, directory = Path(root).resolve(), Path(directory).resolve()
+    if directory.relative_to(root / 'evidence').parts[0] == 'tail-ablation-v1':
+        from tail_ablation.evidence import check_capture as check_followup
+        return check_followup(root, directory)
     require(c.digest(root / 'privacy_study/core.py') == c.digest(Path(c.__file__)),
             'Selected repository scorer differs from this verifier; use its matching checkout.')
     relative = directory.relative_to(root).as_posix()
@@ -237,7 +240,8 @@ def verify(root=ROOT):
         observed = [s for s in summaries if s['model_label'] == model_label
                     and not s['evidence'].startswith(('evidence/recovery-validation/',
                                                       'evidence/source-recorder-validation/',
-                                                      'evidence/source-recovery-validation/'))]
+                                                      'evidence/source-recovery-validation/',
+                                                      'evidence/tail-ablation-v1/'))]
         require(sum(s['new_responses'] for s in observed) == study['generations']
                 == completion['real_model_generations_published'], 'Study response total mismatch.')
         require(len(observed) == study['gpu_runs'] == completion['real_gpu_runs'], 'Study capture total mismatch.')
@@ -301,10 +305,24 @@ def verify(root=ROOT):
                 and campaign['interrupted_gpu_runs'] == sum(s['status'] == 'interrupted' for s in selected)
                 and campaign['completed_responses'] == sum(s['new_responses'] for s in selected)
                 == completion['completed_responses_published'], 'Validation campaign ledger mismatch.')
+    for followup in ledger.get('followup_studies', []):
+        completion = c.read_json(local_file(root, followup['completion']))
+        selected = [s for s in summaries if s['evidence'].startswith('evidence/tail-ablation-v1/')]
+        require(len(selected) == followup['gpu_runs'] == completion['gpu_runs']
+                and sum(s['new_responses'] for s in selected) == followup['generations'] == completion['completed_responses']
+                and {s['run_id'] for s in selected} == set(completion['run_ids']), 'Follow-up ledger mismatch.')
+        from tail_ablation import core as followup_core
+        for split in completion['completed_splits']:
+            phase = [s for s in selected if s['split'] == split]
+            require(len(phase) == 6 and {s['defense'] for s in phase} == set(followup_core.CONDITIONS),
+                    'Follow-up phase coverage mismatch.')
     totals = dict(real_model_generations_published=responses, real_gpu_runs=len(summaries),
                   formal_generations=sum(s['new_responses'] for s in summaries if '/formal/' in s['evidence']),
                   completed_gpu_runs=sum(s['status'] == 'completed' for s in summaries),
                   interrupted_gpu_runs=sum(s['status'] == 'interrupted' for s in summaries))
+    if ledger.get('followup_studies'):
+        totals['followup_test_generations'] = sum(s['new_responses'] for s in summaries
+            if s['evidence'].startswith('evidence/tail-ablation-v1/') and s['split'] == 'test')
     require(all(ledger[key] == value for key, value in totals.items()), 'Repository execution ledger mismatch.')
     return dict(schema_version=1, all_passed=True, totals=totals, runs=summaries,
                 result_rows_checked=sum(s['result_rows'] for s in summaries),
