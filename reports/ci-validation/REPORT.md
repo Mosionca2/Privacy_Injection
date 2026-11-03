@@ -30,6 +30,8 @@ PYTHONPATH=tests python -m unittest -v test_ci test_core test_evidence test_gpu_
 python tools/ci_verify.py --consumer-source /path/to/pinned/ReproLLM
 ```
 
-The integration command writes to ignored `raw/ci/`. It fails if the consumer source bytes change, the published evidence is inconsistent, the delivery receipt is stale, either reader fails, or a reader changes an archived run directory. A GitHub run will be checked after this workflow is first pushed; this local checkpoint does not claim a remote CI result.
+The integration command writes to ignored `raw/ci/`. It fails if the consumer source bytes change, the published evidence is inconsistent, the delivery receipt is stale, either reader fails, or a reader changes an archived run directory.
+
+The first actual [GitHub run #41583455665](https://github.com/Mosionca2/Privacy_Injection/actions/runs/41583455665) **passed** at implementation commit `bcbae488029590b7890fae1b617247e1817fdefe`. All 30 CPU tests passed. Its downloaded integration receipt is byte-identical to the local reader/evidence receipt, and its fresh complete evidence result equals the published delivery receipt. [The permanent run receipt](github-run.json) records the commit, job URL, observed outcome, test count and receipt digest. Later documentation commits receive their own workflow runs.
 
 This maintenance step adds **zero model generations**. It is an internal-consistency and consumer check, without model-weight verification, statistical-figure regeneration, independent scientific replication or a complete upstream product-quality gate. The [accepted upstream contribution](https://github.com/EnumaElish123/ReproLLM/pull/12) remains merged and [Issue #13](https://github.com/EnumaElish123/ReproLLM/issues/13) remains closed after the documented clarification. The case-index proposal has no new maintainer response at this checkpoint; no new product defect was found in these reader checks.
