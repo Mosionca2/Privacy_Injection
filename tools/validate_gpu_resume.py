@@ -72,7 +72,8 @@ def cleanup_owned(process: subprocess.Popen) -> None:
 
 
 def capture(workspace: Path, gpu_index: int, name: str, expected: int,
-            interrupt_after: int | None, timeout: int, min_free_mib: int) -> dict:
+            interrupt_after: int | None, timeout: int, min_free_mib: int,
+            source_recorder: bool = False) -> dict:
     workspace = workspace.resolve()
     if os.name != 'posix':
         raise ValueError('This controlled signal validation requires a POSIX host.')
@@ -100,6 +101,15 @@ def capture(workspace: Path, gpu_index: int, name: str, expected: int,
                TOKENIZERS_PARALLELISM='false', PYTHONUNBUFFERED='1')
     env.pop('PYTHONPATH', None)
     env['PATH'] = str(Path(sys.executable).parent) + os.pathsep + env['PATH']
+    if source_recorder:
+        from tools.validate_source_recorder import (
+            check_input_capture, recorder_witness, runtime_env, verify_payload,
+        )
+        document = c.read_json(workspace / 'recorder-source.json')
+        verify_payload(workspace, document)
+        env = runtime_env(True, gpu_index)
+        witness = recorder_witness(workspace, document, True, env)
+        c.write_json(raw / (name + '.runtime-witness.json'), witness)
     record.command([cli, 'lock', '.', '--check'], workspace, env=env)
     if record.command(['git', 'status', '--porcelain'], workspace).stdout.strip():
         raise ValueError('Commit the actual recording inputs before execution.')
@@ -116,6 +126,7 @@ def capture(workspace: Path, gpu_index: int, name: str, expected: int,
         try:
             if interrupt_after is not None:
                 sent_at = interrupt_after_progress(process, output, interrupt_after, expected, timeout=timeout)
+                c.write_json(raw / (name + '.progress.json'), dict(schema_version=1, observed_samples=sent_at))
             launcher_exit = process.wait(timeout=timeout)
         finally:
             cleanup_owned(process)
@@ -123,6 +134,11 @@ def capture(workspace: Path, gpu_index: int, name: str, expected: int,
     if len(created) != 1:
         raise ValueError('Expected one genuine ReproLLM recording.')
     run = c.read_json(created[0] / 'run.json')
+    if source_recorder:
+        if run['schema_version'] != 2 or run['reprollm_version'] != document['module_version']:
+            raise ValueError('The recovery attempt did not use the pinned schema-2 recorder.')
+        check_input_capture(run, [])
+        verify_payload(workspace, document)
     rows = sample_rows(output, final=True)
     if not output.read_bytes().startswith(initial_bytes):
         raise ValueError('Resume changed existing result bytes.')
@@ -138,6 +154,10 @@ def capture(workspace: Path, gpu_index: int, name: str, expected: int,
         expected_samples=expected, completed_before=len(initial), completed_after=len(rows),
         new_completed_samples=len(rows)-len(initial), signalled_after_samples=sent_at,
         original_result_prefix_unchanged=True, gpu_index=gpu_index)
+    if source_recorder:
+        result.update(source_module_version=run['reprollm_version'], run_schema_version=2,
+                      source_commit=document['source_commit'], source_payload_unchanged=True,
+                      input_baseline_phase=run['input_capture']['baseline_phase'])
     c.write_json(target, result)
     return result
 
@@ -151,6 +171,7 @@ if __name__ == '__main__':
     p.add_argument('--interrupt-after', type=int)
     p.add_argument('--timeout', type=int, default=900)
     p.add_argument('--min-free-mib', type=int, default=24576)
+    p.add_argument('--source-recorder', action='store_true')
     a = p.parse_args()
     print(json.dumps(capture(a.workspace, a.gpu_index, a.name, a.expected_samples,
-                             a.interrupt_after, a.timeout, a.min_free_mib), sort_keys=True))
+                             a.interrupt_after, a.timeout, a.min_free_mib, a.source_recorder), sort_keys=True))

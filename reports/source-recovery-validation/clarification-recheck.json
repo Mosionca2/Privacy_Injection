@@ -1,0 +1,76 @@
+{
+  "clarification_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+  "cpu_recheck": {
+    "child_exit_code": 0,
+    "cli_exit_code": 0,
+    "missing_candidates": [
+      {
+        "after": {
+          "availability": "missing",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "before": {
+          "availability": "missing",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "Only synthetic examples are used."
+      },
+      {
+        "after": {
+          "availability": "missing",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "before": {
+          "availability": "missing",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "Return an exact matching identifier."
+      }
+    ],
+    "model_generations": 0,
+    "module_version": "0.7.0",
+    "run_id": "20261103T042011Z-e0ec49",
+    "run_schema_version": 2,
+    "schema_version": 1,
+    "scope": "CPU-only synthetic reproduction; no model load, paid call or model inference.",
+    "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9"
+  },
+  "official_ci": {
+    "conclusion": "success",
+    "headSha": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+    "jobs": [
+      {
+        "conclusion": "success",
+        "name": "quality / windows-latest / py3.12"
+      },
+      {
+        "conclusion": "success",
+        "name": "quality / macos-latest / py3.12"
+      },
+      {
+        "conclusion": "success",
+        "name": "quality / ubuntu-latest / py3.12"
+      },
+      {
+        "conclusion": "success",
+        "name": "quality / ubuntu-latest / py3.11"
+      },
+      {
+        "conclusion": "success",
+        "name": "quality / ubuntu-latest / py3.10"
+      }
+    ],
+    "status": "completed"
+  },
+  "schema_version": 1,
+  "scope": "Contributor CPU follow-up and official CI observation; maintainer reported checks were not rerun here.",
+  "source_payload_bytes_unchanged": true
+}

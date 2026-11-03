@@ -99,9 +99,11 @@ def check_capture(root, directory):
     historical = [name for name, digest in identity['code'].items()
                   if verify_source(root, name, digest, run['code']['commit'])]
     parts = directory.relative_to(root / 'evidence').parts
-    source_case = parts[0] == 'source-recorder-validation'
-    source_protocol = c.read_json(root / 'reports/source-recorder-validation/protocol.json') if source_case else None
-    study = (root / 'studies' / source_protocol['model_study'] if source_case else
+    source_case = parts[0] in ('source-recorder-validation', 'source-recovery-validation')
+    source_protocol = c.read_json(root / 'reports' / parts[0] / 'protocol.json') if source_case else None
+    model_study = (source_protocol['conditions'][parts[1]].get('model_study', source_protocol.get('model_study'))
+                   if source_case else None)
+    study = (root / 'studies' / model_study if source_case and model_study else root if source_case else
              root / 'studies' / parts[1] if parts[0] == 'extensions' else root)
     protocol = study / ('protocol.json' if study != root else 'configs/protocol.json')
     require(identity['protocol'] == c.digest(protocol)
@@ -198,6 +200,22 @@ def reconcile(captures):
     return len(originals)
 
 
+def compare_recovery_records(partial, resumed, reference):
+    """Compare complete independent coverage while retaining attempt ownership."""
+    require(partial[1] == resumed[1] == reference[1], 'Recovery scientific identity mismatch.')
+    old, final, fresh = partial[2], resumed[2], reference[2]
+    require(set(old) < set(final) == set(fresh), 'Recovery partial/final coverage mismatch.')
+    require(all(final[key] == row for key, row in old.items()), 'Recovery retained response changed.')
+    require(all(row['reprollm_run_id'] == partial[0]['run_id'] for row in old.values())
+            and all(row['reprollm_run_id'] == resumed[0]['run_id'] for key, row in final.items() if key not in old)
+            and all(row['reprollm_run_id'] == reference[0]['run_id'] for row in fresh.values()),
+            'Recovery originating attempt mismatch.')
+    return dict(completed_before_interruption=len(old), resumed_new_samples=len(final)-len(old),
+                reference_new_samples=len(fresh), completed_responses=len(final)+len(fresh),
+                changed_outputs=sum(row['output'] != fresh[key]['output'] for key, row in final.items()),
+                changed_scores=sum(row['scores'] != fresh[key]['scores'] for key, row in final.items()))
+
+
 def verify(root=ROOT):
     root = Path(root).resolve()
     captures = [check_capture(root, p.parent) for p in sorted((root / 'evidence').rglob('results.jsonl'))]
@@ -218,7 +236,8 @@ def verify(root=ROOT):
         require(study['model_label'] == completion['model_label'], 'Study display label mismatch.')
         observed = [s for s in summaries if s['model_label'] == model_label
                     and not s['evidence'].startswith(('evidence/recovery-validation/',
-                                                      'evidence/source-recorder-validation/'))]
+                                                      'evidence/source-recorder-validation/',
+                                                      'evidence/source-recovery-validation/'))]
         require(sum(s['new_responses'] for s in observed) == study['generations']
                 == completion['real_model_generations_published'], 'Study response total mismatch.')
         require(len(observed) == study['gpu_runs'] == completion['real_gpu_runs'], 'Study capture total mismatch.')
@@ -260,6 +279,21 @@ def verify(root=ROOT):
             protocol = c.read_json(root / 'reports/source-recorder-validation/protocol.json')
             require({s['evidence'].split('/')[-1] for s in selected} == set(protocol['conditions']),
                     'Source campaign condition coverage mismatch.')
+        elif campaign['completion'] == 'reports/source-recovery-validation/comparison.json':
+            selected = [s for s in summaries if s['evidence'].startswith('evidence/source-recovery-validation/')]
+            completion = c.read_json(root / campaign['completion'])
+            protocol = c.read_json(root / 'reports/source-recovery-validation/protocol.json')
+            require({s['evidence'].split('/')[-1] for s in selected} == set(protocol['conditions'])
+                    and {s['run_id'] for s in selected} == {v['run_id'] for v in completion['runs'].values()},
+                    'Source recovery campaign capture set mismatch.')
+            stages = {s['evidence'].split('/')[-1]: (s, identity, rows) for s, identity, rows in captures
+                      if s['evidence'].startswith('evidence/source-recovery-validation/')}
+            for model, expected in completion['pairs'].items():
+                partial, resumed, reference = (stages[model+'-'+stage] for stage in ('interrupted','resumed','reference'))
+                actual = compare_recovery_records(partial, resumed, reference)
+                require(all(expected[key] == value for key,value in actual.items()), 'Source recovery comparison mismatch.')
+                require((root/resumed[0]['evidence']/'results.jsonl').read_bytes().startswith(
+                        (root/partial[0]['evidence']/'results.jsonl').read_bytes()), 'Source recovery prefix changed.')
         else:
             raise ValueError('Unrecognized validation campaign; define its evidence contract explicitly.')
         require(campaign['gpu_runs'] == len(selected)

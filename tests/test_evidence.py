@@ -5,7 +5,7 @@ import shutil
 import tempfile
 import unittest
 
-from tools.verify_evidence import check_capture, reconcile
+from tools.verify_evidence import check_capture, compare_recovery_records, reconcile
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -72,3 +72,17 @@ class PublishedEvidenceGuards(unittest.TestCase):
         captures[1][2]['one']['output'] = 'changed retained response'
         with self.assertRaisesRegex(ValueError, 'Retained response changed'):
             reconcile(captures)
+
+    def test_recovery_comparison_rejects_mixed_identities_and_changed_old_success(self):
+        identity={'defense':'D0'}
+        old={'id':'one','reprollm_run_id':'first','output':'A','scores':{'exact':True}}
+        new={'id':'two','reprollm_run_id':'resume','output':'B','scores':{'exact':True}}
+        partial=({'run_id':'first'},identity,{'one':old})
+        resumed=({'run_id':'resume'},identity,{'one':copy.deepcopy(old),'two':new})
+        reference=({'run_id':'fresh'},identity,{k:dict(v,reprollm_run_id='fresh') for k,v in resumed[2].items()})
+        self.assertEqual(compare_recovery_records(partial,resumed,reference)['completed_responses'],4)
+        with self.assertRaisesRegex(ValueError,'scientific identity'):
+            compare_recovery_records(partial,resumed,(reference[0],{'defense':'D1'},reference[2]))
+        resumed[2]['one']['reprollm_run_id']='resume'
+        with self.assertRaisesRegex(ValueError,'retained response'):
+            compare_recovery_records(partial,resumed,reference)

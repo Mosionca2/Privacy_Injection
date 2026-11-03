@@ -1,0 +1,9 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "duration_seconds": 55.455,
+  "exit_code": 0,
+  "new_guards": 2,
+  "passed": 39,
+  "schema_version": 1,
+  "scope": "Research source-recorder selection and recovery evidence attribution; not an upstream full product gate."
+}

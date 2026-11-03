@@ -98,6 +98,28 @@ def mutate_after_progress(process, results, marker, threshold, expected, *, time
     raise RuntimeError('Recorder exited before diagnostic input change.')
 
 
+def recorder_witness(work, document, source, env):
+    """Observe the selected module separately from installed distribution metadata."""
+    work = Path(work)
+    witness_code = (
+        'import hashlib,json,reprollm; from pathlib import Path; from importlib import metadata; '
+        'p=Path(reprollm.__file__).resolve(); root=Path.cwd().resolve(); '
+        "print(json.dumps(dict(module_version=reprollm.__version__,installed_distribution_version=metadata.version('reprollm'),"
+        "module_file=p.relative_to(root).as_posix() if p.is_relative_to(root) else 'installed-distribution',"
+        "module_sha256=hashlib.sha256(p.read_bytes()).hexdigest())))")
+    witness = json.loads(record.command([sys.executable, '-c', witness_code], work, env=env).stdout)
+    require(witness['module_version'] == document['module_version']
+            and witness['installed_distribution_version'] == document['installed_distribution_version'],
+            'Actual module/distribution identity differs from the declaration.')
+    if source:
+        require(witness['module_file'] == 'assets/recorder-source/reprollm/__init__.py',
+                'Source recorder did not load from the materialized pinned package.')
+        require(witness['module_sha256'] == next(v['sha256'] for v in document['files']
+                                                if v['name'] == 'reprollm/__init__.py'),
+                'Loaded source module hash differs from its declaration.')
+    return witness
+
+
 def capture(workspace, gpu, label, expected=64):
     work = Path(workspace).resolve()
     spec = c.read_json(work / 'reports/source-recorder-validation/protocol.json')['conditions'][label]
@@ -112,19 +134,7 @@ def capture(workspace, gpu, label, expected=64):
     document = c.read_json(work / 'recorder-source.json')
     if source:
         verify_payload(work, document)
-    witness_code = (
-        'import hashlib,json,reprollm; from pathlib import Path; from importlib import metadata; '
-        'p=Path(reprollm.__file__).resolve(); root=Path.cwd().resolve(); '
-        "print(json.dumps(dict(module_version=reprollm.__version__,installed_distribution_version=metadata.version('reprollm'),"
-        "module_file=p.relative_to(root).as_posix() if p.is_relative_to(root) else 'installed-distribution',"
-        "module_sha256=hashlib.sha256(p.read_bytes()).hexdigest())))")
-    witness = json.loads(record.command([sys.executable, '-c', witness_code], work, env=env).stdout)
-    require(witness['module_version'] == document['module_version']
-            and witness['installed_distribution_version'] == document['installed_distribution_version'],
-            'Actual module/distribution identity differs from the declaration.')
-    if source:
-        require(witness['module_file'] == 'assets/recorder-source/reprollm/__init__.py',
-                'Source recorder did not load from the materialized pinned package.')
+    witness = recorder_witness(work, document, source, env)
     c.write_json(raw / 'runtime-witness.json', witness)
     record.command([cli, 'lock', '.', '--check'], work, env=env)
     require(not record.command(['git', 'status', '--porcelain'], work).stdout.strip(),

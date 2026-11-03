@@ -1,5 +1,6 @@
 import copy
 import json
+from importlib import metadata
 from pathlib import Path
 import subprocess
 import sys
@@ -7,7 +8,9 @@ import tempfile
 import unittest
 
 from privacy_study import core as c
-from tools.validate_source_recorder import check_input_capture, mutate_after_progress, verify_payload
+from tools.validate_source_recorder import (
+    check_input_capture, mutate_after_progress, recorder_witness, runtime_env, verify_payload,
+)
 from tools.validate_gpu_resume import cleanup_owned
 
 
@@ -77,3 +80,16 @@ class SourceRecorderGuards(unittest.TestCase):
                 self.assertEqual(child.wait(timeout=5), 0)
             finally:
                 cleanup_owned(child)
+
+    def test_runtime_witness_observes_source_without_replacing_installed_metadata(self):
+        with tempfile.TemporaryDirectory() as folder:
+            work=Path(folder); module=work/'assets/recorder-source/reprollm/__init__.py'
+            module.parent.mkdir(parents=True); module.write_text('__version__="synthetic-source"\n')
+            document=dict(module_version='synthetic-source',installed_distribution_version=metadata.version('reprollm'),
+                          files=[dict(name='reprollm/__init__.py',sha256=c.digest(module))])
+            result=recorder_witness(work,document,True,runtime_env(True))
+            self.assertEqual(result['module_version'],'synthetic-source')
+            self.assertEqual(result['installed_distribution_version'],metadata.version('reprollm'))
+            document['module_version']='unobserved-version'
+            with self.assertRaisesRegex(ValueError,'identity differs'):
+                recorder_witness(work,document,True,runtime_env(True))

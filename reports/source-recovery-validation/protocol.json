@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "validation_id": "source-gpu-resume-v1",
+  "scope": "Controlled SIGTERM interruption and resume under pinned source 0.7.0 on two exact existing local models; separate from formal defense estimates.",
+  "upstream_source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+  "source_module_version": "0.7.0",
+  "installed_distribution_version": "0.6.1",
+  "split": "dev",
+  "defense": "D0",
+  "base_cases": 8,
+  "batch_size": 1,
+  "expected_samples_per_complete_condition": 64,
+  "interrupt_after_observed_samples": 8,
+  "expected_new_completed_responses": 256,
+  "expected_captures": 6,
+  "models": {
+    "primary": {"identity": "model.identity.json", "protocol": "configs/protocol.json", "minimum_free_mib": 24576},
+    "extension": {"identity": "studies/qwen3-1.7b/model.identity.json", "protocol": "studies/qwen3-1.7b/protocol.json", "minimum_free_mib": 8192}
+  },
+  "conditions": {
+    "primary-interrupted": {"model_study": null, "source_recorder": true, "expected_input_changes": []},
+    "primary-resumed": {"model_study": null, "source_recorder": true, "expected_input_changes": []},
+    "primary-reference": {"model_study": null, "source_recorder": true, "expected_input_changes": []},
+    "extension-interrupted": {"model_study": "qwen3-1.7b", "source_recorder": true, "expected_input_changes": []},
+    "extension-resumed": {"model_study": "qwen3-1.7b", "source_recorder": true, "expected_input_changes": []},
+    "extension-reference": {"model_study": "qwen3-1.7b", "source_recorder": true, "expected_input_changes": []}
+  },
+  "acceptance": [
+    "Each pair starts from clean committed inputs and a fresh offline full-weight lock.",
+    "Interrupt only an owned recorder after partial genuine progress; retain actual child/launcher exits and persist the observed progress count before final assessment.",
+    "The unchanged scientific command resumes in the same workspace, adds only missing successes, and retains old bytes and originating run IDs.",
+    "A separate uninterrupted reference uses the identical per-model scientific identity. Record output/score differences without assuming equality.",
+    "All six source captures retain schema 2, pre-child baseline, post-child checks and unverified consumption, including absent optional candidates under clarified Issue #13 semantics.",
+    "Source package payload and full local model identity are checked before and after; original formal freezes and installed packages remain unchanged.",
+    "Each complete recovered condition and reference contains all 64 unique expected samples; interrupted in-flight work is excluded from completed-response counts."
+  ],
+  "scheduling": "One recovery worker and one reference worker per model on currently available devices. Recheck memory before every launch; use waves if fewer than four suitable allocations are free.",
+  "limits": [
+    "The study script provides resume behavior; ReproLLM supplies actual captures and evidence, not a checkpoint scheduler.",
+    "No hard-kill, power failure or corrupted-output repair is claimed.",
+    "This is not a new formal defense result, upstream release qualification, five-project acceptance or independent adopter count."
+  ]
+}
