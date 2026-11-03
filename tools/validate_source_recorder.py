@@ -35,12 +35,25 @@ def check_input_capture(run, expected_changes):
     changed = []
     for check in checks:
         before, after = check['before'], check['after']
-        require(before['availability'] == after['availability'] == 'present',
-                'Expected readable declared input fingerprints in this bounded case.')
         if check['path'] in hashes:
             require(before['sha256'] == hashes[check['path']], 'Input baseline no longer matches its saved reference.')
-        actual = ('unchanged' if (before['sha256'], before['size_bytes']) ==
-                  (after['sha256'], after['size_bytes']) else 'changed')
+        for fingerprint in (before, after):
+            if fingerprint['availability'] == 'present':
+                require(fingerprint['sha256'] is not None and type(fingerprint['size_bytes']) is int,
+                        'Present input fingerprints require a hash and size.')
+            else:
+                require(fingerprint['sha256'] is None and fingerprint['size_bytes'] is None,
+                        'Absent input fingerprints must not invent content identity.')
+        states = before['availability'], after['availability']
+        require('unavailable' not in states, 'Unexpected unavailable input check in this bounded case.')
+        if states == ('missing', 'present'):
+            actual = 'created'
+        elif states == ('present', 'missing'):
+            actual = 'removed'
+        else:
+            require(states in (('present', 'present'), ('missing', 'missing')), 'Unexpected fingerprint availability.')
+            actual = ('unchanged' if (before['sha256'], before['size_bytes']) ==
+                      (after['sha256'], after['size_bytes']) else 'changed')
         require(check['change'] == actual, 'Input change disagrees with fingerprints.')
         if actual != 'unchanged':
             changed.append(check['path'])
@@ -127,6 +140,7 @@ def capture(workspace, gpu, label, expected=64):
             if changes:
                 require(changes == ['probe/declared-input.json'], 'Unexpected diagnostic target.')
                 progress = mutate_after_progress(process, raw / 'results.jsonl', work / changes[0], 8, expected)
+                c.write_json(raw / 'input-change-event.json', dict(schema_version=1, observed_samples=progress))
             exit_code = process.wait(timeout=900)
         finally:
             cleanup_owned(process)
@@ -152,6 +166,8 @@ def capture(workspace, gpu, label, expected=64):
         git_dirty=run['code']['dirty'], inputs_clean_before_launch=True,
         expected_input_changes=changes, observed_input_changes=observed_changes,
         changed_after_observed_samples=progress, source_payload_unchanged=source,
+        missing_input_candidates=[v['path'] for v in (run.get('input_capture') or {}).get('checks', [])
+                                  if v['before']['availability'] == 'missing'],
         recorder_module_version=run['reprollm_version'], run_schema_version=run['schema_version'])
     c.write_json(raw / 'controller.json', result)
     return result

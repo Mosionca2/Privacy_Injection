@@ -54,6 +54,17 @@ class SourceRecorderGuards(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Source payload changed'):
                 verify_payload(work, document)
 
+    def test_missing_optional_candidates_remain_visible_without_replacing_real_baselines(self):
+        value = self.record()
+        missing = dict(availability='missing', sha256=None, size_bytes=None)
+        value['input_capture']['checks'].append(dict(path='An inline definition.', origin='declared',
+            before=copy.deepcopy(missing), after=copy.deepcopy(missing), change='unchanged'))
+        self.assertEqual(check_input_capture(value, []), [])
+        value['input_capture']['checks'][0]['before'] = copy.deepcopy(missing)
+        value['input_capture']['checks'][0]['after'] = copy.deepcopy(missing)
+        with self.assertRaisesRegex(ValueError, 'baseline'):
+            check_input_capture(value, [])
+
     def test_probe_mutates_only_after_owned_child_progress(self):
         with tempfile.TemporaryDirectory() as folder:
             work = Path(folder); results = work/'results.jsonl'; marker = work/'marker.json'
