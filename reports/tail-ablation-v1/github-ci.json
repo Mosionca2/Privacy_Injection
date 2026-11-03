@@ -1,0 +1,24 @@
+{
+  "conclusion": "success",
+  "cpu_termination_recordings": 8,
+  "evidence_receipt_matches_published": true,
+  "head_commit": "6adc8b28d9ab4876b76dc60457f157855d582a69",
+  "new_model_generations_in_ci": 0,
+  "published_model_captures_verified": 55,
+  "result_rows_checked": 16920,
+  "run_id": 41597452536,
+  "schema_version": 1,
+  "scope": "Actual CI at the complete follow-up data commit; later receipt/documentation commits get their own runs.",
+  "snapshot_hashes_checked": 459,
+  "tests_duration_seconds": 1.476,
+  "tests_passed": 37,
+  "totals": {
+    "completed_gpu_runs": 52,
+    "followup_test_generations": 4608,
+    "formal_generations": 6144,
+    "interrupted_gpu_runs": 3,
+    "real_gpu_runs": 55,
+    "real_model_generations_published": 16896
+  },
+  "url": "https://github.com/Mosionca2/Privacy_Injection/actions/runs/41597452536"
+}

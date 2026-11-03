@@ -49,3 +49,9 @@ Repository accounting now contains **16,896 completed model responses and 55 GPU
 The existing [Mosionca2 fork](https://github.com/Mosionca2/ReproLLM), [merged documentation PR #12](https://github.com/EnumaElish123/ReproLLM/pull/12), and [resolved Issue #13](https://github.com/EnumaElish123/ReproLLM/issues/13) remain linked contributions. This campaign adds actual source-recorder use, cross-condition Diff and explicit exports. No new product defect has been established; issues and PRs are not created to meet a quota. Work is agent-assisted; no new independent maintainer replication is claimed.
 
 Local upstream checkpoint revisions and original-versus-modified status remain unknown; findings bind the exact two published content fingerprints. Results concern these synthetic tasks and fixed attacks. The two snapshots do not isolate parameter count as a cause. Neutral content, repeated questions, batch execution and the synthetic task distribution limit broader causal or security claims.
+
+
+The complete-data [GitHub CI run](https://github.com/Mosionca2/Privacy_Injection/actions/runs/41597452536) passed all 37 CPU tests, the 55-capture evidence gate and eight fresh CPU termination fixtures. [The permanent receipt](github-ci.json) binds this result to its exact data commit. CI adds no model inference; later documentation commits have separate runs.
+
+
+A dated follow-up was appended to the existing [upstream case-index evidence comment](https://github.com/EnumaElish123/ReproLLM/issues/11#issuecomment-6593163665) using Mosionca2. It links this immutable public report and actual CI evidence. [The submission receipt](upstream-feedback.json) records the update; no case-index acceptance, new independent adopter or maintainer replication is inferred.
