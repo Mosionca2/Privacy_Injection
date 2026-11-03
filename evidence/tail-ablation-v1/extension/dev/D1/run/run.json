@@ -1,0 +1,688 @@
+{
+  "artifacts": [
+    {
+      "path": "raw/completion.json",
+      "sha256": "sha256:c786af892cab9bc476349bdc53936b9b1ddeda2149d0afddd3267e40cb622e84",
+      "size_bytes": 336
+    },
+    {
+      "path": "raw/results.jsonl",
+      "sha256": "sha256:96b3ca6a5d0a384c87595d163a6baec3561dee1b3734c9fc2b1afbee62d5b6e6",
+      "size_bytes": 152679
+    }
+  ],
+  "bindings_observed": {
+    "custom.batch_size": [
+      {
+        "source": {
+          "key": "--batch-size",
+          "path": null,
+          "type": "cli"
+        },
+        "value": 16
+      }
+    ],
+    "custom.dataset_split": [
+      {
+        "source": {
+          "key": "--split",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "dev"
+      }
+    ],
+    "custom.defense": [
+      {
+        "source": {
+          "key": "--defense",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "D1"
+      }
+    ],
+    "custom.study_model": [
+      {
+        "source": {
+          "key": "--study-model",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "extension"
+      }
+    ],
+    "generation.max_tokens": [
+      {
+        "source": {
+          "key": "max_new_tokens",
+          "path": "studies/tail-ablation-v1/protocol.json",
+          "type": "config"
+        },
+        "value": 32
+      }
+    ],
+    "generation.seed": [
+      {
+        "source": {
+          "key": "run_seed",
+          "path": "studies/tail-ablation-v1/protocol.json",
+          "type": "config"
+        },
+        "value": 73129
+      }
+    ],
+    "models.primary.id": [
+      {
+        "source": {
+          "key": "--model",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "assets/model"
+      }
+    ]
+  },
+  "code": {
+    "branch": "main",
+    "commit": "3ec4c65bd0ac31267d93370a91d0bc1f853df200",
+    "dirty": false,
+    "modified_count": 0,
+    "patch_file": null,
+    "patch_sha256": null,
+    "remote": "https://github.com/Mosionca2/Privacy_Injection.git",
+    "untracked_count": 0
+  },
+  "command": {
+    "argv": [
+      "python",
+      "-m",
+      "tail_ablation.run",
+      "--model",
+      "assets/model",
+      "--study-model",
+      "extension",
+      "--defense",
+      "D1",
+      "--split",
+      "dev",
+      "--batch-size",
+      "16"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": 154.368492,
+  "ended_at": "2026-11-03T07:04:43Z",
+  "environment": {
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "3",
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HUB_OFFLINE": "1",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "LC_CTYPE": "C.UTF-8",
+      "MKL_NUM_THREADS": "4",
+      "OMP_NUM_THREADS": "4",
+      "PATH": "<REDACTED:path>",
+      "PYTHONPATH": "assets/recorder-source",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "TRANSFORMERS_OFFLINE": "1"
+    },
+    "env_capture": "allowlist",
+    "hostname_sha256": "sha256:32e83e92d45d71f69dcf9d214688f0375542108631b45d344e5df2eb91c11566",
+    "os": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "accelerate": "1.12.0",
+      "bitsandbytes": "0.49.2",
+      "datasets": "4.6.1",
+      "evaluate": "0.4.6",
+      "lm_eval": "0.4.11",
+      "numpy": "2.2.6",
+      "openai": "2.24.0",
+      "peft": "0.18.1",
+      "safetensors": "0.7.0",
+      "sentencepiece": "0.2.1",
+      "tokenizers": "0.22.2",
+      "torch": "2.5.1+cu121",
+      "transformers": "5.2.0"
+    },
+    "platform": "linux",
+    "python": "3.10.19"
+  },
+  "exit_code": 0,
+  "files": [
+    {
+      "origin": "declared",
+      "path": ".python-version",
+      "redacted": false,
+      "sha256": "sha256:8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+      "size_bytes": 8,
+      "snapshot": "files/8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "origin": "declared",
+      "path": "configs/protocol.json",
+      "redacted": false,
+      "sha256": "sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+      "size_bytes": 2650,
+      "snapshot": "files/69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8"
+    },
+    {
+      "origin": "declared",
+      "path": "model.identity.json",
+      "redacted": false,
+      "sha256": "sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+      "size_bytes": 1967,
+      "snapshot": "files/aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375"
+    },
+    {
+      "origin": "declared",
+      "path": "privacy_study/core.py",
+      "redacted": false,
+      "sha256": "sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43",
+      "size_bytes": 8920,
+      "snapshot": "files/d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43"
+    },
+    {
+      "origin": "declared",
+      "path": "recorder-source.json",
+      "redacted": false,
+      "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "size_bytes": 24152,
+      "snapshot": "files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "origin": "declared",
+      "path": "requirements.runtime.txt",
+      "redacted": false,
+      "sha256": "sha256:be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+      "size_bytes": 112,
+      "snapshot": "files/be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "origin": "declared",
+      "path": "studies/qwen3-1.7b/model.identity.json",
+      "redacted": false,
+      "sha256": "sha256:a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+      "size_bytes": 1710,
+      "snapshot": "files/a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367"
+    },
+    {
+      "origin": "declared",
+      "path": "studies/tail-ablation-v1/data/dev.jsonl",
+      "redacted": false,
+      "sha256": "sha256:09842e88f2724a1995a2105fe2afd44c70e98189045cb3a1fefc2fed446ee620",
+      "size_bytes": 11773,
+      "snapshot": "files/09842e88f2724a1995a2105fe2afd44c70e98189045cb3a1fefc2fed446ee620"
+    },
+    {
+      "origin": "declared",
+      "path": "studies/tail-ablation-v1/data/test.jsonl",
+      "redacted": false,
+      "sha256": "sha256:f77d46d7f91c98abb6493615b842e7fadc72257db5486f66152bd0d9f644c1dd",
+      "size_bytes": 47773,
+      "snapshot": "files/f77d46d7f91c98abb6493615b842e7fadc72257db5486f66152bd0d9f644c1dd"
+    },
+    {
+      "origin": "declared",
+      "path": "studies/tail-ablation-v1/preparation.json",
+      "redacted": false,
+      "sha256": "sha256:0f1e6abdd921ec77c038dc435eef0136b19459d24513a6a05fe646b70684e77c",
+      "size_bytes": 520,
+      "snapshot": "files/0f1e6abdd921ec77c038dc435eef0136b19459d24513a6a05fe646b70684e77c"
+    },
+    {
+      "origin": "declared",
+      "path": "studies/tail-ablation-v1/prompts/extension.jsonl",
+      "redacted": false,
+      "sha256": "sha256:3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+      "size_bytes": 4006908,
+      "snapshot": null
+    },
+    {
+      "origin": "declared",
+      "path": "studies/tail-ablation-v1/prompts/primary.jsonl",
+      "redacted": false,
+      "sha256": "sha256:3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+      "size_bytes": 4006908,
+      "snapshot": null
+    },
+    {
+      "origin": "declared",
+      "path": "studies/tail-ablation-v1/protocol.freeze.json",
+      "redacted": false,
+      "sha256": "sha256:cd4a0d3f57a6f5f2cd0042cab7f3fc773010080bea27d6420501592a80657aca",
+      "size_bytes": 1989,
+      "snapshot": "files/cd4a0d3f57a6f5f2cd0042cab7f3fc773010080bea27d6420501592a80657aca"
+    },
+    {
+      "origin": "declared",
+      "path": "studies/tail-ablation-v1/protocol.json",
+      "redacted": false,
+      "sha256": "sha256:a745712a89bc68688127bc33d8fed466bf73bda18c492de07c034b4859bdc477",
+      "size_bytes": 3960,
+      "snapshot": "files/a745712a89bc68688127bc33d8fed466bf73bda18c492de07c034b4859bdc477"
+    },
+    {
+      "origin": "declared",
+      "path": "tail_ablation/__init__.py",
+      "redacted": false,
+      "sha256": "sha256:7c9287d228f1c783834eff6dc8dd256c843500688c7b44bb3849486ec2841104",
+      "size_bytes": 89,
+      "snapshot": "files/7c9287d228f1c783834eff6dc8dd256c843500688c7b44bb3849486ec2841104"
+    },
+    {
+      "origin": "declared",
+      "path": "tail_ablation/core.py",
+      "redacted": false,
+      "sha256": "sha256:d9c0487bb76e2e4e0b1428ee67fddeb207afa92dbaa56149b0eef3fbb8593de0",
+      "size_bytes": 2781,
+      "snapshot": "files/d9c0487bb76e2e4e0b1428ee67fddeb207afa92dbaa56149b0eef3fbb8593de0"
+    },
+    {
+      "origin": "declared",
+      "path": "tail_ablation/run.py",
+      "redacted": false,
+      "sha256": "sha256:a6f66659152fe2b6d696b59fe4c49c34e3880ac5826c741cbad60adccf9cad53",
+      "size_bytes": 7527,
+      "snapshot": "files/a6f66659152fe2b6d696b59fe4c49c34e3880ac5826c741cbad60adccf9cad53"
+    },
+    {
+      "origin": "declared",
+      "path": "tools/prepare_tail_ablation.py",
+      "redacted": false,
+      "sha256": "sha256:e1daeddd1db60b6e409dfefd0000d8595bdc79ff47eac267c4a33d296d7f6f98",
+      "size_bytes": 5650,
+      "snapshot": "files/e1daeddd1db60b6e409dfefd0000d8595bdc79ff47eac267c4a33d296d7f6f98"
+    }
+  ],
+  "hardware": {
+    "cpu_count": 128,
+    "cuda_driver_max": "13.0",
+    "driver": "580.178.04",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:b77fcc7a2e1a4023818a073834292073f171fd266f8728642c58ab76b8a00474"
+      },
+      {
+        "index": 1,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:6bf6ca98feeeb523c3a0618bc893039e071d13bb6c9304ced089fc7ad18e3e9f"
+      },
+      {
+        "index": 2,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:cb5f06cdb7d0686193268437b847b20606aaa98bc7ff5cb138ecad1e1b2e42fb"
+      },
+      {
+        "index": 3,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:a6ba9cf25912f91d84baab1d169fd6446de16b53a3cd655596bb5a24b377b7a1"
+      }
+    ],
+    "source": "nvidia_smi"
+  },
+  "input_capture": {
+    "baseline_phase": "pre_child",
+    "check_phase": "post_child",
+    "checks": [
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+          "size_bytes": 8
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+          "size_bytes": 8
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": ".python-version"
+      },
+      {
+        "after": {
+          "availability": "missing",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "before": {
+          "availability": "missing",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "Complete synthetic private identifier in newly generated attack response."
+      },
+      {
+        "after": {
+          "availability": "missing",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "before": {
+          "availability": "missing",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "Only retrieved text is attacker-controlled; private identifiers and system policy are hidden from the attacker."
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+          "size_bytes": 2650
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+          "size_bytes": 2650
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "configs/protocol.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+          "size_bytes": 1967
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+          "size_bytes": 1967
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "model.identity.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43",
+          "size_bytes": 8920
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43",
+          "size_bytes": 8920
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "privacy_study/core.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+          "size_bytes": 24152
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+          "size_bytes": 24152
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "recorder-source.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:948f0dd4668e901ce9c10b436e16ef7e990535ea88cf1258ad80bd755655398b",
+          "size_bytes": 7027
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:948f0dd4668e901ce9c10b436e16ef7e990535ea88cf1258ad80bd755655398b",
+          "size_bytes": 7027
+        },
+        "change": "unchanged",
+        "origin": "lock",
+        "path": "reprollm.lock"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:265d09a0c1b770a098afb2227fa1836aaa52c9c08b277ee772492f30315e47f2",
+          "size_bytes": 4481
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:265d09a0c1b770a098afb2227fa1836aaa52c9c08b277ee772492f30315e47f2",
+          "size_bytes": 4481
+        },
+        "change": "unchanged",
+        "origin": "manifest",
+        "path": "reprollm.yaml"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+          "size_bytes": 112
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+          "size_bytes": 112
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "requirements.runtime.txt"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+          "size_bytes": 1710
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+          "size_bytes": 1710
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "studies/qwen3-1.7b/model.identity.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:09842e88f2724a1995a2105fe2afd44c70e98189045cb3a1fefc2fed446ee620",
+          "size_bytes": 11773
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:09842e88f2724a1995a2105fe2afd44c70e98189045cb3a1fefc2fed446ee620",
+          "size_bytes": 11773
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "studies/tail-ablation-v1/data/dev.jsonl"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:f77d46d7f91c98abb6493615b842e7fadc72257db5486f66152bd0d9f644c1dd",
+          "size_bytes": 47773
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:f77d46d7f91c98abb6493615b842e7fadc72257db5486f66152bd0d9f644c1dd",
+          "size_bytes": 47773
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "studies/tail-ablation-v1/data/test.jsonl"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:0f1e6abdd921ec77c038dc435eef0136b19459d24513a6a05fe646b70684e77c",
+          "size_bytes": 520
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:0f1e6abdd921ec77c038dc435eef0136b19459d24513a6a05fe646b70684e77c",
+          "size_bytes": 520
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "studies/tail-ablation-v1/preparation.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+          "size_bytes": 4006908
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+          "size_bytes": 4006908
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "studies/tail-ablation-v1/prompts/extension.jsonl"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+          "size_bytes": 4006908
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+          "size_bytes": 4006908
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "studies/tail-ablation-v1/prompts/primary.jsonl"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:cd4a0d3f57a6f5f2cd0042cab7f3fc773010080bea27d6420501592a80657aca",
+          "size_bytes": 1989
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:cd4a0d3f57a6f5f2cd0042cab7f3fc773010080bea27d6420501592a80657aca",
+          "size_bytes": 1989
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "studies/tail-ablation-v1/protocol.freeze.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:a745712a89bc68688127bc33d8fed466bf73bda18c492de07c034b4859bdc477",
+          "size_bytes": 3960
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:a745712a89bc68688127bc33d8fed466bf73bda18c492de07c034b4859bdc477",
+          "size_bytes": 3960
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "studies/tail-ablation-v1/protocol.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:7c9287d228f1c783834eff6dc8dd256c843500688c7b44bb3849486ec2841104",
+          "size_bytes": 89
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:7c9287d228f1c783834eff6dc8dd256c843500688c7b44bb3849486ec2841104",
+          "size_bytes": 89
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "tail_ablation/__init__.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:d9c0487bb76e2e4e0b1428ee67fddeb207afa92dbaa56149b0eef3fbb8593de0",
+          "size_bytes": 2781
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:d9c0487bb76e2e4e0b1428ee67fddeb207afa92dbaa56149b0eef3fbb8593de0",
+          "size_bytes": 2781
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "tail_ablation/core.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:a6f66659152fe2b6d696b59fe4c49c34e3880ac5826c741cbad60adccf9cad53",
+          "size_bytes": 7527
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:a6f66659152fe2b6d696b59fe4c49c34e3880ac5826c741cbad60adccf9cad53",
+          "size_bytes": 7527
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "tail_ablation/run.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:e1daeddd1db60b6e409dfefd0000d8595bdc79ff47eac267c4a33d296d7f6f98",
+          "size_bytes": 5650
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:e1daeddd1db60b6e409dfefd0000d8595bdc79ff47eac267c4a33d296d7f6f98",
+          "size_bytes": 5650
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "tools/prepare_tail_ablation.py"
+      }
+    ],
+    "consumption": "unverified"
+  },
+  "lock": {
+    "path": "reprollm.lock",
+    "sha256": "sha256:948f0dd4668e901ce9c10b436e16ef7e990535ea88cf1258ad80bd755655398b",
+    "snapshot": "lock.yaml"
+  },
+  "manifest": {
+    "path": "reprollm.yaml",
+    "sha256": "sha256:265d09a0c1b770a098afb2227fa1836aaa52c9c08b277ee772492f30315e47f2",
+    "snapshot": "manifest.yaml"
+  },
+  "name": "tail-dev-extension-D1",
+  "reprollm_version": "0.7.0",
+  "run_id": "20261103T070208Z-f57b83",
+  "scheduler": null,
+  "schema_version": 2,
+  "started_at": "2026-11-03T07:02:08Z",
+  "status": "completed",
+  "warnings": []
+}

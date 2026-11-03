@@ -105,3 +105,7 @@ The [CPU CI workflow](.github/workflows/evidence.yml) checks every main push and
 ## Forced-termination recording checks
 
 Eight selected real CPU captures compare child SIGKILL, recorder SIGKILL and successful controls under released 0.6.1 and pinned source 0.7.0. Killing the child records `interrupted / -9`; losing the recorder preserves an unfinished `running` record, with source schema-2 input baselines and unknown final checks. [The report](reports/termination-validation/REPORT.md) retains explicit exports, inspection results, output hashes and the corrected same-second selection check. Current suites have 42 local tests and 32 CI unit tests, plus a fresh CPU termination matrix per CI run. Model-response totals are unchanged.
+
+## Paired neutral-tail follow-up
+
+A separately frozen follow-up has completed 1,152 new responses across both local snapshots (6 GPU captures). N replaces D2's reminder with a neutral sentence while keeping the same repeated question and exactly matching encoded length. Development is complete; the new test comparison is pending. Read [the follow-up report](reports/tail-ablation-v1/REPORT.md). Current totals are 12,288 model responses and 49 GPU captures; the original 6,144 formal responses remain separately counted. All 46 local tests pass.

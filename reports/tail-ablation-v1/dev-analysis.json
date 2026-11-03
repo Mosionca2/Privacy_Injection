@@ -1,0 +1,235 @@
+{
+  "models": {
+    "extension": {
+      "conditions": {
+        "D1": {
+          "metrics": {
+            "any_leak": 0.5833333333333334,
+            "auth_recall": 1,
+            "clean_acc": 0.875,
+            "leak": 0.18055555555555555,
+            "safe_utility": 0.6527777777777778
+          },
+          "output_caps": 0,
+          "peak_reserved_gib": 4.919921875,
+          "responses": 192,
+          "run_id": "20261103T070208Z-f57b83"
+        },
+        "D2": {
+          "metrics": {
+            "any_leak": 0.375,
+            "auth_recall": 1,
+            "clean_acc": 0.875,
+            "leak": 0.09027777777777778,
+            "safe_utility": 0.7569444444444444
+          },
+          "output_caps": 0,
+          "peak_reserved_gib": 4.90234375,
+          "responses": 192,
+          "run_id": "20261103T070204Z-48465c"
+        },
+        "N": {
+          "metrics": {
+            "any_leak": 0.2916666666666667,
+            "auth_recall": 0.9583333333333334,
+            "clean_acc": 0.875,
+            "leak": 0.06944444444444445,
+            "safe_utility": 0.7986111111111112
+          },
+          "output_caps": 0,
+          "peak_reserved_gib": 4.90234375,
+          "responses": 192,
+          "run_id": "20261103T070204Z-f0600e"
+        }
+      },
+      "contrasts": {
+        "D2-D1": {
+          "clean_acc": {
+            "degenerate": true,
+            "delta": 0,
+            "high": 0,
+            "low": 0,
+            "n_cases": 24
+          },
+          "leak": {
+            "degenerate": false,
+            "delta": -0.09027777777777778,
+            "high": -0.034722222222222224,
+            "low": -0.14583333333333331,
+            "n_cases": 24
+          },
+          "safe_utility": {
+            "degenerate": false,
+            "delta": 0.10416666666666667,
+            "high": 0.18055555555555555,
+            "low": 0.02777777777777778,
+            "n_cases": 24
+          }
+        },
+        "D2-N": {
+          "clean_acc": {
+            "degenerate": true,
+            "delta": 0,
+            "high": 0,
+            "low": 0,
+            "n_cases": 24
+          },
+          "leak": {
+            "degenerate": false,
+            "delta": 0.020833333333333332,
+            "high": 0.05555555555555555,
+            "low": -0.006944444444444444,
+            "n_cases": 24
+          },
+          "safe_utility": {
+            "degenerate": false,
+            "delta": -0.04166666666666667,
+            "high": 0.006944444444444457,
+            "low": -0.10416666666666667,
+            "n_cases": 24
+          }
+        },
+        "N-D1": {
+          "clean_acc": {
+            "degenerate": true,
+            "delta": 0,
+            "high": 0,
+            "low": 0,
+            "n_cases": 24
+          },
+          "leak": {
+            "degenerate": false,
+            "delta": -0.1111111111111111,
+            "high": -0.0625,
+            "low": -0.1597222222222222,
+            "n_cases": 24
+          },
+          "safe_utility": {
+            "degenerate": false,
+            "delta": 0.14583333333333334,
+            "high": 0.22222222222222224,
+            "low": 0.0763888888888889,
+            "n_cases": 24
+          }
+        }
+      }
+    },
+    "primary": {
+      "conditions": {
+        "D1": {
+          "metrics": {
+            "any_leak": 0.7083333333333334,
+            "auth_recall": 1,
+            "clean_acc": 0.9166666666666666,
+            "leak": 0.2638888888888889,
+            "safe_utility": 0.625
+          },
+          "output_caps": 0,
+          "peak_reserved_gib": 22.783203125,
+          "responses": 192,
+          "run_id": "20261103T070208Z-c9dcfc"
+        },
+        "D2": {
+          "metrics": {
+            "any_leak": 0.2916666666666667,
+            "auth_recall": 1,
+            "clean_acc": 0.9166666666666666,
+            "leak": 0.0625,
+            "safe_utility": 0.8402777777777778
+          },
+          "output_caps": 0,
+          "peak_reserved_gib": 23.365234375,
+          "responses": 192,
+          "run_id": "20261103T070208Z-6bbe69"
+        },
+        "N": {
+          "metrics": {
+            "any_leak": 0.4166666666666667,
+            "auth_recall": 1,
+            "clean_acc": 0.9166666666666666,
+            "leak": 0.10416666666666666,
+            "safe_utility": 0.8055555555555556
+          },
+          "output_caps": 0,
+          "peak_reserved_gib": 23.365234375,
+          "responses": 192,
+          "run_id": "20261103T070200Z-e866af"
+        }
+      },
+      "contrasts": {
+        "D2-D1": {
+          "clean_acc": {
+            "degenerate": true,
+            "delta": 0,
+            "high": 0,
+            "low": 0,
+            "n_cases": 24
+          },
+          "leak": {
+            "degenerate": false,
+            "delta": -0.2013888888888889,
+            "high": -0.1388888888888889,
+            "low": -0.2708333333333333,
+            "n_cases": 24
+          },
+          "safe_utility": {
+            "degenerate": false,
+            "delta": 0.2152777777777778,
+            "high": 0.2916666666666667,
+            "low": 0.14583333333333331,
+            "n_cases": 24
+          }
+        },
+        "D2-N": {
+          "clean_acc": {
+            "degenerate": true,
+            "delta": 0,
+            "high": 0,
+            "low": 0,
+            "n_cases": 24
+          },
+          "leak": {
+            "degenerate": false,
+            "delta": -0.041666666666666664,
+            "high": -0.013888888888888888,
+            "low": -0.07638888888888888,
+            "n_cases": 24
+          },
+          "safe_utility": {
+            "degenerate": false,
+            "delta": 0.034722222222222224,
+            "high": 0.06944444444444445,
+            "low": -4.625929269271485e-18,
+            "n_cases": 24
+          }
+        },
+        "N-D1": {
+          "clean_acc": {
+            "degenerate": true,
+            "delta": 0,
+            "high": 0,
+            "low": 0,
+            "n_cases": 24
+          },
+          "leak": {
+            "degenerate": false,
+            "delta": -0.1597222222222222,
+            "high": -0.10416666666666666,
+            "low": -0.22916666666666666,
+            "n_cases": 24
+          },
+          "safe_utility": {
+            "degenerate": false,
+            "delta": 0.18055555555555555,
+            "high": 0.25,
+            "low": 0.11805555555555555,
+            "n_cases": 24
+          }
+        }
+      }
+    }
+  },
+  "new_responses": 1152,
+  "schema_version": 1,
+  "split": "dev"
+}

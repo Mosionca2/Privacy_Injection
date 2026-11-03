@@ -1,0 +1,18 @@
+{
+  "completed_responses": 1152,
+  "completed_splits": [
+    "dev"
+  ],
+  "gpu_runs": 6,
+  "new_test_responses": 0,
+  "run_ids": [
+    "20261103T070208Z-f57b83",
+    "20261103T070204Z-48465c",
+    "20261103T070204Z-f0600e",
+    "20261103T070208Z-c9dcfc",
+    "20261103T070208Z-6bbe69",
+    "20261103T070200Z-e866af"
+  ],
+  "schema_version": 1,
+  "status": "development_complete_test_pending"
+}

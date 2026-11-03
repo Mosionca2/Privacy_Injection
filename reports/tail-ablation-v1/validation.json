@@ -1,0 +1,12 @@
+{
+  "completed_splits": [
+    "dev"
+  ],
+  "evidence_receipt_sha256": "0e411feb8a32464a06f7f3ec383c7a41990731e91cb78c3d74b7bbbe5f547b5a",
+  "local_test_duration_seconds": 50.159,
+  "local_tests_passed": 46,
+  "original_and_followup_freezes_verified": true,
+  "schema_version": 1,
+  "tests_command": "python -m unittest discover -s tests -v",
+  "verifier_sha256": "3c7ff5d214cd488e240e497364b7efd26bf61b4e9a102e1d01f42ac0ca543492"
+}

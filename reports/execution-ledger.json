@@ -1,9 +1,18 @@
 {
-  "completed_gpu_runs": 40,
+  "completed_gpu_runs": 46,
+  "followup_studies": [
+    {
+      "completion": "reports/tail-ablation-v1/completion.json",
+      "generations": 1152,
+      "gpu_runs": 6,
+      "label": "Fresh paired neutral-tail follow-up on both local snapshots"
+    }
+  ],
+  "followup_test_generations": 0,
   "formal_generations": 6144,
   "interrupted_gpu_runs": 3,
-  "real_gpu_runs": 43,
-  "real_model_generations_published": 11136,
+  "real_gpu_runs": 49,
+  "real_model_generations_published": 12288,
   "schema_version": 1,
   "scope": "Two original local-model study campaigns and separately scoped released/source recorder workflow validations. Count completed responses only; exclude CPU fixtures, skips and interrupted in-flight work.",
   "studies": [

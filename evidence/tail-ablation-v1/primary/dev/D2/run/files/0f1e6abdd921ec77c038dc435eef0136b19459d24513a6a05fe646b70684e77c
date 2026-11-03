@@ -1,0 +1,22 @@
+{
+  "diagnostics": {
+    "extension": {
+      "matched_pairs": 960,
+      "maximum_input_tokens": 365,
+      "maximum_token_difference": 0,
+      "minimum_token_difference": 0,
+      "prompt_count": 2880
+    },
+    "primary": {
+      "matched_pairs": 960,
+      "maximum_input_tokens": 365,
+      "maximum_token_difference": 0,
+      "minimum_token_difference": 0,
+      "prompt_count": 2880
+    }
+  },
+  "fresh_case_count": 120,
+  "new_model_generations": 0,
+  "original_identifier_overlap": 0,
+  "schema_version": 1
+}

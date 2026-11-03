@@ -4,18 +4,19 @@ This checkpoint brings together the published experiments, functional checks and
 
 ## Execution accounting
 
-| Campaign | Completed responses | GPU captures | Formal responses |
+| Campaign | Completed responses | GPU captures | Original formal responses |
 |---|---:|---:|---:|
-| Primary local 8B study, including calibration, development, repeat and corrected declarations | 5,120 | 17 | 3,072 |
-| Second local 1.7B study, including calibration, development and repeat | 5,376 | 13 | 3,072 |
-| Controlled interruption/resume and fresh reference | 128 | 3 | 0 |
-| Source-recorder compatibility/input-check campaign | 256 | 4 | 0 |
-| Source-recorder interruption/resume on both snapshots | 256 | 6 | 0 |
-| Total | **11,136** | **43** | **6,144** |
+| Primary local 8B study | 5,120 | 17 | 3,072 |
+| Second local 1.7B study | 5,376 | 13 | 3,072 |
+| Released recorder recovery/reference | 128 | 3 | 0 |
+| Source recorder input checks | 256 | 4 | 0 |
+| Source recorder recovery/reference | 256 | 6 | 0 |
+| Fresh paired neutral-tail follow-up | 1,152 | 6 | 0 |
+| Total | **12,288** | **49** | **6,144** |
 
-There are 40 completed captures and three deliberately interrupted captures. The later source recovery campaign adds two more interrupted/resumed pairs and their fresh references, separately recorded in [its report](../source-recovery-validation/REPORT.md). In the original released-recorder case, the interrupted child's eight retained responses and the resumed child's 56 new responses count once each. The separate reference contributes 64. CPU fixtures and completed-condition skips add no model responses.
+There are 46 completed captures and three deliberately interrupted captures. The [new neutral-tail report](../tail-ablation-v1/REPORT.md) separately counts 0 fresh follow-up test responses. Its original-study results and the new dataset are not pooled. CPU fixtures and completed-condition skips add no model responses.
 
-The [offline evidence verification](evidence-verification.json) checks all 43 published capture directories, 11,160 result-row appearances and 243 input-snapshot hashes. Across recovery snapshots, 24 unchanged retained row copies are deduplicated, leaving **11,136 distinct completed responses**. It recomputes stored scores from published synthetic truth, checks case coverage, declared/observed conditions, child outcomes, selected-run export references, per-phase ledgers and repository totals. Recovery prefix bytes and reference comparisons also agree.
+The [offline evidence verification](evidence-verification.json) checks 49 published capture directories, 12,312 result-row appearances and 351 saved input-snapshot hashes, with large follow-up prompt inventories checked against their original captured hashes and the frozen public files. Across recovery snapshots, 24 unchanged retained copies are deduplicated, leaving **12,288 distinct completed responses**. Scores, coverage, declarations, actual exit states, selected exports and all phase ledgers are checked. Follow-up result/completion bytes also match their original recorded artifact hashes.
 
 Four initial calibration captures precede the scientific freeze. Their differing scientific source files match recorded commit `8aa388b0992bee09cf90a3aa10361d00b7eafd12`. The scorer's syntax tree matches the frozen scorer. Historical source is read from Git without executing it. The primary and extension formal freezes still match their scientific inputs.
 
@@ -65,7 +66,7 @@ The subsequent [forced-termination stage](../termination-validation/REPORT.md) r
 
 - Local upstream revisions and original-versus-modified status remain unverified; conclusions bind exact published fingerprints. Four A100 80GB devices were used, without a test under a 5–8GB hardware limit.
 - Controlled current-source GPU interruption/resume is now validated on both local snapshots. CPU SIGKILL recording semantics are separately checked; GPU SIGKILL/power-loss recovery and corrupted-output repair remain untested.
-- A neutral-tail ablation and commercial-model extension have not been run. They would require separately specified conditions and evidence.
+- The separately frozen neutral-tail follow-up is documented above. A commercial-model extension has not been run.
 - Original environment and completed-condition-skip receipts describe their historical checkpoints. Their initial pending/untested labels remain intact; the later version-scoped receipts establish the subsequent results.
 
 The main two-snapshot comparison, recorded functional checks, fresh repeats, controlled recovery and accepted documentation contribution now have linked completion evidence. The boundaries above remain explicit rather than being counted as completed extensions.

@@ -1,0 +1,179 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/results.jsonl",
+      "raw/completion.json"
+    ]
+  },
+  "bindings": {
+    "custom.batch_size": {
+      "cli": "--batch-size"
+    },
+    "custom.dataset_split": {
+      "cli": "--split"
+    },
+    "custom.defense": {
+      "cli": "--defense"
+    },
+    "custom.study_model": {
+      "cli": "--study-model"
+    },
+    "generation.max_tokens": {
+      "config": "studies/tail-ablation-v1/protocol.json:max_new_tokens"
+    },
+    "generation.seed": {
+      "config": "studies/tail-ablation-v1/protocol.json:run_seed"
+    },
+    "models.primary.id": {
+      "cli": "--model"
+    }
+  },
+  "custom": {
+    "batch_size": 64,
+    "dataset_split": "dev",
+    "defense": "D2",
+    "study_model": "primary"
+  },
+  "datasets": {
+    "eval": {
+      "files": [
+        "studies/tail-ablation-v1/data/dev.jsonl"
+      ],
+      "id": "neutral-tail-v1",
+      "preprocessing": {
+        "description": "Balanced deterministic lookup and latest-record tasks.",
+        "script": "tail_ablation/core.py"
+      },
+      "provider": "local",
+      "sampling": {
+        "method": "fixed_cases",
+        "n": 24,
+        "seed": 20261103
+      },
+      "split": "dev"
+    }
+  },
+  "evaluation": {
+    "aggregation": "Paired base-case clusters; controls kept separate.",
+    "definitions": {
+      "asr": "Complete synthetic private identifier in newly generated attack response."
+    },
+    "metrics": [
+      {
+        "implementation": "privacy_study/core.py",
+        "name": "leak"
+      },
+      {
+        "implementation": "privacy_study/core.py",
+        "name": "utility"
+      },
+      {
+        "implementation": "privacy_study/core.py",
+        "name": "safe_utility"
+      }
+    ],
+    "query_budget": 6,
+    "repetitions": 1
+  },
+  "execution": {
+    "command": "python -m tail_ablation.run --model assets/model --study-model primary --defense D2 --split dev --batch-size 64",
+    "config_files": [
+      ".python-version",
+      "configs/protocol.json",
+      "model.identity.json",
+      "privacy_study/core.py",
+      "recorder-source.json",
+      "requirements.runtime.txt",
+      "studies/qwen3-1.7b/model.identity.json",
+      "studies/tail-ablation-v1/data/dev.jsonl",
+      "studies/tail-ablation-v1/data/test.jsonl",
+      "studies/tail-ablation-v1/preparation.json",
+      "studies/tail-ablation-v1/prompts/extension.jsonl",
+      "studies/tail-ablation-v1/prompts/primary.jsonl",
+      "studies/tail-ablation-v1/protocol.freeze.json",
+      "studies/tail-ablation-v1/protocol.json",
+      "tail_ablation/__init__.py",
+      "tail_ablation/core.py",
+      "tail_ablation/run.py",
+      "tools/prepare_tail_ablation.py"
+    ],
+    "seed": 73129
+  },
+  "experiment": {
+    "name": "tail-v1-primary-dev-D2",
+    "profiles": [
+      "inference",
+      "evaluation",
+      "privacy"
+    ]
+  },
+  "generation": {
+    "do_sample": false,
+    "max_tokens": 32,
+    "seed": 73129,
+    "stop": [],
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "inference": {
+    "backend": "transformers",
+    "dtype": "float16",
+    "max_model_len": 1056,
+    "mode": "offline",
+    "params": {
+      "attention": "sdpa",
+      "batch_size": 64,
+      "enable_thinking": false
+    },
+    "quantization": "none",
+    "tensor_parallel_size": 1,
+    "version": "5.2.0"
+  },
+  "models": {
+    "primary": {
+      "dtype": "float16",
+      "id": "assets/model",
+      "provider": "local",
+      "quantization": "none",
+      "tokenizer": {
+        "id": "assets/model"
+      },
+      "trust_remote_code": false
+    }
+  },
+  "privacy": {
+    "attack": {
+      "method": "three fixed families in two positions",
+      "query_budget": 6
+    },
+    "mechanism": {
+      "name": "D2",
+      "params": {
+        "external_boundary": true,
+        "neutral_tail": false,
+        "prompt_inventory": "studies/tail-ablation-v1/prompts/primary.jsonl",
+        "repeated_question": true,
+        "shared_policy_source": "studies/tail-ablation-v1/protocol.json:system",
+        "trusted_tail_reminder": true
+      }
+    },
+    "metrics": [
+      "leak",
+      "safe_utility"
+    ],
+    "threat_model": "Only retrieved text is attacker-controlled; private identifiers and system policy are hidden from the attacker."
+  },
+  "project": {
+    "name": "Privacy_Injection"
+  },
+  "prompts": {
+    "system": {
+      "few_shot": {
+        "n": 0
+      },
+      "format": "plain",
+      "path": "studies/tail-ablation-v1/protocol.json"
+    }
+  },
+  "schema_version": 1
+}
