@@ -24,7 +24,7 @@ Model weights and machine-specific configuration are not distributed here. Execu
 
 ## Recorded execution
 
-`privacy_study.record` prepares separate condition workspaces, declares relative local-model assets, adds project rules, creates an offline lock, and wraps genuine GPU inference with ReproLLM. On filesystems supporting hard links, existing local weights can be shared without duplicating their bytes. Model assets remain ignored by Git.
+`privacy_study.record` contains the frozen original recording implementation. For new model-study workspaces from the current checkout, use `tools/prepare_extension.py`: it accepts committed recording metadata, reuses matching rules, adds missing rules, and rejects conflicting rule definitions. Each new condition requires a fresh offline lock and committed inputs before inference. On filesystems supporting hard links, existing local weights can be shared without duplicating their bytes. Model assets remain ignored by Git.
 
 The inference entry point is:
 
@@ -70,9 +70,9 @@ Read the [second-model report, charts and cross-model comparisons](reports/exten
 
 ## ReproLLM upstream documentation contribution
 
-A concrete isolated-condition recording guide has been submitted from [Mosionca2/ReproLLM](https://github.com/Mosionca2/ReproLLM) as [Docs Issue #11](https://github.com/EnumaElish123/ReproLLM/issues/11) and [Draft PR #12](https://github.com/EnumaElish123/ReproLLM/pull/12). Its four documentation files cover independent workspaces, local/offline lock scope, bindings, explicit cross-workspace diff and selected historical export. The proposal is awaiting maintainer review.
+A concrete isolated-condition recording guide from [Mosionca2/ReproLLM](https://github.com/Mosionca2/ReproLLM) was accepted through [Docs Issue #11](https://github.com/EnumaElish123/ReproLLM/issues/11) and [merged PR #12](https://github.com/EnumaElish123/ReproLLM/pull/12), upstream commit `ad8b2c7`. Its four documentation files cover independent workspaces, local/offline lock scope, bindings, explicit cross-workspace diff and selected historical export.
 
-[Local validation evidence](reports/reprollm-contribution-validation.json) records four CPU-only command rehearsals across released 0.6.1 and source 0.7.0, plus link/navigation checks. These CPU rehearsals add no model generations; current model-response totals are in the repository execution ledger. Upstream CI currently reports `action_required`; no CI success or upstream acceptance is claimed.
+[The validation receipt](reports/reprollm-contribution-validation.json) records four CPU-only command rehearsals across released 0.6.1 and source 0.7.0, link/navigation checks, the approving review and five successful upstream CI platform jobs. Maintainer assistance covered content/placement review, fork-workflow approval and merge; it did not independently replicate the scientific results. The CPU rehearsals add no model generations; current model-response totals are in the repository execution ledger.
 
 ## Real-GPU interruption and recovery
 

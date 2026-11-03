@@ -12,6 +12,54 @@ from privacy_study import record
 from tools.complete_recording_metadata import complete
 
 
+RULE_BINDINGS = (
+    ('defense', '--defense'),
+    ('dataset_split', '--split'),
+    ('batch_size', '--batch-size'),
+)
+
+
+def ensure_rules(work, cli):
+    from reprollm.core.project_rules import load_project_rules
+
+    document = load_project_rules(work)
+    existing = {rule.id: rule for rule in document.rules} if document else {}
+    missing = []
+    for field, flag in RULE_BINDINGS:
+        identifier = f'project.{field}'
+        rule = existing.get(identifier)
+        if rule is None:
+            missing.append((identifier, field, flag))
+        elif (rule.field != f'custom.{field}' or rule.severity != 'CRITICAL'
+              or rule.bindings is None or rule.bindings.cli != flag
+              or rule.bindings.config is not None or rule.bindings.env is not None):
+            raise ValueError(f'Conflicting project rule {identifier}; expected CRITICAL '
+                             f'custom.{field} bound only to {flag}. Review the source rules.')
+    for identifier, field, flag in missing:
+        record.command([cli, 'rules', 'add', '--id', identifier, '--field', f'custom.{field}',
+                        '--severity', 'CRITICAL', '--reason',
+                        'This declared value must agree with actual execution.', f'--cli={flag}'], work)
+
+
+def extension_workspace(source, destination, model):
+    """Reuse committed recording setup only inside a new disposable clone."""
+    source, work = Path(source).resolve(), Path(destination).resolve()
+    if work.exists():
+        raise ValueError('Use a new condition workspace, or resume its existing declaration.')
+    record.command(['git', 'clone', '--quiet', '--no-hardlinks', source, work], source)
+    record.command(['git', 'remote', 'set-url', 'origin',
+                    'https://github.com/Mosionca2/Privacy_Injection.git'], work)
+    cli = Path(sys.executable).with_name('reprollm')
+    if not (work / 'reprollm.yaml').exists():
+        record.command([cli, 'init', '.', '--profiles', 'inference,evaluation,privacy'], work,
+                       output=work / 'raw/init.txt')
+    ensure_rules(work, cli)
+    # An inherited condition's lock must never be mistaken for this new declaration.
+    (work / 'reprollm.lock').unlink(missing_ok=True)
+    record.link_model(model, work)
+    return work
+
+
 def validate_study(study, source=ROOT):
     study, source = Path(study), Path(source)
     spec = c.read_json(study / 'study.json')
@@ -34,13 +82,13 @@ def validate_study(study, source=ROOT):
 
 def prepare(study, destination, model, defense, split, batch_size, limit=None):
     study = Path(study).resolve()
-    validate_study(study)
+    validate_study(study, ROOT)
     frozen = study / 'protocol.freeze.json'
     if split == 'test' and (not frozen.exists() or limit is not None):
         raise ValueError('Formal extension needs its own freeze and all held-out cases.')
     identity = c.read_json(study / 'model.identity.json')
     c.asset_state(model, identity, verify_large=True)
-    work = record.workspace(ROOT, destination, model, defense, split, batch_size, limit)
+    work = extension_workspace(ROOT, destination, model)
     for entry in identity['files']:
         target = work / 'assets/model' / entry['name']
         if not target.exists():

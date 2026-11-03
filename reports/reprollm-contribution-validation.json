@@ -84,7 +84,56 @@
   "schema_version": 1,
   "source_base_commit": "8772904e0f6baeefbc0499e02a27e303c995e64e",
   "source_cli_selected_via_pythonpath_without_changing_existing_environment": true,
+  "upstream_acceptance": {
+    "accepted_scope": "Documentation placement and content; no independent scientific-result replication.",
+    "issue_state": "closed",
+    "maintainer_assistance": "Content/placement review, fork-workflow approval and merge.",
+    "merge_commit": "ad8b2c7057b6473072b65102eaf8e122b647acec",
+    "merged_at_utc": "2026-11-02T15:04:15Z",
+    "pull_request_state": "MERGED",
+    "review_state": "APPROVED",
+    "review_submitted_at_utc": "2026-11-02T14:27:37Z",
+    "reviewed_head": "5ddbf4b37a1d8fd69567e7aba40aaee61725cb9a",
+    "reviewer": "EnumaElish123"
+  },
   "upstream_ci": {
+    "attempt": 2,
+    "conclusion": "success",
+    "head_commit": "5ddbf4b37a1d8fd69567e7aba40aaee61725cb9a",
+    "jobs": [
+      {
+        "conclusion": "success",
+        "name": "quality / ubuntu-latest / py3.12",
+        "url": "https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597/job/125317179775"
+      },
+      {
+        "conclusion": "success",
+        "name": "quality / ubuntu-latest / py3.10",
+        "url": "https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597/job/125317180292"
+      },
+      {
+        "conclusion": "success",
+        "name": "quality / windows-latest / py3.12",
+        "url": "https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597/job/125317180322"
+      },
+      {
+        "conclusion": "success",
+        "name": "quality / macos-latest / py3.12",
+        "url": "https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597/job/125317180412"
+      },
+      {
+        "conclusion": "success",
+        "name": "quality / ubuntu-latest / py3.11",
+        "url": "https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597/job/125317180497"
+      }
+    ],
+    "passed": true,
+    "run_id": 41445173597,
+    "scope": "Upstream GitHub Actions results; separate from the local documentation rehearsals.",
+    "status": "completed",
+    "url": "https://github.com/EnumaElish123/ReproLLM/actions/runs/41445173597"
+  },
+  "upstream_ci_initial": {
     "conclusion": "action_required",
     "head_commit": "5ddbf4b37a1d8fd69567e7aba40aaee61725cb9a",
     "passed": false,
