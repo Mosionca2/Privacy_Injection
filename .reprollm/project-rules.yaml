@@ -33,4 +33,15 @@ rules:
     cli: --batch-size
     config: null
     env: null
+- id: project.study_model
+  field: custom.study_model
+  severity: CRITICAL
+  reason: The selected local snapshot must match the follow-up command.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-03T06:56:51Z'
+  bindings:
+    cli: --study-model
+    config: null
+    env: null
 ignored_candidates: []
