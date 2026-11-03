@@ -2,6 +2,8 @@
 
 A controlled local-model study of confidentiality and task completion under injected instructions in retrieved text. ReproLLM records actual executions and their declared inputs. All identifiers are synthetic; models have no tools, network actions, or access to real credentials.
 
+Read the [delivery checkpoint and functional coverage](reports/delivery/REPORT.md) for the consolidated evidence, accepted upstream contribution and remaining limits. The offline verifier checks response accounting and published input snapshots without running inference.
+
 The paired design uses two tasks (entity lookup and latest-record lookup), four prompt interventions, three attack families, two injection positions, and separate clean and authorized-copy controls. There are 24 development cases and 96 held-out cases. A complete single-model formal experiment requires 3,072 newly generated responses. The statistical unit is the base case, not each response.
 
 - D0: confidentiality policy with plain record presentation.
