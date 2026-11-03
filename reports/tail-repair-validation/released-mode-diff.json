@@ -1,0 +1,112 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261103T081438Z-d4bcfb/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "inspect",
+      "b": "repair",
+      "note": null,
+      "path": "custom.mode",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "9f63e50804b6a8cd9f3b26ed4bcc23b43ce81b56",
+      "b": "6d3e2415203d5542dee01fd7be1d3e91697a887c",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "repair.py",
+        "--input",
+        "inputs/checkpoint.jsonl",
+        "--identity",
+        "inputs/identity.json",
+        "--mode",
+        "inspect"
+      ],
+      "b": [
+        "python",
+        "repair.py",
+        "--input",
+        "inputs/checkpoint.jsonl",
+        "--identity",
+        "inputs/identity.json",
+        "--mode",
+        "repair",
+        "--sha256",
+        "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162",
+        "--output-directory",
+        "raw/bundle"
+      ],
+      "note": null,
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python repair.py --input inputs/checkpoint.jsonl --identity inputs/identity.json --mode inspect",
+      "b": "python repair.py --input inputs/checkpoint.jsonl --identity inputs/identity.json --mode repair --sha256 725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162 --output-directory raw/bundle",
+      "note": null,
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 3.786146,
+      "b": 2.638394,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T08:14:42Z",
+      "b": "2026-11-03T08:14:35Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261103T081438Z-d4bcfb",
+      "b": "20261103T081433Z-7a2fef",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T08:14:38Z",
+      "b": "2026-11-03T08:14:33Z",
+      "note": null,
+      "path": "started_at",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.6.1",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 4,
+      "MEDIUM_HIGH": 0,
+      "NONE": 4
+    },
+    "highest": "MEDIUM",
+    "same": 59
+  }
+}

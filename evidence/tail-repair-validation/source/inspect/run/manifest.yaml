@@ -1,0 +1,38 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/bundle/*.json",
+      "raw/bundle/*.jsonl",
+      "raw/bundle/*.bin"
+    ]
+  },
+  "bindings": {
+    "custom.input_file": {
+      "cli": "--input"
+    },
+    "custom.mode": {
+      "cli": "--mode"
+    }
+  },
+  "custom": {
+    "input_file": "inputs/checkpoint.jsonl",
+    "mode": "inspect"
+  },
+  "execution": {
+    "command": "python repair.py --input inputs/checkpoint.jsonl --identity inputs/identity.json --mode inspect",
+    "config_files": [
+      "repair.py",
+      "inputs/checkpoint.jsonl",
+      "inputs/identity.json",
+      "inputs/derivation.json"
+    ]
+  },
+  "experiment": {
+    "name": "source-inspect",
+    "profiles": []
+  },
+  "project": {
+    "name": "result_tail_repair_fixture"
+  },
+  "schema_version": 1
+}

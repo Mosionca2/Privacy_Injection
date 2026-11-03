@@ -1,0 +1,545 @@
+{
+  "files": [
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/REPRODUCIBILITY.md",
+      "sha256": "94bb0f18c6ab8c808cd0e745d569cd5093e85901e47fdfff15ac9b50f8a44af4"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/inputs/checkpoint.jsonl",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/inputs/derivation.json",
+      "sha256": "b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/inputs/genuine-prefix.jsonl",
+      "sha256": "48e50884d24def883d9672cfed8cddeedb8fe211887cc73616f3480f692a0010"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/inputs/identity.json",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/project-rules.yaml",
+      "sha256": "61d7ffc2cce943c254a3d40f3d7619d71c1c0afbbd1e8417364b658a2eb97321"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/reprollm.lock",
+      "sha256": "848ece602fc216125b505d6cfcc5413199f40746b2de4b8e12f9aa905a18fb85"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/reprollm.yaml",
+      "sha256": "3030f0aa3862fb752377de4c66a96aed0f3447d39ab6da33cb15172d257053ff"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/files/725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/files/b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c",
+      "sha256": "b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/files/f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/lock.yaml",
+      "sha256": "848ece602fc216125b505d6cfcc5413199f40746b2de4b8e12f9aa905a18fb85"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/manifest.yaml",
+      "sha256": "3030f0aa3862fb752377de4c66a96aed0f3447d39ab6da33cb15172d257053ff"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/run.json",
+      "sha256": "95e06cc70643200213e9fab616e2540072b2e22186c881faaac5352e62837601"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/run/stdout.log",
+      "sha256": "c272313a788d30fc8b05c34b943781f74e060d3533e1fd09b33b3e8b13bb5c4c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/inspect/runtime-witness.json",
+      "sha256": "0ff2d79e06949dd91f0ac65a1ac708280ad5f77ca0881a77f755bfa42a963ae7"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/REPRODUCIBILITY.md",
+      "sha256": "feaaf2ac223ab36161b80db365327c179a52d8b1ee00f32db8a45676abfe4a5c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/inputs/checkpoint.jsonl",
+      "sha256": "cf3c9995d52c4a60ec8762fbd999523adf560772be8825184ea37363294aec3d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/inputs/derivation.json",
+      "sha256": "9bd07b9b7dd87576807a0f5e2910b742a2633bbee2a38f4fb690515d6bfc62b0"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/inputs/genuine-prefix.jsonl",
+      "sha256": "48e50884d24def883d9672cfed8cddeedb8fe211887cc73616f3480f692a0010"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/inputs/identity.json",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/project-rules.yaml",
+      "sha256": "61d7ffc2cce943c254a3d40f3d7619d71c1c0afbbd1e8417364b658a2eb97321"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/reprollm.lock",
+      "sha256": "4d78ed5dc63e8e7c56328ed4a5bd74311df9b8d39b7cc8469d9995a2090eb1fa"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/reprollm.yaml",
+      "sha256": "6f095bdb30f62e2439be27700166d3d5fcc1522dc12e4d06741bfd839aa668f9"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/files/9bd07b9b7dd87576807a0f5e2910b742a2633bbee2a38f4fb690515d6bfc62b0",
+      "sha256": "9bd07b9b7dd87576807a0f5e2910b742a2633bbee2a38f4fb690515d6bfc62b0"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/files/cf3c9995d52c4a60ec8762fbd999523adf560772be8825184ea37363294aec3d",
+      "sha256": "cf3c9995d52c4a60ec8762fbd999523adf560772be8825184ea37363294aec3d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/files/f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/lock.yaml",
+      "sha256": "4d78ed5dc63e8e7c56328ed4a5bd74311df9b8d39b7cc8469d9995a2090eb1fa"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/manifest.yaml",
+      "sha256": "6f095bdb30f62e2439be27700166d3d5fcc1522dc12e4d06741bfd839aa668f9"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/run.json",
+      "sha256": "33b722247c22576986179c0067b288eac76cbe24c8e1b7dd7b26e5bb407602f3"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/stderr.log",
+      "sha256": "d86341686028113990f270ca529509952279cbec83a09c54d232387671db3898"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/run/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/refuse-complete-failure/runtime-witness.json",
+      "sha256": "0ff2d79e06949dd91f0ac65a1ac708280ad5f77ca0881a77f755bfa42a963ae7"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/REPRODUCIBILITY.md",
+      "sha256": "09b84f3af061b60a28811bf117045b8677155151a4aa8639cbde7a78b603690d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/bundle/damaged.jsonl",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/bundle/receipt.json",
+      "sha256": "253dd1b9d90d44e68861b34f759f8447145a23364a838c9ba681602ce620b9f9"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/bundle/repaired.jsonl",
+      "sha256": "3fa5bdfbe402084a9d6c12ebbf8990556ec137e20d06a20999e04358e44f4857"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/bundle/unfinished-tail.bin",
+      "sha256": "9b58562b148fa0ad5a87f1867e382ebdaffd475827e5c05e6813daefa812e50f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/inputs/checkpoint.jsonl",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/inputs/derivation.json",
+      "sha256": "b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/inputs/genuine-prefix.jsonl",
+      "sha256": "48e50884d24def883d9672cfed8cddeedb8fe211887cc73616f3480f692a0010"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/inputs/identity.json",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/project-rules.yaml",
+      "sha256": "61d7ffc2cce943c254a3d40f3d7619d71c1c0afbbd1e8417364b658a2eb97321"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/reprollm.lock",
+      "sha256": "e943c7bd683bef8fffee530805a622584dc05f722a4f3377fce48d706744c72a"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/reprollm.yaml",
+      "sha256": "f08c9216b3671c21a325ed2eae425aa87546553e75635a3fc3b8d5425496aa5a"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/files/725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/files/b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c",
+      "sha256": "b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/files/f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/lock.yaml",
+      "sha256": "e943c7bd683bef8fffee530805a622584dc05f722a4f3377fce48d706744c72a"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/manifest.yaml",
+      "sha256": "f08c9216b3671c21a325ed2eae425aa87546553e75635a3fc3b8d5425496aa5a"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/run.json",
+      "sha256": "b7d1e95970226eb7bd3c57026798b82a67b84533fc9439412e22c7a26ceb4b62"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/run/stdout.log",
+      "sha256": "253dd1b9d90d44e68861b34f759f8447145a23364a838c9ba681602ce620b9f9"
+    },
+    {
+      "path": "evidence/tail-repair-validation/released/repair/runtime-witness.json",
+      "sha256": "0ff2d79e06949dd91f0ac65a1ac708280ad5f77ca0881a77f755bfa42a963ae7"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/REPRODUCIBILITY.md",
+      "sha256": "c02dfa6387ba93b622040031c6a98596bb59322bbac2a7d76b8667cb5d78724a"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/inputs/checkpoint.jsonl",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/inputs/derivation.json",
+      "sha256": "b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/inputs/genuine-prefix.jsonl",
+      "sha256": "48e50884d24def883d9672cfed8cddeedb8fe211887cc73616f3480f692a0010"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/inputs/identity.json",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/project-rules.yaml",
+      "sha256": "2cef52c74f6c1155de7719f6f8d235d82c5bf23e6f33463e41dfeef200dd497f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/reprollm.lock",
+      "sha256": "99d797fefb08ca2245d2f1a5e7b1a7ff614991d80666c04482c939e29d8371ff"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/reprollm.yaml",
+      "sha256": "a4abad8d27af066d7b3ad800d68b104f4ded89ff6705df704d9911dedc076bf1"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/files/725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/files/b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c",
+      "sha256": "b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/files/f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/lock.yaml",
+      "sha256": "99d797fefb08ca2245d2f1a5e7b1a7ff614991d80666c04482c939e29d8371ff"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/manifest.yaml",
+      "sha256": "a4abad8d27af066d7b3ad800d68b104f4ded89ff6705df704d9911dedc076bf1"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/run.json",
+      "sha256": "442e098d2218e2b1f3dddad760beb9f96dbcc319787659e8c6d221e5a1ed1625"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/run/stdout.log",
+      "sha256": "cf199d87f6c47728d03d555c6dac911377070f7c9d7de677f135f95386cdad33"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/inspect/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/REPRODUCIBILITY.md",
+      "sha256": "d4ef728626c16ecb593dca7ad3269f68cf1624a8c71c5eb1fd9d29fc0fa61d00"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/inputs/checkpoint.jsonl",
+      "sha256": "cf3c9995d52c4a60ec8762fbd999523adf560772be8825184ea37363294aec3d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/inputs/derivation.json",
+      "sha256": "9bd07b9b7dd87576807a0f5e2910b742a2633bbee2a38f4fb690515d6bfc62b0"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/inputs/genuine-prefix.jsonl",
+      "sha256": "48e50884d24def883d9672cfed8cddeedb8fe211887cc73616f3480f692a0010"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/inputs/identity.json",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/project-rules.yaml",
+      "sha256": "2cef52c74f6c1155de7719f6f8d235d82c5bf23e6f33463e41dfeef200dd497f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/reprollm.lock",
+      "sha256": "755b1cdd4000bce37b7b248b35b83c6ca3ef1ad1b07f88ebcdaed59dd9184ab1"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/reprollm.yaml",
+      "sha256": "f218dfc61fce84575b5455d7363c941c01a8318387c2c37a38b025e0e5eca585"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/files/9bd07b9b7dd87576807a0f5e2910b742a2633bbee2a38f4fb690515d6bfc62b0",
+      "sha256": "9bd07b9b7dd87576807a0f5e2910b742a2633bbee2a38f4fb690515d6bfc62b0"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/files/cf3c9995d52c4a60ec8762fbd999523adf560772be8825184ea37363294aec3d",
+      "sha256": "cf3c9995d52c4a60ec8762fbd999523adf560772be8825184ea37363294aec3d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/files/f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/lock.yaml",
+      "sha256": "755b1cdd4000bce37b7b248b35b83c6ca3ef1ad1b07f88ebcdaed59dd9184ab1"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/manifest.yaml",
+      "sha256": "f218dfc61fce84575b5455d7363c941c01a8318387c2c37a38b025e0e5eca585"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/run.json",
+      "sha256": "9fd0da749e002e6a1d01fb361ce44ce709a3dba5e890906aaf923ab993a45ce5"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/stderr.log",
+      "sha256": "d86341686028113990f270ca529509952279cbec83a09c54d232387671db3898"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/run/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/refuse-complete-failure/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/REPRODUCIBILITY.md",
+      "sha256": "bd6b698329d78f3596a6c7234319d03fb1b3ab573f40cb85a59e70081f48c75c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/bundle/damaged.jsonl",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/bundle/receipt.json",
+      "sha256": "565e0885042dce786e3fd6ffde55c8c9ba04bf7cb140f1b5de7737631b35d141"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/bundle/repaired.jsonl",
+      "sha256": "3fa5bdfbe402084a9d6c12ebbf8990556ec137e20d06a20999e04358e44f4857"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/bundle/unfinished-tail.bin",
+      "sha256": "9b58562b148fa0ad5a87f1867e382ebdaffd475827e5c05e6813daefa812e50f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/inputs/checkpoint.jsonl",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/inputs/derivation.json",
+      "sha256": "b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/inputs/genuine-prefix.jsonl",
+      "sha256": "48e50884d24def883d9672cfed8cddeedb8fe211887cc73616f3480f692a0010"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/inputs/identity.json",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/project-rules.yaml",
+      "sha256": "2cef52c74f6c1155de7719f6f8d235d82c5bf23e6f33463e41dfeef200dd497f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/reprollm.lock",
+      "sha256": "54e27655f1a75b66c17dae9bd46cccc6cad80f73954315d9cead3301dbd1f20d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/reprollm.yaml",
+      "sha256": "7a7301a9df9afcd3952538c6cb70750053281630d44e1ca93de0f23f7cff695d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/files/725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162",
+      "sha256": "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/files/b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c",
+      "sha256": "b59280c60e66bd7168600b1e58bc0d61fb061a514313bdc10ea4440b5818454c"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/files/f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace",
+      "sha256": "f1b35f7ab76b80a8219a1f17c9fa9c6c59b439bba072cc0f7024c7c10e09aace"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/lock.yaml",
+      "sha256": "54e27655f1a75b66c17dae9bd46cccc6cad80f73954315d9cead3301dbd1f20d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/manifest.yaml",
+      "sha256": "7a7301a9df9afcd3952538c6cb70750053281630d44e1ca93de0f23f7cff695d"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/run.json",
+      "sha256": "bd1f23c18a2a9ca95f9880e3fe1811e3869c798801d56b0ef07d82c5f6348364"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/run/stdout.log",
+      "sha256": "565e0885042dce786e3fd6ffde55c8c9ba04bf7cb140f1b5de7737631b35d141"
+    },
+    {
+      "path": "evidence/tail-repair-validation/source/repair/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    }
+  ],
+  "new_model_generations": 0,
+  "original_run_bytes_preserved": true,
+  "recorded_output_hashes_checked": [
+    {
+      "declared_path": "raw/bundle/damaged.jsonl",
+      "published_file": "evidence/tail-repair-validation/released/repair/bundle/damaged.jsonl",
+      "run_id": "20261103T081433Z-7a2fef",
+      "sha256": "sha256:725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "declared_path": "raw/bundle/receipt.json",
+      "published_file": "evidence/tail-repair-validation/released/repair/bundle/receipt.json",
+      "run_id": "20261103T081433Z-7a2fef",
+      "sha256": "sha256:253dd1b9d90d44e68861b34f759f8447145a23364a838c9ba681602ce620b9f9"
+    },
+    {
+      "declared_path": "raw/bundle/repaired.jsonl",
+      "published_file": "evidence/tail-repair-validation/released/repair/bundle/repaired.jsonl",
+      "run_id": "20261103T081433Z-7a2fef",
+      "sha256": "sha256:3fa5bdfbe402084a9d6c12ebbf8990556ec137e20d06a20999e04358e44f4857"
+    },
+    {
+      "declared_path": "raw/bundle/unfinished-tail.bin",
+      "published_file": "evidence/tail-repair-validation/released/repair/bundle/unfinished-tail.bin",
+      "run_id": "20261103T081433Z-7a2fef",
+      "sha256": "sha256:9b58562b148fa0ad5a87f1867e382ebdaffd475827e5c05e6813daefa812e50f"
+    },
+    {
+      "declared_path": "raw/bundle/damaged.jsonl",
+      "published_file": "evidence/tail-repair-validation/source/repair/bundle/damaged.jsonl",
+      "run_id": "20261103T081441Z-a0b597",
+      "sha256": "sha256:725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162"
+    },
+    {
+      "declared_path": "raw/bundle/receipt.json",
+      "published_file": "evidence/tail-repair-validation/source/repair/bundle/receipt.json",
+      "run_id": "20261103T081441Z-a0b597",
+      "sha256": "sha256:565e0885042dce786e3fd6ffde55c8c9ba04bf7cb140f1b5de7737631b35d141"
+    },
+    {
+      "declared_path": "raw/bundle/repaired.jsonl",
+      "published_file": "evidence/tail-repair-validation/source/repair/bundle/repaired.jsonl",
+      "run_id": "20261103T081441Z-a0b597",
+      "sha256": "sha256:3fa5bdfbe402084a9d6c12ebbf8990556ec137e20d06a20999e04358e44f4857"
+    },
+    {
+      "declared_path": "raw/bundle/unfinished-tail.bin",
+      "published_file": "evidence/tail-repair-validation/source/repair/bundle/unfinished-tail.bin",
+      "run_id": "20261103T081441Z-a0b597",
+      "sha256": "sha256:9b58562b148fa0ad5a87f1867e382ebdaffd475827e5c05e6813daefa812e50f"
+    }
+  ],
+  "schema_version": 1
+}

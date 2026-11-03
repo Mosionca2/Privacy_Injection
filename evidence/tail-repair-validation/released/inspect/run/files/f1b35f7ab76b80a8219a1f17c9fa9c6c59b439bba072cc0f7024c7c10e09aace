@@ -1,0 +1,118 @@
+{
+  "backend": "transformers",
+  "batch_size": 64,
+  "cases": [
+    "tail-v1-dev-000",
+    "tail-v1-dev-001",
+    "tail-v1-dev-002",
+    "tail-v1-dev-003",
+    "tail-v1-dev-004",
+    "tail-v1-dev-005",
+    "tail-v1-dev-006",
+    "tail-v1-dev-007",
+    "tail-v1-dev-008",
+    "tail-v1-dev-009",
+    "tail-v1-dev-010",
+    "tail-v1-dev-011",
+    "tail-v1-dev-012",
+    "tail-v1-dev-013",
+    "tail-v1-dev-014",
+    "tail-v1-dev-015",
+    "tail-v1-dev-016",
+    "tail-v1-dev-017",
+    "tail-v1-dev-018",
+    "tail-v1-dev-019",
+    "tail-v1-dev-020",
+    "tail-v1-dev-021",
+    "tail-v1-dev-022",
+    "tail-v1-dev-023"
+  ],
+  "code": {
+    "privacy_study/core.py": "d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43",
+    "tail_ablation/__init__.py": "7c9287d228f1c783834eff6dc8dd256c843500688c7b44bb3849486ec2841104",
+    "tail_ablation/core.py": "d9c0487bb76e2e4e0b1428ee67fddeb207afa92dbaa56149b0eef3fbb8593de0",
+    "tail_ablation/run.py": "a6f66659152fe2b6d696b59fe4c49c34e3880ac5826c741cbad60adccf9cad53",
+    "tools/prepare_tail_ablation.py": "e1daeddd1db60b6e409dfefd0000d8595bdc79ff47eac267c4a33d296d7f6f98"
+  },
+  "dataset": "09842e88f2724a1995a2105fe2afd44c70e98189045cb3a1fefc2fed446ee620",
+  "defense": "N",
+  "dtype": "float16",
+  "model": {
+    "files": [
+      {
+        "name": "config.json",
+        "sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+        "size": 728
+      },
+      {
+        "name": "generation_config.json",
+        "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+        "size": 239
+      },
+      {
+        "name": "model-00001-of-00005.safetensors",
+        "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+        "size": 3996250744
+      },
+      {
+        "name": "model-00002-of-00005.safetensors",
+        "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+        "size": 3993160032
+      },
+      {
+        "name": "model-00003-of-00005.safetensors",
+        "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+        "size": 3959604768
+      },
+      {
+        "name": "model-00004-of-00005.safetensors",
+        "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+        "size": 3187841392
+      },
+      {
+        "name": "model-00005-of-00005.safetensors",
+        "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+        "size": 1244659840
+      },
+      {
+        "name": "model.safetensors.index.json",
+        "sha256": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc",
+        "size": 32878
+      },
+      {
+        "name": "tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "size": 11422654
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "size": 9732
+      },
+      {
+        "name": "vocab.json",
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "size": 2776833
+      }
+    ],
+    "model_label": "Qwen3-8B",
+    "provenance": "Existing local files; upstream revision not independently established.",
+    "schema_version": 1,
+    "upstream_revision": null
+  },
+  "prompt_index": "3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+  "protocol": "a745712a89bc68688127bc33d8fed466bf73bda18c492de07c034b4859bdc477",
+  "schema_version": 1,
+  "split": "dev",
+  "study_id": "tail-ablation-v1",
+  "study_model": "primary",
+  "thinking": false,
+  "versions": {
+    "accelerate": "1.12.0",
+    "reprollm": "0.6.1",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.5.1+cu121",
+    "transformers": "5.2.0"
+  }
+}

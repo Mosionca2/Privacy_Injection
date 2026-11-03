@@ -1,0 +1,25 @@
+schema_version: 1
+rules:
+- id: project.mode
+  field: custom.mode
+  severity: CRITICAL
+  reason: The actual repair operation and checkpoint must match the declaration.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-03T08:13:52Z'
+  bindings:
+    cli: --mode
+    config: null
+    env: null
+- id: project.input_file
+  field: custom.input_file
+  severity: CRITICAL
+  reason: The actual repair operation and checkpoint must match the declaration.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-03T08:14:04Z'
+  bindings:
+    cli: --input
+    config: null
+    env: null
+ignored_candidates: []

@@ -32,6 +32,7 @@ Four initial calibration captures precede the scientific freeze. Their differing
 | Selected historical export | Explicit run selection preserves historical declarations after current manifest changes | [Contract checks](../reprollm-validation.json), [selected history](../../evidence/tool-validation/selected-history.md) |
 | Nonzero exits and launch failure | CPU fixtures preserve exit 7 and failed launch; GPU interruption records actual child exit -15 | [Contract checks](../reprollm-validation.json), [recovery report](../recovery-validation/REPORT.md) |
 | Resumption and repeats | Retained rows remain unchanged; fresh 768-response repeats match within each snapshot | [Recovery](../recovery-validation/comparison.json), [primary repeat](../repeat/comparison.json), [extension repeat](../extensions/qwen3-1.7b/repeat/comparison.json) |
+| Copy-only checkpoint tail repair | Controlled copies preserve complete successes/failures, back up the damaged bytes and refuse complete unterminated JSON; actual model recovery is outside this CPU test | [Usage guide](../../docs/result-tail-repair.md), [actual CLI matrix](../tail-repair-validation/REPORT.md) |
 | Redaction | Tested synthetic patterns absent from tool-owned persistence; reviewed publication copies remove device identifiers | [Bounded contract check](../reprollm-validation.json), [publication boundary](../formal/publication.json) |
 | Version-scoped documentation | Released 0.6.1 and source 0.7.0 command rehearsals, with source/input-phase differences retained | [Contribution receipt](../reprollm-contribution-validation.json) |
 
@@ -62,10 +63,12 @@ The later [CPU CI gate](../ci-validation/REPORT.md) automates this complete evid
 
 The subsequent [forced-termination stage](../termination-validation/REPORT.md) retains eight real CPU records across released and source recorders. Child SIGKILL records an interrupted child; recorder SIGKILL leaves unfinished evidence. Source-only outcome filters and explicit historical exports were exercised without rewriting records. Two additional guards bring the local suite to 42 tests and CI to 32 unit tests, alongside a fresh CPU matrix. The report preserves the first CI failure and its research-controller ordering correction. GPU and model-response accounting remain unchanged.
 
+The later [copy-only tail-repair stage](../tail-repair-validation/REPORT.md) adds seven preservation/refusal guards, reaching 54 local tests and 44 CI tests after the intervening neutral-tail follow-up. Six actual CPU CLI captures validate both recorder producers, mode bindings, the refused child's exit 2, explicit exports and cross-mode diff. New repaired copies retain the trusted prefix while originals and complete failure markers remain preserved. This adds no model generations and does not establish GPU corruption recovery or power-loss durability.
+
 ## Remaining boundaries
 
 - Local upstream revisions and original-versus-modified status remain unverified; conclusions bind exact published fingerprints. Four A100 80GB devices were used, without a test under a 5–8GB hardware limit.
-- Controlled current-source GPU interruption/resume is now validated on both local snapshots. CPU SIGKILL recording semantics are separately checked; GPU SIGKILL/power-loss recovery and corrupted-output repair remain untested.
+- Controlled current-source GPU interruption/resume is validated on both local snapshots. CPU SIGKILL semantics and copy-only repair of controlled JSONL tails are separately checked. GPU SIGKILL/power-loss recovery and actual GPU corruption/resume remain untested.
 - The separately frozen neutral-tail follow-up is documented above. A commercial-model extension has not been run.
 - Original environment and completed-condition-skip receipts describe their historical checkpoints. Their initial pending/untested labels remain intact; the later version-scoped receipts establish the subsequent results.
 

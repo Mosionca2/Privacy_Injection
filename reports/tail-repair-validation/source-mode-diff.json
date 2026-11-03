@@ -1,0 +1,96 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261103T081441Z-094c40/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "inspect",
+      "b": "repair",
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "custom.mode",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "c89abe85c27ebf121e068763eb83b5ec386968d5",
+      "b": "b71c3265ad22cc40ed4f6a2e826ea1786131d687",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "repair.py",
+        "--input",
+        "inputs/checkpoint.jsonl",
+        "--identity",
+        "inputs/identity.json",
+        "--mode",
+        "inspect"
+      ],
+      "b": [
+        "python",
+        "repair.py",
+        "--input",
+        "inputs/checkpoint.jsonl",
+        "--identity",
+        "inputs/identity.json",
+        "--mode",
+        "repair",
+        "--sha256",
+        "725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162",
+        "--output-directory",
+        "raw/bundle"
+      ],
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python repair.py --input inputs/checkpoint.jsonl --identity inputs/identity.json --mode inspect",
+      "b": "python repair.py --input inputs/checkpoint.jsonl --identity inputs/identity.json --mode repair --sha256 725a202594e36f62c16a3fe83a55511e63b96437c006100e3c2c87efc08c5162 --output-directory raw/bundle",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 2.87377,
+      "b": 2.886109,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261103T081441Z-094c40",
+      "b": "20261103T081441Z-a0b597",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.7.0",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 4,
+      "MEDIUM_HIGH": 0,
+      "NONE": 2
+    },
+    "highest": "MEDIUM",
+    "same": 62
+  }
+}

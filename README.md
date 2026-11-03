@@ -109,3 +109,7 @@ Eight selected real CPU captures compare child SIGKILL, recorder SIGKILL and suc
 ## Paired neutral-tail follow-up
 
 A separately frozen follow-up has completed 5,760 new responses across both local snapshots (12 GPU captures). N replaces D2's reminder with a neutral sentence while keeping the same repeated question and exactly matching encoded length. The full new 96-case-per-model comparison is complete. Read [the follow-up report](reports/tail-ablation-v1/REPORT.md). Current totals are 16,896 model responses and 55 GPU captures; the original 6,144 formal responses remain separately counted. All 47 local tests pass.
+
+## Copy-only checkpoint tail recovery
+
+The [result-tail utility](docs/result-tail-repair.md) inspects a damaged JSONL checkpoint and creates a new backed-up repaired copy, preserving complete samples/failures and the excluded tail bytes. It leaves the source untouched and refuses ambiguous damage or complete JSON missing only a newline. [The validation report](reports/tail-repair-validation/REPORT.md) retains six actual released/source ReproLLM CPU captures, cross-mode diffs and explicit exports. Current suites pass 54 local tests and 44 CI tests; no model inference is added and all scientific freezes remain unchanged.

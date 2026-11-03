@@ -1,0 +1,11 @@
+{
+  "complete_synthetic_failure_rows": 1,
+  "controlled_suffix": "synthetic unfinished sample string",
+  "genuine_prefix_sha256": "48e50884d24def883d9672cfed8cddeedb8fe211887cc73616f3480f692a0010",
+  "genuine_sample_rows": 8,
+  "original": "evidence/tail-ablation-v1/primary/dev/N/results.jsonl",
+  "original_sha256": "a17bd54bb0a24f520fa5ef962728b8080d41f0230b1b728395eb992086786dd4",
+  "schema_version": 1,
+  "scope": "Controlled corruption of copies of existing public rows; no new model execution.",
+  "source_model_generations": 0
+}

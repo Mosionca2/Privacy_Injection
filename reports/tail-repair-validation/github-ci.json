@@ -1,0 +1,14 @@
+{
+  "conclusion": "success",
+  "evidence_receipt_matches_published": true,
+  "head_commit": "980c1ba68ac11f4756550bffcbef0fb50eebad45",
+  "new_model_generations": 0,
+  "published_model_captures_checked": 55,
+  "repair_cpu_recordings": 6,
+  "repair_matrix_sha256": "e50c4696694dea4a4d53965e74c60b2987183fd5954b26de2b42e3c2a8ff31af",
+  "run_id": 41602335343,
+  "schema_version": 1,
+  "tests_duration_seconds": 1.311,
+  "tests_passed": 44,
+  "url": "https://github.com/Mosionca2/Privacy_Injection/actions/runs/41602335343"
+}

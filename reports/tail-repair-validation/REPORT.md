@@ -8,7 +8,22 @@ The actual CLI matrix covers inspection, copy repair and refusal under installed
 
 The seven regression cases cover backup/prefix/failure-byte preservation, inspection side effects, complete unterminated records, damage inside complete lines, identity/JSON ambiguity and duplicate successes, stale inspection digests/existing bundles, and clean-checkpoint no-ops. Identity checks preserve JSON types, so `true` and `1` do not compare as the same configuration. The initial review exposed and fixed that Python equality pitfall before publication; its earlier fixture artifacts remain private and are not the final acceptance.
 
-All **54 local repository tests** pass; [the unit receipt](unit-checks.json) binds them to the corrected utility. The corrected [local matrix](local-results.json) completed six genuine CPU recordings: inspection and repair exit 0; refusing complete unterminated failure JSON exits 2. Both producers correctly retain `status: completed` with that nonzero child exit. Selected exports and cross-mode diffs also passed, and the frozen scientific resume reader retained the eight original successful IDs from each repaired copy. Curated run directories and actual remote CI receipts are published as a separate completion step; this local checkpoint does not claim a GitHub run result.
+All **54 local repository tests** pass; [the unit receipt](unit-checks.json) binds them to the corrected utility. The corrected [local matrix](local-results.json) completed six genuine CPU recordings:
+
+| Engine | Operation | Child exit | Saved status | Result |
+|---|---|---:|---|---|
+| Released 0.6.1 | Inspect | 0 | completed | No bundle or input changes |
+| Released 0.6.1 | Repair copy | 0 | completed | Eight original successes and one synthetic failure preserved |
+| Released 0.6.1 | Refuse complete unterminated failure | 2 | completed | Input preserved; no bundle |
+| Pinned source 0.7.0 | Inspect | 0 | completed | No bundle or input changes |
+| Pinned source 0.7.0 | Repair copy | 0 | completed | Eight original successes and one synthetic failure preserved |
+| Pinned source 0.7.0 | Refuse complete unterminated failure | 2 | completed | Input preserved; no bundle |
+
+Both producers correctly retain `status: completed` with the nonzero child exit 2. Selected exports and real [released](released-mode-diff.json)/[source](source-mode-diff.json) inspection-versus-repair CLI diffs passed. Source outcome filtering includes the refused attempt as a failure. The frozen scientific resume reader retained the eight original successful IDs from each repaired copy. This reader compatibility check performs no inference.
+
+The [curated evidence](../../evidence/tail-repair-validation/) retains input derivations, actual declarations/locks, tool source, runtime witnesses, original run directories, captured output, explicit exports and complete recovery bundles. [The publication inventory](publication.json) covers 122 selected files and eight recorded output-artifact hashes. Original model result files and original run-directory bytes were preserved. Fixture Git commits identify disposable local repositories; the selected input/snapshot bytes are published without claiming those private Git objects can be fetched from research main.
+
+[GitHub run #41602335343](https://github.com/Mosionca2/Privacy_Injection/actions/runs/41602335343) passed **44 CPU unit tests**, the unchanged 55-capture model-evidence gate, archived-record reading, eight actual CPU termination fixtures and six fresh repair/refusal CLI captures at implementation commit `980c1ba`. [The permanent CI receipt](github-ci.json) and [downloaded repair matrix](github-results.json) distinguish its run IDs from the local captures. Later evidence/report commits receive their own CI runs. CI creates no model responses.
 
 This is a research-output utility, not a change to ReproLLM's run-record recovery contract. The model-resume reader is checked by reading the repaired copy and retaining its eight original success IDs; no model is loaded or resumed. Complete failure markers are preserved, not scored as successes. Minimal CPU manifests declare no model, so their exported current-tree audits can report absent model fields; they are not presented as clean model experiments.
 
