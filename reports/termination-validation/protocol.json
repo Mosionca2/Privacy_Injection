@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "scope": "Owned Linux CPU fixtures for actual forced-termination and archived-record inspection; no model inference.",
+  "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+  "engines": {
+    "released": {"module_version": "0.6.1", "run_schema_version": 1},
+    "source": {"module_version": "0.7.0", "run_schema_version": 2}
+  },
+  "cases": {
+    "child-kill": {
+      "attempts_per_engine": 1,
+      "target": "Owned experiment child after witnessed CPU work and an initial running record",
+      "signal": "SIGKILL",
+      "expected_record_status": "interrupted",
+      "expected_child_exit_code": -9,
+      "expected_posix_cli_exit_code": 247
+    },
+    "recorder-kill": {
+      "attempts_per_engine": 1,
+      "target": "Owned recorder after witnessed CPU work and an initial running record",
+      "signal": "SIGKILL",
+      "expected_record_status": "running",
+      "expected_child_exit_code": null,
+      "expected_posix_cli_exit_code": -9,
+      "cleanup": "Adopt and reap only the child in the original owned recorder process group; preserve the unfinished record."
+    },
+    "success": {
+      "attempts_per_engine": 2,
+      "target": "Fresh CPU work in each actual recording",
+      "signal": null,
+      "expected_record_status": "completed",
+      "expected_child_exit_code": 0,
+      "expected_posix_cli_exit_code": 0
+    }
+  },
+  "acceptance": [
+    "Validate the source Git commit and all 148 pinned package files before copying the reader/recorder payload.",
+    "Lock each independent condition offline and commit its actual fixture inputs before running.",
+    "Check nonce, parent PID, process group and session before targeting an experiment child.",
+    "Check actual run IDs, child work, recorded states and real process exits.",
+    "Source schema-2 unfinished records retain pre-child baselines and unknown final input state.",
+    "List and show actual records; export each explicit historical run; exercise self-diff or the two fresh successful controls.",
+    "Source outcome filters exclude unfinished running records from both success and failure; latest-successful selects the two actual successful controls.",
+    "All archived run-directory bytes remain unchanged during inspection; all owned processes are cleaned up."
+  ],
+  "new_model_generations": 0,
+  "limitations": [
+    "This is SIGKILL on a Linux process, not a power-loss, filesystem-durability or GPU-inference experiment.",
+    "A running record after recorder loss is incomplete evidence, without a confirmed final child outcome.",
+    "The controller performs bounded cleanup; no automatic recovery or repair is attributed to ReproLLM.",
+    "Released 0.6.1 does not gain source-only filters or schema-2 baselines."
+  ]
+}
