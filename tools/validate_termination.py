@@ -207,6 +207,12 @@ def capture(work, env, case, label):
                 recorder_metadata_finalized=run['environment'] is not None), directory
 
 
+def successful_pair_ids(captures):
+    """Use the documented saved start-time/run-ID order, including same-second ties."""
+    return [record['run_id'] for record, directory in sorted(captures, key=lambda item: (
+        c.read_json(item[1] / 'run.json')['started_at'], item[0]['run_id']))]
+
+
 def inspect(work, env, captures, source):
     before = directory_hashes(work / '.reprollm/runs')
     rows = json.loads(call(work, env, 'list', ['runs', 'list', '--json']))
@@ -233,7 +239,7 @@ def inspect(work, env, captures, source):
         require(diff['changes'] == [], 'Self-diff should preserve archived state.')
     if source and len(captures) == 2:
         selected = json.loads(call(work, env, 'latest-successful', ['diff', '--latest-successful', '--format', 'json']))
-        require([selected[k]['ref'] for k in ('a', 'b')] == [r['run_id'] for r, _ in captures],
+        require([selected[k]['ref'] for k in ('a', 'b')] == successful_pair_ids(captures),
                 'Latest-successful diff chose the wrong attempts.')
     require(before == directory_hashes(work / '.reprollm/runs'), 'Inspection changed historical run bytes.')
 
