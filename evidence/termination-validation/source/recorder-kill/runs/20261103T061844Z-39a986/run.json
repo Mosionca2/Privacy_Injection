@@ -1,0 +1,120 @@
+{
+  "artifacts": [],
+  "bindings_observed": {
+    "custom.probe": [
+      {
+        "source": {
+          "key": "--case",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "recorder-kill"
+      }
+    ]
+  },
+  "code": {
+    "branch": null,
+    "commit": null,
+    "dirty": false,
+    "modified_count": 0,
+    "patch_file": null,
+    "patch_sha256": null,
+    "remote": null,
+    "untracked_count": 0
+  },
+  "command": {
+    "argv": [
+      "python",
+      "fixture.py",
+      "--case",
+      "recorder-kill"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": null,
+  "ended_at": null,
+  "environment": null,
+  "exit_code": null,
+  "files": [
+    {
+      "origin": "declared",
+      "path": "fixture.py",
+      "redacted": false,
+      "sha256": "sha256:9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c",
+      "size_bytes": 707,
+      "snapshot": "files/9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c"
+    }
+  ],
+  "hardware": null,
+  "input_capture": {
+    "baseline_phase": "pre_child",
+    "check_phase": "post_child",
+    "checks": [
+      {
+        "after": {
+          "availability": "unavailable",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c",
+          "size_bytes": 707
+        },
+        "change": "unknown",
+        "origin": "declared",
+        "path": "fixture.py"
+      },
+      {
+        "after": {
+          "availability": "unavailable",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:f942cc85d57129117cee9470f85d95c5d0132a93f2e9075c7af161cfce44a3b5",
+          "size_bytes": 952
+        },
+        "change": "unknown",
+        "origin": "lock",
+        "path": "reprollm.lock"
+      },
+      {
+        "after": {
+          "availability": "unavailable",
+          "sha256": null,
+          "size_bytes": null
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:c65353d051a63fa7cfa1c75f8d914620ebb2118d4a2f881ebb8589073f88a5b1",
+          "size_bytes": 503
+        },
+        "change": "unknown",
+        "origin": "manifest",
+        "path": "reprollm.yaml"
+      }
+    ],
+    "consumption": "unverified"
+  },
+  "lock": {
+    "path": "reprollm.lock",
+    "sha256": "sha256:f942cc85d57129117cee9470f85d95c5d0132a93f2e9075c7af161cfce44a3b5",
+    "snapshot": "lock.yaml"
+  },
+  "manifest": {
+    "path": "reprollm.yaml",
+    "sha256": "sha256:c65353d051a63fa7cfa1c75f8d914620ebb2118d4a2f881ebb8589073f88a5b1",
+    "snapshot": "manifest.yaml"
+  },
+  "name": "recorder-kill-0",
+  "reprollm_version": "0.7.0",
+  "run_id": "20261103T061844Z-39a986",
+  "scheduler": null,
+  "schema_version": 2,
+  "started_at": "2026-11-03T06:18:44Z",
+  "status": "running",
+  "warnings": []
+}

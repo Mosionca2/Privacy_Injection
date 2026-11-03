@@ -1,0 +1,40 @@
+{
+  "artifacts": [],
+  "bindings_observed": {},
+  "code": {
+    "branch": null,
+    "commit": null,
+    "dirty": false,
+    "modified_count": 0,
+    "patch_file": null,
+    "patch_sha256": null,
+    "remote": null,
+    "untracked_count": 0
+  },
+  "command": {
+    "argv": [
+      "python",
+      "fixture.py",
+      "--case",
+      "recorder-kill"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": null,
+  "ended_at": null,
+  "environment": null,
+  "exit_code": null,
+  "files": [],
+  "hardware": null,
+  "lock": null,
+  "manifest": null,
+  "name": "recorder-kill-0",
+  "reprollm_version": "0.6.1",
+  "run_id": "20261103T061436Z-b4fdf9",
+  "scheduler": null,
+  "schema_version": 1,
+  "started_at": "2026-11-03T06:14:36Z",
+  "status": "running",
+  "warnings": []
+}

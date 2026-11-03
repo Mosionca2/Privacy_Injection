@@ -1,0 +1,30 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/artifact.json",
+      "raw/completion.json"
+    ]
+  },
+  "bindings": {
+    "custom.probe": {
+      "cli": "--case"
+    }
+  },
+  "custom": {
+    "probe": "recorder-kill"
+  },
+  "execution": {
+    "command": "python fixture.py --case recorder-kill",
+    "config_files": [
+      "fixture.py"
+    ]
+  },
+  "experiment": {
+    "name": "recorder-kill",
+    "profiles": []
+  },
+  "project": {
+    "name": "forced_termination_fixture"
+  },
+  "schema_version": 1
+}

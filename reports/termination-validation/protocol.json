@@ -40,7 +40,7 @@
     "Check actual run IDs, child work, recorded states and real process exits.",
     "Source schema-2 unfinished records retain pre-child baselines and unknown final input state.",
     "List and show actual records; export each explicit historical run; exercise self-diff or the two fresh successful controls.",
-    "Source outcome filters exclude unfinished running records from both success and failure; latest-successful selects the two actual successful controls.",
+    "Source outcome filters exclude unfinished running records from both success and failure; latest-successful selects the two actual successful controls in saved start-time/run-ID order, including same-second ties.",
     "All archived run-directory bytes remain unchanged during inspection; all owned processes are cleaned up."
   ],
   "new_model_generations": 0,

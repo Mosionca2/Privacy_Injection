@@ -1,0 +1,20 @@
+[
+  {
+    "dirty": false,
+    "duration_seconds": 1.489321,
+    "exit_code": 0,
+    "name": "success-1",
+    "run_id": "20261103T061551Z-86536c",
+    "started_at": "2026-11-03T06:15:51Z",
+    "status": "completed"
+  },
+  {
+    "dirty": false,
+    "duration_seconds": 1.432238,
+    "exit_code": 0,
+    "name": "success-0",
+    "run_id": "20261103T061540Z-048457",
+    "started_at": "2026-11-03T06:15:40Z",
+    "status": "completed"
+  }
+]

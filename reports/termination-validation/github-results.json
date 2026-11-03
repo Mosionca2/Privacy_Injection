@@ -1,0 +1,144 @@
+{
+  "actual_cpu_recordings": 8,
+  "all_passed": true,
+  "consumer": {
+    "module_version": "0.7.0",
+    "package_files_checked": 148,
+    "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9"
+  },
+  "engines": [
+    {
+      "engine": "released",
+      "inspection_preserved_all_run_bytes": true,
+      "outcome_filters_checked": false,
+      "records": [
+        {
+          "case": "child-kill",
+          "child_exit_code": -9,
+          "child_work_units": 1,
+          "input_baseline_saved": true,
+          "launcher_exit_code": 247,
+          "owned_child_cleanup_complete": true,
+          "recorded_commit": "ea091aa74e207dfaa5a9e83398ec3f441a21c359",
+          "recorder_metadata_finalized": true,
+          "recorder_version": "0.6.1",
+          "run_id": "20261103T062351Z-9c94b1",
+          "schema_version": 1,
+          "status": "interrupted"
+        },
+        {
+          "case": "recorder-kill",
+          "child_exit_code": null,
+          "child_work_units": 1,
+          "input_baseline_saved": false,
+          "launcher_exit_code": -9,
+          "owned_child_cleanup_complete": true,
+          "recorded_commit": null,
+          "recorder_metadata_finalized": false,
+          "recorder_version": "0.6.1",
+          "run_id": "20261103T062355Z-95de2d",
+          "schema_version": 1,
+          "status": "running"
+        },
+        {
+          "case": "success",
+          "child_exit_code": 0,
+          "child_work_units": 1,
+          "input_baseline_saved": true,
+          "launcher_exit_code": 0,
+          "owned_child_cleanup_complete": true,
+          "recorded_commit": "9dac2242660c8d2eeaa66cbb48bf4c5851721fe1",
+          "recorder_metadata_finalized": true,
+          "recorder_version": "0.6.1",
+          "run_id": "20261103T062359Z-10bf71",
+          "schema_version": 1,
+          "status": "completed"
+        },
+        {
+          "case": "success",
+          "child_exit_code": 0,
+          "child_work_units": 1,
+          "input_baseline_saved": true,
+          "launcher_exit_code": 0,
+          "owned_child_cleanup_complete": true,
+          "recorded_commit": "9dac2242660c8d2eeaa66cbb48bf4c5851721fe1",
+          "recorder_metadata_finalized": true,
+          "recorder_version": "0.6.1",
+          "run_id": "20261103T062359Z-da7011",
+          "schema_version": 1,
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "engine": "source",
+      "inspection_preserved_all_run_bytes": true,
+      "outcome_filters_checked": true,
+      "records": [
+        {
+          "case": "child-kill",
+          "child_exit_code": -9,
+          "child_work_units": 1,
+          "input_baseline_saved": true,
+          "launcher_exit_code": 247,
+          "owned_child_cleanup_complete": true,
+          "recorded_commit": "84a74a843717636b7270e835e63a9475fc6bdb1f",
+          "recorder_metadata_finalized": true,
+          "recorder_version": "0.7.0",
+          "run_id": "20261103T062405Z-bf5692",
+          "schema_version": 2,
+          "status": "interrupted"
+        },
+        {
+          "case": "recorder-kill",
+          "child_exit_code": null,
+          "child_work_units": 1,
+          "input_baseline_saved": true,
+          "launcher_exit_code": -9,
+          "owned_child_cleanup_complete": true,
+          "recorded_commit": null,
+          "recorder_metadata_finalized": false,
+          "recorder_version": "0.7.0",
+          "run_id": "20261103T062412Z-8d04db",
+          "schema_version": 2,
+          "status": "running"
+        },
+        {
+          "case": "success",
+          "child_exit_code": 0,
+          "child_work_units": 1,
+          "input_baseline_saved": true,
+          "launcher_exit_code": 0,
+          "owned_child_cleanup_complete": true,
+          "recorded_commit": "65713957381efc083e563eafd6909984b85e412d",
+          "recorder_metadata_finalized": true,
+          "recorder_version": "0.7.0",
+          "run_id": "20261103T062419Z-d3040f",
+          "schema_version": 2,
+          "status": "completed"
+        },
+        {
+          "case": "success",
+          "child_exit_code": 0,
+          "child_work_units": 1,
+          "input_baseline_saved": true,
+          "launcher_exit_code": 0,
+          "owned_child_cleanup_complete": true,
+          "recorded_commit": "65713957381efc083e563eafd6909984b85e412d",
+          "recorder_metadata_finalized": true,
+          "recorder_version": "0.7.0",
+          "run_id": "20261103T062420Z-013fe3",
+          "schema_version": 2,
+          "status": "completed"
+        }
+      ]
+    }
+  ],
+  "fixture_sha256": "9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c",
+  "installed_distribution_version": "0.6.1",
+  "new_model_generations": 0,
+  "python_version": "3.12.15",
+  "schema_version": 1,
+  "scope": "Linux owned CPU fixtures: child SIGKILL, recorder SIGKILL and two successful controls per engine; no GPU/model execution or power-loss simulation.",
+  "validator_sha256": "80e03c7d766671250c36bc07ac101ba3ab84cb3f9411c4f0b7e437b895c63ee3"
+}

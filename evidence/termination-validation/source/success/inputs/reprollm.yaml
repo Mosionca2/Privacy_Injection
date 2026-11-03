@@ -1,0 +1,30 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/artifact.json",
+      "raw/completion.json"
+    ]
+  },
+  "bindings": {
+    "custom.probe": {
+      "cli": "--case"
+    }
+  },
+  "custom": {
+    "probe": "success"
+  },
+  "execution": {
+    "command": "python fixture.py --case success",
+    "config_files": [
+      "fixture.py"
+    ]
+  },
+  "experiment": {
+    "name": "success",
+    "profiles": []
+  },
+  "project": {
+    "name": "forced_termination_fixture"
+  },
+  "schema_version": 1
+}

@@ -101,3 +101,7 @@ Current totals are **11,136 completed responses across 43 GPU captures** (40 com
 ## Automated evidence and ReproLLM reader checks
 
 The [CPU CI workflow](.github/workflows/evidence.yml) checks every main push and pull request against all published capture evidence and its committed verification receipt. It also uses pinned ReproLLM source 0.7.0 to read actual schema-1 and schema-2 archived runs, checking source-file hashes and preserving archived bytes. The gate requires no model weights or inference packages and adds no model responses. [The validation report](reports/ci-validation/REPORT.md) records scope, local checks and remote-run status; all 40 local repository tests pass.
+
+## Forced-termination recording checks
+
+Eight selected real CPU captures compare child SIGKILL, recorder SIGKILL and successful controls under released 0.6.1 and pinned source 0.7.0. Killing the child records `interrupted / -9`; losing the recorder preserves an unfinished `running` record, with source schema-2 input baselines and unknown final checks. [The report](reports/termination-validation/REPORT.md) retains explicit exports, inspection results, output hashes and the corrected same-second selection check. Current suites have 42 local tests and 32 CI unit tests, plus a fresh CPU termination matrix per CI run. Model-response totals are unchanged.

@@ -59,10 +59,12 @@ python -m unittest discover -s tests -v
 
 The later [CPU CI gate](../ci-validation/REPORT.md) automates this complete evidence check and checks actual pinned-source ReproLLM reading of schema-1 and schema-2 archives. It compares a fresh verification result to the committed receipt on each main push or pull request. Its 30 CPU tests cover scoring, evidence, recovery and source guards; the full local scientific-environment suite has 40 passing tests. These maintenance checks add no model responses.
 
+The subsequent [forced-termination stage](../termination-validation/REPORT.md) retains eight real CPU records across released and source recorders. Child SIGKILL records an interrupted child; recorder SIGKILL leaves unfinished evidence. Source-only outcome filters and explicit historical exports were exercised without rewriting records. Two additional guards bring the local suite to 42 tests and CI to 32 unit tests, alongside a fresh CPU matrix. The report preserves the first CI failure and its research-controller ordering correction. GPU and model-response accounting remain unchanged.
+
 ## Remaining boundaries
 
 - Local upstream revisions and original-versus-modified status remain unverified; conclusions bind exact published fingerprints. Four A100 80GB devices were used, without a test under a 5–8GB hardware limit.
-- Controlled current-source GPU interruption/resume is now validated on both local snapshots. Hard-kill/power-loss recovery and corrupted-output repair remain untested.
+- Controlled current-source GPU interruption/resume is now validated on both local snapshots. CPU SIGKILL recording semantics are separately checked; GPU SIGKILL/power-loss recovery and corrupted-output repair remain untested.
 - A neutral-tail ablation and commercial-model extension have not been run. They would require separately specified conditions and evidence.
 - Original environment and completed-condition-skip receipts describe their historical checkpoints. Their initial pending/untested labels remain intact; the later version-scoped receipts establish the subsequent results.
 

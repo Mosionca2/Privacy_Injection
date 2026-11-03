@@ -1,0 +1,192 @@
+{
+  "artifacts": [
+    {
+      "path": "raw/artifact.json",
+      "sha256": "sha256:6776a95e8d4adb0075f4785c2bcc8da410ed8f70cefe773b33d0e200f032dbf5",
+      "size_bytes": 94
+    },
+    {
+      "path": "raw/completion.json",
+      "sha256": "sha256:6776a95e8d4adb0075f4785c2bcc8da410ed8f70cefe773b33d0e200f032dbf5",
+      "size_bytes": 94
+    }
+  ],
+  "bindings_observed": {
+    "custom.probe": [
+      {
+        "source": {
+          "key": "--case",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "success"
+      }
+    ]
+  },
+  "code": {
+    "branch": "master",
+    "commit": "e73730205f371728429250a2344197f77e97295e",
+    "dirty": false,
+    "modified_count": 0,
+    "patch_file": null,
+    "patch_sha256": null,
+    "remote": null,
+    "untracked_count": 0
+  },
+  "command": {
+    "argv": [
+      "python",
+      "fixture.py",
+      "--case",
+      "success"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": 1.46606,
+  "ended_at": "2026-11-03T06:20:09Z",
+  "environment": {
+    "env": {
+      "HF_HUB_OFFLINE": "1",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "PATH": "<REDACTED:path>",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONPATH": "assets/recorder-source",
+      "TRANSFORMERS_OFFLINE": "1"
+    },
+    "env_capture": "allowlist",
+    "hostname_sha256": "sha256:32e83e92d45d71f69dcf9d214688f0375542108631b45d344e5df2eb91c11566",
+    "os": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "accelerate": "1.12.0",
+      "bitsandbytes": "0.49.2",
+      "datasets": "4.6.1",
+      "evaluate": "0.4.6",
+      "lm_eval": "0.4.11",
+      "numpy": "2.2.6",
+      "openai": "2.24.0",
+      "peft": "0.18.1",
+      "safetensors": "0.7.0",
+      "sentencepiece": "0.2.1",
+      "tokenizers": "0.22.2",
+      "torch": "2.5.1+cu121",
+      "transformers": "5.2.0"
+    },
+    "platform": "linux",
+    "python": "3.10.19"
+  },
+  "exit_code": 0,
+  "files": [
+    {
+      "origin": "declared",
+      "path": "fixture.py",
+      "redacted": false,
+      "sha256": "sha256:9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c",
+      "size_bytes": 707,
+      "snapshot": "files/9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c"
+    }
+  ],
+  "hardware": {
+    "cpu_count": 128,
+    "cuda_driver_max": "13.0",
+    "driver": "580.178.04",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:b77fcc7a2e1a4023818a073834292073f171fd266f8728642c58ab76b8a00474"
+      },
+      {
+        "index": 1,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:6bf6ca98feeeb523c3a0618bc893039e071d13bb6c9304ced089fc7ad18e3e9f"
+      },
+      {
+        "index": 2,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:cb5f06cdb7d0686193268437b847b20606aaa98bc7ff5cb138ecad1e1b2e42fb"
+      },
+      {
+        "index": 3,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:a6ba9cf25912f91d84baab1d169fd6446de16b53a3cd655596bb5a24b377b7a1"
+      }
+    ],
+    "source": "nvidia_smi"
+  },
+  "input_capture": {
+    "baseline_phase": "pre_child",
+    "check_phase": "post_child",
+    "checks": [
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c",
+          "size_bytes": 707
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c",
+          "size_bytes": 707
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "fixture.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:f7d49ed60a8ce99e28c738e0279782f8f7fe28cea4349dd2a3d948f65749cc16",
+          "size_bytes": 952
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:f7d49ed60a8ce99e28c738e0279782f8f7fe28cea4349dd2a3d948f65749cc16",
+          "size_bytes": 952
+        },
+        "change": "unchanged",
+        "origin": "lock",
+        "path": "reprollm.lock"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:89689f3932bbe44ffb72fed8f31dd75935b2a14f3bf24cde5b4c5feccc66e70f",
+          "size_bytes": 485
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:89689f3932bbe44ffb72fed8f31dd75935b2a14f3bf24cde5b4c5feccc66e70f",
+          "size_bytes": 485
+        },
+        "change": "unchanged",
+        "origin": "manifest",
+        "path": "reprollm.yaml"
+      }
+    ],
+    "consumption": "unverified"
+  },
+  "lock": {
+    "path": "reprollm.lock",
+    "sha256": "sha256:f7d49ed60a8ce99e28c738e0279782f8f7fe28cea4349dd2a3d948f65749cc16",
+    "snapshot": "lock.yaml"
+  },
+  "manifest": {
+    "path": "reprollm.yaml",
+    "sha256": "sha256:89689f3932bbe44ffb72fed8f31dd75935b2a14f3bf24cde5b4c5feccc66e70f",
+    "snapshot": "manifest.yaml"
+  },
+  "name": "success-0",
+  "reprollm_version": "0.7.0",
+  "run_id": "20261103T062008Z-9b9ea2",
+  "scheduler": null,
+  "schema_version": 2,
+  "started_at": "2026-11-03T06:20:08Z",
+  "status": "completed",
+  "warnings": []
+}

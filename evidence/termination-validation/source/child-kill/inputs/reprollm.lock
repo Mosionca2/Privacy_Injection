@@ -1,0 +1,40 @@
+schema_version: 1
+reprollm_version: 0.7.0
+generated_at: '2026-11-03T06:16:59Z'
+manifest_sha256: sha256:b7227da6e5c158ea9fe10365d2dbe7bb33ec98f2ca669190eecac2fc64be7e0b
+project_rules_sha256: sha256:7bf278237d2453840b3b04d50a901fcf78b3557089a9c8402dd5212272b7fc4f
+resolution:
+  mode: offline
+models: {}
+datasets: {}
+prompts: {}
+files:
+- path: fixture.py
+  sha256: sha256:9c9e44ef003de347d4fe1c471d1ffb9feeb7c92d9327e5b52299b09b3cfd9b5c
+  size_bytes: 707
+generation: null
+inference: null
+training: null
+evaluation: null
+privacy: null
+environment:
+  python: 3.10.19
+  platform: linux
+  packages:
+    accelerate: 1.12.0
+    bitsandbytes: 0.49.2
+    datasets: 4.6.1
+    evaluate: 0.4.6
+    lm_eval: 0.4.11
+    numpy: 2.2.6
+    openai: 2.24.0
+    peft: 0.18.1
+    safetensors: 0.7.0
+    sentencepiece: 0.2.1
+    tokenizers: 0.22.2
+    torch: 2.5.1+cu121
+    transformers: 5.2.0
+  gpu:
+    driver: 580.178.04
+    cuda_driver_max: '13.0'
+    source: nvidia_smi

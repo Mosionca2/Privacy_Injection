@@ -1,0 +1,58 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261103T061540Z-048457/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261103T061551Z-86536c/run.json"
+  },
+  "changes": [
+    {
+      "a": 1.432238,
+      "b": 1.489321,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T06:15:41Z",
+      "b": "2026-11-03T06:15:52Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261103T061540Z-048457",
+      "b": "20261103T061551Z-86536c",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T06:15:40Z",
+      "b": "2026-11-03T06:15:51Z",
+      "note": null,
+      "path": "started_at",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.6.1",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 0,
+      "MEDIUM_HIGH": 0,
+      "NONE": 4
+    },
+    "highest": "NONE",
+    "same": 56
+  }
+}

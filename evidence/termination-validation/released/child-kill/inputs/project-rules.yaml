@@ -1,0 +1,14 @@
+schema_version: 1
+rules:
+- id: project.probe
+  field: custom.probe
+  severity: CRITICAL
+  reason: The CPU scenario must match its command.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-03T06:13:07Z'
+  bindings:
+    cli: --case
+    config: null
+    env: null
+ignored_candidates: []

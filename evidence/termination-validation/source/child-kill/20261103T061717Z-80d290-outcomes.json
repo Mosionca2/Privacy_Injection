@@ -1,0 +1,15 @@
+{
+  "failure": [
+    {
+      "dirty": false,
+      "duration_seconds": 1.466312,
+      "exit_code": -9,
+      "name": "child-kill-0",
+      "run_id": "20261103T061717Z-80d290",
+      "started_at": "2026-11-03T06:17:17Z",
+      "status": "interrupted"
+    }
+  ],
+  "schema_version": 1,
+  "success": []
+}

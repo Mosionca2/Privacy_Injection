@@ -1,0 +1,10 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "duration_seconds": 55.709,
+  "exit_code": 0,
+  "new_model_generations": 0,
+  "new_regression_cases": 2,
+  "passed": 42,
+  "schema_version": 1,
+  "validator_sha256": "80e03c7d766671250c36bc07ac101ba3ab84cb3f9411c4f0b7e437b895c63ee3"
+}

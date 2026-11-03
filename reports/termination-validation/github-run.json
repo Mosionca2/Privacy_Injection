@@ -1,0 +1,25 @@
+{
+  "actual_cpu_recordings": 8,
+  "completed_at": "2026-11-03T06:24:33Z",
+  "conclusion": "success",
+  "created_at": "2026-11-03T06:23:21Z",
+  "event": "push",
+  "head_commit": "91dd8a7f68d9a0235a90973e727233b965d71fd0",
+  "job_url": "https://github.com/Mosionca2/Privacy_Injection/actions/runs/41589563151/job/125762899379",
+  "matrix_receipt_sha256": "ed1dc5cce6ed8b3542f51925d0f7c08307a0390d819c2a24ebfe0eaabaf72095",
+  "new_model_generations": 0,
+  "previous_attempt": {
+    "cause": "Research-controller assertion expected launch order instead of saved start-time/run-ID order for same-second successes",
+    "conclusion": "failure",
+    "run_id": 41588858334
+  },
+  "run_id": 41589563151,
+  "schema_version": 1,
+  "scientific_evidence_receipt_matches": true,
+  "scope": "Actual corrected-controller GitHub run; local archived CPU records separately identify their original controller commit.",
+  "status": "completed",
+  "tests_duration_seconds": 1.292,
+  "tests_passed": 32,
+  "url": "https://github.com/Mosionca2/Privacy_Injection/actions/runs/41589563151",
+  "validator_sha256": "80e03c7d766671250c36bc07ac101ba3ab84cb3f9411c4f0b7e437b895c63ee3"
+}
