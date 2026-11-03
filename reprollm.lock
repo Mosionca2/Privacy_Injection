@@ -1,7 +1,7 @@
 schema_version: 1
-reprollm_version: 0.6.1
-generated_at: '2026-11-02T08:32:01Z'
-manifest_sha256: sha256:a1fc2b362a72a2a62a67ed22ba311bef35e27a3a8eec8e6a5cc4e7588c5f7a21
+reprollm_version: 0.7.0
+generated_at: '2026-11-03T04:30:12Z'
+manifest_sha256: sha256:7adcd4a97b1777a5d2996b7d5e48ad7eb041c24415beede53685aad87f850608
 project_rules_sha256: sha256:0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b
 resolution:
   mode: offline
@@ -11,10 +11,10 @@ models:
     id: assets/model
     pinnability: exact
     revision:
-      value: sha256:b05e4bbb179baeeed6b994cb6021c10f08ce8c3abd8582aafd496918221fb56e
+      value: sha256:54b9259d64ca9c410c55e276443b52164cef93f1d76cae3c072ef4112bc76ccb
       source: filesystem
       confidence: exact
-      resolved_at: '2026-11-02T08:32:01Z'
+      resolved_at: '2026-11-03T04:30:12Z'
       note: null
     observed_at: null
     tokenizer: null
@@ -23,7 +23,7 @@ models:
         value: sha256:a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8
         source: filesystem:tokenizer_config.json
         confidence: exact
-        resolved_at: '2026-11-02T08:32:01Z'
+        resolved_at: '2026-11-03T04:30:12Z'
         note: null
       status: present
     config_sha256: null
@@ -31,15 +31,15 @@ models:
     local:
       path: assets/model
       config_sha256:
-        value: sha256:b05e4bbb179baeeed6b994cb6021c10f08ce8c3abd8582aafd496918221fb56e
+        value: sha256:54b9259d64ca9c410c55e276443b52164cef93f1d76cae3c072ef4112bc76ccb
         source: filesystem:config_files
         confidence: exact
-        resolved_at: '2026-11-02T08:32:01Z'
+        resolved_at: '2026-11-03T04:30:12Z'
         note: config.json, tokenizer_config.json, tokenizer.json
       weights:
-        hashed: false
-        total_size_bytes: 16381516776
-        sha256: null
+        hashed: true
+        total_size_bytes: 4063515592
+        sha256: sha256:aaf02e75c53380d6dd0e9b99d6d086ccf0adabda5952dcea9e169880a4b9afe4
     dtype: float16
     quantization: none
     trust_remote_code: false
@@ -51,7 +51,7 @@ datasets:
       value: null
       source: filesystem
       confidence: exact
-      resolved_at: '2026-11-02T08:32:01Z'
+      resolved_at: '2026-11-03T04:30:12Z'
       note: null
     subset: null
     split: dev
@@ -64,19 +64,22 @@ datasets:
 prompts:
   system:
     path: configs/protocol.json
-    sha256: sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8
-    size_bytes: 2650
+    sha256: sha256:9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298
+    size_bytes: 2845
     text_sha256: null
 files:
 - path: .python-version
   sha256: sha256:8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8
   size_bytes: 8
 - path: configs/protocol.json
-  sha256: sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8
-  size_bytes: 2650
+  sha256: sha256:9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298
+  size_bytes: 2845
 - path: model.identity.json
-  sha256: sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375
-  size_bytes: 1967
+  sha256: sha256:a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367
+  size_bytes: 1710
+- path: recorder-source.json
+  sha256: sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213
+  size_bytes: 24152
 - path: requirements.runtime.txt
   sha256: sha256:be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00
   size_bytes: 112
@@ -96,7 +99,7 @@ inference:
     value: 5.2.0
     source: importlib_metadata
     confidence: exact
-    resolved_at: '2026-11-02T08:32:01Z'
+    resolved_at: '2026-11-03T04:30:12Z'
     note: null
   mode: offline
   dtype: float16
@@ -107,7 +110,7 @@ inference:
   kv_cache_dtype: null
   params:
     attention: sdpa
-    batch_size: 64
+    batch_size: 1
     enable_thinking: false
 training: null
 evaluation:
@@ -134,10 +137,10 @@ evaluation:
 privacy:
   threat_model: Only retrieved text is attacker-controlled; private identifiers and system policy are hidden from the attacker.
   mechanism:
-    name: D3
+    name: D0
     params:
-      external_boundary: true
-      per_line_origin_labels: true
+      external_boundary: false
+      per_line_origin_labels: false
       shared_policy_source: configs/protocol.json:system
       trusted_tail_reminder: false
   metrics:
