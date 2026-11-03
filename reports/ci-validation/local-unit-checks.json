@@ -1,0 +1,10 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "duration_seconds": 59.245,
+  "exit_code": 0,
+  "new_model_generations": 0,
+  "new_regression_cases": 1,
+  "passed": 40,
+  "schema_version": 1,
+  "scope": "Full research repository suite in the existing scientific environment; separate from the 30-test CPU CI subset."
+}

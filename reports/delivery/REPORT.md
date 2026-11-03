@@ -57,6 +57,8 @@ python -m unittest discover -s tests -v
 
 [The checkpoint validation receipt](validation.json) records the actual local results. Verification is offline and runs no inference. It checks internal consistency of published artifacts, including scores recomputed with the study's frozen scoring definition. It is not an external attestation or independent scientific replication. Large model weights, bootstrap intervals and charts are not revalidated by this command. Device-sanitized run/log copies also cannot be treated as the private originals' complete byte identity.
 
+The later [CPU CI gate](../ci-validation/REPORT.md) automates this complete evidence check and checks actual pinned-source ReproLLM reading of schema-1 and schema-2 archives. It compares a fresh verification result to the committed receipt on each main push or pull request. Its 30 CPU tests cover scoring, evidence, recovery and source guards; the full local scientific-environment suite has 40 passing tests. These maintenance checks add no model responses.
+
 ## Remaining boundaries
 
 - Local upstream revisions and original-versus-modified status remain unverified; conclusions bind exact published fingerprints. Four A100 80GB devices were used, without a test under a 5–8GB hardware limit.

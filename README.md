@@ -97,3 +97,7 @@ At the source-input checkpoint, repository totals were **10,880 completed respon
 Pinned source 0.7.0 controlled SIGTERM/resume cases on the local 8B and 1.7B snapshots added 256 genuine completed responses across six captures. Both recovered outputs preserve the original rows and match their separate uninterrupted references. [The report](reports/source-recovery-validation/REPORT.md) retains attempt IDs, exits, input identities, progress receipts, diffs and limits.
 
 Current totals are **11,136 completed responses across 43 GPU captures** (40 completed, three intentionally interrupted), with **6,144 formal responses** unchanged. All 39 repository tests and the full offline evidence check pass. Issue #13 is resolved by upstream documentation clarification and a recorded contributor revisit.
+
+## Automated evidence and ReproLLM reader checks
+
+The [CPU CI workflow](.github/workflows/evidence.yml) checks every main push and pull request against all published capture evidence and its committed verification receipt. It also uses pinned ReproLLM source 0.7.0 to read actual schema-1 and schema-2 archived runs, checking source-file hashes and preserving archived bytes. The gate requires no model weights or inference packages and adds no model responses. [The validation report](reports/ci-validation/REPORT.md) records scope, local checks and remote-run status; all 40 local repository tests pass.

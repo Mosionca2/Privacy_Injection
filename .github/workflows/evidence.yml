@@ -1,0 +1,58 @@
+name: Published evidence
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evidence-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+    steps:
+      - name: Check out study and historical scientific sources
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check out the recorded ReproLLM source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: EnumaElish123/ReproLLM
+          ref: f7bd2ad7686ff603f8508d9eedfb919d35edb8e9
+          path: .ci-tools/reprollm
+          persist-credentials: false
+      - name: Set up CPU Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Install evidence and reader dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.ci.txt
+      - name: Test scoring, evidence, recovery and source guards
+        env:
+          PYTHONPATH: tests
+        run: |
+          mkdir -p raw/ci
+          python -m unittest -v test_ci test_core test_evidence test_gpu_resume test_source_recorder 2>&1 | tee raw/ci/unit-tests.log
+      - name: Verify all published captures and read both run schemas
+        run: python tools/ci_verify.py --consumer-source .ci-tools/reprollm
+      - name: Preserve verification receipts
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: evidence-verification
+          path: raw/ci/
+          if-no-files-found: warn
+          retention-days: 14
