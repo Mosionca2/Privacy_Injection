@@ -23,7 +23,8 @@
     "reports/extensions/qwen3-1.7b/REPORT.md",
     "reports/reprollm-contribution-validation.json",
     "reports/workspace-preparation/REPORT.md",
-    "reports/delivery/evidence-verification.json"
+    "reports/delivery/evidence-verification.json",
+    "reports/source-recorder-validation/REPORT.md"
   ],
   "fork_status": "created_main_synchronized_to_upstream_merge",
   "fork_url": "https://github.com/Mosionca2/ReproLLM",
@@ -55,6 +56,23 @@
     "completed": true,
     "gpu_runs": 13,
     "real_generations": 5376
+  },
+  "source_recorder_followup": {
+    "author": "Mosionca2",
+    "label_assignment": "GitHub denied AddLabelsToLabelable for the contributing account; maintainer assignment requested.",
+    "minimal_reproduction": "reports/source-recorder-validation/inline-candidate-mre.json",
+    "number": 13,
+    "observed_labels": [],
+    "observed_state": "open",
+    "pull_request_created": false,
+    "requested_labels": [
+      "spec",
+      "question"
+    ],
+    "schema_version": 1,
+    "scope": "Text-or-path candidate specification clarification; no confirmed product defect or code fix claimed.",
+    "source_commit": "ad8b2c7057b6473072b65102eaf8e122b647acec",
+    "url": "https://github.com/EnumaElish123/ReproLLM/issues/13"
   },
   "upstream_acceptance": {
     "accepted_scope": "Documentation placement and content; no independent scientific-result replication.",

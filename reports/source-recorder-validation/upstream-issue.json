@@ -1,0 +1,17 @@
+{
+  "author": "Mosionca2",
+  "label_assignment": "GitHub denied AddLabelsToLabelable for the contributing account; maintainer assignment requested.",
+  "minimal_reproduction": "reports/source-recorder-validation/inline-candidate-mre.json",
+  "number": 13,
+  "observed_labels": [],
+  "observed_state": "open",
+  "pull_request_created": false,
+  "requested_labels": [
+    "spec",
+    "question"
+  ],
+  "schema_version": 1,
+  "scope": "Text-or-path candidate specification clarification; no confirmed product defect or code fix claimed.",
+  "source_commit": "ad8b2c7057b6473072b65102eaf8e122b647acec",
+  "url": "https://github.com/EnumaElish123/ReproLLM/issues/13"
+}
