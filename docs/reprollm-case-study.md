@@ -55,4 +55,8 @@ After committed recording metadata became part of the source checkout, a bounded
 
 ## Pinned-source GPU follow-up
 
-The later [source-recorder GPU check](../reports/source-recorder-validation/REPORT.md) adds three actual schema-2 source captures and one released reference. It verifies pre-child baselines, post-child auxiliary-input drift and an unchanged historical capture after current-file restoration. Source module version 0.7.0 is kept distinct from the unchanged installed distribution 0.6.1. This adds 256 development responses, without changing the formal scientific results. Source GPU interruption and hard-kill recovery remain untested.
+The later [source-recorder GPU check](../reports/source-recorder-validation/REPORT.md) adds three actual schema-2 source captures and one released reference. It verifies pre-child baselines, post-child auxiliary-input drift and an unchanged historical capture after current-file restoration. Source module version 0.7.0 is kept distinct from the unchanged installed distribution 0.6.1. This adds 256 development responses, without changing the formal scientific results. At that checkpoint, source GPU interruption had not been tested; the subsequent source recovery case is linked below. Hard-kill recovery remains untested.
+
+## Source recovery and clarification follow-up
+
+The [source recovery campaign](../reports/source-recovery-validation/REPORT.md) now verifies controlled SIGTERM/resume on both local snapshots against fresh references, adding 256 completed development responses in six captures. It retains the original partial bytes, all attempt IDs, schema-2 phases and durable interruption counts. Issue #13 is closed as an existing-contract clarification; the contributor rechecked the exact updated checkout and posted a follow-up. Hard-kill and corrupted-output repair remain untested.

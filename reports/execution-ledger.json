@@ -1,11 +1,11 @@
 {
-  "completed_gpu_runs": 36,
+  "completed_gpu_runs": 40,
   "formal_generations": 6144,
-  "interrupted_gpu_runs": 1,
-  "real_gpu_runs": 37,
-  "real_model_generations_published": 10880,
+  "interrupted_gpu_runs": 3,
+  "real_gpu_runs": 43,
+  "real_model_generations_published": 11136,
   "schema_version": 1,
-  "scope": "Two exact local-model study campaigns plus separately scoped GPU recovery and source-recorder validations. Counts include completed responses only; CPU fixtures, skips and interrupted in-flight work are excluded.",
+  "scope": "Two original local-model study campaigns and separately scoped released/source recorder workflow validations. Count completed responses only; exclude CPU fixtures, skips and interrupted in-flight work.",
   "studies": [
     {
       "completion": "reports/completion.json",
@@ -38,6 +38,15 @@
       "interrupted_gpu_runs": 0,
       "label": "Pinned source recorder GPU compatibility and input-change probe",
       "model_label": "Local Qwen3-1.7B"
+    },
+    {
+      "completed_gpu_runs": 4,
+      "completed_responses": 256,
+      "completion": "reports/source-recovery-validation/comparison.json",
+      "gpu_runs": 6,
+      "interrupted_gpu_runs": 2,
+      "label": "Source 0.7.0 SIGTERM recovery on two local snapshots",
+      "model_label": "Local Qwen3-8B and Qwen3-1.7B"
     }
   ]
 }

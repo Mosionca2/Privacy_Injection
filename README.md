@@ -90,4 +90,10 @@ The extension adapter now supports source checkouts with committed recording met
 
 Three pinned-source 0.7.0 GPU conditions and a released-0.6.1 reference completed 256 new responses. Schema-2 baselines preserve the original diagnostic input while post-child checks detect its deliberate change. Installed distribution metadata remains 0.6.1; no environment upgrade occurred. [The report](reports/source-recorder-validation/REPORT.md) records source identity, actual run IDs, diffs, historical exports and limits.
 
-Current repository totals are **10,880 completed responses and 37 GPU captures**, with **6,144 formal responses** unchanged. All 37 repository tests and the full published-evidence consistency check pass.
+At the source-input checkpoint, repository totals were **10,880 completed responses and 37 GPU captures**, with **6,144 formal responses** unchanged. All 37 repository tests and the full published-evidence consistency check pass.
+
+## Source recorder interruption and resume
+
+Pinned source 0.7.0 controlled SIGTERM/resume cases on the local 8B and 1.7B snapshots added 256 genuine completed responses across six captures. Both recovered outputs preserve the original rows and match their separate uninterrupted references. [The report](reports/source-recovery-validation/REPORT.md) retains attempt IDs, exits, input identities, progress receipts, diffs and limits.
+
+Current totals are **11,136 completed responses across 43 GPU captures** (40 completed, three intentionally interrupted), with **6,144 formal responses** unchanged. All 39 repository tests and the full offline evidence check pass. Issue #13 is resolved by upstream documentation clarification and a recorded contributor revisit.

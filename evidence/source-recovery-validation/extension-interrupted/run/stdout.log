@@ -1,0 +1,9 @@
+{"event": "model_loaded", "load_seconds": 7.1046886052936316, "batch_size": 1}
+{"event": "batch_complete", "new_samples": 1, "total_pending": 64}
+{"event": "batch_complete", "new_samples": 2, "total_pending": 64}
+{"event": "batch_complete", "new_samples": 3, "total_pending": 64}
+{"event": "batch_complete", "new_samples": 4, "total_pending": 64}
+{"event": "batch_complete", "new_samples": 5, "total_pending": 64}
+{"event": "batch_complete", "new_samples": 6, "total_pending": 64}
+{"event": "batch_complete", "new_samples": 7, "total_pending": 64}
+{"event": "batch_complete", "new_samples": 8, "total_pending": 64}
