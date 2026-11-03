@@ -1,0 +1,129 @@
+{
+  "all_passed": true,
+  "before_fix": {
+    "cause": "Source clone already contains a committed reprollm.yaml.",
+    "duration_seconds": 87.247,
+    "exit_code": 2,
+    "expected_failure": true,
+    "failing_cli": "reprollm init . --profiles inference,evaluation,privacy",
+    "source_commit": "76392b0d95bcb4d44a8e70ce755c4e17b7cbd729"
+  },
+  "command_placeholders": "Machine-specific source/model/destination paths are replaced with descriptive placeholders.",
+  "complete_model_identity_verified_by_preparation": true,
+  "condition_commit_retained_privately": true,
+  "expected_condition": {
+    "batch_size": 16,
+    "cases": 1,
+    "defense": "D1",
+    "split": "dev"
+  },
+  "fresh_lock_local_weights": {
+    "hashed": true,
+    "sha256": "sha256:aaf02e75c53380d6dd0e9b99d6d086ccf0adabda5952dcea9e169880a4b9afe4",
+    "total_size_bytes": 4063515592
+  },
+  "fresh_offline_lock_with_large_file_hashing": true,
+  "hardlinked_existing_assets": true,
+  "inherited_lock_removed": true,
+  "installed_reprollm": "0.6.1",
+  "limits": [
+    "Study adapter fix, not a confirmed upstream ReproLLM defect.",
+    "Actual setup/locking check uses released 0.6.1 and the existing exact local 1.7B snapshot.",
+    "No model execution, new run captures or additional formal estimates.",
+    "Source 0.7.0 GPU execution and hard-kill recovery are not validated by this check.",
+    "Prepared validation condition is committed locally; no recording-provenance tag is claimed."
+  ],
+  "local_asset_bytes": 4079423234,
+  "local_asset_files": 9,
+  "lock_check_exit": 0,
+  "matching_rule_bytes_preserved": true,
+  "model_identity_sha256": "a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+  "new_model_generations": 0,
+  "new_recorded_runs": 0,
+  "original_scientific_freeze_unchanged": true,
+  "preparation_script_sha256": "e24d64ebdf304ef3f2e1a15530af40b5702ded594566844312bfadd4b074434c",
+  "schema_version": 1,
+  "scope": "Workspace preparation, local model identity, offline locking and clean committed inputs only; no inference or run capture.",
+  "source_and_condition_git_clean": true,
+  "source_commit": "e3731fccfca6a1de00a936a9d37ca1119531e0c2",
+  "source_inputs_unchanged": true,
+  "steps": [
+    {
+      "command": "git rev-parse HEAD",
+      "duration_seconds": 0.083,
+      "exit_code": 0,
+      "step": "source-commit",
+      "working_directory": "source-checkout"
+    },
+    {
+      "command": "git status --porcelain",
+      "duration_seconds": 3.905,
+      "exit_code": 0,
+      "step": "source-clean",
+      "working_directory": "source-checkout"
+    },
+    {
+      "command": "python tools/prepare_extension.py --study studies/qwen3-1.7b --destination <new-workspace> --model <matching-local-model> --defense D1 --split dev --batch-size 16 --limit 1",
+      "duration_seconds": 63.506,
+      "exit_code": 0,
+      "step": "prepare",
+      "working_directory": "source-checkout"
+    },
+    {
+      "command": "reprollm lock . --offline --hash-large-files",
+      "duration_seconds": 40.062,
+      "exit_code": 0,
+      "step": "lock",
+      "working_directory": "new-condition-workspace"
+    },
+    {
+      "command": "reprollm lock . --check",
+      "duration_seconds": 6.749,
+      "exit_code": 0,
+      "step": "lock-check",
+      "working_directory": "new-condition-workspace"
+    },
+    {
+      "command": "git add -f reprollm.yaml reprollm.lock .reprollm/project-rules.yaml configs/protocol.json model.identity.json protocol.freeze.json .python-version requirements.runtime.txt",
+      "duration_seconds": 0.215,
+      "exit_code": 0,
+      "step": "commit-inputs-add",
+      "working_directory": "new-condition-workspace"
+    },
+    {
+      "command": "git commit -m \"experiment: validate repaired extension preparation\"",
+      "duration_seconds": 1.835,
+      "exit_code": 0,
+      "step": "commit-inputs",
+      "working_directory": "new-condition-workspace"
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "duration_seconds": 0.046,
+      "exit_code": 0,
+      "step": "condition-commit",
+      "working_directory": "new-condition-workspace"
+    },
+    {
+      "command": "git status --porcelain",
+      "duration_seconds": 3.974,
+      "exit_code": 0,
+      "step": "condition-clean",
+      "working_directory": "new-condition-workspace"
+    },
+    {
+      "command": "git status --porcelain",
+      "duration_seconds": 3.874,
+      "exit_code": 0,
+      "step": "source-still-clean",
+      "working_directory": "source-checkout"
+    }
+  ],
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "duration_seconds": 46.138,
+    "new_regression_cases": 5,
+    "passed": 25,
+    "scientific_source_changes": 0
+  }
+}

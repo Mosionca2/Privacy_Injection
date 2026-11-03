@@ -48,3 +48,7 @@ Per upstream's documentation-only validation exception, local product full-suite
 ## Controlled real-GPU recovery follow-up
 
 The [released-0.6.1 GPU recovery case](../reports/recovery-validation/REPORT.md) completed another 128 responses across an interrupted/resumed pair and an independent reference. The first capture retained 8 rows and recorded the child's signal exit; the unchanged experiment command added the remaining 56. All 64 sample IDs are unique and complete, with 0 output and 0 score differences against the fresh reference. Both actual attempt IDs and the original partial output remain preserved. Resume belongs to the experiment script; ReproLLM supplies the truthful interrupted/completed records and selected-run evidence. This is not current-source 0.7.0 GPU validation or a hard-kill recovery guarantee.
+
+## Later workspace preparation
+
+After committed recording metadata became part of the source checkout, a bounded check reproduced an adapter failure caused by repeated initialization. `tools/prepare_extension.py` now reuses existing matching rules, adds missing rules, rejects conflicts and discards the source condition's inherited lock. A real local-asset setup and full offline-lock check passed, with 25 repository tests and no frozen scientific changes. The [validation report](../reports/workspace-preparation/REPORT.md) distinguishes this study integration repair from upstream product findings; it adds no inference or capture counts.
