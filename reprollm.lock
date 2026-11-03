@@ -1,8 +1,8 @@
 schema_version: 1
-reprollm_version: 0.6.1
-generated_at: '2026-11-02T08:32:01Z'
-manifest_sha256: sha256:a1fc2b362a72a2a62a67ed22ba311bef35e27a3a8eec8e6a5cc4e7588c5f7a21
-project_rules_sha256: sha256:0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b
+reprollm_version: 0.7.0
+generated_at: '2026-11-03T07:20:04Z'
+manifest_sha256: sha256:43491d4d4110e867dedc51d58d11365087e1df64e54c164fa453d790c3e66f78
+project_rules_sha256: sha256:2569c9674bb5b67f29bf0351d286aac693853c50cf44254ade604b9593b33c8a
 resolution:
   mode: offline
 models:
@@ -14,7 +14,7 @@ models:
       value: sha256:b05e4bbb179baeeed6b994cb6021c10f08ce8c3abd8582aafd496918221fb56e
       source: filesystem
       confidence: exact
-      resolved_at: '2026-11-02T08:32:01Z'
+      resolved_at: '2026-11-03T07:20:04Z'
       note: null
     observed_at: null
     tokenizer: null
@@ -23,7 +23,7 @@ models:
         value: sha256:a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8
         source: filesystem:tokenizer_config.json
         confidence: exact
-        resolved_at: '2026-11-02T08:32:01Z'
+        resolved_at: '2026-11-03T07:20:04Z'
         note: null
       status: present
     config_sha256: null
@@ -34,7 +34,7 @@ models:
         value: sha256:b05e4bbb179baeeed6b994cb6021c10f08ce8c3abd8582aafd496918221fb56e
         source: filesystem:config_files
         confidence: exact
-        resolved_at: '2026-11-02T08:32:01Z'
+        resolved_at: '2026-11-03T07:20:04Z'
         note: config.json, tokenizer_config.json, tokenizer.json
       weights:
         hashed: false
@@ -46,26 +46,26 @@ models:
 datasets:
   eval:
     provider: local
-    id: paired-identifiers-v1
+    id: neutral-tail-v1
     revision:
       value: null
       source: filesystem
       confidence: exact
-      resolved_at: '2026-11-02T08:32:01Z'
+      resolved_at: '2026-11-03T07:20:04Z'
       note: null
     subset: null
-    split: dev
+    split: test
     content_fingerprint:
       status: not_computed
     files:
-    - path: data/dev.jsonl
-      sha256: sha256:fffea11822f77fd223d414d0cdd6ddd62d711fd4b060b52aaeae14fb9e947dc1
-      size_bytes: 10621
+    - path: studies/tail-ablation-v1/data/test.jsonl
+      sha256: sha256:f77d46d7f91c98abb6493615b842e7fadc72257db5486f66152bd0d9f644c1dd
+      size_bytes: 47773
 prompts:
   system:
-    path: configs/protocol.json
-    sha256: sha256:69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8
-    size_bytes: 2650
+    path: studies/tail-ablation-v1/protocol.json
+    sha256: sha256:a745712a89bc68688127bc33d8fed466bf73bda18c492de07c034b4859bdc477
+    size_bytes: 3960
     text_sha256: null
 files:
 - path: .python-version
@@ -77,9 +77,51 @@ files:
 - path: model.identity.json
   sha256: sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375
   size_bytes: 1967
+- path: privacy_study/core.py
+  sha256: sha256:d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43
+  size_bytes: 8920
+- path: recorder-source.json
+  sha256: sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213
+  size_bytes: 24152
 - path: requirements.runtime.txt
   sha256: sha256:be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00
   size_bytes: 112
+- path: studies/qwen3-1.7b/model.identity.json
+  sha256: sha256:a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367
+  size_bytes: 1710
+- path: studies/tail-ablation-v1/data/dev.jsonl
+  sha256: sha256:09842e88f2724a1995a2105fe2afd44c70e98189045cb3a1fefc2fed446ee620
+  size_bytes: 11773
+- path: studies/tail-ablation-v1/data/test.jsonl
+  sha256: sha256:f77d46d7f91c98abb6493615b842e7fadc72257db5486f66152bd0d9f644c1dd
+  size_bytes: 47773
+- path: studies/tail-ablation-v1/preparation.json
+  sha256: sha256:0f1e6abdd921ec77c038dc435eef0136b19459d24513a6a05fe646b70684e77c
+  size_bytes: 520
+- path: studies/tail-ablation-v1/prompts/extension.jsonl
+  sha256: sha256:3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5
+  size_bytes: 4006908
+- path: studies/tail-ablation-v1/prompts/primary.jsonl
+  sha256: sha256:3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5
+  size_bytes: 4006908
+- path: studies/tail-ablation-v1/protocol.freeze.json
+  sha256: sha256:cd4a0d3f57a6f5f2cd0042cab7f3fc773010080bea27d6420501592a80657aca
+  size_bytes: 1989
+- path: studies/tail-ablation-v1/protocol.json
+  sha256: sha256:a745712a89bc68688127bc33d8fed466bf73bda18c492de07c034b4859bdc477
+  size_bytes: 3960
+- path: tail_ablation/__init__.py
+  sha256: sha256:7c9287d228f1c783834eff6dc8dd256c843500688c7b44bb3849486ec2841104
+  size_bytes: 89
+- path: tail_ablation/core.py
+  sha256: sha256:d9c0487bb76e2e4e0b1428ee67fddeb207afa92dbaa56149b0eef3fbb8593de0
+  size_bytes: 2781
+- path: tail_ablation/run.py
+  sha256: sha256:a6f66659152fe2b6d696b59fe4c49c34e3880ac5826c741cbad60adccf9cad53
+  size_bytes: 7527
+- path: tools/prepare_tail_ablation.py
+  sha256: sha256:e1daeddd1db60b6e409dfefd0000d8595bdc79ff47eac267c4a33d296d7f6f98
+  size_bytes: 5650
 generation:
   temperature: 0.0
   top_p: 1.0
@@ -96,7 +138,7 @@ inference:
     value: 5.2.0
     source: importlib_metadata
     confidence: exact
-    resolved_at: '2026-11-02T08:32:01Z'
+    resolved_at: '2026-11-03T07:20:04Z'
     note: null
   mode: offline
   dtype: float16
@@ -134,11 +176,13 @@ evaluation:
 privacy:
   threat_model: Only retrieved text is attacker-controlled; private identifiers and system policy are hidden from the attacker.
   mechanism:
-    name: D3
+    name: N
     params:
       external_boundary: true
-      per_line_origin_labels: true
-      shared_policy_source: configs/protocol.json:system
+      neutral_tail: true
+      prompt_inventory: studies/tail-ablation-v1/prompts/primary.jsonl
+      repeated_question: true
+      shared_policy_source: studies/tail-ablation-v1/protocol.json:system
       trusted_tail_reminder: false
   metrics:
   - leak
