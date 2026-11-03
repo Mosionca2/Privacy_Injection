@@ -15,11 +15,14 @@
     "custom.defense": {
       "cli": "--defense"
     },
+    "custom.study_model": {
+      "cli": "--study-model"
+    },
     "generation.max_tokens": {
-      "config": "configs/protocol.json:max_new_tokens"
+      "config": "studies/tail-ablation-v1/protocol.json:max_new_tokens"
     },
     "generation.seed": {
-      "config": "configs/protocol.json:run_seed"
+      "config": "studies/tail-ablation-v1/protocol.json:run_seed"
     },
     "models.primary.id": {
       "cli": "--model"
@@ -27,26 +30,27 @@
   },
   "custom": {
     "batch_size": 64,
-    "dataset_split": "dev",
-    "defense": "D3"
+    "dataset_split": "test",
+    "defense": "D2",
+    "study_model": "primary"
   },
   "datasets": {
     "eval": {
       "files": [
-        "data/dev.jsonl"
+        "studies/tail-ablation-v1/data/test.jsonl"
       ],
-      "id": "paired-identifiers-v1",
+      "id": "neutral-tail-v1",
       "preprocessing": {
         "description": "Balanced deterministic lookup and latest-record tasks.",
-        "script": "privacy_study/core.py"
+        "script": "tail_ablation/core.py"
       },
       "provider": "local",
       "sampling": {
         "method": "fixed_cases",
-        "n": 8,
-        "seed": 20261102
+        "n": 96,
+        "seed": 20261103
       },
-      "split": "dev"
+      "split": "test"
     }
   },
   "evaluation": {
@@ -72,17 +76,31 @@
     "repetitions": 1
   },
   "execution": {
-    "command": "python -m privacy_study.run --model assets/model --defense D3 --split dev --batch-size 64 --limit 8",
+    "command": "python -m tail_ablation.run --model assets/model --study-model primary --defense D2 --split test --batch-size 64",
     "config_files": [
       ".python-version",
       "configs/protocol.json",
       "model.identity.json",
-      "requirements.runtime.txt"
+      "privacy_study/core.py",
+      "recorder-source.json",
+      "requirements.runtime.txt",
+      "studies/qwen3-1.7b/model.identity.json",
+      "studies/tail-ablation-v1/data/dev.jsonl",
+      "studies/tail-ablation-v1/data/test.jsonl",
+      "studies/tail-ablation-v1/preparation.json",
+      "studies/tail-ablation-v1/prompts/extension.jsonl",
+      "studies/tail-ablation-v1/prompts/primary.jsonl",
+      "studies/tail-ablation-v1/protocol.freeze.json",
+      "studies/tail-ablation-v1/protocol.json",
+      "tail_ablation/__init__.py",
+      "tail_ablation/core.py",
+      "tail_ablation/run.py",
+      "tools/prepare_tail_ablation.py"
     ],
     "seed": 73129
   },
   "experiment": {
-    "name": "dev-D3-b64",
+    "name": "tail-v1-primary-test-D2",
     "profiles": [
       "inference",
       "evaluation",
@@ -129,12 +147,14 @@
       "query_budget": 6
     },
     "mechanism": {
-      "name": "D3",
+      "name": "D2",
       "params": {
         "external_boundary": true,
-        "per_line_origin_labels": true,
-        "shared_policy_source": "configs/protocol.json:system",
-        "trusted_tail_reminder": false
+        "neutral_tail": false,
+        "prompt_inventory": "studies/tail-ablation-v1/prompts/primary.jsonl",
+        "repeated_question": true,
+        "shared_policy_source": "studies/tail-ablation-v1/protocol.json:system",
+        "trusted_tail_reminder": true
       }
     },
     "metrics": [
@@ -152,7 +172,7 @@
         "n": 0
       },
       "format": "plain",
-      "path": "configs/protocol.json"
+      "path": "studies/tail-ablation-v1/protocol.json"
     }
   },
   "schema_version": 1
