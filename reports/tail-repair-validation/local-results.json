@@ -1,0 +1,115 @@
+{
+  "actual_cpu_recordings": 6,
+  "all_passed": true,
+  "consumer": {
+    "module_version": "0.7.0",
+    "package_files_checked": 148,
+    "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9"
+  },
+  "diffs": [
+    {
+      "custom_mode_change_detected": true,
+      "engine": "released"
+    },
+    {
+      "custom_mode_change_detected": true,
+      "engine": "source"
+    }
+  ],
+  "new_model_generations": 0,
+  "records": [
+    {
+      "backup_and_output_hashes_verified": false,
+      "child_exit_code": 0,
+      "complete_failure_rows_preserved": null,
+      "engine": "released",
+      "original_inputs_unchanged": true,
+      "record_status": "completed",
+      "recorder_version": "0.6.1",
+      "retained_sample_rows": 8,
+      "run_directory_unchanged": true,
+      "run_id": "20261103T081438Z-d4bcfb",
+      "run_schema_version": 1,
+      "scenario": "inspect",
+      "scientific_reader_compatibility_checked": false
+    },
+    {
+      "backup_and_output_hashes_verified": true,
+      "child_exit_code": 0,
+      "complete_failure_rows_preserved": 1,
+      "engine": "released",
+      "original_inputs_unchanged": true,
+      "record_status": "completed",
+      "recorder_version": "0.6.1",
+      "retained_sample_rows": 8,
+      "run_directory_unchanged": true,
+      "run_id": "20261103T081433Z-7a2fef",
+      "run_schema_version": 1,
+      "scenario": "repair",
+      "scientific_reader_compatibility_checked": true
+    },
+    {
+      "backup_and_output_hashes_verified": false,
+      "child_exit_code": 2,
+      "complete_failure_rows_preserved": null,
+      "engine": "released",
+      "original_inputs_unchanged": true,
+      "record_status": "completed",
+      "recorder_version": "0.6.1",
+      "retained_sample_rows": 8,
+      "run_directory_unchanged": true,
+      "run_id": "20261103T081438Z-7a33e3",
+      "run_schema_version": 1,
+      "scenario": "refuse-complete-failure",
+      "scientific_reader_compatibility_checked": false
+    },
+    {
+      "backup_and_output_hashes_verified": false,
+      "child_exit_code": 0,
+      "complete_failure_rows_preserved": null,
+      "engine": "source",
+      "original_inputs_unchanged": true,
+      "record_status": "completed",
+      "recorder_version": "0.7.0",
+      "retained_sample_rows": 8,
+      "run_directory_unchanged": true,
+      "run_id": "20261103T081441Z-094c40",
+      "run_schema_version": 2,
+      "scenario": "inspect",
+      "scientific_reader_compatibility_checked": false
+    },
+    {
+      "backup_and_output_hashes_verified": true,
+      "child_exit_code": 0,
+      "complete_failure_rows_preserved": 1,
+      "engine": "source",
+      "original_inputs_unchanged": true,
+      "record_status": "completed",
+      "recorder_version": "0.7.0",
+      "retained_sample_rows": 8,
+      "run_directory_unchanged": true,
+      "run_id": "20261103T081441Z-a0b597",
+      "run_schema_version": 2,
+      "scenario": "repair",
+      "scientific_reader_compatibility_checked": true
+    },
+    {
+      "backup_and_output_hashes_verified": false,
+      "child_exit_code": 2,
+      "complete_failure_rows_preserved": null,
+      "engine": "source",
+      "original_inputs_unchanged": true,
+      "record_status": "completed",
+      "recorder_version": "0.7.0",
+      "retained_sample_rows": 8,
+      "run_directory_unchanged": true,
+      "run_id": "20261103T081438Z-d18a16",
+      "run_schema_version": 2,
+      "scenario": "refuse-complete-failure",
+      "scientific_reader_compatibility_checked": false
+    }
+  ],
+  "repair_tool_sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+  "schema_version": 1,
+  "scope": "Controlled corruption/failure markers on copies of existing public model rows; actual repair-tool CLI capture, not GPU corruption/recovery or power-loss testing."
+}

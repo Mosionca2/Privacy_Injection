@@ -23,7 +23,9 @@ At the initial CI checkpoint, all **40 local repository tests** passed; the [uni
 
 The later [termination-validation protocol](../termination-validation/protocol.json) added guards for process ownership and same-second run ordering, reaching **42 local tests and 32 CI tests**, plus a separate real CPU termination matrix. Its records and results are scoped separately from this initial CI checkpoint.
 
-The [neutral-tail follow-up](../tail-ablation-v1/REPORT.md) adds five prompt, fresh-data, freeze and captured-token-trace guards. Current suites have **47 local tests and 37 CI tests**. The evidence gate now covers the separately accounted follow-up model captures as well as the original campaigns, without installing inference packages on CI.
+The [neutral-tail follow-up](../tail-ablation-v1/REPORT.md) added five prompt, fresh-data, freeze and captured-token-trace guards, reaching **47 local tests and 37 CI tests**. The evidence gate covers the separately accounted follow-up model captures as well as the original campaigns, without installing inference packages on CI.
+
+The subsequent [copy-only tail-repair stage](../tail-repair-validation/REPORT.md) adds seven preservation/refusal guards and a six-record actual ReproLLM CPU matrix. Current suites have **54 local tests and 44 CI tests**. Model-response accounting is unchanged by these copy and CLI checks.
 
 GitHub actions are pinned by complete commit SHA. The job has read-only repository permission, does not persist checkout credentials, and uploads only its generated verification receipts and test output with 14-day retention. It uses no repository secrets. The server environment and frozen scientific files are unchanged.
 

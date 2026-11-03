@@ -45,11 +45,13 @@ jobs:
           PYTHONPATH: tests
         run: |
           mkdir -p raw/ci
-          python -m unittest -v test_ci test_core test_evidence test_gpu_resume test_source_recorder test_termination test_tail_ablation 2>&1 | tee raw/ci/unit-tests.log
+          python -m unittest -v test_ci test_core test_evidence test_gpu_resume test_source_recorder test_termination test_tail_ablation test_tail_repair 2>&1 | tee raw/ci/unit-tests.log
       - name: Verify all published captures and read both run schemas
         run: python tools/ci_verify.py --consumer-source .ci-tools/reprollm
       - name: Exercise owned CPU termination boundaries
         run: python tools/validate_termination.py --consumer-source .ci-tools/reprollm --workspace raw/termination --output raw/ci/termination.json
+      - name: Record copy-only result-tail repair and refusal
+        run: python tools/validate_tail_repair.py --consumer-source .ci-tools/reprollm --workspace raw/tail-repair --output raw/ci/tail-repair.json
       - name: Preserve verification receipts
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

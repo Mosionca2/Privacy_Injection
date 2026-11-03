@@ -1,0 +1,10 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "duration_seconds": 76.855,
+  "exit_code": 0,
+  "new_guards": 7,
+  "new_model_generations": 0,
+  "passed": 54,
+  "repair_tool_sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+  "schema_version": 1
+}
