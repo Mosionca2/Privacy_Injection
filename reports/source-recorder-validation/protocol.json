@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "validation_id": "source-recorder-gpu-v1",
+  "scope": "Bounded real-GPU recorder compatibility and pre/post input-capture validation, separate from formal defense estimates.",
+  "upstream_source_commit": "ad8b2c7057b6473072b65102eaf8e122b647acec",
+  "source_module_version": "0.7.0",
+  "installed_distribution_version": "0.6.1",
+  "source_loading": "Verified upstream package files copied into ignored assets/recorder-source and selected with process-local relative PYTHONPATH; installed packages unchanged.",
+  "version_interpretation": "The recorder module reports source 0.7.0; scientific runner versions and environment package inventory report the actually installed 0.6.1 distribution. These are distinct observations.",
+  "model_study": "qwen3-1.7b",
+  "model_identity": "studies/qwen3-1.7b/model.identity.json",
+  "scientific_protocol": "studies/qwen3-1.7b/protocol.json",
+  "split": "dev",
+  "base_cases": 8,
+  "batch_size": 1,
+  "samples_per_capture": 64,
+  "expected_completed_responses": 256,
+  "conditions": {
+    "source-D0": {"defense": "D0", "source_recorder": true, "expected_input_changes": []},
+    "source-D1": {"defense": "D1", "source_recorder": true, "expected_input_changes": []},
+    "source-input-change": {"defense": "D0", "source_recorder": true, "expected_input_changes": ["probe/declared-input.json"]},
+    "released-D0": {"defense": "D0", "source_recorder": false, "expected_input_changes": []}
+  },
+  "input_change_probe": {
+    "path": "probe/declared-input.json",
+    "role": "Auxiliary declared diagnostic input; the scientific runner does not read it.",
+    "change_after_observed_samples": 8,
+    "expected": "Schema-2 snapshot retains original bytes; post-child check records changed hashes; captured Git dirty state is preserved. Scientific inputs remain unchanged."
+  },
+  "acceptance": [
+    "Actual complete inference coverage, zero child exit and distinct genuine capture IDs.",
+    "Source payload hashes verified before and after; original environment and formal freezes unchanged.",
+    "Three source schema-2 captures with pre_child/post_child phases and consumption unverified; released reference remains schema 1.",
+    "Only the predeclared auxiliary input changes in the diagnostic capture; no changed inputs in ordinary source captures.",
+    "Run-ID links, binding agreement, offline full-weight locks, explicit selected exports and actual cross-workspace diff.",
+    "Record output/score differences between source D0, diagnostic D0 and released D0 without assuming equality or changing scientific estimates."
+  ],
+  "gpu_policy": "Recheck free memory before every launch; at most one of these four useful conditions per available device, minimum 8192 MiB free; fewer devices run in waves.",
+  "limits": [
+    "No model downloads, training, paid calls, product-source changes or package upgrades.",
+    "This is not a new formal model/defense comparison, a release qualification, or five-project product acceptance.",
+    "Source GPU interruption, hard-kill and corrupt-output repair are outside this protocol."
+  ]
+}

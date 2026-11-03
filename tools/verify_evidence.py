@@ -14,6 +14,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from privacy_study import core as c
+from tools.validate_source_recorder import check_input_capture
 
 
 def require(condition, message):
@@ -98,13 +99,35 @@ def check_capture(root, directory):
     historical = [name for name, digest in identity['code'].items()
                   if verify_source(root, name, digest, run['code']['commit'])]
     parts = directory.relative_to(root / 'evidence').parts
-    study = root / 'studies' / parts[1] if parts[0] == 'extensions' else root
+    source_case = parts[0] == 'source-recorder-validation'
+    source_protocol = c.read_json(root / 'reports/source-recorder-validation/protocol.json') if source_case else None
+    study = (root / 'studies' / source_protocol['model_study'] if source_case else
+             root / 'studies' / parts[1] if parts[0] == 'extensions' else root)
     protocol = study / ('protocol.json' if study != root else 'configs/protocol.json')
     require(identity['protocol'] == c.digest(protocol)
             and identity['model'] == c.read_json(study / 'model.identity.json'),
             f'Protocol/model identity mismatch: {relative}')
-    require(identity['versions']['reprollm'] == run['reprollm_version'],
-            f'Recorder version mismatch: {relative}')
+    if source_case:
+        condition = source_protocol['conditions'][parts[1]]
+        source_doc = c.read_json(directory / 'recorder-source.json')
+        witness = c.read_json(directory / 'runtime-witness.json')
+        require(identity['versions']['reprollm'] == source_doc['installed_distribution_version']
+                == witness['installed_distribution_version']
+                and run['reprollm_version'] == source_doc['module_version'] == witness['module_version'],
+                f'Recorder module/distribution version mismatch: {relative}')
+        if condition['source_recorder']:
+            require(source_doc['source_commit'] == source_protocol['upstream_source_commit']
+                    and source_doc['module_version'] == source_protocol['source_module_version']
+                    and witness['module_file'] == 'assets/recorder-source/reprollm/__init__.py'
+                    and witness['module_sha256'] == next(v['sha256'] for v in source_doc['files']
+                                                        if v['name'] == 'reprollm/__init__.py'),
+                    f'Pinned source witness mismatch: {relative}')
+        expected_changes = condition['expected_input_changes']
+    else:
+        require(identity['versions']['reprollm'] == run['reprollm_version'],
+                f'Recorder version mismatch: {relative}')
+        expected_changes = []
+    input_changes = check_input_capture(run, expected_changes)
     expected = c.expected_ids(cases)
     require(set(rows) <= expected and bool(rows), f'Unexpected or empty sample coverage: {relative}')
     if run['status'] == 'completed':
@@ -152,7 +175,9 @@ def check_capture(root, directory):
                    result_rows=len(rows), snapshot_hashes_checked=len(snapshots),
                    results_sha256=c.digest(directory / 'results.jsonl'),
                    capture_warning_count=len(run['warnings']),
-                   historical_source_files=historical, recorded_commit=run['code']['commit'])
+                   historical_source_files=historical, recorded_commit=run['code']['commit'],
+                   input_baseline_phase='pre_child' if run['schema_version'] == 2 else 'unknown',
+                   input_changes=input_changes)
     return summary, identity, rows
 
 
@@ -192,7 +217,8 @@ def verify(root=ROOT):
         model_label = c.read_json(model_root / 'model.identity.json')['model_label']
         require(study['model_label'] == completion['model_label'], 'Study display label mismatch.')
         observed = [s for s in summaries if s['model_label'] == model_label
-                    and not s['evidence'].startswith('evidence/recovery-validation/')]
+                    and not s['evidence'].startswith(('evidence/recovery-validation/',
+                                                      'evidence/source-recorder-validation/'))]
         require(sum(s['new_responses'] for s in observed) == study['generations']
                 == completion['real_model_generations_published'], 'Study response total mismatch.')
         require(len(observed) == study['gpu_runs'] == completion['real_gpu_runs'], 'Study capture total mismatch.')
@@ -223,12 +249,24 @@ def verify(root=ROOT):
         changed = sum(row[column] != reference[2][key][column] for key, row in resumed[2].items())
         require(changed == comparison[report_key], f'Recovery comparison mismatch: {column}')
     for campaign in ledger['validation_campaigns']:
-        require(campaign['completion'] == 'reports/recovery-validation/comparison.json'
-                and campaign['gpu_runs'] == len(recovery)
-                and campaign['completed_gpu_runs'] == sum(s[0]['status'] == 'completed' for s in recovery.values())
-                and campaign['interrupted_gpu_runs'] == sum(s[0]['status'] == 'interrupted' for s in recovery.values())
-                and campaign['completed_responses'] == sum(s[0]['new_responses'] for s in recovery.values())
-                == comparison['completed_responses_published'], 'Validation campaign ledger mismatch.')
+        if campaign['completion'] == 'reports/recovery-validation/comparison.json':
+            selected = [s[0] for s in recovery.values()]
+            completion = comparison
+        elif campaign['completion'] == 'reports/source-recorder-validation/comparison.json':
+            selected = [s for s in summaries if s['evidence'].startswith('evidence/source-recorder-validation/')]
+            completion = c.read_json(root / campaign['completion'])
+            require({s['run_id'] for s in selected} == {v['run_id'] for v in completion['runs'].values()},
+                    'Source campaign capture IDs disagree.')
+            protocol = c.read_json(root / 'reports/source-recorder-validation/protocol.json')
+            require({s['evidence'].split('/')[-1] for s in selected} == set(protocol['conditions']),
+                    'Source campaign condition coverage mismatch.')
+        else:
+            raise ValueError('Unrecognized validation campaign; define its evidence contract explicitly.')
+        require(campaign['gpu_runs'] == len(selected)
+                and campaign['completed_gpu_runs'] == sum(s['status'] == 'completed' for s in selected)
+                and campaign['interrupted_gpu_runs'] == sum(s['status'] == 'interrupted' for s in selected)
+                and campaign['completed_responses'] == sum(s['new_responses'] for s in selected)
+                == completion['completed_responses_published'], 'Validation campaign ledger mismatch.')
     totals = dict(real_model_generations_published=responses, real_gpu_runs=len(summaries),
                   formal_generations=sum(s['new_responses'] for s in summaries if '/formal/' in s['evidence']),
                   completed_gpu_runs=sum(s['status'] == 'completed' for s in summaries),

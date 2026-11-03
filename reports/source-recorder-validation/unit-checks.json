@@ -1,0 +1,9 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "duration_seconds": 28.71,
+  "exit_code": 0,
+  "new_source_recorder_guard_tests": 5,
+  "passed": 36,
+  "schema_version": 1,
+  "scope": "Research adapter, schema-phase and publication verifier guards; not an upstream full product gate."
+}
