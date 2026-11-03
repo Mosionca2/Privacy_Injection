@@ -1,18 +1,25 @@
 {
-  "completed_responses": 1152,
+  "completed_responses": 5760,
   "completed_splits": [
-    "dev"
+    "dev",
+    "test"
   ],
-  "gpu_runs": 6,
-  "new_test_responses": 0,
+  "gpu_runs": 12,
+  "new_test_responses": 4608,
   "run_ids": [
     "20261103T070208Z-f57b83",
     "20261103T070204Z-48465c",
     "20261103T070204Z-f0600e",
+    "20261103T072412Z-717835",
+    "20261103T072404Z-f53112",
+    "20261103T072413Z-349b3e",
     "20261103T070208Z-c9dcfc",
     "20261103T070208Z-6bbe69",
-    "20261103T070200Z-e866af"
+    "20261103T070200Z-e866af",
+    "20261103T072413Z-a8dfc0",
+    "20261103T072412Z-2b410b",
+    "20261103T072413Z-f99902"
   ],
   "schema_version": 1,
-  "status": "development_complete_test_pending"
+  "status": "complete"
 }

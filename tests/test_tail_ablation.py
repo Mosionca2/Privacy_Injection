@@ -1,14 +1,35 @@
 from pathlib import Path
+import json
+import shutil
 import tempfile
 import unittest
 
 from privacy_study import core as c
 from tail_ablation import core as a
+from tail_ablation.evidence import check_capture
 
 ROOT=Path(__file__).resolve().parents[1]
 
 
 class TailAblationGuards(unittest.TestCase):
+    def test_published_capture_rejects_a_forged_actual_token_trace(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            frozen=c.read_json(ROOT/a.STUDY/'protocol.freeze.json')
+            for name in [*frozen['files'],a.STUDY+'/protocol.freeze.json',
+                         'evidence/source-recovery-validation/primary-reference/recorder-source.json']:
+                destination=root/name;destination.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(ROOT/name,destination)
+            name='evidence/tail-ablation-v1/primary/dev/N'
+            shutil.copytree(ROOT/name,root/name)
+            self.assertEqual(check_capture(root,root/name)[0]['new_responses'],192)
+            target=root/name/'results.jsonl'
+            values=[json.loads(line) for line in target.read_text().splitlines()]
+            values[1]['input_ids_sha256']='0'*64
+            target.write_text(''.join(json.dumps(v)+'\n' for v in values))
+            with self.assertRaisesRegex(ValueError,'response/prompt/scoring mismatch'):
+                check_capture(root,root/name)
+
     def test_neutral_control_preserves_policy_and_repeated_question(self):
         protocol=dict(c.read_json(ROOT/'configs/protocol.json'),neutral_tail=a.NEUTRAL)
         case=a.fresh_cases('dev',24,20261103)[0]

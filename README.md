@@ -108,4 +108,4 @@ Eight selected real CPU captures compare child SIGKILL, recorder SIGKILL and suc
 
 ## Paired neutral-tail follow-up
 
-A separately frozen follow-up has completed 1,152 new responses across both local snapshots (6 GPU captures). N replaces D2's reminder with a neutral sentence while keeping the same repeated question and exactly matching encoded length. Development is complete; the new test comparison is pending. Read [the follow-up report](reports/tail-ablation-v1/REPORT.md). Current totals are 12,288 model responses and 49 GPU captures; the original 6,144 formal responses remain separately counted. All 46 local tests pass.
+A separately frozen follow-up has completed 5,760 new responses across both local snapshots (12 GPU captures). N replaces D2's reminder with a neutral sentence while keeping the same repeated question and exactly matching encoded length. The full new 96-case-per-model comparison is complete. Read [the follow-up report](reports/tail-ablation-v1/REPORT.md). Current totals are 16,896 model responses and 55 GPU captures; the original 6,144 formal responses remain separately counted. All 47 local tests pass.

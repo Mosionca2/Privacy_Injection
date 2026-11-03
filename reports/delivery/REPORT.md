@@ -11,12 +11,12 @@ This checkpoint brings together the published experiments, functional checks and
 | Released recorder recovery/reference | 128 | 3 | 0 |
 | Source recorder input checks | 256 | 4 | 0 |
 | Source recorder recovery/reference | 256 | 6 | 0 |
-| Fresh paired neutral-tail follow-up | 1,152 | 6 | 0 |
-| Total | **12,288** | **49** | **6,144** |
+| Fresh paired neutral-tail follow-up | 5,760 | 12 | 0 |
+| Total | **16,896** | **55** | **6,144** |
 
-There are 46 completed captures and three deliberately interrupted captures. The [new neutral-tail report](../tail-ablation-v1/REPORT.md) separately counts 0 fresh follow-up test responses. Its original-study results and the new dataset are not pooled. CPU fixtures and completed-condition skips add no model responses.
+There are 52 completed captures and three deliberately interrupted captures. The [new neutral-tail report](../tail-ablation-v1/REPORT.md) separately counts 4,608 fresh follow-up test responses. Its original-study results and the new dataset are not pooled. CPU fixtures and completed-condition skips add no model responses.
 
-The [offline evidence verification](evidence-verification.json) checks 49 published capture directories, 12,312 result-row appearances and 351 saved input-snapshot hashes, with large follow-up prompt inventories checked against their original captured hashes and the frozen public files. Across recovery snapshots, 24 unchanged retained copies are deduplicated, leaving **12,288 distinct completed responses**. Scores, coverage, declarations, actual exit states, selected exports and all phase ledgers are checked. Follow-up result/completion bytes also match their original recorded artifact hashes.
+The [offline evidence verification](evidence-verification.json) checks 55 published capture directories, 16,920 result-row appearances and 459 saved input-snapshot hashes, with large follow-up prompt inventories checked against their original captured hashes and the frozen public files. Across recovery snapshots, 24 unchanged retained copies are deduplicated, leaving **16,896 distinct completed responses**. Scores, coverage, declarations, actual exit states, selected exports and all phase ledgers are checked. Follow-up result/completion bytes also match their original recorded artifact hashes.
 
 Four initial calibration captures precede the scientific freeze. Their differing scientific source files match recorded commit `8aa388b0992bee09cf90a3aa10361d00b7eafd12`. The scorer's syntax tree matches the frozen scorer. Historical source is read from Git without executing it. The primary and extension formal freezes still match their scientific inputs.
 

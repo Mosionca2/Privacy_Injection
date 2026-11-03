@@ -21,7 +21,9 @@ Both commands exited 0 in the [local integration receipt](local-reader-and-evide
 
 At the initial CI checkpoint, all **40 local repository tests** passed; the [unit receipt](local-unit-checks.json) records that command and timing. That workflow ran **30 CPU tests** for scoring, published evidence, recovery-controller behavior and recorder-source guards. The other ten workspace-preparation/metadata tests run in the existing scientific environment because they inspect installed inference-dependency metadata. The source guard rejects changed or added package bytes despite an unchanged commit/version, as well as a wrong source commit.
 
-The later [termination-validation protocol](../termination-validation/protocol.json) adds guards for process ownership and same-second run ordering, bringing the current suites to **42 local tests and 32 CI tests**, plus a separate real CPU termination matrix. Its records and results are scoped separately from this initial CI checkpoint.
+The later [termination-validation protocol](../termination-validation/protocol.json) added guards for process ownership and same-second run ordering, reaching **42 local tests and 32 CI tests**, plus a separate real CPU termination matrix. Its records and results are scoped separately from this initial CI checkpoint.
+
+The [neutral-tail follow-up](../tail-ablation-v1/REPORT.md) adds five prompt, fresh-data, freeze and captured-token-trace guards. Current suites have **47 local tests and 37 CI tests**. The evidence gate now covers the separately accounted follow-up model captures as well as the original campaigns, without installing inference packages on CI.
 
 GitHub actions are pinned by complete commit SHA. The job has read-only repository permission, does not persist checkout credentials, and uploads only its generated verification receipts and test output with 14-day retention. It uses no repository secrets. The server environment and frozen scientific files are unchanged.
 

@@ -1,0 +1,21 @@
+{
+  "child_exit_code": 0,
+  "completed_after": 768,
+  "completed_before": 0,
+  "expected_samples": 768,
+  "git_dirty": false,
+  "gpu_index": 3,
+  "input_baseline_phase": "pre_child",
+  "launcher_exit_code": 0,
+  "new_completed_samples": 768,
+  "original_result_prefix_unchanged": true,
+  "recorded_commit": "0b9864543584bdefc953f6dc7c6ad76788d5986b",
+  "run_id": "20261103T072413Z-349b3e",
+  "run_schema_version": 2,
+  "schema_version": 1,
+  "signalled_after_samples": null,
+  "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+  "source_module_version": "0.7.0",
+  "source_payload_unchanged": true,
+  "status": "completed"
+}

@@ -1,10 +1,11 @@
 {
   "completed_splits": [
-    "dev"
+    "dev",
+    "test"
   ],
-  "evidence_receipt_sha256": "0e411feb8a32464a06f7f3ec383c7a41990731e91cb78c3d74b7bbbe5f547b5a",
-  "local_test_duration_seconds": 50.159,
-  "local_tests_passed": 46,
+  "evidence_receipt_sha256": "0a997f4af1b169f47433271ee5149726b1a3db77ddda2579c2963689c01478fc",
+  "local_test_duration_seconds": 59.164,
+  "local_tests_passed": 47,
   "original_and_followup_freezes_verified": true,
   "schema_version": 1,
   "tests_command": "python -m unittest discover -s tests -v",

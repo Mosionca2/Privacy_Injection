@@ -1,0 +1,33 @@
+{
+  "batch_sizes": {
+    "extension": 16,
+    "primary": 64
+  },
+  "files": {
+    "configs/protocol.json": "69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+    "model.identity.json": "aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+    "privacy_study/core.py": "d458ab574369a9815e6af8cce3c49e00bd2d2a954e41e9dedafd8178ab11af43",
+    "requirements.runtime.txt": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+    "studies/qwen3-1.7b/model.identity.json": "a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+    "studies/tail-ablation-v1/data/dev.jsonl": "09842e88f2724a1995a2105fe2afd44c70e98189045cb3a1fefc2fed446ee620",
+    "studies/tail-ablation-v1/data/test.jsonl": "f77d46d7f91c98abb6493615b842e7fadc72257db5486f66152bd0d9f644c1dd",
+    "studies/tail-ablation-v1/preparation.json": "0f1e6abdd921ec77c038dc435eef0136b19459d24513a6a05fe646b70684e77c",
+    "studies/tail-ablation-v1/prompts/extension.jsonl": "3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+    "studies/tail-ablation-v1/prompts/primary.jsonl": "3798d02d14f7b415f0d93a2f07798a6e951baa8b5d121223dbce35619763ecf5",
+    "studies/tail-ablation-v1/protocol.json": "a745712a89bc68688127bc33d8fed466bf73bda18c492de07c034b4859bdc477",
+    "tail_ablation/__init__.py": "7c9287d228f1c783834eff6dc8dd256c843500688c7b44bb3849486ec2841104",
+    "tail_ablation/core.py": "d9c0487bb76e2e4e0b1428ee67fddeb207afa92dbaa56149b0eef3fbb8593de0",
+    "tail_ablation/run.py": "a6f66659152fe2b6d696b59fe4c49c34e3880ac5826c741cbad60adccf9cad53",
+    "tools/prepare_tail_ablation.py": "e1daeddd1db60b6e409dfefd0000d8595bdc79ff47eac267c4a33d296d7f6f98"
+  },
+  "schema_version": 1,
+  "stage": "Frozen before any follow-up GPU generation; original freezes unchanged.",
+  "versions": {
+    "accelerate": "1.12.0",
+    "reprollm": "0.6.1",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.5.1+cu121",
+    "transformers": "5.2.0"
+  }
+}

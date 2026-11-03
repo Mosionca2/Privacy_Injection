@@ -1,0 +1,14 @@
+{"event": "model_loaded", "load_seconds": 40.59087945986539, "batch_size": 64}
+{"event": "batch_complete", "new_samples": 64, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 128, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 192, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 256, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 320, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 384, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 448, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 512, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 576, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 640, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 704, "total_pending": 768}
+{"event": "batch_complete", "new_samples": 768, "total_pending": 768}
+{"event": "completed", "schema_version": 1, "defense": "D2", "split": "test", "batch_size": 64, "expected": 768, "new_generations": 768, "load_seconds": 40.59087945986539, "inference_seconds": 41.3650891026482, "peak_allocated_gib": 20.813425064086914, "peak_reserved_gib": 26.595703125, "reprollm_run_id": "20261103T072412Z-2b410b"}

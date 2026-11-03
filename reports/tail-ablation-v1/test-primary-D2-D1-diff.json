@@ -1,0 +1,150 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "D1",
+      "b": "D2",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "privacy.mechanism.name",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": false,
+      "b": true,
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "privacy.mechanism.params.repeated_question",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": false,
+      "b": true,
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "privacy.mechanism.params.trusted_tail_reminder",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "D1",
+      "b": "D2",
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "custom.defense",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "13efc951e8704e93334030982aebd8049dd23f44",
+      "b": "bc5ac27871613c75088200553ed86aaa52773d9c",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "0",
+      "b": "2",
+      "note": "a: inherited_environment/pre_child; child unverified; b: inherited_environment/pre_child; child unverified",
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "-m",
+        "tail_ablation.run",
+        "--model",
+        "assets/model",
+        "--study-model",
+        "primary",
+        "--defense",
+        "D1",
+        "--split",
+        "test",
+        "--batch-size",
+        "64"
+      ],
+      "b": [
+        "python",
+        "-m",
+        "tail_ablation.run",
+        "--model",
+        "assets/model",
+        "--study-model",
+        "primary",
+        "--defense",
+        "D2",
+        "--split",
+        "test",
+        "--batch-size",
+        "64"
+      ],
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python -m tail_ablation.run --model assets/model --study-model primary --defense D1 --split test --batch-size 64",
+      "b": "python -m tail_ablation.run --model assets/model --study-model primary --defense D2 --split test --batch-size 64",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 194.647176,
+      "b": 198.162693,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T07:27:29Z",
+      "b": "2026-11-03T07:27:31Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261103T072413Z-a8dfc0",
+      "b": "20261103T072412Z-2b410b",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-03T07:24:13Z",
+      "b": "2026-11-03T07:24:12Z",
+      "note": null,
+      "path": "started_at",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.7.0",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 8,
+      "MEDIUM_HIGH": 0,
+      "NONE": 4
+    },
+    "highest": "MEDIUM",
+    "same": 139
+  }
+}
