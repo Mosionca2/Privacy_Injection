@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import argparse
+import ctypes
 import json
 import os
+import platform
 from pathlib import Path
 import shlex
 import signal
@@ -71,9 +73,78 @@ def cleanup_owned(process: subprocess.Popen) -> None:
         process.wait(timeout=5)
 
 
+def scientific_child(process: subprocess.Popen, workspace: Path, argv: list[str]) -> int:
+    """Find exactly one live, immediate child with our command, directory and session."""
+    if sys.platform != 'linux' or process.poll() is not None:
+        raise RuntimeError('A live owned Linux recorder is required.')
+    children = Path(f'/proc/{process.pid}/task/{process.pid}/children').read_text().split()
+    matches = []
+    for value in children:
+        pid = int(value)
+        proc = Path('/proc') / value
+        try:
+            command = [os.fsdecode(v) for v in (proc/'cmdline').read_bytes().rstrip(b'\0').split(b'\0')]
+            parent = next(line.split()[1] for line in (proc/'status').read_text().splitlines()
+                          if line.startswith('PPid:'))
+            if (command == argv and int(parent) == process.pid
+                    and (proc/'cwd').resolve(strict=True) == workspace.resolve()
+                    and os.getpgid(pid) == process.pid and os.getsid(pid) == process.pid):
+                matches.append(pid)
+        except (FileNotFoundError, ProcessLookupError):
+            continue
+    if len(matches) != 1 or process.poll() is not None:
+        raise RuntimeError('Scientific child ownership is absent or ambiguous; refusing to signal.')
+    return matches[0]
+
+
+def kill_scientific_child(process: subprocess.Popen, workspace: Path, argv: list[str]) -> None:
+    """Use a Linux process descriptor so a reused numeric PID cannot be signalled."""
+    pid = scientific_child(process, workspace, argv)
+    libc = ctypes.CDLL(None, use_errno=True)
+    if hasattr(libc, 'pidfd_open') and hasattr(libc, 'pidfd_send_signal'):
+        open_fd = lambda: libc.pidfd_open(pid, 0)
+        send = lambda fd: libc.pidfd_send_signal(fd, signal.SIGKILL, None, 0)
+    elif platform.machine() == 'x86_64':
+        # Stable x86_64 Linux UAPI numbers, also checked against the execution host's headers.
+        # Older libc/Python may lack wrappers even though the running kernel supports them.
+        libc.syscall.restype = ctypes.c_long
+        open_fd = lambda: libc.syscall(434, pid, 0)
+        send = lambda fd: libc.syscall(424, fd, signal.SIGKILL, ctypes.c_void_p(), 0)
+    else:
+        raise RuntimeError('Linux process-descriptor support is required for child SIGKILL.')
+    fd = open_fd()
+    if fd < 0:
+        raise OSError(ctypes.get_errno(), 'Cannot open the owned child process descriptor.')
+    try:
+        if scientific_child(process, workspace, argv) != pid:
+            raise RuntimeError('Child ownership changed before signalling.')
+        if send(fd) != 0:
+            raise OSError(ctypes.get_errno(), 'Cannot signal the owned child process descriptor.')
+    finally:
+        os.close(fd)
+
+
+def kill_after_progress(process, results, stop_after, expected, workspace, argv,
+                        *, timeout=900, interval=.01):
+    if not 0 < stop_after < expected:
+        raise ValueError('The interruption point must lie inside the workload.')
+    deadline = time.monotonic() + timeout
+    while process.poll() is None:
+        completed = len(sample_rows(results))
+        if completed >= expected:
+            raise RuntimeError('The workload finished before interruption.')
+        if completed >= stop_after:
+            kill_scientific_child(process, workspace, argv)
+            return completed
+        if time.monotonic() >= deadline:
+            raise TimeoutError('No sufficient progress before child SIGKILL deadline.')
+        time.sleep(interval)
+    raise RuntimeError('The recorder exited before child SIGKILL.')
+
+
 def capture(workspace: Path, gpu_index: int, name: str, expected: int,
             interrupt_after: int | None, timeout: int, min_free_mib: int,
-            source_recorder: bool = False) -> dict:
+            source_recorder: bool = False, child_sigkill: bool = False) -> dict:
     workspace = workspace.resolve()
     if os.name != 'posix':
         raise ValueError('This controlled signal validation requires a POSIX host.')
@@ -91,6 +162,8 @@ def capture(workspace: Path, gpu_index: int, name: str, expected: int,
         raise ValueError('This workload is already complete; do not create an empty model recording.')
     if interrupt_after is not None and (initial or not 0 < interrupt_after < expected):
         raise ValueError('Interrupt only a fresh workload, at a point inside its coverage.')
+    if child_sigkill and (interrupt_after is None or not source_recorder):
+        raise ValueError('Child SIGKILL requires a fresh interrupted source-recorder workload.')
     free = subprocess.check_output(['nvidia-smi', f'--id={gpu_index}', '--query-gpu=memory.free',
                                     '--format=csv,noheader,nounits'], text=True)
     if int(free.strip()) < min_free_mib:
@@ -125,7 +198,9 @@ def capture(workspace: Path, gpu_index: int, name: str, expected: int,
             cwd=workspace, env=env, stdout=stdout, stderr=stderr, start_new_session=True)
         try:
             if interrupt_after is not None:
-                sent_at = interrupt_after_progress(process, output, interrupt_after, expected, timeout=timeout)
+                sent_at = (kill_after_progress(process, output, interrupt_after, expected, workspace, argv,
+                                              timeout=timeout) if child_sigkill else
+                           interrupt_after_progress(process, output, interrupt_after, expected, timeout=timeout))
                 c.write_json(raw / (name + '.progress.json'), dict(schema_version=1, observed_samples=sent_at))
             launcher_exit = process.wait(timeout=timeout)
         finally:
@@ -147,6 +222,8 @@ def capture(workspace: Path, gpu_index: int, name: str, expected: int,
     if interrupt_after is not None:
         if run['status'] != 'interrupted' or not run['exit_code'] or not launcher_exit or not 0 < len(rows) < expected:
             raise ValueError('No valid interrupted partial workload was observed.')
+        if child_sigkill and (run['exit_code'] != -signal.SIGKILL or launcher_exit != 247):
+            raise ValueError('Expected actual child SIGKILL and the corresponding CLI exit 247.')
     elif run['status'] != 'completed' or run['exit_code'] != 0 or launcher_exit != 0 or len(rows) != expected:
         raise ValueError('The genuine GPU workload did not complete with full coverage.')
     result = dict(schema_version=1, run_id=run['run_id'], status=run['status'], child_exit_code=run['exit_code'],
@@ -158,6 +235,9 @@ def capture(workspace: Path, gpu_index: int, name: str, expected: int,
         result.update(source_module_version=run['reprollm_version'], run_schema_version=2,
                       source_commit=document['source_commit'], source_payload_unchanged=True,
                       input_baseline_phase=run['input_capture']['baseline_phase'])
+    if child_sigkill:
+        result.update(signal_target='owned_immediate_scientific_child', signal='SIGKILL',
+                      process_descriptor_used=True)
     c.write_json(target, result)
     return result
 
@@ -172,6 +252,8 @@ if __name__ == '__main__':
     p.add_argument('--timeout', type=int, default=900)
     p.add_argument('--min-free-mib', type=int, default=24576)
     p.add_argument('--source-recorder', action='store_true')
+    p.add_argument('--child-sigkill', action='store_true')
     a = p.parse_args()
     print(json.dumps(capture(a.workspace, a.gpu_index, a.name, a.expected_samples,
-                             a.interrupt_after, a.timeout, a.min_free_mib, a.source_recorder), sort_keys=True))
+                             a.interrupt_after, a.timeout, a.min_free_mib, a.source_recorder,
+                             a.child_sigkill), sort_keys=True))

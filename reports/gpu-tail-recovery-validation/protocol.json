@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "validation_id": "gpu-tail-recovery-v1",
+  "scope": "Real owned GPU child SIGKILL, explicitly constructed unfinished JSONL suffix, backed-up copy-only repair and resume, with fresh references on two local snapshots.",
+  "upstream_source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+  "source_module_version": "0.7.0",
+  "installed_distribution_version": "0.6.1",
+  "split": "dev",
+  "defense": "D0",
+  "base_cases": 8,
+  "batch_size": 1,
+  "expected_samples_per_complete_condition": 64,
+  "interrupt_after_observed_samples": 8,
+  "expected_new_completed_responses": 256,
+  "expected_captures": 6,
+  "models": {
+    "primary": {
+      "identity": "model.identity.json",
+      "protocol": "configs/protocol.json",
+      "minimum_free_mib": 24576
+    },
+    "extension": {
+      "identity": "studies/qwen3-1.7b/model.identity.json",
+      "protocol": "studies/qwen3-1.7b/protocol.json",
+      "minimum_free_mib": 8192
+    }
+  },
+  "conditions": {
+    "primary-interrupted": {
+      "model_study": null,
+      "source_recorder": true,
+      "expected_input_changes": []
+    },
+    "primary-resumed": {
+      "model_study": null,
+      "source_recorder": true,
+      "expected_input_changes": []
+    },
+    "primary-reference": {
+      "model_study": null,
+      "source_recorder": true,
+      "expected_input_changes": []
+    },
+    "extension-interrupted": {
+      "model_study": "qwen3-1.7b",
+      "source_recorder": true,
+      "expected_input_changes": []
+    },
+    "extension-resumed": {
+      "model_study": "qwen3-1.7b",
+      "source_recorder": true,
+      "expected_input_changes": []
+    },
+    "extension-reference": {
+      "model_study": "qwen3-1.7b",
+      "source_recorder": true,
+      "expected_input_changes": []
+    }
+  },
+  "acceptance": [
+    "Before execution commit this bounded protocol, unchanged inference code and pinned recorder identity. Use eight development base cases, batch one, 64 successes per completed condition.",
+    "Use Linux process descriptors and verify immediate parent, exact command, directory, session and process group before signalling only the owned scientific child. Require child exit -9, CLI exit 247 and interrupted recorder status.",
+    "Preserve the original interrupted JSONL before any corruption. Require its complete lines to parse; if SIGKILL itself produces an incomplete suffix, stop this protocol for separate review rather than silently repairing it.",
+    "After the writer has exited, append only the documented synthetic unfinished suffix. Inspect against the trusted pre-corruption identity, pin the complete damaged SHA256, and save a new repair bundle with exact damaged backup, valid prefix and excluded suffix.",
+    "Use the actual pinned ReproLLM CLI to record inspection and repair as CPU operations, separate from GPU accounting. These operations never overwrite the interrupted or damaged input.",
+    "Install the repaired prefix only after confirming the original writer exited, input bytes still match the inspected digest, and repaired bytes equal the entire original interrupted file. Resume with the unchanged scientific command in the same isolated workspace.",
+    "Check retained bytes and originating attempt IDs, complete missing coverage, compare all outputs and scores to independent fresh references, and publish any differences.",
+    "Keep full model fingerprints and source payload unchanged; retain actual records, selected exports and CLI diffs. Preserve original scientific freezes and earlier evidence."
+  ],
+  "scheduling": "One recovery worker and one reference worker per model on currently available devices. Recheck memory before every launch; use waves if fewer than four suitable allocations are free.",
+  "limits": [
+    "The incomplete suffix is deliberately constructed after a real SIGKILL; it is not evidence of naturally torn output or power-loss durability.",
+    "The experiment script and copy-only repair utility provide recovery. ReproLLM records attempts and input provenance; it is not a checkpoint scheduler.",
+    "CPU inspection and repair recordings are excluded from GPU and model-generation counts. In-flight interrupted computation is excluded from completed responses.",
+    "No commercial API, additional formal defense estimate, independent adopter or upstream release qualification is claimed."
+  ],
+  "signal": "SIGKILL",
+  "signal_target": "owned_immediate_scientific_child",
+  "controlled_tail": "{\"type\":\"sample\",\"id\":\"controlled-tail\",\"output\":\"unfinished"
+}
