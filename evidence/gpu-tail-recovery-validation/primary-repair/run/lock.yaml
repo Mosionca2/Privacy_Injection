@@ -1,0 +1,52 @@
+schema_version: 1
+reprollm_version: 0.7.0
+generated_at: '2026-11-04T02:54:01Z'
+manifest_sha256: sha256:9b5f660de973959cd654e2aff714e1b2714ed363feed020bcff2fbb661726b01
+project_rules_sha256: sha256:91526a69c9c7728ce182ca0160b0fd3c25c35083c2db80f362abc645cdb9425f
+resolution:
+  mode: offline
+models: {}
+datasets: {}
+prompts: {}
+files:
+- path: inputs/checkpoint.jsonl
+  sha256: sha256:5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8
+  size_bytes: 7525
+- path: inputs/derivation.json
+  sha256: sha256:08b16e0ba6fcd5289031f7ff161891de79d0141bee29635a24e957d66481dbc9
+  size_bytes: 437
+- path: inputs/identity.json
+  sha256: sha256:0d5103d2ba195f1de93e97219194e2b16edf04f4067af44bd17845b3e6217e14
+  size_bytes: 3252
+- path: recorder-source.json
+  sha256: sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213
+  size_bytes: 24152
+- path: repair.py
+  sha256: sha256:140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f
+  size_bytes: 7759
+generation: null
+inference: null
+training: null
+evaluation: null
+privacy: null
+environment:
+  python: 3.10.19
+  platform: linux
+  packages:
+    accelerate: 1.12.0
+    bitsandbytes: 0.49.2
+    datasets: 4.6.1
+    evaluate: 0.4.6
+    lm_eval: 0.4.11
+    numpy: 2.2.6
+    openai: 2.24.0
+    peft: 0.18.1
+    safetensors: 0.7.0
+    sentencepiece: 0.2.1
+    tokenizers: 0.22.2
+    torch: 2.5.1+cu121
+    transformers: 5.2.0
+  gpu:
+    driver: 580.178.04
+    cuda_driver_max: '13.0'
+    source: nvidia_smi

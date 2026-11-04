@@ -12,11 +12,12 @@ This checkpoint brings together the published experiments, functional checks and
 | Source recorder input checks | 256 | 4 | 0 |
 | Source recorder recovery/reference | 256 | 6 | 0 |
 | Fresh paired neutral-tail follow-up | 5,760 | 12 | 0 |
-| Total | **16,896** | **55** | **6,144** |
+| GPU child kill, controlled tail repair/resume | 256 | 6 | 0 |
+| Total | **17,152** | **61** | **6,144** |
 
-There are 52 completed captures and three deliberately interrupted captures. The [new neutral-tail report](../tail-ablation-v1/REPORT.md) separately counts 4,608 fresh follow-up test responses. Its original-study results and the new dataset are not pooled. CPU fixtures and completed-condition skips add no model responses.
+There are 56 completed captures and five deliberately interrupted captures. The [new neutral-tail report](../tail-ablation-v1/REPORT.md) separately counts 4,608 fresh follow-up test responses. Its original-study results and the new dataset are not pooled. CPU fixtures and completed-condition skips add no model responses.
 
-The [offline evidence verification](evidence-verification.json) checks 55 published capture directories, 16,920 result-row appearances and 459 saved input-snapshot hashes, with large follow-up prompt inventories checked against their original captured hashes and the frozen public files. Across recovery snapshots, 24 unchanged retained copies are deduplicated, leaving **16,896 distinct completed responses**. Scores, coverage, declarations, actual exit states, selected exports and all phase ledgers are checked. Follow-up result/completion bytes also match their original recorded artifact hashes.
+The [offline evidence verification](evidence-verification.json) checks 61 published GPU capture directories, 17,192 result-row appearances and 501 saved input-snapshot hashes, with large follow-up prompt inventories checked against their original captured hashes and the frozen public files. Across recovery snapshots, 40 unchanged retained copies are deduplicated, leaving **17,152 distinct completed responses**. Scores, coverage, declarations, actual exit states, selected exports and all phase ledgers are checked. Follow-up result/completion bytes also match their original recorded artifact hashes.
 
 Four initial calibration captures precede the scientific freeze. Their differing scientific source files match recorded commit `8aa388b0992bee09cf90a3aa10361d00b7eafd12`. The scorer's syntax tree matches the frozen scorer. Historical source is read from Git without executing it. The primary and extension formal freezes still match their scientific inputs.
 
@@ -33,6 +34,7 @@ Four initial calibration captures precede the scientific freeze. Their differing
 | Nonzero exits and launch failure | CPU fixtures preserve exit 7 and failed launch; GPU interruption records actual child exit -15 | [Contract checks](../reprollm-validation.json), [recovery report](../recovery-validation/REPORT.md) |
 | Resumption and repeats | Retained rows remain unchanged; fresh 768-response repeats match within each snapshot | [Recovery](../recovery-validation/comparison.json), [primary repeat](../repeat/comparison.json), [extension repeat](../extensions/qwen3-1.7b/repeat/comparison.json) |
 | Copy-only checkpoint tail repair | Controlled copies preserve complete successes/failures, back up the damaged bytes and refuse complete unterminated JSON; actual model recovery is outside this CPU test | [Usage guide](../../docs/result-tail-repair.md), [actual CLI matrix](../tail-repair-validation/REPORT.md) |
+| GPU child kill and repaired-prefix resume | Real child SIGKILL, explicitly constructed unfinished suffix, recorded backup/copy repair and actual resumed inference against fresh references on both snapshots | [Recovery evidence](../gpu-tail-recovery-validation/REPORT.md), [byte-chain verifier](../../tools/verify_gpu_tail_recovery.py) |
 | Redaction | Tested synthetic patterns absent from tool-owned persistence; reviewed publication copies remove device identifiers | [Bounded contract check](../reprollm-validation.json), [publication boundary](../formal/publication.json) |
 | Version-scoped documentation | Released 0.6.1 and source 0.7.0 command rehearsals, with source/input-phase differences retained | [Contribution receipt](../reprollm-contribution-validation.json) |
 
@@ -65,10 +67,12 @@ The subsequent [forced-termination stage](../termination-validation/REPORT.md) r
 
 The later [copy-only tail-repair stage](../tail-repair-validation/REPORT.md) adds seven preservation/refusal guards, reaching 54 local tests and 44 CI tests after the intervening neutral-tail follow-up. Six actual CPU CLI captures validate both recorder producers, mode bindings, the refused child's exit 2, explicit exports and cross-mode diff. New repaired copies retain the trusted prefix while originals and complete failure markers remain preserved. This adds no model generations and does not establish GPU corruption recovery or power-loss durability.
 
+The later [GPU child-kill and tail-recovery stage](../gpu-tail-recovery-validation/REPORT.md) connects six real GPU captures to four independent CPU inspection/repair records. Original interrupted output, constructed damaged copies, exact repair bundles and resumed/fresh-reference comparisons are verified together; only the 256 newly completed model responses enter the ledger.
+
 ## Remaining boundaries
 
 - Local upstream revisions and original-versus-modified status remain unverified; conclusions bind exact published fingerprints. Four A100 80GB devices were used, without a test under a 5–8GB hardware limit.
-- Controlled current-source GPU interruption/resume is validated on both local snapshots. CPU SIGKILL semantics and copy-only repair of controlled JSONL tails are separately checked. GPU SIGKILL/power-loss recovery and actual GPU corruption/resume remain untested.
+- Controlled current-source GPU SIGTERM and child-SIGKILL recovery are validated on both local snapshots. The later repair/resume path uses a deliberately constructed unfinished suffix after the writer exits. Naturally torn writes, arbitrary corruption and power-loss durability remain untested.
 - The separately frozen neutral-tail follow-up is documented above. A commercial-model extension has not been run.
 - Original environment and completed-condition-skip receipts describe their historical checkpoints. Their initial pending/untested labels remain intact; the later version-scoped receipts establish the subsequent results.
 

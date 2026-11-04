@@ -102,7 +102,8 @@ def check_capture(root, directory):
     historical = [name for name, digest in identity['code'].items()
                   if verify_source(root, name, digest, run['code']['commit'])]
     parts = directory.relative_to(root / 'evidence').parts
-    source_case = parts[0] in ('source-recorder-validation', 'source-recovery-validation')
+    source_case = parts[0] in ('source-recorder-validation', 'source-recovery-validation',
+                               'gpu-tail-recovery-validation')
     source_protocol = c.read_json(root / 'reports' / parts[0] / 'protocol.json') if source_case else None
     model_study = (source_protocol['conditions'][parts[1]].get('model_study', source_protocol.get('model_study'))
                    if source_case else None)
@@ -241,6 +242,7 @@ def verify(root=ROOT):
                     and not s['evidence'].startswith(('evidence/recovery-validation/',
                                                       'evidence/source-recorder-validation/',
                                                       'evidence/source-recovery-validation/',
+                                                      'evidence/gpu-tail-recovery-validation/',
                                                       'evidence/tail-ablation-v1/'))]
         require(sum(s['new_responses'] for s in observed) == study['generations']
                 == completion['real_model_generations_published'], 'Study response total mismatch.')
@@ -283,21 +285,27 @@ def verify(root=ROOT):
             protocol = c.read_json(root / 'reports/source-recorder-validation/protocol.json')
             require({s['evidence'].split('/')[-1] for s in selected} == set(protocol['conditions']),
                     'Source campaign condition coverage mismatch.')
-        elif campaign['completion'] == 'reports/source-recovery-validation/comparison.json':
-            selected = [s for s in summaries if s['evidence'].startswith('evidence/source-recovery-validation/')]
+        elif campaign['completion'] in ('reports/source-recovery-validation/comparison.json',
+                                        'reports/gpu-tail-recovery-validation/comparison.json'):
+            campaign_id = Path(campaign['completion']).parts[1]
+            prefix = 'evidence/' + campaign_id + '/'
+            selected = [s for s in summaries if s['evidence'].startswith(prefix)]
             completion = c.read_json(root / campaign['completion'])
-            protocol = c.read_json(root / 'reports/source-recovery-validation/protocol.json')
+            protocol = c.read_json(root / 'reports' / campaign_id / 'protocol.json')
             require({s['evidence'].split('/')[-1] for s in selected} == set(protocol['conditions'])
                     and {s['run_id'] for s in selected} == {v['run_id'] for v in completion['runs'].values()},
                     'Source recovery campaign capture set mismatch.')
             stages = {s['evidence'].split('/')[-1]: (s, identity, rows) for s, identity, rows in captures
-                      if s['evidence'].startswith('evidence/source-recovery-validation/')}
+                      if s['evidence'].startswith(prefix)}
             for model, expected in completion['pairs'].items():
                 partial, resumed, reference = (stages[model+'-'+stage] for stage in ('interrupted','resumed','reference'))
                 actual = compare_recovery_records(partial, resumed, reference)
                 require(all(expected[key] == value for key,value in actual.items()), 'Source recovery comparison mismatch.')
                 require((root/resumed[0]['evidence']/'results.jsonl').read_bytes().startswith(
                         (root/partial[0]['evidence']/'results.jsonl').read_bytes()), 'Source recovery prefix changed.')
+            if campaign_id == 'gpu-tail-recovery-validation':
+                from tools.verify_gpu_tail_recovery import check_tail_recovery
+                check_tail_recovery(root, completion, stages, protocol)
         else:
             raise ValueError('Unrecognized validation campaign; define its evidence contract explicitly.')
         require(campaign['gpu_runs'] == len(selected)

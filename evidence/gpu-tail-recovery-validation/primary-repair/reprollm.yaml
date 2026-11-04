@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/bundle/*.json",
+      "raw/bundle/*.jsonl",
+      "raw/bundle/*.bin"
+    ]
+  },
+  "bindings": {
+    "custom.input_file": {
+      "cli": "--input"
+    },
+    "custom.mode": {
+      "cli": "--mode"
+    }
+  },
+  "custom": {
+    "input_file": "inputs/checkpoint.jsonl",
+    "mode": "repair"
+  },
+  "execution": {
+    "command": "python repair.py --input inputs/checkpoint.jsonl --identity inputs/identity.json --mode repair --sha256 5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8 --output-directory raw/bundle",
+    "config_files": [
+      "repair.py",
+      "inputs/checkpoint.jsonl",
+      "inputs/identity.json",
+      "inputs/derivation.json",
+      "recorder-source.json"
+    ]
+  },
+  "experiment": {
+    "name": "primary-repair",
+    "profiles": []
+  },
+  "project": {
+    "name": "gpu_checkpoint_repair"
+  },
+  "schema_version": 1
+}

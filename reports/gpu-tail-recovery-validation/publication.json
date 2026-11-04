@@ -1,0 +1,893 @@
+{
+  "cpu_captures": 4,
+  "cpu_run_directories_unchanged": true,
+  "files": [
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/REPRODUCIBILITY.md",
+      "sha256": "fb8d11028daa53d701fda7cb0ab62da2a55f1c039e3936fe09e6ee4e4483df32"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/inputs/checkpoint.jsonl",
+      "sha256": "8a13d8bf08c48c759c0c418874b24b88d4ccda5812b443f0572e4eb2500a78bb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/inputs/derivation.json",
+      "sha256": "d821353711a57207603a727bde6f733cbf7259d6af1a39468a94da28e5c7fbaa"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/inputs/identity.json",
+      "sha256": "64810873003cb81db779674a24e8289c752a7b1485c99cd914123cb3745ce322"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/project-rules.yaml",
+      "sha256": "1fd202ba6d73bd5690dd5bb01eac974dcc7d87f2c41ee470c147999b29b0416f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/reprollm.lock",
+      "sha256": "a8014cf7066103dbd62932882eb673264a97bd27dac9d5c3eb553a6cc1e8df1f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/reprollm.yaml",
+      "sha256": "a08d31870892914c394d8ba06b29e282e3d8869ddb2cf88b7854094ce67d46f3"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/files/64810873003cb81db779674a24e8289c752a7b1485c99cd914123cb3745ce322",
+      "sha256": "64810873003cb81db779674a24e8289c752a7b1485c99cd914123cb3745ce322"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/files/8a13d8bf08c48c759c0c418874b24b88d4ccda5812b443f0572e4eb2500a78bb",
+      "sha256": "8a13d8bf08c48c759c0c418874b24b88d4ccda5812b443f0572e4eb2500a78bb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/files/d821353711a57207603a727bde6f733cbf7259d6af1a39468a94da28e5c7fbaa",
+      "sha256": "d821353711a57207603a727bde6f733cbf7259d6af1a39468a94da28e5c7fbaa"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/lock.yaml",
+      "sha256": "a8014cf7066103dbd62932882eb673264a97bd27dac9d5c3eb553a6cc1e8df1f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/manifest.yaml",
+      "sha256": "a08d31870892914c394d8ba06b29e282e3d8869ddb2cf88b7854094ce67d46f3"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/run.json",
+      "sha256": "6693de68ddca0357dd3a8c5c18950649e7a623a0b14761570141bc7a911286e6"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/run/stdout.log",
+      "sha256": "8df690ea090a56f9f94df30eccbaef40b5e9e3f8694120091587209c16f5a0e1"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-inspect/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/.python-version",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/REPRODUCIBILITY.md",
+      "sha256": "6d627232b06a29f06c585dacdbea889e4b9fb60093131106a60dea032bb7d200"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/controller.json",
+      "sha256": "fe937baa8876f5069c239a872dfd6880db49f86dc382ab2fde14d015c731339f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/current-audit-after-completion.json",
+      "sha256": "6890e483e1d62dbae097293befe7999a8086fc82747fa462d7e0518accedaedb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/interruption-progress.json",
+      "sha256": "767865d929b7e42df529b63d62c1f280ff567aa0f0327039a46f002c5618547c"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/project-rules.yaml",
+      "sha256": "0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/reprollm.lock",
+      "sha256": "371db24489b114a7d0d725b9ae2a534260b4c5110a6378a07c9940039999b559"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/reprollm.yaml",
+      "sha256": "b1ab70302fb51d0a705ef21c9ae01a59d606378d46888116bdf5586a07148723"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/requirements.runtime.txt",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/results.jsonl",
+      "sha256": "837c1fa9641a18b0d90a64cbf2033b5f977ce3b0142ab24e6c460752f4fc64aa"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/files/8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/files/9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298",
+      "sha256": "9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/files/a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+      "sha256": "a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/files/be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/lock.yaml",
+      "sha256": "371db24489b114a7d0d725b9ae2a534260b4c5110a6378a07c9940039999b559"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/manifest.yaml",
+      "sha256": "b1ab70302fb51d0a705ef21c9ae01a59d606378d46888116bdf5586a07148723"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/run.json",
+      "sha256": "84fa2772e9f69d14daf6d4939b7660944d5f6a0162a542483c62ef6b95903751"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/stderr.log",
+      "sha256": "934be12b386ba5e8d55c0da4ab5eca02b40ef8ff9a64fa79f567063c26a2977d"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/run/stdout.log",
+      "sha256": "82a89fa5dde0b7e66c7144797b3a0d889a23f18b01ca688cb4faa32322930e9e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-interrupted/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/.python-version",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/REPRODUCIBILITY.md",
+      "sha256": "f25fab4a25b90e335489f09076d979b03c57b6b6dfbcde98df8164f68cf43dde"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/completion.json",
+      "sha256": "66a8f5ad1efc342ad35768690d7d68f1985452dfb6269e98fafa2fc923bfff93"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/controller.json",
+      "sha256": "596b4deb1a3d459e61d81458f5e968fbc407a8c6abb1c30ad6a4303cd172473e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/current-audit-after-completion.json",
+      "sha256": "e376e62e6cc911bea5124412f35fb6f81879cb761dc6a0fd1412f29f53961f0a"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/project-rules.yaml",
+      "sha256": "0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/reprollm.lock",
+      "sha256": "271a645a4e5380a5061cadcf4de6a7068f6787e780d45c1a63eb582c245f471f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/reprollm.yaml",
+      "sha256": "8c9752739af9a125049c3ddb49d0a12617b188f15e4308f6b8b1629800af4549"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/requirements.runtime.txt",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/results.jsonl",
+      "sha256": "2c21f3dd58053ff0da85720e6c8c3d551110c0aa2b12ff0af78cd7ff0bce967e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/files/8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/files/9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298",
+      "sha256": "9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/files/a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+      "sha256": "a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/files/be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/lock.yaml",
+      "sha256": "271a645a4e5380a5061cadcf4de6a7068f6787e780d45c1a63eb582c245f471f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/manifest.yaml",
+      "sha256": "8c9752739af9a125049c3ddb49d0a12617b188f15e4308f6b8b1629800af4549"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/run.json",
+      "sha256": "e3c869f345076b5d8332f597c7c2a20a6384c5eec4390f57a2793bcd4b8a1ca2"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/stderr.log",
+      "sha256": "934be12b386ba5e8d55c0da4ab5eca02b40ef8ff9a64fa79f567063c26a2977d"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/run/stdout.log",
+      "sha256": "51229e7e5b6a79eb1c41e77b73231389549032f5807d0c821021474b9f9c8fa0"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-reference/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/REPRODUCIBILITY.md",
+      "sha256": "7d67faa657c2fe795109817a75e6ca35ed6faa0e123d9de65c8a60466ee4d173"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/bundle/damaged.jsonl",
+      "sha256": "8a13d8bf08c48c759c0c418874b24b88d4ccda5812b443f0572e4eb2500a78bb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/bundle/receipt.json",
+      "sha256": "942d8368aa205baf719040bde967fb22a3d6ab35d2b3d93b4344d718e99e3b85"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/bundle/repaired.jsonl",
+      "sha256": "837c1fa9641a18b0d90a64cbf2033b5f977ce3b0142ab24e6c460752f4fc64aa"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/bundle/unfinished-tail.bin",
+      "sha256": "9b58562b148fa0ad5a87f1867e382ebdaffd475827e5c05e6813daefa812e50f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/inputs/checkpoint.jsonl",
+      "sha256": "8a13d8bf08c48c759c0c418874b24b88d4ccda5812b443f0572e4eb2500a78bb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/inputs/derivation.json",
+      "sha256": "d821353711a57207603a727bde6f733cbf7259d6af1a39468a94da28e5c7fbaa"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/inputs/identity.json",
+      "sha256": "64810873003cb81db779674a24e8289c752a7b1485c99cd914123cb3745ce322"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/project-rules.yaml",
+      "sha256": "9dee4a69fea712a3000999eccf6080f59b0df1f83404fbc0d359de444f3748ea"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/reprollm.lock",
+      "sha256": "4a673734510549b98d3e5a8a7791158c0e1ae4a64dc763cc3712141d851617cf"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/reprollm.yaml",
+      "sha256": "335b39c3abb7e4021e7582442d74eece745a09e5570a2260722f62bb72f1ef95"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/files/64810873003cb81db779674a24e8289c752a7b1485c99cd914123cb3745ce322",
+      "sha256": "64810873003cb81db779674a24e8289c752a7b1485c99cd914123cb3745ce322"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/files/8a13d8bf08c48c759c0c418874b24b88d4ccda5812b443f0572e4eb2500a78bb",
+      "sha256": "8a13d8bf08c48c759c0c418874b24b88d4ccda5812b443f0572e4eb2500a78bb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/files/d821353711a57207603a727bde6f733cbf7259d6af1a39468a94da28e5c7fbaa",
+      "sha256": "d821353711a57207603a727bde6f733cbf7259d6af1a39468a94da28e5c7fbaa"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/lock.yaml",
+      "sha256": "4a673734510549b98d3e5a8a7791158c0e1ae4a64dc763cc3712141d851617cf"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/manifest.yaml",
+      "sha256": "335b39c3abb7e4021e7582442d74eece745a09e5570a2260722f62bb72f1ef95"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/run.json",
+      "sha256": "4b20407195dc484c652ce31c92e657af51efa9a8bbce4cfc3aedb20d9ccb1100"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/run/stdout.log",
+      "sha256": "942d8368aa205baf719040bde967fb22a3d6ab35d2b3d93b4344d718e99e3b85"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-repair/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/.python-version",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/REPRODUCIBILITY.md",
+      "sha256": "c6c8030a111f8d774cdf645cd942751aec595fe526bee02f985d747419c4da75"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/completion.json",
+      "sha256": "135ca5b4a2ab1b4c767092b058912d01b2e26345e5ca508a96ce30728676b8df"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/controller.json",
+      "sha256": "af933afe828efebc72c1bd3bbed3df6694196649e261f688f88be01b07212411"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/current-audit-after-completion.json",
+      "sha256": "fc388e1b93e36cd3e9f9586e8d18cc48579af37c6d9b765f5b657fb7e1b9b7b4"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/project-rules.yaml",
+      "sha256": "0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/reprollm.lock",
+      "sha256": "371db24489b114a7d0d725b9ae2a534260b4c5110a6378a07c9940039999b559"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/reprollm.yaml",
+      "sha256": "b1ab70302fb51d0a705ef21c9ae01a59d606378d46888116bdf5586a07148723"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/requirements.runtime.txt",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/results.jsonl",
+      "sha256": "3791ffe59c557022f8ed48755a243fef6b78bb98a03982ef0a2a259ede01f2f7"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/files/8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/files/9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298",
+      "sha256": "9df2e96c7e2eee46029d357bfe8044b45bab3ba5ec9a8e95bdb2b56f0f971298"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/files/a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367",
+      "sha256": "a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/files/be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/lock.yaml",
+      "sha256": "371db24489b114a7d0d725b9ae2a534260b4c5110a6378a07c9940039999b559"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/manifest.yaml",
+      "sha256": "b1ab70302fb51d0a705ef21c9ae01a59d606378d46888116bdf5586a07148723"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/run.json",
+      "sha256": "83b6c13c07d2de5875bf9ff152ce72a57b4333f2576d653002a54b93eb3176ef"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/stderr.log",
+      "sha256": "934be12b386ba5e8d55c0da4ab5eca02b40ef8ff9a64fa79f567063c26a2977d"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/run/stdout.log",
+      "sha256": "3bfe94bcb1a6cc85dd2c0f1b0e662572c89c252cdbc34c8a1deaa6249c381dec"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/extension-resumed/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/REPRODUCIBILITY.md",
+      "sha256": "19132dacc5842b9d66b7ae6183e8f5a5e2345cf17cd3331d178584c0ed1f4c61"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/inputs/checkpoint.jsonl",
+      "sha256": "5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/inputs/derivation.json",
+      "sha256": "08b16e0ba6fcd5289031f7ff161891de79d0141bee29635a24e957d66481dbc9"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/inputs/identity.json",
+      "sha256": "0d5103d2ba195f1de93e97219194e2b16edf04f4067af44bd17845b3e6217e14"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/project-rules.yaml",
+      "sha256": "3566a05ae720af0153b86e3c2b9dddc572ada01c3562bf9bad647071571b4d02"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/reprollm.lock",
+      "sha256": "578bbd2b1cdc958a768a955c902b0f6f15c9401a138f8702c686ec4029d1e4c0"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/reprollm.yaml",
+      "sha256": "6042e0b8efae1c4dd45e50d49f68dea43301d16a7730376b4a3444f11fcbe700"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/files/08b16e0ba6fcd5289031f7ff161891de79d0141bee29635a24e957d66481dbc9",
+      "sha256": "08b16e0ba6fcd5289031f7ff161891de79d0141bee29635a24e957d66481dbc9"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/files/0d5103d2ba195f1de93e97219194e2b16edf04f4067af44bd17845b3e6217e14",
+      "sha256": "0d5103d2ba195f1de93e97219194e2b16edf04f4067af44bd17845b3e6217e14"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/files/5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8",
+      "sha256": "5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/lock.yaml",
+      "sha256": "578bbd2b1cdc958a768a955c902b0f6f15c9401a138f8702c686ec4029d1e4c0"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/manifest.yaml",
+      "sha256": "6042e0b8efae1c4dd45e50d49f68dea43301d16a7730376b4a3444f11fcbe700"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/run.json",
+      "sha256": "4d05783b304d48419da9e0c4114ef8d5ba577075e4cf67d1564b373a19117017"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/run/stdout.log",
+      "sha256": "db2ebf2bbc218d9e8ed5e7dce2d3c4c33bfdb092b555df59d0bff96933378a74"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-inspect/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/.python-version",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/REPRODUCIBILITY.md",
+      "sha256": "553ac249b7aec40c9d1a0251a8669b52cb51a394b11fc52a433c604e72e1c636"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/controller.json",
+      "sha256": "fe949807cd5311a9819a39355f2340177a5132d43be3861e3c08ec0d844323a7"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/current-audit-after-completion.json",
+      "sha256": "98ce7a5e7662a83facb8cdd1636d9cd8a85de8f71576a20adf2d5e796a4b14a6"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/interruption-progress.json",
+      "sha256": "767865d929b7e42df529b63d62c1f280ff567aa0f0327039a46f002c5618547c"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/project-rules.yaml",
+      "sha256": "0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/reprollm.lock",
+      "sha256": "9bdb5fc352b670ab68ed444a96389bd565170d7aabc6003f14480496370227eb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/reprollm.yaml",
+      "sha256": "4c365dc147deb82fa28437072f7ec9575ade43544452fc1d3623065a21caa49e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/requirements.runtime.txt",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/results.jsonl",
+      "sha256": "be588c919f9127648e1d2224627df5f6479eacf04836260c1a9a372144febe55"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/files/69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+      "sha256": "69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/files/8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/files/aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+      "sha256": "aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/files/be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/lock.yaml",
+      "sha256": "9bdb5fc352b670ab68ed444a96389bd565170d7aabc6003f14480496370227eb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/manifest.yaml",
+      "sha256": "4c365dc147deb82fa28437072f7ec9575ade43544452fc1d3623065a21caa49e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/run.json",
+      "sha256": "9dad6b08049323c66c7c4eedb2a9b305680c3397e33a6a79a0fa43ca21617b33"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/stderr.log",
+      "sha256": "a8fa6a0cbccafbea0fb60e1c94b9f03065ebd4d24ce956bd0f1b85d8708aab8e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/run/stdout.log",
+      "sha256": "c2556a14c94f4fe9b138f8aaf0d58d4e2b47fd6eeec5bd032b9e17662add1e55"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-interrupted/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/.python-version",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/REPRODUCIBILITY.md",
+      "sha256": "1aa053081d5418ae36a65212c708fd78c03b5d878690717070125543c976daaa"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/completion.json",
+      "sha256": "5cea4ca261d41a666ddb618491dd76699a1815f1c312d322632610e8d845b20c"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/controller.json",
+      "sha256": "cb2b566398a5d18b9d2774763cd7c9250c6f0ebc2f5f3243cda610059db2b215"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/current-audit-after-completion.json",
+      "sha256": "123c718dd5cb6b62011d20a0956368843d1c0a2e661cc1e7cbdabaa1f6434706"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/project-rules.yaml",
+      "sha256": "0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/reprollm.lock",
+      "sha256": "a9b61678868713a22d10756ee97fc71fd1a5269c31b0ddcdf75fbf5ccefffa72"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/reprollm.yaml",
+      "sha256": "48781e610e4ba02819a51f2d0eda07945705099a37fab6804b4f2a1912896621"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/requirements.runtime.txt",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/results.jsonl",
+      "sha256": "1aa9deebc43357001a91d692235d3c6daf9829bc9c144b34e3c4086a07c2da66"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/files/69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+      "sha256": "69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/files/8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/files/aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+      "sha256": "aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/files/be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/lock.yaml",
+      "sha256": "a9b61678868713a22d10756ee97fc71fd1a5269c31b0ddcdf75fbf5ccefffa72"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/manifest.yaml",
+      "sha256": "48781e610e4ba02819a51f2d0eda07945705099a37fab6804b4f2a1912896621"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/run.json",
+      "sha256": "0a5eb751a47b82d5b794f09431d1e2e218f7700ce94ec6932a75d8102c12b4fc"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/stderr.log",
+      "sha256": "a8fa6a0cbccafbea0fb60e1c94b9f03065ebd4d24ce956bd0f1b85d8708aab8e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/run/stdout.log",
+      "sha256": "ba0ad4cb49ee030d0c8938374b27917aa661d35956cecaf83b293b235ca9691e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-reference/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/REPRODUCIBILITY.md",
+      "sha256": "d6511a63d36da490917369b0097e688acfa2184372137e33f5f1ac5dd501cba5"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/bundle/damaged.jsonl",
+      "sha256": "5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/bundle/receipt.json",
+      "sha256": "f9e5d96b3c95815edfb8f89a18522d28113dfda8d3172eb236a64b82e32fd545"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/bundle/repaired.jsonl",
+      "sha256": "be588c919f9127648e1d2224627df5f6479eacf04836260c1a9a372144febe55"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/bundle/unfinished-tail.bin",
+      "sha256": "9b58562b148fa0ad5a87f1867e382ebdaffd475827e5c05e6813daefa812e50f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/inputs/checkpoint.jsonl",
+      "sha256": "5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/inputs/derivation.json",
+      "sha256": "08b16e0ba6fcd5289031f7ff161891de79d0141bee29635a24e957d66481dbc9"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/inputs/identity.json",
+      "sha256": "0d5103d2ba195f1de93e97219194e2b16edf04f4067af44bd17845b3e6217e14"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/project-rules.yaml",
+      "sha256": "91526a69c9c7728ce182ca0160b0fd3c25c35083c2db80f362abc645cdb9425f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/repair.py",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/reprollm.lock",
+      "sha256": "18c471945ba5d60adf2786c8af34f73b8577a7c6d1a1676ca5657e775372ff95"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/reprollm.yaml",
+      "sha256": "9b5f660de973959cd654e2aff714e1b2714ed363feed020bcff2fbb661726b01"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/files/08b16e0ba6fcd5289031f7ff161891de79d0141bee29635a24e957d66481dbc9",
+      "sha256": "08b16e0ba6fcd5289031f7ff161891de79d0141bee29635a24e957d66481dbc9"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/files/0d5103d2ba195f1de93e97219194e2b16edf04f4067af44bd17845b3e6217e14",
+      "sha256": "0d5103d2ba195f1de93e97219194e2b16edf04f4067af44bd17845b3e6217e14"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/files/140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f",
+      "sha256": "140c93eeca3bd088ba1b6cc1046260982d0dacedcfda4d69576a9251042b0e2f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/files/5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8",
+      "sha256": "5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/lock.yaml",
+      "sha256": "18c471945ba5d60adf2786c8af34f73b8577a7c6d1a1676ca5657e775372ff95"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/manifest.yaml",
+      "sha256": "9b5f660de973959cd654e2aff714e1b2714ed363feed020bcff2fbb661726b01"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/run.json",
+      "sha256": "500cbf394231f2a8cff4d53f344df56e56564a86e762f7fcaaf720ca2d1aa022"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/run/stdout.log",
+      "sha256": "f9e5d96b3c95815edfb8f89a18522d28113dfda8d3172eb236a64b82e32fd545"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-repair/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/.python-version",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/REPRODUCIBILITY.md",
+      "sha256": "a9fa0be639715a2f2123e4684e1c31dfd8cbec70a2272402638a6832974fcc32"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/completion.json",
+      "sha256": "5c34a9cb28dede58303d6f64a8bc4b076c7e5a3a583d1050cafdce8785925ae7"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/controller.json",
+      "sha256": "3e4e7b5c2662ed08d42eb6b3d78edf8468c6bfa17f15a6eba25b1db848d306c0"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/current-audit-after-completion.json",
+      "sha256": "1ba3e535b77489beca814617bed61e5693a3e5e7b835d9a4503c8ffa0d9477ca"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/project-rules.yaml",
+      "sha256": "0eecd52fbbd96c4a54dae86703e8e9cc38ab0fd17ce1f7413fa0580d81f8c14b"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/reprollm.lock",
+      "sha256": "9bdb5fc352b670ab68ed444a96389bd565170d7aabc6003f14480496370227eb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/reprollm.yaml",
+      "sha256": "4c365dc147deb82fa28437072f7ec9575ade43544452fc1d3623065a21caa49e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/requirements.runtime.txt",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/results.jsonl",
+      "sha256": "f7cc7756153645bf2c85e0af3c9b51766f105284c7012b760bc4f16508442a67"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/files/69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8",
+      "sha256": "69a28f1126355a6261a902a1d133f4ba43871b78b50feafa82611bc2f06edec8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/files/8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8",
+      "sha256": "8afa78fc84f08bc74880d13233b35fb12708ee8abbd97da1fae779ae004b11b8"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/files/aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+      "sha256": "aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/files/be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00",
+      "sha256": "be069f090429c46ec519b1ac606dfc0734a5cc0f01f615712e78d295e5f80c00"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/lock.yaml",
+      "sha256": "9bdb5fc352b670ab68ed444a96389bd565170d7aabc6003f14480496370227eb"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/manifest.yaml",
+      "sha256": "4c365dc147deb82fa28437072f7ec9575ade43544452fc1d3623065a21caa49e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/run.json",
+      "sha256": "2ddaddddaaf52a41c1465f19db9c772eeefcd37b8cd909db8a4427b2681dd84f"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/stderr.log",
+      "sha256": "a8fa6a0cbccafbea0fb60e1c94b9f03065ebd4d24ce956bd0f1b85d8708aab8e"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/run/stdout.log",
+      "sha256": "a7d269754a86888914f6f47717cdaefa30e53614a3e485f5381ac454faf8c44a"
+    },
+    {
+      "path": "evidence/gpu-tail-recovery-validation/primary-resumed/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    }
+  ],
+  "gpu_captures": 6,
+  "gpu_text_log_newlines_normalized": true,
+  "new_completed_model_responses": 256,
+  "original_gpu_run_json_bytes_preserved": true,
+  "recorded_model_and_repair_output_bytes_verified": true,
+  "schema_version": 1,
+  "scope": "Original execution workspaces remain private; only reviewed public inputs, records and derived artifacts are included."
+}

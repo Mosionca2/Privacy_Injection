@@ -1,5 +1,5 @@
 {
-  "completed_gpu_runs": 52,
+  "completed_gpu_runs": 56,
   "followup_studies": [
     {
       "completion": "reports/tail-ablation-v1/completion.json",
@@ -10,11 +10,11 @@
   ],
   "followup_test_generations": 4608,
   "formal_generations": 6144,
-  "interrupted_gpu_runs": 3,
-  "real_gpu_runs": 55,
-  "real_model_generations_published": 16896,
+  "interrupted_gpu_runs": 5,
+  "real_gpu_runs": 61,
+  "real_model_generations_published": 17152,
   "schema_version": 1,
-  "scope": "Two original local-model study campaigns and separately scoped released/source recorder workflow validations. Count completed responses only; exclude CPU fixtures, skips and interrupted in-flight work.",
+  "scope": "Original local-model studies, separately frozen follow-up and separately scoped workflow validations. Count completed responses only; exclude CPU tools, skips and interrupted in-flight computation.",
   "studies": [
     {
       "completion": "reports/completion.json",
@@ -55,6 +55,15 @@
       "gpu_runs": 6,
       "interrupted_gpu_runs": 2,
       "label": "Source 0.7.0 SIGTERM recovery on two local snapshots",
+      "model_label": "Local Qwen3-8B and Qwen3-1.7B"
+    },
+    {
+      "completed_gpu_runs": 4,
+      "completed_responses": 256,
+      "completion": "reports/gpu-tail-recovery-validation/comparison.json",
+      "gpu_runs": 6,
+      "interrupted_gpu_runs": 2,
+      "label": "Owned GPU child SIGKILL, controlled tail repair/resume and fresh references",
       "model_label": "Local Qwen3-8B and Qwen3-1.7B"
     }
   ]

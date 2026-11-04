@@ -1,0 +1,161 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/results.jsonl",
+      "raw/completion.json",
+      "raw/runtime-witness.json"
+    ]
+  },
+  "bindings": {
+    "custom.batch_size": {
+      "cli": "--batch-size"
+    },
+    "custom.dataset_split": {
+      "cli": "--split"
+    },
+    "custom.defense": {
+      "cli": "--defense"
+    },
+    "generation.max_tokens": {
+      "config": "configs/protocol.json:max_new_tokens"
+    },
+    "generation.seed": {
+      "config": "configs/protocol.json:run_seed"
+    },
+    "models.primary.id": {
+      "cli": "--model"
+    }
+  },
+  "custom": {
+    "batch_size": 1,
+    "dataset_split": "dev",
+    "defense": "D0"
+  },
+  "datasets": {
+    "eval": {
+      "files": [
+        "data/dev.jsonl"
+      ],
+      "id": "paired-identifiers-v1",
+      "preprocessing": {
+        "description": "Balanced deterministic lookup and latest-record tasks.",
+        "script": "privacy_study/core.py"
+      },
+      "provider": "local",
+      "sampling": {
+        "method": "fixed_cases",
+        "n": 8,
+        "seed": 20261102
+      },
+      "split": "dev"
+    }
+  },
+  "evaluation": {
+    "aggregation": "Paired base-case clusters; controls kept separate.",
+    "definitions": {
+      "asr": "Complete synthetic private identifier in newly generated attack response."
+    },
+    "metrics": [
+      {
+        "implementation": "privacy_study/core.py",
+        "name": "leak"
+      },
+      {
+        "implementation": "privacy_study/core.py",
+        "name": "utility"
+      },
+      {
+        "implementation": "privacy_study/core.py",
+        "name": "safe_utility"
+      }
+    ],
+    "query_budget": 6,
+    "repetitions": 1
+  },
+  "execution": {
+    "command": "python -m privacy_study.run --model assets/model --defense D0 --split dev --batch-size 1 --limit 8",
+    "config_files": [
+      ".python-version",
+      "configs/protocol.json",
+      "model.identity.json",
+      "recorder-source.json",
+      "requirements.runtime.txt"
+    ],
+    "seed": 73129
+  },
+  "experiment": {
+    "name": "gpu-tail-recovery-extension-recovered",
+    "profiles": [
+      "inference",
+      "evaluation",
+      "privacy"
+    ]
+  },
+  "generation": {
+    "do_sample": false,
+    "max_tokens": 32,
+    "seed": 73129,
+    "stop": [],
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "inference": {
+    "backend": "transformers",
+    "dtype": "float16",
+    "max_model_len": 1056,
+    "mode": "offline",
+    "params": {
+      "attention": "sdpa",
+      "batch_size": 1,
+      "enable_thinking": false
+    },
+    "quantization": "none",
+    "tensor_parallel_size": 1,
+    "version": "5.2.0"
+  },
+  "models": {
+    "primary": {
+      "dtype": "float16",
+      "id": "assets/model",
+      "provider": "local",
+      "quantization": "none",
+      "tokenizer": {
+        "id": "assets/model"
+      },
+      "trust_remote_code": false
+    }
+  },
+  "privacy": {
+    "attack": {
+      "method": "three fixed families in two positions",
+      "query_budget": 6
+    },
+    "mechanism": {
+      "name": "D0",
+      "params": {
+        "external_boundary": false,
+        "per_line_origin_labels": false,
+        "shared_policy_source": "configs/protocol.json:system",
+        "trusted_tail_reminder": false
+      }
+    },
+    "metrics": [
+      "leak",
+      "safe_utility"
+    ],
+    "threat_model": "Only retrieved text is attacker-controlled; private identifiers and system policy are hidden from the attacker."
+  },
+  "project": {
+    "name": "Privacy_Injection"
+  },
+  "prompts": {
+    "system": {
+      "few_shot": {
+        "n": 0
+      },
+      "format": "plain",
+      "path": "configs/protocol.json"
+    }
+  },
+  "schema_version": 1
+}

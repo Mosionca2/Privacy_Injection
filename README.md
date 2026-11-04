@@ -113,3 +113,7 @@ A separately frozen follow-up has completed 5,760 new responses across both loca
 ## Copy-only checkpoint tail recovery
 
 The [result-tail utility](docs/result-tail-repair.md) inspects a damaged JSONL checkpoint and creates a new backed-up repaired copy, preserving complete samples/failures and the excluded tail bytes. It leaves the source untouched and refuses ambiguous damage or complete JSON missing only a newline. [The validation report](reports/tail-repair-validation/REPORT.md) retains six actual released/source ReproLLM CPU captures, cross-mode diffs and explicit exports. Current suites pass 54 local tests and 44 CI tests; no model inference is added and all scientific freezes remain unchanged.
+
+## GPU child kill and checkpoint-tail recovery
+
+A [bounded two-snapshot follow-up](reports/gpu-tail-recovery-validation/REPORT.md) validates actual child SIGKILL, an explicitly constructed unfinished output suffix, recorded backup/copy repair, and resumed inference against fresh references. It adds 256 completed responses in six GPU captures plus four separately counted CPU tool recordings. Original interrupted bytes and run ownership remain preserved; naturally torn writes and power-loss durability remain untested.

@@ -1,0 +1,12 @@
+{
+  "all_passed": true,
+  "checked_at_utc": "2026-11-04T03:13:20.620932+00:00",
+  "command": "python -m unittest discover -s tests -v",
+  "duration_seconds": 67.887,
+  "errors": 0,
+  "failures": 0,
+  "new_model_generations": 0,
+  "schema_version": 1,
+  "skipped": 0,
+  "tests_run": 59
+}

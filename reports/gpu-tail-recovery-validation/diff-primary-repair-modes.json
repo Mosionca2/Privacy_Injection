@@ -1,0 +1,112 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": ".reprollm/runs/20261104T025314Z-e6a1e9/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "run.json"
+  },
+  "changes": [
+    {
+      "a": "inspect",
+      "b": "repair",
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "custom.mode",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "6b8d427610c7ddd07df9822c91238d70e17ac878",
+      "b": "7e351965dc0617603d0476435860f185d37fa907",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "repair.py",
+        "--input",
+        "inputs/checkpoint.jsonl",
+        "--identity",
+        "inputs/identity.json",
+        "--mode",
+        "inspect"
+      ],
+      "b": [
+        "python",
+        "repair.py",
+        "--input",
+        "inputs/checkpoint.jsonl",
+        "--identity",
+        "inputs/identity.json",
+        "--mode",
+        "repair",
+        "--sha256",
+        "5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8",
+        "--output-directory",
+        "raw/bundle"
+      ],
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python repair.py --input inputs/checkpoint.jsonl --identity inputs/identity.json --mode inspect",
+      "b": "python repair.py --input inputs/checkpoint.jsonl --identity inputs/identity.json --mode repair --sha256 5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8 --output-directory raw/bundle",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 1.671227,
+      "b": 1.938909,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-04T02:53:16Z",
+      "b": "2026-11-04T02:54:23Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261104T025314Z-e6a1e9",
+      "b": "20261104T025420Z-1496d4",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-04T02:53:14Z",
+      "b": "2026-11-04T02:54:20Z",
+      "note": null,
+      "path": "started_at",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.7.0",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 0,
+      "LOW": 0,
+      "MEDIUM": 4,
+      "MEDIUM_HIGH": 0,
+      "NONE": 4
+    },
+    "highest": "MEDIUM",
+    "same": 61
+  }
+}

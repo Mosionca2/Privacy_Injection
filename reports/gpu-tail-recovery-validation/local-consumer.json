@@ -1,0 +1,43 @@
+{
+  "all_passed": true,
+  "consumer": {
+    "module_version": "0.7.0",
+    "package_files_checked": 148,
+    "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9"
+  },
+  "evidence_receipt_matches": true,
+  "new_model_generations": 0,
+  "reader_probes": [
+    {
+      "archived_directory_unchanged": true,
+      "changes": 0,
+      "exit_code": 0,
+      "reader_version": "0.7.0",
+      "run": "evidence/calibration/b1/run/run.json",
+      "run_schema_version": 1,
+      "run_sha256": "ae8bc5cdd775f2b71a1c5c063c9641634afa41031748c8e7645368c7daab4353",
+      "same": 126
+    },
+    {
+      "archived_directory_unchanged": true,
+      "changes": 0,
+      "exit_code": 0,
+      "reader_version": "0.7.0",
+      "run": "evidence/source-recovery-validation/primary-reference/run/run.json",
+      "run_schema_version": 2,
+      "run_sha256": "84c3ab409469b31437c96c926c57070cc3025002cadfeb2853294800c1d1a678",
+      "same": 134
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Offline public-evidence consistency and pinned-source archived-run reading; no inference, model-weight verification, or full upstream product gate.",
+  "snapshot_hashes_checked": 501,
+  "totals": {
+    "completed_gpu_runs": 56,
+    "followup_test_generations": 4608,
+    "formal_generations": 6144,
+    "interrupted_gpu_runs": 5,
+    "real_gpu_runs": 61,
+    "real_model_generations_published": 17152
+  }
+}

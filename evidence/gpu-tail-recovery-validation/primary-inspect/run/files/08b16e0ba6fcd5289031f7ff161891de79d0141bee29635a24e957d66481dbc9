@@ -1,0 +1,7 @@
+{
+  "controlled_tail": "{\"type\":\"sample\",\"id\":\"controlled-tail\",\"output\":\"unfinished",
+  "damaged_sha256": "5ffc2d489563a0b864ba92fae955c5f29b62de132027644882f24df48d574bd8",
+  "interrupted_run_id": "20261104T024833Z-2b5674",
+  "original_sha256": "be588c919f9127648e1d2224627df5f6479eacf04836260c1a9a372144febe55",
+  "scope": "Constructed suffix after a real GPU child SIGKILL; no naturally torn write or power-loss claim."
+}
