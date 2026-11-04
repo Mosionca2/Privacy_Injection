@@ -1,0 +1,72 @@
+{
+  "all_passed": true,
+  "checked_at_utc": "2026-11-04T12:38:14.182195+00:00",
+  "consumer": {
+    "module_version": "0.7.0",
+    "package_files_checked": 148,
+    "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9"
+  },
+  "evidence_receipt": {
+    "matches_fresh_verification": true,
+    "path": "reports/delivery/evidence-verification.json",
+    "sha256": "4f07ffd92e1eb65f7f4b88e1a7cf2cde38dd9d03d6cead5373f916c8d575e037"
+  },
+  "implementation_validation": {
+    "ci_cpu_tail_repair_recordings": 6,
+    "ci_cpu_termination_recordings": 8,
+    "ci_unit_tests": 49,
+    "commit": "9780e6ff4f45c2d8b8d13d082238c7e22ec9f15d",
+    "github_conclusion": "success",
+    "github_run_id": 41766034328,
+    "github_run_url": "https://github.com/Mosionca2/Privacy_Injection/actions/runs/41766034328",
+    "local_receipt": "reports/gpu-tail-recovery-validation/unit-checks.json",
+    "local_unit_tests": 59
+  },
+  "new_gpu_captures": 0,
+  "new_model_generations": 0,
+  "reader_probes": [
+    {
+      "archived_directory_unchanged": true,
+      "changes": 0,
+      "exit_code": 0,
+      "reader_version": "0.7.0",
+      "run": "evidence/calibration/b1/run/run.json",
+      "run_schema_version": 1,
+      "run_sha256": "ae8bc5cdd775f2b71a1c5c063c9641634afa41031748c8e7645368c7daab4353",
+      "same": 126
+    },
+    {
+      "archived_directory_unchanged": true,
+      "changes": 0,
+      "exit_code": 0,
+      "reader_version": "0.7.0",
+      "run": "evidence/source-recovery-validation/primary-reference/run/run.json",
+      "run_schema_version": 2,
+      "run_sha256": "84c3ab409469b31437c96c926c57070cc3025002cadfeb2853294800c1d1a678",
+      "same": 134
+    }
+  ],
+  "result_rows_checked": 17192,
+  "retained_row_copies": 40,
+  "schema_version": 1,
+  "scientific_code_data_and_frozen_protocols_unchanged": true,
+  "scope": "Documentation closeout: fresh offline evidence verification and actual pinned-source archived-run reading; implementation test results are linked to their previously validated commit, not rerun locally for this documentation change.",
+  "snapshot_hashes_checked": 501,
+  "totals": {
+    "completed_gpu_runs": 56,
+    "followup_test_generations": 4608,
+    "formal_generations": 6144,
+    "interrupted_gpu_runs": 5,
+    "real_gpu_runs": 61,
+    "real_model_generations_published": 17152
+  },
+  "upstream": {
+    "accepted_pr": "https://github.com/EnumaElish123/ReproLLM/pull/12",
+    "case_index_acceptance": "not_confirmed",
+    "case_index_proposal": "https://github.com/EnumaElish123/ReproLLM/issues/11#issuecomment-6593163665",
+    "fork_main_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+    "merge_commit": "ad8b2c7057b6473072b65102eaf8e122b647acec",
+    "new_issue_or_pr_created": false,
+    "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9"
+  }
+}

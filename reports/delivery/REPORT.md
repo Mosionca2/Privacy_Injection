@@ -2,6 +2,8 @@
 
 This checkpoint brings together the published experiments, functional checks and accepted documentation contribution. It describes one agent-assisted research project using exact local model snapshots. The scientific findings remain in the [primary report](../../REPORT.md) and [second-snapshot report](../extensions/qwen3-1.7b/REPORT.md).
 
+The two-snapshot study and documented workflow follow-ups are complete. The [delivery status and evidence map](CHECKLIST.md) distinguishes finished work from the pending external case-index proposal and optional extensions. The validated implementation at `9780e6f` passed 59 local tests and 49 CI unit tests; the [closeout receipt](closeout-validation.json) records a fresh evidence/reader check and the corresponding implementation CI. Earlier validation receipts and test counts below remain scoped to their original checkpoints.
+
 ## Execution accounting
 
 | Campaign | Completed responses | GPU captures | Original formal responses |
@@ -59,7 +61,7 @@ python tools/verify_evidence.py --output reports/delivery/evidence-verification.
 python -m unittest discover -s tests -v
 ```
 
-[The checkpoint validation receipt](validation.json) records the actual local results. Verification is offline and runs no inference. It checks internal consistency of published artifacts, including scores recomputed with the study's frozen scoring definition. It is not an external attestation or independent scientific replication. Large model weights, bootstrap intervals and charts are not revalidated by this command. Device-sanitized run/log copies also cannot be treated as the private originals' complete byte identity.
+[The historical source-recovery checkpoint receipt](validation.json) preserves that stage's local results; [the closeout receipt](closeout-validation.json) links the current evidence check to its validated implementation. Verification is offline and runs no inference. It checks internal consistency of published artifacts, including scores recomputed with the study's frozen scoring definition. It is not an external attestation or independent scientific replication. Large model weights, bootstrap intervals and charts are not revalidated by this command. Device-sanitized run/log copies also cannot be treated as the private originals' complete byte identity.
 
 The later [CPU CI gate](../ci-validation/REPORT.md) automates this complete evidence check and checks actual pinned-source ReproLLM reading of schema-1 and schema-2 archives. It compares a fresh verification result to the committed receipt on each main push or pull request. Its 30 CPU tests cover scoring, evidence, recovery and source guards; the full local scientific-environment suite has 40 passing tests. These maintenance checks add no model responses.
 

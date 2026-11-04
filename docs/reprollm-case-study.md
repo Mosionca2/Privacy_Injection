@@ -1,6 +1,6 @@
 # ReproLLM case study: a recorded local-model privacy experiment
 
-This agent-assisted study recorded genuine GPU inference with ReproLLM 0.6.1. The public evidence includes 3,072 held-out generations, a 768-generation fresh repeat, calibration and development runs, and a separate corrected-declaration validation. See [the report](../REPORT.md) and [the execution ledger](../reports/completion.json). One study is not multiple independent users or long-term deployment evidence.
+The initial primary-study checkpoint recorded genuine GPU inference with ReproLLM 0.6.1: 3,072 held-out generations, a 768-generation fresh repeat, calibration and development runs, and a separate corrected-declaration validation. See [the primary report](../REPORT.md) and [its execution ledger](../reports/completion.json). Later two-snapshot studies and recorder checks are summarized in the [current delivery status](../reports/delivery/CHECKLIST.md). One study is not multiple independent users or long-term deployment evidence.
 
 ## Reusable workflow
 
@@ -23,7 +23,7 @@ Actual run IDs link rows to captures; accepted CLI bindings detected intentional
 - Large local weights are not fully hashed by default.
 - A present project field may pass its presence rule while a contradictory runtime observation correctly fails `consistency.custom_fields`.
 - `NONE` is a real drift severity; omitting `--fail-on` makes diff informational.
-- Capture evidence is collected mainly after the child exits. Keep scientific inputs immutable and isolate concurrent manifests.
+- Released 0.6.1/schema-1 captures do not attest a pre-child input baseline. Pinned source 0.7.0/schema 2 adds pre-child input baselines and post-child checks; consumption remains unverified. Keep scientific inputs immutable and isolate concurrent manifests.
 - The selected synthetic secret patterns were redacted in tool-owned persistence. This is not a general guarantee for arbitrary secrets or user-created output files.
 
 No confirmed upstream defect was inferred from these cases. The resulting documentation contribution from [the research owner's Fork](https://github.com/Mosionca2/ReproLLM) was accepted through [Docs Issue #11](https://github.com/EnumaElish123/ReproLLM/issues/11) and [merged PR #12](https://github.com/EnumaElish123/ReproLLM/pull/12). The PR contains only the isolated-recording tutorial, navigation and changelog.

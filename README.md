@@ -4,6 +4,8 @@ A controlled local-model study of confidentiality and task completion under inje
 
 Read the [delivery checkpoint and functional coverage](reports/delivery/REPORT.md) for the consolidated evidence, accepted upstream contribution and remaining limits. The offline verifier checks response accounting and published input snapshots without running inference.
 
+The two-snapshot study and the documented workflow follow-ups are complete. The current repository ledger contains **17,152 completed model responses in 61 GPU captures**: 56 completed captures and five controlled interruptions. The **6,144 original formal responses** and **4,608 neutral-tail follow-up test responses** remain separately counted. The validated implementation at `9780e6f` passed 59 local tests and 49 CI unit tests. See the [delivery status and evidence map](reports/delivery/CHECKLIST.md) for the completed work, version boundaries, contribution status and optional extensions. Numbers in the stage descriptions below describe their historical checkpoints.
+
 The paired design uses two tasks (entity lookup and latest-record lookup), four prompt interventions, three attack families, two injection positions, and separate clean and authorized-copy controls. There are 24 development cases and 96 held-out cases. A complete single-model formal experiment requires 3,072 newly generated responses. The statistical unit is the base case, not each response.
 
 - D0: confidentiality policy with plain record presentation.
@@ -22,7 +24,7 @@ python -c 'from privacy_study.core import prepare; prepare(".")'
 python -m unittest discover -s tests -v
 ```
 
-Model weights and machine-specific configuration are not distributed here. Execution and ReproLLM integration are added as independently validated stages. Published results will identify completed generations, failures, exact software versions, and limitations; completed stages and their evidence are reported below.
+Model weights and machine-specific configuration are not distributed here. Execution and ReproLLM integration are added as independently validated stages. Published results identify completed generations, failures, exact software versions, and limitations; completed stages and their evidence are reported below.
 
 ## Recorded execution
 
@@ -90,29 +92,29 @@ The extension adapter now supports source checkouts with committed recording met
 
 Three pinned-source 0.7.0 GPU conditions and a released-0.6.1 reference completed 256 new responses. Schema-2 baselines preserve the original diagnostic input while post-child checks detect its deliberate change. Installed distribution metadata remains 0.6.1; no environment upgrade occurred. [The report](reports/source-recorder-validation/REPORT.md) records source identity, actual run IDs, diffs, historical exports and limits.
 
-At the source-input checkpoint, repository totals were **10,880 completed responses and 37 GPU captures**, with **6,144 formal responses** unchanged. All 37 repository tests and the full published-evidence consistency check pass.
+At the source-input checkpoint, repository totals were **10,880 completed responses and 37 GPU captures**, with **6,144 formal responses** unchanged. That checkpoint passed 37 repository tests and the full published-evidence consistency check.
 
 ## Source recorder interruption and resume
 
 Pinned source 0.7.0 controlled SIGTERM/resume cases on the local 8B and 1.7B snapshots added 256 genuine completed responses across six captures. Both recovered outputs preserve the original rows and match their separate uninterrupted references. [The report](reports/source-recovery-validation/REPORT.md) retains attempt IDs, exits, input identities, progress receipts, diffs and limits.
 
-Current totals are **11,136 completed responses across 43 GPU captures** (40 completed, three intentionally interrupted), with **6,144 formal responses** unchanged. All 39 repository tests and the full offline evidence check pass. Issue #13 is resolved by upstream documentation clarification and a recorded contributor revisit.
+At the source-recovery checkpoint, totals were **11,136 completed responses across 43 GPU captures** (40 completed, three intentionally interrupted), with **6,144 formal responses** unchanged. That checkpoint passed 39 repository tests and the full offline evidence check. Issue #13 was resolved by upstream documentation clarification and a recorded contributor revisit.
 
 ## Automated evidence and ReproLLM reader checks
 
-The [CPU CI workflow](.github/workflows/evidence.yml) checks every main push and pull request against all published capture evidence and its committed verification receipt. It also uses pinned ReproLLM source 0.7.0 to read actual schema-1 and schema-2 archived runs, checking source-file hashes and preserving archived bytes. The gate requires no model weights or inference packages and adds no model responses. [The validation report](reports/ci-validation/REPORT.md) records scope, local checks and remote-run status; all 40 local repository tests pass.
+The [CPU CI workflow](.github/workflows/evidence.yml) checks every main push and pull request against all published capture evidence and its committed verification receipt. It also uses pinned ReproLLM source 0.7.0 to read actual schema-1 and schema-2 archived runs, checking source-file hashes and preserving archived bytes. The gate requires no model weights or inference packages and adds no model responses. [The validation report](reports/ci-validation/REPORT.md) records its initial checkpoint, when 40 local tests passed.
 
 ## Forced-termination recording checks
 
-Eight selected real CPU captures compare child SIGKILL, recorder SIGKILL and successful controls under released 0.6.1 and pinned source 0.7.0. Killing the child records `interrupted / -9`; losing the recorder preserves an unfinished `running` record, with source schema-2 input baselines and unknown final checks. [The report](reports/termination-validation/REPORT.md) retains explicit exports, inspection results, output hashes and the corrected same-second selection check. Current suites have 42 local tests and 32 CI unit tests, plus a fresh CPU termination matrix per CI run. Model-response totals are unchanged.
+Eight selected real CPU captures compare child SIGKILL, recorder SIGKILL and successful controls under released 0.6.1 and pinned source 0.7.0. Killing the child records `interrupted / -9`; losing the recorder preserves an unfinished `running` record, with source schema-2 input baselines and unknown final checks. [The report](reports/termination-validation/REPORT.md) retains explicit exports, inspection results, output hashes and the corrected same-second selection check. At the termination checkpoint, suites passed 42 local tests and 32 CI unit tests; the workflow also records a fresh CPU termination matrix. This stage added no model responses.
 
 ## Paired neutral-tail follow-up
 
-A separately frozen follow-up has completed 5,760 new responses across both local snapshots (12 GPU captures). N replaces D2's reminder with a neutral sentence while keeping the same repeated question and exactly matching encoded length. The full new 96-case-per-model comparison is complete. Read [the follow-up report](reports/tail-ablation-v1/REPORT.md). Current totals are 16,896 model responses and 55 GPU captures; the original 6,144 formal responses remain separately counted. All 47 local tests pass.
+A separately frozen follow-up completed 5,760 new responses across both local snapshots (12 GPU captures). N replaces D2's reminder with a neutral sentence while keeping the same repeated question and exactly matching encoded length. The full new 96-case-per-model comparison is complete. Read [the follow-up report](reports/tail-ablation-v1/REPORT.md). At that checkpoint, totals were 16,896 model responses and 55 GPU captures, and 47 local tests passed. The original 6,144 formal responses remain separately counted.
 
 ## Copy-only checkpoint tail recovery
 
-The [result-tail utility](docs/result-tail-repair.md) inspects a damaged JSONL checkpoint and creates a new backed-up repaired copy, preserving complete samples/failures and the excluded tail bytes. It leaves the source untouched and refuses ambiguous damage or complete JSON missing only a newline. [The validation report](reports/tail-repair-validation/REPORT.md) retains six actual released/source ReproLLM CPU captures, cross-mode diffs and explicit exports. Current suites pass 54 local tests and 44 CI tests; no model inference is added and all scientific freezes remain unchanged.
+The [result-tail utility](docs/result-tail-repair.md) inspects a damaged JSONL checkpoint and creates a new backed-up repaired copy, preserving complete samples/failures and the excluded tail bytes. It leaves the source untouched and refuses ambiguous damage or complete JSON missing only a newline. [The validation report](reports/tail-repair-validation/REPORT.md) retains six actual released/source ReproLLM CPU captures, cross-mode diffs and explicit exports. At the copy-only repair checkpoint, suites passed 54 local tests and 44 CI tests. This stage added no model inference and preserved all scientific freezes.
 
 ## GPU child kill and checkpoint-tail recovery
 
