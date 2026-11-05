@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "issue": {
+    "number": 14,
+    "title": "Docs/feedback: judge_only stored-answer grading with real local runs and checklist exports",
+    "state": "OPEN",
+    "url": "https://github.com/EnumaElish123/ReproLLM/issues/14",
+    "createdAt": "2026-11-05T04:26:59Z"
+  },
+  "author": "Mosionca2",
+  "scope": "Judge-only field-use feedback and a bounded stored-answer documentation proposal.",
+  "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+  "existing_fork": "https://github.com/Mosionca2/ReproLLM",
+  "new_pull_request_created": false,
+  "pull_request_status": "Proposed documentation scope/location awaits maintainer feedback; no new confirmed product defect."
+}
