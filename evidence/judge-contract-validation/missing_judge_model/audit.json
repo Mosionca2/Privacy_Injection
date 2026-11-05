@@ -1,0 +1,910 @@
+{
+  "documents": {
+    "lock": "sha256:8099610829afad812252f4dbb3be0c4a78dbec7bc938b0c3b3ac626547687b43",
+    "manifest": "sha256:39f4b5e47e34db1704234c0b2a567f4e3709c190d6266b1d1108ed42bb78b533",
+    "runs": 0
+  },
+  "findings": [
+    {
+      "aliases": [],
+      "category": "code",
+      "evidence": [
+        {
+          "expected": null,
+          "field": null,
+          "kind": "git",
+          "line": null,
+          "note": "git rev-parse --is-inside-work-tree failed",
+          "path": ".",
+          "value": null
+        }
+      ],
+      "fix_hint": "Run `git init` and commit the experiment code so its state is recorded.",
+      "level": 1,
+      "message": ". is not inside a git work tree",
+      "profile_origin": [],
+      "rule_id": "code.git_repo",
+      "severity": "CRITICAL",
+      "severity_origin": "default",
+      "status": "fail",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "judge",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "models.judge.id",
+          "kind": "field",
+          "line": null,
+          "note": "absent",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set models.judge.id in reprollm.yaml.",
+      "level": 1,
+      "message": "models.judge.id is missing",
+      "profile_origin": [],
+      "rule_id": "judge.model_declared",
+      "severity": "CRITICAL",
+      "severity_origin": "default",
+      "status": "fail",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "env",
+      "evidence": [
+        {
+          "expected": null,
+          "field": null,
+          "kind": "file",
+          "line": 40,
+          "note": "imported",
+          "path": "judge_injection/run.py",
+          "value": null
+        }
+      ],
+      "fix_hint": "Pin torch exactly, e.g. `torch==2.5.1+cu121`.",
+      "level": 1,
+      "message": "torch is used but not pinned to an exact version (suggestion: torch==2.5.1+cu121)",
+      "profile_origin": [],
+      "rule_id": "env.llm_critical_deps_pinned",
+      "severity": "WARNING",
+      "severity_origin": "default",
+      "status": "fail",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "env",
+      "evidence": [
+        {
+          "expected": null,
+          "field": null,
+          "kind": "file",
+          "line": null,
+          "note": "no requires-python / .python-version / conda python= found",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Add `requires-python` to pyproject.toml, a .python-version file, or a `python=3.x` entry in environment.yml.",
+      "level": 1,
+      "message": "no Python version requirement is declared",
+      "profile_origin": [],
+      "rule_id": "env.python_version_declared",
+      "severity": "WARNING",
+      "severity_origin": "default",
+      "status": "fail",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "model",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "models.judge.dtype",
+          "kind": "field",
+          "line": null,
+          "note": "absent",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set models.judge.dtype in reprollm.yaml.",
+      "level": 1,
+      "message": "models.judge.dtype is missing",
+      "profile_origin": [],
+      "rule_id": "model.dtype_declared",
+      "severity": "WARNING",
+      "severity_origin": "default",
+      "status": "fail",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "code",
+      "evidence": [],
+      "fix_hint": "Commit or stash your changes: `git add -A && git commit` or `git stash`.",
+      "level": 1,
+      "message": "not a git repository",
+      "profile_origin": [],
+      "rule_id": "code.clean_tree",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "code",
+      "evidence": [],
+      "fix_hint": "Commit the current state: `git add -A && git commit -m 'experiment'`.",
+      "level": 1,
+      "message": "not a git repository",
+      "profile_origin": [],
+      "rule_id": "code.git_commit",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "code",
+      "evidence": [],
+      "fix_hint": "Commit them, delete them, or add them to .gitignore.",
+      "level": 1,
+      "message": "not a git repository",
+      "profile_origin": [],
+      "rule_id": "code.no_untracked",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "code",
+      "evidence": [],
+      "fix_hint": "Run `git remote add origin <url>` so the experiment's code source is recorded.",
+      "level": 1,
+      "message": "not a git repository",
+      "profile_origin": [],
+      "rule_id": "code.remote_recorded",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "code",
+      "evidence": [],
+      "fix_hint": "Run `git submodule update --init --recursive`.",
+      "level": 1,
+      "message": "not a git repository",
+      "profile_origin": [],
+      "rule_id": "code.submodules_initialized",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "env",
+      "evidence": [],
+      "fix_hint": "Run `reprollm init` to create reprollm.yaml and .reprollm/.",
+      "level": 1,
+      "message": "audit level > 0; reprollm.yaml exists",
+      "profile_origin": [],
+      "rule_id": "env.reprollm_initialized",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "exec",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "experiment.profiles",
+          "kind": "field",
+          "line": null,
+          "note": "judge_only declared, nothing detected",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Review experiment.profiles in reprollm.yaml against the detection evidence; add or remove a profile only to describe the selected experiment. Capabilities used by other repository workflows need no manifest change.",
+      "level": 1,
+      "message": "declared profile 'judge_only' has no detection evidence in this repository",
+      "profile_origin": [],
+      "rule_id": "exec.profile_detection_mismatch",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "fail",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "exec",
+      "evidence": [
+        {
+          "expected": null,
+          "field": null,
+          "kind": "run",
+          "line": null,
+          "note": "no run.json found",
+          "path": ".reprollm/runs",
+          "value": null
+        }
+      ],
+      "fix_hint": "Wrap your command with `reprollm run -- <command>` to record runtime truth.",
+      "level": 1,
+      "message": "no run records found under .reprollm/runs",
+      "profile_origin": [],
+      "rule_id": "exec.run_recorded",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "fail",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "model",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "models.primary.id",
+          "kind": "field",
+          "line": null,
+          "note": "not required for the explicitly selected shipped judge_only experiment",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set models.primary.id in reprollm.yaml.",
+      "level": 1,
+      "message": "models.primary.id: not required for the explicitly selected shipped judge_only experiment",
+      "profile_origin": [],
+      "rule_id": "model.primary_declared",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "model",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "models.judge.provider",
+          "kind": "field",
+          "line": null,
+          "note": "provider is not declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set models.<role>.provider to a supported provider in reprollm.yaml.",
+      "level": 1,
+      "message": "models.judge.provider: provider is not declared",
+      "profile_origin": [],
+      "rule_id": "model.provider_known",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "model",
+      "evidence": [],
+      "fix_hint": "Set models.<role>.trust_remote_code to true or false in reprollm.yaml to match the selected execution path.",
+      "level": 1,
+      "message": "no applicable declarations",
+      "profile_origin": [],
+      "rule_id": "model.trust_remote_code_declared",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "dataset",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "datasets.eval.split",
+          "kind": "field",
+          "line": null,
+          "note": "only required for Hugging Face datasets",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set datasets.<role>.split in reprollm.yaml.",
+      "level": 1,
+      "message": "datasets.eval.split: only required for Hugging Face datasets",
+      "profile_origin": [],
+      "rule_id": "dataset.split_declared",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "dataset",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "datasets.eval.subset",
+          "kind": "field",
+          "line": null,
+          "note": "only required for Hugging Face datasets",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set datasets.<role>.subset in reprollm.yaml.",
+      "level": 1,
+      "message": "datasets.eval.subset: only required for Hugging Face datasets",
+      "profile_origin": [],
+      "rule_id": "dataset.subset_declared",
+      "severity": "INFO",
+      "severity_origin": "default",
+      "status": "skipped",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "env",
+      "evidence": [],
+      "fix_hint": "Add a pyproject.toml, requirements*.txt, or environment.yml that declares the dependencies of this experiment.",
+      "level": 1,
+      "message": "A dependency manifest declares the Python environment.",
+      "profile_origin": [],
+      "rule_id": "env.dependency_manifest_present",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "env",
+      "evidence": [],
+      "fix_hint": "Commit a uv.lock/poetry.lock, or pin every dependency with `==` in requirements.txt so the environment can be rebuilt exactly.",
+      "level": 1,
+      "message": "A lockfile (or fully pinned requirements) records exact versions.",
+      "profile_origin": [],
+      "rule_id": "env.lockfile_present",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "env",
+      "evidence": [],
+      "fix_hint": "Remove the secret file from the repository, rotate the secret, and add the pattern to .gitignore (keep only .env.example-style templates).",
+      "level": 1,
+      "message": "Secret-bearing files are not present or are gitignored.",
+      "profile_origin": [],
+      "rule_id": "env.secret_files_ignored",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "exec",
+      "evidence": [],
+      "fix_hint": "Set execution.command in reprollm.yaml, e.g. `execution: {command: 'python eval.py --config configs/eval.yaml'}`.",
+      "level": 1,
+      "message": "The command that reproduces the experiment is declared.",
+      "profile_origin": [],
+      "rule_id": "exec.command_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "exec",
+      "evidence": [],
+      "fix_hint": "Set execution.seed (or generation.seed / training.seed) in reprollm.yaml.",
+      "level": 1,
+      "message": "A random seed is declared somewhere (execution/generation/training).",
+      "profile_origin": [],
+      "rule_id": "exec.seed_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "dataset",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "datasets",
+          "kind": "field",
+          "line": null,
+          "note": "declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set datasets in reprollm.yaml.",
+      "level": 1,
+      "message": "datasets is declared",
+      "profile_origin": [],
+      "rule_id": "dataset.declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "dataset",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "datasets.eval.preprocessing",
+          "kind": "field",
+          "line": null,
+          "note": "declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set datasets.eval.preprocessing in reprollm.yaml.",
+      "level": 1,
+      "message": "datasets.eval.preprocessing is declared",
+      "profile_origin": [],
+      "rule_id": "dataset.preprocessing_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "dataset",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "datasets.eval.sampling.seed",
+          "kind": "field",
+          "line": null,
+          "note": "declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set datasets.eval.sampling.seed in reprollm.yaml.",
+      "level": 1,
+      "message": "datasets.eval.sampling.seed is declared",
+      "profile_origin": [],
+      "rule_id": "dataset.sampling_seed_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "prompt",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "prompts.judge.path",
+          "kind": "field",
+          "line": null,
+          "note": "referenced file exists",
+          "path": null,
+          "value": null
+        },
+        {
+          "expected": null,
+          "field": null,
+          "kind": "file",
+          "line": null,
+          "note": null,
+          "path": "prompts/judge.txt",
+          "value": null
+        }
+      ],
+      "fix_hint": "Set prompts.judge.path to an existing file in reprollm.yaml.",
+      "level": 1,
+      "message": "prompts.judge.path: referenced file exists",
+      "profile_origin": [],
+      "rule_id": "prompt.file_exists",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "eval",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.aggregation",
+          "kind": "field",
+          "line": null,
+          "note": "declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.aggregation in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.aggregation is declared",
+      "profile_origin": [],
+      "rule_id": "eval.aggregation_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "eval",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.metrics.0.implementation",
+          "kind": "field",
+          "line": null,
+          "note": "referenced file exists",
+          "path": null,
+          "value": null
+        },
+        {
+          "expected": null,
+          "field": null,
+          "kind": "file",
+          "line": null,
+          "note": null,
+          "path": "judge_injection/core.py",
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.metrics.0.implementation to an existing relative file or pkg==version in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.metrics.0.implementation: referenced file exists",
+      "profile_origin": [],
+      "rule_id": "eval.metric_implementation_referenced",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "eval",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.metrics.1.implementation",
+          "kind": "field",
+          "line": null,
+          "note": "referenced file exists",
+          "path": null,
+          "value": null
+        },
+        {
+          "expected": null,
+          "field": null,
+          "kind": "file",
+          "line": null,
+          "note": null,
+          "path": "judge_injection/core.py",
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.metrics.1.implementation to an existing relative file or pkg==version in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.metrics.1.implementation: referenced file exists",
+      "profile_origin": [],
+      "rule_id": "eval.metric_implementation_referenced",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "eval",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.metrics.2.implementation",
+          "kind": "field",
+          "line": null,
+          "note": "referenced file exists",
+          "path": null,
+          "value": null
+        },
+        {
+          "expected": null,
+          "field": null,
+          "kind": "file",
+          "line": null,
+          "note": null,
+          "path": "judge_injection/core.py",
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.metrics.2.implementation to an existing relative file or pkg==version in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.metrics.2.implementation: referenced file exists",
+      "profile_origin": [],
+      "rule_id": "eval.metric_implementation_referenced",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "eval",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.metrics.3.implementation",
+          "kind": "field",
+          "line": null,
+          "note": "referenced file exists",
+          "path": null,
+          "value": null
+        },
+        {
+          "expected": null,
+          "field": null,
+          "kind": "file",
+          "line": null,
+          "note": null,
+          "path": "judge_injection/core.py",
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.metrics.3.implementation to an existing relative file or pkg==version in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.metrics.3.implementation: referenced file exists",
+      "profile_origin": [],
+      "rule_id": "eval.metric_implementation_referenced",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "eval",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.metrics.4.implementation",
+          "kind": "field",
+          "line": null,
+          "note": "referenced file exists",
+          "path": null,
+          "value": null
+        },
+        {
+          "expected": null,
+          "field": null,
+          "kind": "file",
+          "line": null,
+          "note": null,
+          "path": "judge_injection/core.py",
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.metrics.4.implementation to an existing relative file or pkg==version in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.metrics.4.implementation: referenced file exists",
+      "profile_origin": [],
+      "rule_id": "eval.metric_implementation_referenced",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "eval",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.metrics",
+          "kind": "field",
+          "line": null,
+          "note": "declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.metrics in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.metrics is declared",
+      "profile_origin": [],
+      "rule_id": "eval.metrics_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "eval",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.repetitions",
+          "kind": "field",
+          "line": null,
+          "note": "declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.repetitions in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.repetitions is declared",
+      "profile_origin": [],
+      "rule_id": "eval.repetitions_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "judge",
+      "evidence": [],
+      "fix_hint": "Set evaluation.judge.params.temperature and evaluation.judge.params.max_tokens in reprollm.yaml.",
+      "level": 1,
+      "message": "Judge temperature and max_tokens are declared.",
+      "profile_origin": [],
+      "rule_id": "judge.params_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "judge",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "prompts.judge",
+          "kind": "field",
+          "line": null,
+          "note": "declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set prompts.judge in reprollm.yaml.",
+      "level": 1,
+      "message": "prompts.judge is declared",
+      "profile_origin": [],
+      "rule_id": "judge.prompt_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    },
+    {
+      "aliases": [],
+      "category": "judge",
+      "evidence": [
+        {
+          "expected": null,
+          "field": "evaluation.judge.repetitions",
+          "kind": "field",
+          "line": null,
+          "note": "declared",
+          "path": null,
+          "value": null
+        }
+      ],
+      "fix_hint": "Set evaluation.judge.repetitions in reprollm.yaml.",
+      "level": 1,
+      "message": "evaluation.judge.repetitions is declared",
+      "profile_origin": [],
+      "rule_id": "judge.repetitions_declared",
+      "severity": "PASS",
+      "severity_origin": "default",
+      "status": "pass",
+      "suppressed_reason": null
+    }
+  ],
+  "generated_at": "2026-11-05T04:02:49Z",
+  "level": 1,
+  "profiles": {
+    "declared": [
+      "judge_only"
+    ],
+    "detected": [
+      {
+        "confidence": "medium",
+        "evidence": [
+          {
+            "expected": null,
+            "field": null,
+            "kind": "detection",
+            "line": 3,
+            "note": "dependency accelerate",
+            "path": "requirements.txt",
+            "value": null
+          }
+        ],
+        "profile": "finetuning",
+        "shipped": true
+      },
+      {
+        "confidence": "medium",
+        "evidence": [
+          {
+            "expected": null,
+            "field": null,
+            "kind": "detection",
+            "line": null,
+            "note": "keyword 'judge' in config key",
+            "path": "assets/recorder-source/reprollm/profiles/judge_only.yaml",
+            "value": null
+          },
+          {
+            "expected": null,
+            "field": null,
+            "kind": "detection",
+            "line": null,
+            "note": "keyword 'llm_judge' in file stem",
+            "path": "assets/recorder-source/reprollm/profiles/llm_judge.yaml",
+            "value": null
+          }
+        ],
+        "profile": "llm_judge",
+        "shipped": true
+      }
+    ],
+    "resolved": [
+      "core",
+      "judge_only"
+    ]
+  },
+  "reprollm_version": "0.7.0",
+  "schema_version": 1,
+  "summary": {
+    "critical": 2,
+    "info": 2,
+    "pass": 20,
+    "skipped": 11,
+    "suppressed": 0,
+    "warning": 3
+  },
+  "target": "."
+}

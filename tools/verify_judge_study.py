@@ -8,9 +8,9 @@ from judge_injection import core as j
 from tools.validate_source_recorder import check_input_capture
 from tools.verify_evidence import require,local_file
 
-def verify(root=ROOT,allow_partial=False):
- root=Path(root);captures=[];total=0
- for out in sorted((root/'evidence/judge-injection-v1').glob('*/*/*')):
+def verify(root=ROOT,allow_partial=False,study="judge-injection-v2",require_matching=True):
+ root=Path(root);captures=[];total=0;mismatches=0
+ for out in sorted((root/'evidence'/study).glob('*/*/*')):
   if not (out/'run/run.json').exists():continue
   cond=c.read_json(out/'condition.json');run=c.read_json(out/'run/run.json')
   require(run['status']=='completed' and run['exit_code']==0 and run['schema_version']==2,'Unsuccessful judge capture.')
@@ -26,7 +26,7 @@ def verify(root=ROOT,allow_partial=False):
   raw=(out/'judge-predictions.jsonl').read_bytes();docs=[json.loads(x) for x in raw.splitlines()];identity=docs[0]['identity'];rows=docs[1:]
   artifacts={v['path']:v['sha256'] for v in run['artifacts']}
   require(artifacts['raw/judge-predictions.jsonl']=='sha256:'+c.digest(out/'judge-predictions.jsonl') and artifacts['raw/completion.json']=='sha256:'+c.digest(out/'completion.json'),'Judge output artifact mismatch.')
-  dataset=root/'studies/judge-injection-v1/inputs'/(cond['model']+'-'+('test' if cond['phase']=='test' else 'dev')+'.jsonl')
+  dataset=root/'studies'/study/'inputs'/(cond['model']+'-'+('test' if cond['phase']=='test' else 'dev')+'.jsonl')
   inputs=[json.loads(x) for x in dataset.read_text().splitlines()]
   if cond['phase'] in ('pilot','repeat'):
    ids=sorted({r['case_id'] for r in inputs})[:8]
@@ -47,7 +47,9 @@ def verify(root=ROOT,allow_partial=False):
    pairs={}
    for r in rows:
     if r['view']!='clean':pairs.setdefault((r['case_id'],r['gold'],r['family'],r['position']),{})[r['view']]=r['input_tokens']
-   require(all(set(v)=={'attack','neutral'} and v['attack']==v['neutral'] for v in pairs.values()),'Attack/neutral token lengths differ.')
+   require(all(set(v)=={'attack','neutral'} for v in pairs.values()),'Missing attack/neutral token pair.')
+   bad=sum(v['attack']!=v['neutral'] for v in pairs.values());mismatches+=bad
+   if require_matching:require(bad==0,'Attack/neutral token lengths differ.')
   complete=c.read_json(out/'completion.json');require(complete['new_judge_outputs']==len(rows) and complete['reprollm_run_id']==run['run_id'],'Judge completion mismatch.')
   require(run['run_id'] in (out/'REPRODUCIBILITY.md').read_text(),'Selected judge export mismatch.')
   require(identity['guard']==cond['guard'] and identity['max_tokens']==16 and identity['repetitions']==reps,'Judge identity contradicts condition.')
@@ -62,9 +64,11 @@ def verify(root=ROOT,allow_partial=False):
  if not allow_partial:
   require(total==12928 and len(captures)==14,'Judge campaign is incomplete.')
   require({(v['model'],v['phase'],v['guard']) for v in captures}=={(m,p,g) for m in ('primary','extension') for p in ('pilot','dev','test','repeat') for g in (('J1',) if p=='pilot' else ('J0','J1'))},'Missing or duplicate judge condition.')
-  frozen=c.read_json(root/'studies/judge-injection-v1/protocol.freeze.json')
+  frozen=c.read_json(root/'studies'/study/'protocol.freeze.json')
   for name,digest in frozen['files'].items():require(c.digest(local_file(root,name))==digest,'Formal judge study changed after freeze.')
- return dict(schema_version=1,all_passed=True,judge_outputs=total,gpu_captures=len(captures),records=captures,new_victim_generations=0)
+  ledger=c.read_json(root/'reports'/study/'execution.json')
+  require(ledger['completed_judge_outputs']==total and ledger['new_victim_generations']==0 and {(r['model'],r['phase'],r['guard'],r['run_id'],r['judge_outputs']) for r in ledger['records']}=={(r['model'],r['phase'],r['guard'],r['run_id'],r['judge_outputs']) for r in captures},'Judge execution ledger mismatch.')
+ return dict(schema_version=1,study=study,all_passed=require_matching and mismatches==0,input_length_mismatches=mismatches,eligible_for_confirmatory_analysis=require_matching and mismatches==0,judge_outputs=total,gpu_captures=len(captures),records=captures,new_victim_generations=0)
 if __name__=='__main__':
  import argparse
- p=argparse.ArgumentParser();p.add_argument('--allow-partial',action='store_true');a=p.parse_args();print(json.dumps(verify(allow_partial=a.allow_partial),indent=2))
+ p=argparse.ArgumentParser();p.add_argument('--allow-partial',action='store_true');p.add_argument('--study',choices=['judge-injection-v1','judge-injection-v2'],default='judge-injection-v2');a=p.parse_args();print(json.dumps(verify(allow_partial=a.allow_partial,study=a.study),indent=2))

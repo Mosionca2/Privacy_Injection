@@ -36,8 +36,8 @@ class JudgeProtocolGuards(unittest.TestCase):
   with tempfile.TemporaryDirectory() as tmp:
    tmp=Path(tmp);relative=Path('evidence/judge-injection-v1/primary/pilot/J1')
    shutil.copytree(root/relative,tmp/relative);shutil.copytree(root/'studies/judge-injection-v1/inputs',tmp/'studies/judge-injection-v1/inputs')
-   self.assertEqual(verify(tmp,allow_partial=True)['judge_outputs'],32)
-   with self.assertRaisesRegex(ValueError,'incomplete'):verify(tmp)
+   self.assertEqual(verify(tmp,allow_partial=True,study='judge-injection-v1')['judge_outputs'],32)
+   with self.assertRaisesRegex(ValueError,'incomplete'):verify(tmp,study='judge-injection-v1')
  def test_scores_recomputed_even_if_output_hash_is_updated(self):
   from tools.verify_judge_study import verify
   from pathlib import Path
@@ -53,7 +53,7 @@ class JudgeProtocolGuards(unittest.TestCase):
    for item in run['artifacts']:
     if item['path']=='raw/judge-predictions.jsonl':item['sha256']='sha256:'+c.digest(raw)
    c.write_json(file,run)
-   with self.assertRaisesRegex(ValueError,'gold, score'):verify(tmp,allow_partial=True)
+   with self.assertRaisesRegex(ValueError,'gold, score'):verify(tmp,allow_partial=True,study='judge-injection-v1')
  def test_large_formal_input_verified_from_published_full_bytes(self):
   from tools.verify_judge_study import verify
   from pathlib import Path
@@ -64,9 +64,9 @@ class JudgeProtocolGuards(unittest.TestCase):
    shutil.copytree(root/relative,tmp/relative);shutil.copytree(root/'studies/judge-injection-v1/inputs',tmp/'studies/judge-injection-v1/inputs')
    run=json.loads((tmp/relative/'run/run.json').read_text())
    self.assertIsNone(next(v for v in run['files'] if v['path']=='data/inputs.jsonl')['snapshot'])
-   with self.assertRaisesRegex(ValueError,'token lengths'):verify(tmp,allow_partial=True)
+   with self.assertRaisesRegex(ValueError,'token lengths'):verify(tmp,allow_partial=True,study='judge-injection-v1')
    path=tmp/'studies/judge-injection-v1/inputs/primary-test.jsonl';text=path.read_text();path.write_text(text.replace('A notebook','A changed notebook',1))
-   with self.assertRaisesRegex(ValueError,'dataset identity'):verify(tmp,allow_partial=True)
+   with self.assertRaisesRegex(ValueError,'dataset identity'):verify(tmp,allow_partial=True,study='judge-injection-v1')
 
  def test_corrected_length_uses_ids_not_mapping_size(self):
   from judge_injection_v2 import core as fixed

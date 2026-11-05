@@ -1,0 +1,440 @@
+{
+  "all_passed": true,
+  "cli_commands": 31,
+  "commands": [
+    {
+      "args": [
+        "init",
+        ".",
+        "--profiles",
+        "judge_only"
+      ],
+      "exit_code": 0,
+      "label": "init",
+      "scenario": "judge_only"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "label": "lock",
+      "scenario": "judge_only"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "check-lock",
+      "scenario": "judge_only"
+    },
+    {
+      "args": [
+        "audit",
+        ".",
+        "--level",
+        "1",
+        "--format",
+        "json",
+        "--fail-on",
+        "never"
+      ],
+      "exit_code": 0,
+      "label": "audit",
+      "scenario": "judge_only"
+    },
+    {
+      "args": [
+        "init",
+        ".",
+        "--profiles",
+        "judge_only"
+      ],
+      "exit_code": 0,
+      "label": "init",
+      "scenario": "with_privacy"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "label": "lock",
+      "scenario": "with_privacy"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "check-lock",
+      "scenario": "with_privacy"
+    },
+    {
+      "args": [
+        "audit",
+        ".",
+        "--level",
+        "1",
+        "--format",
+        "json",
+        "--fail-on",
+        "never"
+      ],
+      "exit_code": 0,
+      "label": "audit",
+      "scenario": "with_privacy"
+    },
+    {
+      "args": [
+        "init",
+        ".",
+        "--profiles",
+        "judge_only"
+      ],
+      "exit_code": 0,
+      "label": "init",
+      "scenario": "with_inference"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "label": "lock",
+      "scenario": "with_inference"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "check-lock",
+      "scenario": "with_inference"
+    },
+    {
+      "args": [
+        "audit",
+        ".",
+        "--level",
+        "1",
+        "--format",
+        "json",
+        "--fail-on",
+        "never"
+      ],
+      "exit_code": 0,
+      "label": "audit",
+      "scenario": "with_inference"
+    },
+    {
+      "args": [
+        "init",
+        ".",
+        "--profiles",
+        "judge_only"
+      ],
+      "exit_code": 0,
+      "label": "init",
+      "scenario": "user_override"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "label": "lock",
+      "scenario": "user_override"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "check-lock",
+      "scenario": "user_override"
+    },
+    {
+      "args": [
+        "audit",
+        ".",
+        "--level",
+        "1",
+        "--format",
+        "json",
+        "--fail-on",
+        "never"
+      ],
+      "exit_code": 0,
+      "label": "audit",
+      "scenario": "user_override"
+    },
+    {
+      "args": [
+        "init",
+        ".",
+        "--profiles",
+        "judge_only"
+      ],
+      "exit_code": 0,
+      "label": "init",
+      "scenario": "missing_temperature"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "label": "lock",
+      "scenario": "missing_temperature"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "check-lock",
+      "scenario": "missing_temperature"
+    },
+    {
+      "args": [
+        "audit",
+        ".",
+        "--level",
+        "1",
+        "--format",
+        "json",
+        "--fail-on",
+        "never"
+      ],
+      "exit_code": 0,
+      "label": "audit",
+      "scenario": "missing_temperature"
+    },
+    {
+      "args": [
+        "init",
+        ".",
+        "--profiles",
+        "judge_only"
+      ],
+      "exit_code": 0,
+      "label": "init",
+      "scenario": "missing_judge_model"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "label": "lock",
+      "scenario": "missing_judge_model"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "check-lock",
+      "scenario": "missing_judge_model"
+    },
+    {
+      "args": [
+        "audit",
+        ".",
+        "--level",
+        "1",
+        "--format",
+        "json",
+        "--fail-on",
+        "never"
+      ],
+      "exit_code": 0,
+      "label": "audit",
+      "scenario": "missing_judge_model"
+    },
+    {
+      "args": [
+        "init",
+        ".",
+        "--profiles",
+        "judge_only"
+      ],
+      "exit_code": 0,
+      "label": "init",
+      "scenario": "missing_judge_prompt"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "label": "lock",
+      "scenario": "missing_judge_prompt"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "check-lock",
+      "scenario": "missing_judge_prompt"
+    },
+    {
+      "args": [
+        "audit",
+        ".",
+        "--level",
+        "1",
+        "--format",
+        "json",
+        "--fail-on",
+        "never"
+      ],
+      "exit_code": 0,
+      "label": "audit",
+      "scenario": "missing_judge_prompt"
+    },
+    {
+      "args": [
+        "diff",
+        "history/left/run.json",
+        "history/right/run.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "label": "actual-guard-diff",
+      "scenario": "judge_only"
+    },
+    {
+      "args": [
+        "lock",
+        ".",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "label": "changed-lock",
+      "scenario": "judge_only"
+    },
+    {
+      "args": [
+        "diff",
+        "before.lock",
+        "reprollm.lock",
+        "--format",
+        "json",
+        "--fail-on",
+        "HIGH"
+      ],
+      "exit_code": 1,
+      "label": "parameter-diff",
+      "scenario": "judge_only"
+    }
+  ],
+  "new_judge_outputs": 0,
+  "new_victim_generations": 0,
+  "scenarios": [
+    {
+      "findings": {
+        "judge.model_declared": "pass",
+        "judge.params_declared": "pass",
+        "judge.prompt_declared": "pass",
+        "judge.repetitions_declared": "pass"
+      },
+      "primary_status": "skipped",
+      "scenario": "judge_only"
+    },
+    {
+      "findings": {
+        "judge.model_declared": "pass",
+        "judge.params_declared": "pass",
+        "judge.prompt_declared": "pass",
+        "judge.repetitions_declared": "pass"
+      },
+      "primary_status": "skipped",
+      "scenario": "with_privacy"
+    },
+    {
+      "findings": {
+        "judge.model_declared": "pass",
+        "judge.params_declared": "pass",
+        "judge.prompt_declared": "pass",
+        "judge.repetitions_declared": "pass"
+      },
+      "primary_status": "fail",
+      "scenario": "with_inference"
+    },
+    {
+      "findings": {
+        "judge.model_declared": "pass",
+        "judge.params_declared": "pass",
+        "judge.prompt_declared": "pass",
+        "judge.repetitions_declared": "pass"
+      },
+      "primary_status": "fail",
+      "scenario": "user_override"
+    },
+    {
+      "findings": {
+        "judge.model_declared": "pass",
+        "judge.params_declared": "fail",
+        "judge.prompt_declared": "pass",
+        "judge.repetitions_declared": "pass"
+      },
+      "primary_status": "skipped",
+      "scenario": "missing_temperature"
+    },
+    {
+      "findings": {
+        "judge.model_declared": "fail",
+        "judge.params_declared": "pass",
+        "judge.prompt_declared": "pass",
+        "judge.repetitions_declared": "pass"
+      },
+      "primary_status": "skipped",
+      "scenario": "missing_judge_model"
+    },
+    {
+      "findings": {
+        "judge.model_declared": "pass",
+        "judge.params_declared": "pass",
+        "judge.prompt_declared": "fail",
+        "judge.repetitions_declared": "pass"
+      },
+      "primary_status": "skipped",
+      "scenario": "missing_judge_prompt"
+    }
+  ],
+  "schema_version": 1,
+  "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9"
+}

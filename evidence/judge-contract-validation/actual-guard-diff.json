@@ -1,0 +1,166 @@
+{
+  "a": {
+    "kind": "run",
+    "ref": "history/left/run.json"
+  },
+  "b": {
+    "kind": "run",
+    "ref": "history/right/run.json"
+  },
+  "changes": [
+    {
+      "a": "sha256:cced6fca69babf624e641cbfcb88a142b8f9e807e70989b524494c811f42b0dc",
+      "b": "sha256:45a7e15871070b01076f04918fddbb0fcd5d8411a1fe40aa282f7a85a8310ecf",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "prompts.judge.sha256",
+      "severity": "HIGH",
+      "status": "changed"
+    },
+    {
+      "a": "sha256:31e35d8f15c1f379f32a6b0a52d066b46689729cff959ed17aca7b3fe2d44a11",
+      "b": "sha256:26e904dcbe48dc0d4a043d579bd385c0b05c392376c1be058e874eca93c09843",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "files.condition.json.sha256",
+      "severity": "HIGH",
+      "status": "changed"
+    },
+    {
+      "a": "sha256:cced6fca69babf624e641cbfcb88a142b8f9e807e70989b524494c811f42b0dc",
+      "b": "sha256:45a7e15871070b01076f04918fddbb0fcd5d8411a1fe40aa282f7a85a8310ecf",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "files.prompts/judge.txt.sha256",
+      "severity": "HIGH",
+      "status": "changed"
+    },
+    {
+      "a": 143,
+      "b": 261,
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "prompts.judge.size_bytes",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "J0",
+      "b": "J1",
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "custom.guard",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "26a47cb33a07c8cde15f7588bdca68edeb2226c9",
+      "b": "710013fb8e631a3aa8dca05c2d91113806a402e0",
+      "note": "code changed",
+      "path": "code.commit",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "0",
+      "b": "1",
+      "note": "a: inherited_environment/pre_child; child unverified; b: inherited_environment/pre_child; child unverified",
+      "path": "environment.env.CUDA_VISIBLE_DEVICES",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": [
+        "python",
+        "-m",
+        "judge_injection.run",
+        "--judge-model",
+        "assets/judge",
+        "--inputs",
+        "data/inputs.jsonl",
+        "--judge-guard",
+        "J0",
+        "--judge-temperature",
+        "0",
+        "--judge-max-tokens",
+        "16",
+        "--judge-repetitions",
+        "1",
+        "--batch-size",
+        "64"
+      ],
+      "b": [
+        "python",
+        "-m",
+        "judge_injection.run",
+        "--judge-model",
+        "assets/judge",
+        "--inputs",
+        "data/inputs.jsonl",
+        "--judge-guard",
+        "J1",
+        "--judge-temperature",
+        "0",
+        "--judge-max-tokens",
+        "16",
+        "--judge-repetitions",
+        "1",
+        "--batch-size",
+        "64"
+      ],
+      "note": "a: recorder/pre_child; child unverified; b: recorder/pre_child; child unverified",
+      "path": "command.argv",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": "python -m judge_injection.run --judge-model assets/judge --inputs data/inputs.jsonl --judge-guard J0 --judge-temperature 0 --judge-max-tokens 16 --judge-repetitions 1 --batch-size 64",
+      "b": "python -m judge_injection.run --judge-model assets/judge --inputs data/inputs.jsonl --judge-guard J1 --judge-temperature 0 --judge-max-tokens 16 --judge-repetitions 1 --batch-size 64",
+      "note": "a: input_file/pre_child; child unverified; b: input_file/pre_child; child unverified",
+      "path": "execution.command",
+      "severity": "MEDIUM",
+      "status": "changed"
+    },
+    {
+      "a": 121.385376,
+      "b": 124.281152,
+      "note": null,
+      "path": "duration_seconds",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-05T03:52:10Z",
+      "b": "2026-11-05T03:52:12Z",
+      "note": null,
+      "path": "ended_at",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "20261105T035008Z-536da0",
+      "b": "20261105T035007Z-488fce",
+      "note": null,
+      "path": "run_id",
+      "severity": "NONE",
+      "status": "changed"
+    },
+    {
+      "a": "2026-11-05T03:50:08Z",
+      "b": "2026-11-05T03:50:07Z",
+      "note": null,
+      "path": "started_at",
+      "severity": "NONE",
+      "status": "changed"
+    }
+  ],
+  "filtered_below": null,
+  "reprollm_version": "0.7.0",
+  "schema_version": 1,
+  "summary": {
+    "counts": {
+      "HIGH": 3,
+      "LOW": 0,
+      "MEDIUM": 6,
+      "MEDIUM_HIGH": 0,
+      "NONE": 4
+    },
+    "highest": "HIGH",
+    "same": 100
+  }
+}
