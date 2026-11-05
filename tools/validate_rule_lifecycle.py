@@ -98,7 +98,9 @@ def assess(work,scenario,env,document,run_dir,before):
     result=c.read_json(work/'raw/result.json')
     require(result['all_passed'] and result['scenario']==scenario and result['reprollm_run_id']==run['run_id'],'Driver result is not bound to its recording.')
     observed=run['bindings_observed']['custom.defense']
-    require(all(v['value']=='D0' for v in observed) and len(observed)>=3,'Missing actual CLI/config/environment observations.')
+    require(all(v['value']=='D0' for v in observed)
+            and {v['source']['type'] for v in observed}=={'cli','config','env'},
+            'Missing actual CLI/config/environment observations.')
     for item in run['artifacts']:
         require(item['sha256']=='sha256:'+c.digest(work/item['path']),'Recorded output artifact differs from disk.')
     saved=directory_hashes(run_dir)
