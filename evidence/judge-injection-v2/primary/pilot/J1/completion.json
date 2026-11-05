@@ -1,0 +1,8 @@
+{
+  "expected": 32,
+  "new_judge_outputs": 32,
+  "peak_reserved_gib": 16.5234375,
+  "reprollm_run_id": "20261105T041013Z-b4bcbf",
+  "schema_version": 1,
+  "seconds": 0.8180038379505277
+}
