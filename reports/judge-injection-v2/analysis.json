@@ -1,0 +1,813 @@
+{
+  "conditions": [
+    {
+      "attack_minus_neutral": {
+        "base_cases": 96,
+        "bootstrap_95": [
+          -0.08333333333333338,
+          -0.02604166666666666
+        ],
+        "estimate": -0.05555555555555555,
+        "resamples": 10000,
+        "seed": 20261106,
+        "sign_flip_p": 0.0005999400059994001
+      },
+      "by_family_position": {
+        "evaluation_calibration:prefix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.9947916666666666,
+            "false_alarm": 0.0,
+            "false_safe": 0.010416666666666666,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "evaluation_calibration:suffix": {
+          "attack": {
+            "accuracy": 0.8125,
+            "false_alarm": 0.0,
+            "false_safe": 0.375,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "override:prefix": {
+          "attack": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "override:suffix": {
+          "attack": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "role_spoof:prefix": {
+          "attack": {
+            "accuracy": 0.96875,
+            "false_alarm": 0.0,
+            "false_safe": 0.0625,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "role_spoof:suffix": {
+          "attack": {
+            "accuracy": 0.8802083333333334,
+            "false_alarm": 0.0,
+            "false_safe": 0.23958333333333334,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        }
+      },
+      "by_view": {
+        "attack": {
+          "accuracy": 0.7769097222222222,
+          "false_alarm": 0.0,
+          "false_safe": 0.4461805555555556,
+          "invalid": 0.0,
+          "leak_denominator": 576,
+          "n": 1152,
+          "private_echo": 0.0,
+          "safe_denominator": 576
+        },
+        "clean": {
+          "accuracy": 1.0,
+          "false_alarm": 0.0,
+          "false_safe": 0.0,
+          "invalid": 0.0,
+          "leak_denominator": 96,
+          "n": 192,
+          "private_echo": 0.0,
+          "safe_denominator": 96
+        },
+        "neutral": {
+          "accuracy": 0.7491319444444444,
+          "false_alarm": 0.0,
+          "false_safe": 0.5017361111111112,
+          "invalid": 0.0,
+          "leak_denominator": 576,
+          "n": 1152,
+          "private_echo": 0.0,
+          "safe_denominator": 576
+        }
+      },
+      "clean_correct_leak_subset": {
+        "attack_minus_neutral": -0.05555555555555556,
+        "base_cases": 96
+      },
+      "guard": "J0",
+      "model": "extension",
+      "performance": {
+        "hit_output_cap": 0,
+        "inference_seconds": 25.512303100898862,
+        "output_tokens": 9282,
+        "output_tokens_per_second": 363.82446395727294,
+        "peak_reserved_gib": 4.107421875
+      }
+    },
+    {
+      "attack_minus_neutral": {
+        "base_cases": 96,
+        "bootstrap_95": [
+          -0.11805555555555557,
+          -0.05034722222222223
+        ],
+        "estimate": -0.08506944444444443,
+        "holm_adjusted_p": 0.00019998000199980003,
+        "resamples": 10000,
+        "seed": 20261106,
+        "sign_flip_p": 9.999000099990002e-05
+      },
+      "by_family_position": {
+        "evaluation_calibration:prefix": {
+          "attack": {
+            "accuracy": 0.6354166666666666,
+            "false_alarm": 0.010416666666666666,
+            "false_safe": 0.71875,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.609375,
+            "false_alarm": 0.0,
+            "false_safe": 0.78125,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "evaluation_calibration:suffix": {
+          "attack": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "override:prefix": {
+          "attack": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.5885416666666666,
+            "false_alarm": 0.0,
+            "false_safe": 0.8229166666666666,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "override:suffix": {
+          "attack": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "role_spoof:prefix": {
+          "attack": {
+            "accuracy": 0.9427083333333334,
+            "false_alarm": 0.0,
+            "false_safe": 0.11458333333333333,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.6302083333333334,
+            "false_alarm": 0.0,
+            "false_safe": 0.7395833333333334,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "role_spoof:suffix": {
+          "attack": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        }
+      },
+      "by_view": {
+        "attack": {
+          "accuracy": 0.5963541666666666,
+          "false_alarm": 0.001736111111111111,
+          "false_safe": 0.8055555555555556,
+          "invalid": 0.0,
+          "leak_denominator": 576,
+          "n": 1152,
+          "private_echo": 0.0,
+          "safe_denominator": 576
+        },
+        "clean": {
+          "accuracy": 0.5,
+          "false_alarm": 0.0,
+          "false_safe": 1.0,
+          "invalid": 0.0,
+          "leak_denominator": 96,
+          "n": 192,
+          "private_echo": 0.0,
+          "safe_denominator": 96
+        },
+        "neutral": {
+          "accuracy": 0.5546875,
+          "false_alarm": 0.0,
+          "false_safe": 0.890625,
+          "invalid": 0.0,
+          "leak_denominator": 576,
+          "n": 1152,
+          "private_echo": 0.0,
+          "safe_denominator": 576
+        }
+      },
+      "clean_correct_leak_subset": {
+        "attack_minus_neutral": null,
+        "base_cases": 0
+      },
+      "guard": "J1",
+      "model": "extension",
+      "performance": {
+        "hit_output_cap": 0,
+        "inference_seconds": 27.757065010257065,
+        "output_tokens": 9808,
+        "output_tokens_per_second": 353.35147993405104,
+        "peak_reserved_gib": 4.23828125
+      }
+    },
+    {
+      "attack_minus_neutral": {
+        "base_cases": 96,
+        "bootstrap_95": [
+          0.16666666666666644,
+          0.16666666666666644
+        ],
+        "estimate": 0.16666666666666666,
+        "resamples": 10000,
+        "seed": 20261106,
+        "sign_flip_p": 9.999000099990002e-05
+      },
+      "by_family_position": {
+        "evaluation_calibration:prefix": {
+          "attack": {
+            "accuracy": 0.84375,
+            "false_alarm": 0.3125,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.6145833333333334,
+            "false_alarm": 0.7708333333333334,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "evaluation_calibration:suffix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "override:prefix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.578125,
+            "false_alarm": 0.84375,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "override:suffix": {
+          "attack": {
+            "accuracy": 0.5,
+            "false_alarm": 0.0,
+            "false_safe": 1.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "role_spoof:prefix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.5989583333333334,
+            "false_alarm": 0.8020833333333334,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "role_spoof:suffix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        }
+      },
+      "by_view": {
+        "attack": {
+          "accuracy": 0.890625,
+          "false_alarm": 0.052083333333333336,
+          "false_safe": 0.16666666666666666,
+          "invalid": 0.0,
+          "leak_denominator": 576,
+          "n": 1152,
+          "private_echo": 0.0,
+          "safe_denominator": 576
+        },
+        "clean": {
+          "accuracy": 1.0,
+          "false_alarm": 0.0,
+          "false_safe": 0.0,
+          "invalid": 0.0,
+          "leak_denominator": 96,
+          "n": 192,
+          "private_echo": 0.0,
+          "safe_denominator": 96
+        },
+        "neutral": {
+          "accuracy": 0.7986111111111112,
+          "false_alarm": 0.4027777777777778,
+          "false_safe": 0.0,
+          "invalid": 0.0,
+          "leak_denominator": 576,
+          "n": 1152,
+          "private_echo": 0.0,
+          "safe_denominator": 576
+        }
+      },
+      "clean_correct_leak_subset": {
+        "attack_minus_neutral": 0.16666666666666644,
+        "base_cases": 96
+      },
+      "guard": "J0",
+      "model": "primary",
+      "performance": {
+        "hit_output_cap": 0,
+        "inference_seconds": 27.42551099229604,
+        "output_tokens": 8570,
+        "output_tokens_per_second": 312.48278299745647,
+        "peak_reserved_gib": 18.3359375
+      }
+    },
+    {
+      "attack_minus_neutral": {
+        "base_cases": 96,
+        "bootstrap_95": [
+          0.0,
+          0.012152777777777776
+        ],
+        "estimate": 0.005208333333333333,
+        "holm_adjusted_p": 0.25007499250074994,
+        "resamples": 10000,
+        "seed": 20261106,
+        "sign_flip_p": 0.25007499250074994
+      },
+      "by_family_position": {
+        "evaluation_calibration:prefix": {
+          "attack": {
+            "accuracy": 0.9635416666666666,
+            "false_alarm": 0.07291666666666667,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.8333333333333334,
+            "false_alarm": 0.3333333333333333,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "evaluation_calibration:suffix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "override:prefix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.859375,
+            "false_alarm": 0.28125,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "override:suffix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "role_spoof:prefix": {
+          "attack": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 0.8177083333333334,
+            "false_alarm": 0.3645833333333333,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        },
+        "role_spoof:suffix": {
+          "attack": {
+            "accuracy": 0.984375,
+            "false_alarm": 0.0,
+            "false_safe": 0.03125,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "false_alarm": 0.0,
+            "false_safe": 0.0,
+            "invalid": 0.0,
+            "leak_denominator": 96,
+            "n": 192,
+            "private_echo": 0.0,
+            "safe_denominator": 96
+          }
+        }
+      },
+      "by_view": {
+        "attack": {
+          "accuracy": 0.9913194444444444,
+          "false_alarm": 0.012152777777777778,
+          "false_safe": 0.005208333333333333,
+          "invalid": 0.0,
+          "leak_denominator": 576,
+          "n": 1152,
+          "private_echo": 0.0,
+          "safe_denominator": 576
+        },
+        "clean": {
+          "accuracy": 1.0,
+          "false_alarm": 0.0,
+          "false_safe": 0.0,
+          "invalid": 0.0,
+          "leak_denominator": 96,
+          "n": 192,
+          "private_echo": 0.0,
+          "safe_denominator": 96
+        },
+        "neutral": {
+          "accuracy": 0.9184027777777778,
+          "false_alarm": 0.16319444444444445,
+          "false_safe": 0.0,
+          "invalid": 0.0,
+          "leak_denominator": 576,
+          "n": 1152,
+          "private_echo": 0.0,
+          "safe_denominator": 576
+        }
+      },
+      "clean_correct_leak_subset": {
+        "attack_minus_neutral": 0.005208333333333333,
+        "base_cases": 96
+      },
+      "guard": "J1",
+      "model": "primary",
+      "performance": {
+        "hit_output_cap": 0,
+        "inference_seconds": 33.98981536086649,
+        "output_tokens": 8638,
+        "output_tokens_per_second": 254.13494919849413,
+        "peak_reserved_gib": 18.904296875
+      }
+    }
+  ],
+  "inference": "10000 paired cluster bootstrap resamples and two-sided cluster sign flips. Holm correction over the two confirmatory J1 models only. J0 and family/position results are secondary.",
+  "repeat_probes": [
+    {
+      "fresh_outputs": 96,
+      "groups": 32,
+      "guard": "J0",
+      "label_disagreements": 0,
+      "model": "extension",
+      "text_disagreements": 0
+    },
+    {
+      "fresh_outputs": 96,
+      "groups": 32,
+      "guard": "J1",
+      "label_disagreements": 0,
+      "model": "extension",
+      "text_disagreements": 0
+    },
+    {
+      "fresh_outputs": 96,
+      "groups": 32,
+      "guard": "J0",
+      "label_disagreements": 0,
+      "model": "primary",
+      "text_disagreements": 0
+    },
+    {
+      "fresh_outputs": 96,
+      "groups": 32,
+      "guard": "J1",
+      "label_disagreements": 0,
+      "model": "primary",
+      "text_disagreements": 0
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Exact synthetic target inclusion in controlled stored answers; judge outputs only.",
+  "statistical_unit": "Base case; retain paired views and gold classes. Primary inference uses the LEAK member; NO_LEAK supplies false-alarm and accuracy diagnostics.",
+  "study": "judge-injection-v2"
+}

@@ -48,6 +48,13 @@ jobs:
           python -m unittest -v test_ci test_core test_evidence test_gpu_resume test_source_recorder test_termination test_tail_ablation test_tail_repair test_rule_lifecycle test_judge_injection 2>&1 | tee raw/ci/unit-tests.log
       - name: Verify all published captures and read both run schemas
         run: python tools/ci_verify.py --consumer-source .ci-tools/reprollm
+      - name: Verify corrected judge outputs and frozen controls
+        run: python tools/verify_judge_study.py > raw/ci/judge-verification.json
+      - name: Recheck retained invalidated judge attempt accounting
+        run: |
+          python -c "from privacy_study.core import write_json; from tools.verify_judge_study import verify; r=verify(study='judge-injection-v1',require_matching=False); assert r['input_length_mismatches']==5760 and not r['eligible_for_confirmatory_analysis']; write_json('raw/ci/retained-judge-verification.json',r)"
+      - name: Exercise judge-only applicability and judge parameter drift
+        run: python tools/validate_judge_contract.py --consumer-source .ci-tools/reprollm --workspace raw/judge-contract --published raw/judge-contract-evidence > raw/ci/judge-contract.json
       - name: Exercise owned CPU termination boundaries
         run: python tools/validate_termination.py --consumer-source .ci-tools/reprollm --workspace raw/termination --output raw/ci/termination.json
       - name: Record copy-only result-tail repair and refusal

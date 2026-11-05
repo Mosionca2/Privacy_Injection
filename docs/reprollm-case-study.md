@@ -64,3 +64,12 @@ The [source recovery campaign](../reports/source-recovery-validation/REPORT.md) 
 ## Recorded GPU child kill, repair and resume
 
 The subsequent [bounded GPU tail-recovery follow-up](../reports/gpu-tail-recovery-validation/REPORT.md) completes the previously untested child-SIGKILL/controlled-tail-repair path on both exact local snapshots. It adds six source GPU captures and 256 completed responses, with four independent CPU inspection/repair recordings excluded from model accounting. The tail is deliberately constructed after the killed writer exits; neither a naturally torn write nor power-loss durability is claimed. Original partial bytes, damaged backups, repair run IDs and resumed/fresh-reference comparisons are retained. Existing accepted upstream contributions remain linked above; no new product defect or duplicate Issue/PR is asserted.
+
+
+## Stored-answer judge-only continuation
+
+The [separately frozen judge-injection follow-up](../reports/judge-injection-v2/REPORT.md) uses the same researcher's two local snapshots as judges over controlled stored answer pairs. The corrected campaign records 12,928 judge outputs in 14 source-0.7.0 GPU captures; seven additional CPU audit scenarios exercise 31 real CLI operations. New coverage includes the explicitly selected `judge_only` profile, its narrow no-primary exception, independent judge parameter bindings, HIGH direct judge-parameter drift, and selected-run ACL/NeurIPS checklist mapping.
+
+Independent recorded-token checks exposed our first attempt's `len(BatchEncoding)` construction error. Its 12,928 outputs and 14 captures remain public diagnostic evidence and are excluded from the corrected estimates. The repair uses fresh base cases, keeps the prompts/attacks fixed, freezes again before held-out inference, and verifies actual encoded lengths. A successful recording is not scientific validation. Large formal input collections have hash-only capture and are published separately with byte-for-byte hash checks. Poor clean accuracy of the local 1.7B-labelled judge under J1 limits robustness interpretation.
+
+Both judge attempts add 25,856 newly generated judge outputs in 28 captures, separate from the unchanged victim-answer ledger. No new product defect was demonstrated by this round. Source identity, the unchanged installed distribution, offline model-lock limitations, audit warnings and earlier maintainer assistance remain explicit. This is repeated use by one researcher, not a new independent adopter or full upstream conformance test.

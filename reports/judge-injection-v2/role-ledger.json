@@ -1,0 +1,12 @@
+{
+  "legacy_victim_gpu_captures": 61,
+  "legacy_victim_responses": 17152,
+  "new_judge_gpu_captures": 28,
+  "new_judge_outputs": 25856,
+  "new_victim_generations": 0,
+  "retained_diagnostic_gpu_captures": 14,
+  "retained_diagnostic_judge_outputs": 12928,
+  "schema_version": 1,
+  "verified_judge_gpu_captures": 14,
+  "verified_judge_outputs": 12928
+}

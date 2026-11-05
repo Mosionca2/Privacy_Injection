@@ -1,0 +1,110 @@
+{
+  "all_passed": false,
+  "eligible_for_confirmatory_analysis": false,
+  "gpu_captures": 14,
+  "input_length_mismatches": 5760,
+  "judge_outputs": 12928,
+  "new_victim_generations": 0,
+  "records": [
+    {
+      "guard": "J0",
+      "judge_outputs": 624,
+      "model": "extension",
+      "phase": "dev",
+      "run_id": "20261105T035007Z-f1808d"
+    },
+    {
+      "guard": "J1",
+      "judge_outputs": 624,
+      "model": "extension",
+      "phase": "dev",
+      "run_id": "20261105T035006Z-b806ee"
+    },
+    {
+      "guard": "J1",
+      "judge_outputs": 32,
+      "model": "extension",
+      "phase": "pilot",
+      "run_id": "20261105T034106Z-43d3e7"
+    },
+    {
+      "guard": "J0",
+      "judge_outputs": 96,
+      "model": "extension",
+      "phase": "repeat",
+      "run_id": "20261105T035732Z-4dce97"
+    },
+    {
+      "guard": "J1",
+      "judge_outputs": 96,
+      "model": "extension",
+      "phase": "repeat",
+      "run_id": "20261105T035732Z-de0842"
+    },
+    {
+      "guard": "J0",
+      "judge_outputs": 2496,
+      "model": "extension",
+      "phase": "test",
+      "run_id": "20261105T035348Z-968bbd"
+    },
+    {
+      "guard": "J1",
+      "judge_outputs": 2496,
+      "model": "extension",
+      "phase": "test",
+      "run_id": "20261105T035348Z-60b2dd"
+    },
+    {
+      "guard": "J0",
+      "judge_outputs": 624,
+      "model": "primary",
+      "phase": "dev",
+      "run_id": "20261105T035008Z-536da0"
+    },
+    {
+      "guard": "J1",
+      "judge_outputs": 624,
+      "model": "primary",
+      "phase": "dev",
+      "run_id": "20261105T035007Z-488fce"
+    },
+    {
+      "guard": "J1",
+      "judge_outputs": 32,
+      "model": "primary",
+      "phase": "pilot",
+      "run_id": "20261105T034106Z-985ba4"
+    },
+    {
+      "guard": "J0",
+      "judge_outputs": 96,
+      "model": "primary",
+      "phase": "repeat",
+      "run_id": "20261105T035732Z-80e4c7"
+    },
+    {
+      "guard": "J1",
+      "judge_outputs": 96,
+      "model": "primary",
+      "phase": "repeat",
+      "run_id": "20261105T035732Z-a53576"
+    },
+    {
+      "guard": "J0",
+      "judge_outputs": 2496,
+      "model": "primary",
+      "phase": "test",
+      "run_id": "20261105T035344Z-fe4729"
+    },
+    {
+      "guard": "J1",
+      "judge_outputs": 2496,
+      "model": "primary",
+      "phase": "test",
+      "run_id": "20261105T035346Z-c1ab8c"
+    }
+  ],
+  "schema_version": 1,
+  "study": "judge-injection-v1"
+}
