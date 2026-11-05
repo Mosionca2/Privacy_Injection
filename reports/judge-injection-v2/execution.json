@@ -1,12 +1,16 @@
 {
-  "completed_judge_outputs": 2560,
+  "completed_judge_outputs": 12544,
   "completed_phases": [
     "pilot",
     "pilot",
     "dev",
     "dev",
     "dev",
-    "dev"
+    "dev",
+    "test",
+    "test",
+    "test",
+    "test"
   ],
   "new_victim_generations": 0,
   "records": [
@@ -105,6 +109,70 @@
       "model": "extension",
       "phase": "dev",
       "run_id": "20261105T041324Z-17af9a"
+    },
+    {
+      "completion": {
+        "expected": 2496,
+        "new_judge_outputs": 2496,
+        "peak_reserved_gib": 18.3359375,
+        "reprollm_run_id": "20261105T041708Z-85441b",
+        "schema_version": 1,
+        "seconds": 27.42551099229604
+      },
+      "evidence": "evidence/judge-injection-v2/primary/test/J0",
+      "guard": "J0",
+      "judge_outputs": 2496,
+      "model": "primary",
+      "phase": "test",
+      "run_id": "20261105T041708Z-85441b"
+    },
+    {
+      "completion": {
+        "expected": 2496,
+        "new_judge_outputs": 2496,
+        "peak_reserved_gib": 18.904296875,
+        "reprollm_run_id": "20261105T041711Z-089e3c",
+        "schema_version": 1,
+        "seconds": 33.98981536086649
+      },
+      "evidence": "evidence/judge-injection-v2/primary/test/J1",
+      "guard": "J1",
+      "judge_outputs": 2496,
+      "model": "primary",
+      "phase": "test",
+      "run_id": "20261105T041711Z-089e3c"
+    },
+    {
+      "completion": {
+        "expected": 2496,
+        "new_judge_outputs": 2496,
+        "peak_reserved_gib": 4.107421875,
+        "reprollm_run_id": "20261105T041711Z-6a0202",
+        "schema_version": 1,
+        "seconds": 25.512303100898862
+      },
+      "evidence": "evidence/judge-injection-v2/extension/test/J0",
+      "guard": "J0",
+      "judge_outputs": 2496,
+      "model": "extension",
+      "phase": "test",
+      "run_id": "20261105T041711Z-6a0202"
+    },
+    {
+      "completion": {
+        "expected": 2496,
+        "new_judge_outputs": 2496,
+        "peak_reserved_gib": 4.23828125,
+        "reprollm_run_id": "20261105T041708Z-76f35a",
+        "schema_version": 1,
+        "seconds": 27.757065010257065
+      },
+      "evidence": "evidence/judge-injection-v2/extension/test/J1",
+      "guard": "J1",
+      "judge_outputs": 2496,
+      "model": "extension",
+      "phase": "test",
+      "run_id": "20261105T041708Z-76f35a"
     }
   ],
   "schema_version": 1
