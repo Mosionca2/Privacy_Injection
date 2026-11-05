@@ -1,0 +1,422 @@
+{
+  "artifacts": [
+    {
+      "path": "raw/completion.json",
+      "sha256": "sha256:1e43c10a22ff06e062c227ad2018ad3936a8ad22edaaaa22c281f00b4588f12d",
+      "size_bytes": 190
+    },
+    {
+      "path": "raw/judge-predictions.jsonl",
+      "sha256": "sha256:3d5b6242204c2b8434a685426e91d641abd7a1c073656b0e9586098d88355918",
+      "size_bytes": 304720
+    }
+  ],
+  "bindings_observed": {
+    "custom.batch_size": [
+      {
+        "source": {
+          "key": "--batch-size",
+          "path": null,
+          "type": "cli"
+        },
+        "value": 64
+      }
+    ],
+    "custom.guard": [
+      {
+        "source": {
+          "key": "--judge-guard",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "J1"
+      }
+    ],
+    "evaluation.judge.params.max_tokens": [
+      {
+        "source": {
+          "key": "--judge-max-tokens",
+          "path": null,
+          "type": "cli"
+        },
+        "value": 16
+      }
+    ],
+    "evaluation.judge.params.temperature": [
+      {
+        "source": {
+          "key": "--judge-temperature",
+          "path": null,
+          "type": "cli"
+        },
+        "value": 0
+      }
+    ],
+    "evaluation.judge.repetitions": [
+      {
+        "source": {
+          "key": "--judge-repetitions",
+          "path": null,
+          "type": "cli"
+        },
+        "value": 1
+      }
+    ],
+    "models.judge.id": [
+      {
+        "source": {
+          "key": "--judge-model",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "assets/judge"
+      }
+    ]
+  },
+  "code": {
+    "branch": "master",
+    "commit": "710013fb8e631a3aa8dca05c2d91113806a402e0",
+    "dirty": false,
+    "modified_count": 0,
+    "patch_file": null,
+    "patch_sha256": null,
+    "remote": null,
+    "untracked_count": 0
+  },
+  "command": {
+    "argv": [
+      "python",
+      "-m",
+      "judge_injection.run",
+      "--judge-model",
+      "assets/judge",
+      "--inputs",
+      "data/inputs.jsonl",
+      "--judge-guard",
+      "J1",
+      "--judge-temperature",
+      "0",
+      "--judge-max-tokens",
+      "16",
+      "--judge-repetitions",
+      "1",
+      "--batch-size",
+      "64"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": 124.281152,
+  "ended_at": "2026-11-05T03:52:12Z",
+  "environment": {
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "1",
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HUB_OFFLINE": "1",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "LC_CTYPE": "C.UTF-8",
+      "PATH": "<REDACTED:path>",
+      "PYTHONPATH": "assets/recorder-source",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "TRANSFORMERS_OFFLINE": "1"
+    },
+    "env_capture": "allowlist",
+    "hostname_sha256": "sha256:32e83e92d45d71f69dcf9d214688f0375542108631b45d344e5df2eb91c11566",
+    "os": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "accelerate": "1.12.0",
+      "bitsandbytes": "0.49.2",
+      "datasets": "4.6.1",
+      "evaluate": "0.4.6",
+      "lm_eval": "0.4.11",
+      "numpy": "2.2.6",
+      "openai": "2.24.0",
+      "peft": "0.18.1",
+      "safetensors": "0.7.0",
+      "sentencepiece": "0.2.1",
+      "tokenizers": "0.22.2",
+      "torch": "2.5.1+cu121",
+      "transformers": "5.2.0"
+    },
+    "platform": "linux",
+    "python": "3.10.19"
+  },
+  "exit_code": 0,
+  "files": [
+    {
+      "origin": "declared",
+      "path": "condition.json",
+      "redacted": false,
+      "sha256": "sha256:26e904dcbe48dc0d4a043d579bd385c0b05c392376c1be058e874eca93c09843",
+      "size_bytes": 102,
+      "snapshot": "files/26e904dcbe48dc0d4a043d579bd385c0b05c392376c1be058e874eca93c09843"
+    },
+    {
+      "origin": "argv",
+      "path": "data/inputs.jsonl",
+      "redacted": false,
+      "sha256": "sha256:debcc0c5b2d6d13aef84367373471b2fec69becd074d5c37c5db50397f220057",
+      "size_bytes": 203208,
+      "snapshot": null
+    },
+    {
+      "origin": "declared",
+      "path": "judge_injection/core.py",
+      "redacted": false,
+      "sha256": "sha256:111499b07e0db2d770be75a848d8879de52578456d41a0b74c4e21b012e126aa",
+      "size_bytes": 3261,
+      "snapshot": "files/111499b07e0db2d770be75a848d8879de52578456d41a0b74c4e21b012e126aa"
+    },
+    {
+      "origin": "declared",
+      "path": "judge_injection/run.py",
+      "redacted": false,
+      "sha256": "sha256:050a08f7e603b38f362b753981814dee8c1aa0183b6b733d6951fd8e13e5e153",
+      "size_bytes": 5082,
+      "snapshot": "files/050a08f7e603b38f362b753981814dee8c1aa0183b6b733d6951fd8e13e5e153"
+    },
+    {
+      "origin": "declared",
+      "path": "model.identity.json",
+      "redacted": false,
+      "sha256": "sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+      "size_bytes": 1967,
+      "snapshot": "files/aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375"
+    },
+    {
+      "origin": "declared",
+      "path": "prompts/judge.txt",
+      "redacted": false,
+      "sha256": "sha256:45a7e15871070b01076f04918fddbb0fcd5d8411a1fe40aa282f7a85a8310ecf",
+      "size_bytes": 261,
+      "snapshot": "files/45a7e15871070b01076f04918fddbb0fcd5d8411a1fe40aa282f7a85a8310ecf"
+    },
+    {
+      "origin": "declared",
+      "path": "recorder-source.json",
+      "redacted": false,
+      "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "size_bytes": 24152,
+      "snapshot": "files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "origin": "declared",
+      "path": "requirements.txt",
+      "redacted": false,
+      "sha256": "sha256:8d3c6c7e8a02f0dec2063aeca8ff3c4d731316ab5bfcaa7d8d29b540ed554138",
+      "size_bytes": 171,
+      "snapshot": "files/8d3c6c7e8a02f0dec2063aeca8ff3c4d731316ab5bfcaa7d8d29b540ed554138"
+    }
+  ],
+  "hardware": {
+    "cpu_count": 128,
+    "cuda_driver_max": "13.0",
+    "driver": "580.178.04",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:b77fcc7a2e1a4023818a073834292073f171fd266f8728642c58ab76b8a00474"
+      },
+      {
+        "index": 1,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:6bf6ca98feeeb523c3a0618bc893039e071d13bb6c9304ced089fc7ad18e3e9f"
+      },
+      {
+        "index": 2,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:cb5f06cdb7d0686193268437b847b20606aaa98bc7ff5cb138ecad1e1b2e42fb"
+      },
+      {
+        "index": 3,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:a6ba9cf25912f91d84baab1d169fd6446de16b53a3cd655596bb5a24b377b7a1"
+      }
+    ],
+    "source": "nvidia_smi"
+  },
+  "input_capture": {
+    "baseline_phase": "pre_child",
+    "check_phase": "post_child",
+    "checks": [
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:26e904dcbe48dc0d4a043d579bd385c0b05c392376c1be058e874eca93c09843",
+          "size_bytes": 102
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:26e904dcbe48dc0d4a043d579bd385c0b05c392376c1be058e874eca93c09843",
+          "size_bytes": 102
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "condition.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:debcc0c5b2d6d13aef84367373471b2fec69becd074d5c37c5db50397f220057",
+          "size_bytes": 203208
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:debcc0c5b2d6d13aef84367373471b2fec69becd074d5c37c5db50397f220057",
+          "size_bytes": 203208
+        },
+        "change": "unchanged",
+        "origin": "argv",
+        "path": "data/inputs.jsonl"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:111499b07e0db2d770be75a848d8879de52578456d41a0b74c4e21b012e126aa",
+          "size_bytes": 3261
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:111499b07e0db2d770be75a848d8879de52578456d41a0b74c4e21b012e126aa",
+          "size_bytes": 3261
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "judge_injection/core.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:050a08f7e603b38f362b753981814dee8c1aa0183b6b733d6951fd8e13e5e153",
+          "size_bytes": 5082
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:050a08f7e603b38f362b753981814dee8c1aa0183b6b733d6951fd8e13e5e153",
+          "size_bytes": 5082
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "judge_injection/run.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+          "size_bytes": 1967
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:aa9127fc34e32d34e206f0d2a15476d7d4a7b89d9b98bcf6724d39f39f2e8375",
+          "size_bytes": 1967
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "model.identity.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:45a7e15871070b01076f04918fddbb0fcd5d8411a1fe40aa282f7a85a8310ecf",
+          "size_bytes": 261
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:45a7e15871070b01076f04918fddbb0fcd5d8411a1fe40aa282f7a85a8310ecf",
+          "size_bytes": 261
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "prompts/judge.txt"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+          "size_bytes": 24152
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+          "size_bytes": 24152
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "recorder-source.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:7f293a744e4eafeba4e3dd46e84a5f9d495009dfe98b5b5711975a513748f826",
+          "size_bytes": 4658
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:7f293a744e4eafeba4e3dd46e84a5f9d495009dfe98b5b5711975a513748f826",
+          "size_bytes": 4658
+        },
+        "change": "unchanged",
+        "origin": "lock",
+        "path": "reprollm.lock"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:88cdd4c71fc0c9fdf1219997a5b2932e6a199fbc7be668beb04293d2fdeb3e39",
+          "size_bytes": 2914
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:88cdd4c71fc0c9fdf1219997a5b2932e6a199fbc7be668beb04293d2fdeb3e39",
+          "size_bytes": 2914
+        },
+        "change": "unchanged",
+        "origin": "manifest",
+        "path": "reprollm.yaml"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:8d3c6c7e8a02f0dec2063aeca8ff3c4d731316ab5bfcaa7d8d29b540ed554138",
+          "size_bytes": 171
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:8d3c6c7e8a02f0dec2063aeca8ff3c4d731316ab5bfcaa7d8d29b540ed554138",
+          "size_bytes": 171
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "requirements.txt"
+      }
+    ],
+    "consumption": "unverified"
+  },
+  "lock": {
+    "path": "reprollm.lock",
+    "sha256": "sha256:7f293a744e4eafeba4e3dd46e84a5f9d495009dfe98b5b5711975a513748f826",
+    "snapshot": "lock.yaml"
+  },
+  "manifest": {
+    "path": "reprollm.yaml",
+    "sha256": "sha256:88cdd4c71fc0c9fdf1219997a5b2932e6a199fbc7be668beb04293d2fdeb3e39",
+    "snapshot": "manifest.yaml"
+  },
+  "name": "dev-primary-J1",
+  "reprollm_version": "0.7.0",
+  "run_id": "20261105T035007Z-488fce",
+  "scheduler": null,
+  "schema_version": 2,
+  "started_at": "2026-11-05T03:50:07Z",
+  "status": "completed",
+  "warnings": [
+    "input file snapshot unavailable"
+  ]
+}

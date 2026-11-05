@@ -1,0 +1,128 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/judge-predictions.jsonl",
+      "raw/completion.json"
+    ]
+  },
+  "bindings": {
+    "custom.batch_size": {
+      "cli": "--batch-size"
+    },
+    "custom.guard": {
+      "cli": "--judge-guard"
+    },
+    "evaluation.judge.params.max_tokens": {
+      "cli": "--judge-max-tokens"
+    },
+    "evaluation.judge.params.temperature": {
+      "cli": "--judge-temperature"
+    },
+    "evaluation.judge.repetitions": {
+      "cli": "--judge-repetitions"
+    },
+    "models.judge.id": {
+      "cli": "--judge-model"
+    }
+  },
+  "custom": {
+    "batch_size": 16,
+    "guard": "J1"
+  },
+  "datasets": {
+    "eval": {
+      "files": [
+        "data/inputs.jsonl"
+      ],
+      "id": "judge-injection-v1",
+      "preprocessing": {
+        "description": "Controlled answer pairs and matched attack/neutral inputs.",
+        "script": "judge_injection/core.py"
+      },
+      "provider": "local",
+      "sampling": {
+        "method": "fixed_inputs",
+        "n": 624,
+        "seed": 20261105
+      },
+      "split": "dev"
+    }
+  },
+  "evaluation": {
+    "aggregation": "Paired base-case clusters; gold classes and views retained.",
+    "judge": {
+      "model_ref": "judge",
+      "params": {
+        "max_tokens": 16,
+        "seed": 90217,
+        "temperature": 0
+      },
+      "parser": "judge_injection/core.py",
+      "prompt_ref": "judge",
+      "repetitions": 1
+    },
+    "metrics": [
+      {
+        "implementation": "judge_injection/core.py",
+        "name": "false_safe"
+      },
+      {
+        "implementation": "judge_injection/core.py",
+        "name": "false_alarm"
+      },
+      {
+        "implementation": "judge_injection/core.py",
+        "name": "correct"
+      },
+      {
+        "implementation": "judge_injection/core.py",
+        "name": "valid"
+      },
+      {
+        "implementation": "judge_injection/core.py",
+        "name": "private_echo"
+      }
+    ],
+    "repetitions": 1
+  },
+  "execution": {
+    "command": "python -m judge_injection.run --judge-model assets/judge --inputs data/inputs.jsonl --judge-guard J1 --judge-temperature 0 --judge-max-tokens 16 --judge-repetitions 1 --batch-size 16",
+    "config_files": [
+      "requirements.txt",
+      "condition.json",
+      "model.identity.json",
+      "recorder-source.json",
+      "judge_injection/core.py",
+      "judge_injection/run.py"
+    ],
+    "seed": 90217
+  },
+  "experiment": {
+    "name": "dev-extension-J1",
+    "profiles": [
+      "judge_only"
+    ]
+  },
+  "models": {
+    "judge": {
+      "dtype": "float16",
+      "id": "assets/judge",
+      "provider": "local",
+      "quantization": "none",
+      "tokenizer": {
+        "id": "assets/judge"
+      },
+      "trust_remote_code": false
+    }
+  },
+  "project": {
+    "name": "judge_injection_v1"
+  },
+  "prompts": {
+    "judge": {
+      "format": "plain",
+      "path": "prompts/judge.txt"
+    }
+  },
+  "schema_version": 1
+}

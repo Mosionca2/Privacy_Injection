@@ -1,8 +1,12 @@
 {
-  "completed_judge_outputs": 64,
+  "completed_judge_outputs": 2560,
   "completed_phases": [
     "pilot",
-    "pilot"
+    "pilot",
+    "dev",
+    "dev",
+    "dev",
+    "dev"
   ],
   "new_victim_generations": 0,
   "records": [
@@ -37,6 +41,70 @@
       "model": "extension",
       "phase": "pilot",
       "run_id": "20261105T034106Z-43d3e7"
+    },
+    {
+      "completion": {
+        "expected": 624,
+        "new_judge_outputs": 624,
+        "peak_reserved_gib": 17.251953125,
+        "reprollm_run_id": "20261105T035008Z-536da0",
+        "schema_version": 1,
+        "seconds": 6.987797458656132
+      },
+      "evidence": "evidence/judge-injection-v1/primary/dev/J0",
+      "guard": "J0",
+      "judge_outputs": 624,
+      "model": "primary",
+      "phase": "dev",
+      "run_id": "20261105T035008Z-536da0"
+    },
+    {
+      "completion": {
+        "expected": 624,
+        "new_judge_outputs": 624,
+        "peak_reserved_gib": 17.763671875,
+        "reprollm_run_id": "20261105T035007Z-488fce",
+        "schema_version": 1,
+        "seconds": 8.631703559309244
+      },
+      "evidence": "evidence/judge-injection-v1/primary/dev/J1",
+      "guard": "J1",
+      "judge_outputs": 624,
+      "model": "primary",
+      "phase": "dev",
+      "run_id": "20261105T035007Z-488fce"
+    },
+    {
+      "completion": {
+        "expected": 624,
+        "new_judge_outputs": 624,
+        "peak_reserved_gib": 4.107421875,
+        "reprollm_run_id": "20261105T035007Z-f1808d",
+        "schema_version": 1,
+        "seconds": 8.088147095404565
+      },
+      "evidence": "evidence/judge-injection-v1/extension/dev/J0",
+      "guard": "J0",
+      "judge_outputs": 624,
+      "model": "extension",
+      "phase": "dev",
+      "run_id": "20261105T035007Z-f1808d"
+    },
+    {
+      "completion": {
+        "expected": 624,
+        "new_judge_outputs": 624,
+        "peak_reserved_gib": 4.21875,
+        "reprollm_run_id": "20261105T035006Z-b806ee",
+        "schema_version": 1,
+        "seconds": 8.919801088050008
+      },
+      "evidence": "evidence/judge-injection-v1/extension/dev/J1",
+      "guard": "J1",
+      "judge_outputs": 624,
+      "model": "extension",
+      "phase": "dev",
+      "run_id": "20261105T035006Z-b806ee"
     }
   ],
   "schema_version": 1
