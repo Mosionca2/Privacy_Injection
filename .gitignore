@@ -11,3 +11,9 @@ raw/
 
 # Only reviewed publication copies of runtime logs are versioned.
 !evidence/**/*.log
+
+# Reviewed CPU lifecycle evidence preserves the recorder's relative artifact paths.
+!evidence/rule-lifecycle-validation/**/raw/
+!evidence/rule-lifecycle-validation/**/raw/**
+!evidence/rule-lifecycle-validation/**/.reprollm/
+!evidence/rule-lifecycle-validation/**/.reprollm/**

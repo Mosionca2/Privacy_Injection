@@ -1,0 +1,363 @@
+{
+  "artifacts": [
+    {
+      "path": ".reprollm/rule-archives/ra-4a9493c39d4f1629.json",
+      "sha256": "sha256:c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+      "size_bytes": 556
+    },
+    {
+      "path": "raw/result.json",
+      "sha256": "sha256:34da46b0fefacec031d40d133b6c4196896990781fecad8a8b954524d646a286",
+      "size_bytes": 5900
+    },
+    {
+      "path": "raw/snapshots/archive-input.json",
+      "sha256": "sha256:c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+      "size_bytes": 556
+    },
+    {
+      "path": "raw/snapshots/before-lock.json",
+      "sha256": "sha256:2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5",
+      "size_bytes": 1641
+    },
+    {
+      "path": "raw/snapshots/before-rules.yaml",
+      "sha256": "sha256:553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699",
+      "size_bytes": 587
+    },
+    {
+      "path": "raw/snapshots/final-lock.json",
+      "sha256": "sha256:2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5",
+      "size_bytes": 1641
+    },
+    {
+      "path": "raw/snapshots/final-rules.yaml",
+      "sha256": "sha256:553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699",
+      "size_bytes": 587
+    }
+  ],
+  "bindings_observed": {
+    "custom.defense": [
+      {
+        "source": {
+          "key": "--defense",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "D0"
+      },
+      {
+        "source": {
+          "key": "settings.defense",
+          "path": "configuration.json",
+          "type": "config"
+        },
+        "value": "D0"
+      },
+      {
+        "source": {
+          "key": "RULE_CHECK_DEFENSE",
+          "path": null,
+          "type": "env"
+        },
+        "value": "D0"
+      }
+    ],
+    "custom.scenario": [
+      {
+        "source": {
+          "key": "--scenario",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "conflict"
+      }
+    ]
+  },
+  "code": {
+    "branch": "master",
+    "commit": "a47a260081436661db4b0735b354f346e976a6f4",
+    "dirty": false,
+    "modified_count": 0,
+    "patch_file": null,
+    "patch_sha256": null,
+    "remote": null,
+    "untracked_count": 0
+  },
+  "command": {
+    "argv": [
+      "python",
+      "fixture.py",
+      "--scenario",
+      "conflict",
+      "--defense",
+      "D0"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": 21.848895,
+  "ended_at": "2026-11-05T01:44:49Z",
+  "environment": {
+    "env": {
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HUB_OFFLINE": "1",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "LC_CTYPE": "C.UTF-8",
+      "PATH": "<REDACTED:path>",
+      "PYTHONPATH": "assets/recorder-source",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "TRANSFORMERS_OFFLINE": "1"
+    },
+    "env_capture": "allowlist",
+    "hostname_sha256": "sha256:32e83e92d45d71f69dcf9d214688f0375542108631b45d344e5df2eb91c11566",
+    "os": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "accelerate": "1.12.0",
+      "bitsandbytes": "0.49.2",
+      "datasets": "4.6.1",
+      "evaluate": "0.4.6",
+      "lm_eval": "0.4.11",
+      "numpy": "2.2.6",
+      "openai": "2.24.0",
+      "peft": "0.18.1",
+      "safetensors": "0.7.0",
+      "sentencepiece": "0.2.1",
+      "tokenizers": "0.22.2",
+      "torch": "2.5.1+cu121",
+      "transformers": "5.2.0"
+    },
+    "platform": "linux",
+    "python": "3.10.19"
+  },
+  "exit_code": 0,
+  "files": [
+    {
+      "origin": "declared",
+      "path": ".reprollm/project-rules.yaml",
+      "redacted": false,
+      "sha256": "sha256:553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699",
+      "size_bytes": 587,
+      "snapshot": "files/553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699"
+    },
+    {
+      "origin": "declared",
+      "path": ".reprollm/rule-archives/ra-4a9493c39d4f1629.json",
+      "redacted": false,
+      "sha256": "sha256:c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+      "size_bytes": 556,
+      "snapshot": "files/c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "origin": "declared",
+      "path": "configuration.json",
+      "redacted": false,
+      "sha256": "sha256:d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+      "size_bytes": 44,
+      "snapshot": "files/d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3"
+    },
+    {
+      "origin": "declared",
+      "path": "fixture.py",
+      "redacted": false,
+      "sha256": "sha256:a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+      "size_bytes": 7534,
+      "snapshot": "files/a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b"
+    },
+    {
+      "origin": "declared",
+      "path": "inputs/original-archive.json",
+      "redacted": false,
+      "sha256": "sha256:c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+      "size_bytes": 556,
+      "snapshot": "files/c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "origin": "declared",
+      "path": "recorder-source.json",
+      "redacted": false,
+      "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "size_bytes": 24152,
+      "snapshot": "files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    }
+  ],
+  "hardware": {
+    "cpu_count": 128,
+    "cuda_driver_max": "13.0",
+    "driver": "580.178.04",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:b77fcc7a2e1a4023818a073834292073f171fd266f8728642c58ab76b8a00474"
+      },
+      {
+        "index": 1,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:6bf6ca98feeeb523c3a0618bc893039e071d13bb6c9304ced089fc7ad18e3e9f"
+      },
+      {
+        "index": 2,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:cb5f06cdb7d0686193268437b847b20606aaa98bc7ff5cb138ecad1e1b2e42fb"
+      },
+      {
+        "index": 3,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:a6ba9cf25912f91d84baab1d169fd6446de16b53a3cd655596bb5a24b377b7a1"
+      }
+    ],
+    "source": "nvidia_smi"
+  },
+  "input_capture": {
+    "baseline_phase": "pre_child",
+    "check_phase": "post_child",
+    "checks": [
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699",
+          "size_bytes": 587
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699",
+          "size_bytes": 587
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": ".reprollm/project-rules.yaml"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+          "size_bytes": 556
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+          "size_bytes": 556
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": ".reprollm/rule-archives/ra-4a9493c39d4f1629.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+          "size_bytes": 44
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+          "size_bytes": 44
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "configuration.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+          "size_bytes": 7534
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+          "size_bytes": 7534
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "fixture.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+          "size_bytes": 556
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+          "size_bytes": 556
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "inputs/original-archive.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+          "size_bytes": 24152
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+          "size_bytes": 24152
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "recorder-source.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5",
+          "size_bytes": 1641
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5",
+          "size_bytes": 1641
+        },
+        "change": "unchanged",
+        "origin": "lock",
+        "path": "reprollm.lock"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:17e01a6e7e450df05a219c286751392286cdf1d24aa680904af2a52f4b36e2b3",
+          "size_bytes": 913
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:17e01a6e7e450df05a219c286751392286cdf1d24aa680904af2a52f4b36e2b3",
+          "size_bytes": 913
+        },
+        "change": "unchanged",
+        "origin": "manifest",
+        "path": "reprollm.yaml"
+      }
+    ],
+    "consumption": "unverified"
+  },
+  "lock": {
+    "path": "reprollm.lock",
+    "sha256": "sha256:2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5",
+    "snapshot": "lock.yaml"
+  },
+  "manifest": {
+    "path": "reprollm.yaml",
+    "sha256": "sha256:17e01a6e7e450df05a219c286751392286cdf1d24aa680904af2a52f4b36e2b3",
+    "snapshot": "manifest.yaml"
+  },
+  "name": "conflict",
+  "reprollm_version": "0.7.0",
+  "run_id": "20261105T014427Z-898823",
+  "scheduler": null,
+  "schema_version": 2,
+  "started_at": "2026-11-05T01:44:27Z",
+  "status": "completed",
+  "warnings": []
+}

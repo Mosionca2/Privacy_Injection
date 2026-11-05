@@ -1,0 +1,387 @@
+{
+  "all_passed": true,
+  "files": [
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/REPRODUCIBILITY.md",
+      "sha256": "5266060f3f5f8a767eff0c0e5472822146d4c4e1118881b1f09f54b582b30014"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/controller.json",
+      "sha256": "7ac8294652a1736e0f4d04cbc06786cead074b4aa1ebfe3165f83b3bbd81fdd1"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/inputs/.reprollm/project-rules.yaml",
+      "sha256": "553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/inputs/.reprollm/rule-archives/ra-4a9493c39d4f1629.json",
+      "sha256": "c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/inputs/configuration.json",
+      "sha256": "d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/inputs/fixture.py",
+      "sha256": "a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/inputs/inputs/original-archive.json",
+      "sha256": "c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/inputs/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/inputs/reprollm.lock",
+      "sha256": "2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/inputs/reprollm.yaml",
+      "sha256": "17e01a6e7e450df05a219c286751392286cdf1d24aa680904af2a52f4b36e2b3"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/outputs/.reprollm/rule-archives/ra-4a9493c39d4f1629.json",
+      "sha256": "c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/outputs/raw/result.json",
+      "sha256": "34da46b0fefacec031d40d133b6c4196896990781fecad8a8b954524d646a286"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/outputs/raw/snapshots/archive-input.json",
+      "sha256": "c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/outputs/raw/snapshots/before-lock.json",
+      "sha256": "2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/outputs/raw/snapshots/before-rules.yaml",
+      "sha256": "553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/outputs/raw/snapshots/final-lock.json",
+      "sha256": "2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/outputs/raw/snapshots/final-rules.yaml",
+      "sha256": "553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/files/553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699",
+      "sha256": "553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/files/a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+      "sha256": "a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/files/c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+      "sha256": "c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/files/d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+      "sha256": "d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/lock.yaml",
+      "sha256": "2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/manifest.yaml",
+      "sha256": "17e01a6e7e450df05a219c286751392286cdf1d24aa680904af2a52f4b36e2b3"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/run.json",
+      "sha256": "a1b5b607a1058fc9b83db3f6e0a1a535b66605df375943c9db7e0087074ee17c"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/run/stdout.log",
+      "sha256": "21cb11782ccd02f0e9f7829155ee17afd4689a7258230f0d7d8a087f7615a555"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/conflict/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/REPRODUCIBILITY.md",
+      "sha256": "f8e91b39fc4f3a96ad39f549ee65522b7acea7c32c3a4039b997d6eb6197fbe8"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/controller.json",
+      "sha256": "5b62a446616f5a422134251439cf8305e1edc2c4b4d9aa3afd56cb50d0ef223e"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/inputs/.reprollm/project-rules.yaml",
+      "sha256": "e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/inputs/configuration.json",
+      "sha256": "d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/inputs/fixture.py",
+      "sha256": "a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/inputs/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/inputs/reprollm.lock",
+      "sha256": "ad7c8644070f141ae9c132aaa25b712cd8587b779e9a7d1751bde5d1ff767980"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/inputs/reprollm.yaml",
+      "sha256": "6e71411388b2feee086efb726d64d516e4d3218e35f5157c45b8503220a3cfef"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/.reprollm/rule-archives/ra-fba7154dbdba1222.json",
+      "sha256": "935db0854e5dc9ca5d7536aa132ed97642dd90688cd60109caac0980263dcd22"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/result.json",
+      "sha256": "330c34acde84ded216562d01556d1baa35f3624b3c199ff5d21a3c1430f414b5"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/snapshots/archive-original.json",
+      "sha256": "935db0854e5dc9ca5d7536aa132ed97642dd90688cd60109caac0980263dcd22"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/snapshots/before-lock.json",
+      "sha256": "ad7c8644070f141ae9c132aaa25b712cd8587b779e9a7d1751bde5d1ff767980"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/snapshots/before-rules.yaml",
+      "sha256": "e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/snapshots/final-lock.json",
+      "sha256": "e2b113de5a87e25506575c37b3cbeae2b0944e590c72ded8af1b56c83f020c5b"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/snapshots/final-rules.yaml",
+      "sha256": "e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/snapshots/inactive-lock.json",
+      "sha256": "2460ec03814331c138a6c37eac1da98210ade3ec9e0b47abd7023068fff8da54"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/snapshots/removed-rules.yaml",
+      "sha256": "b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/outputs/raw/snapshots/restored-rules.yaml",
+      "sha256": "e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/files/a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+      "sha256": "a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/files/d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+      "sha256": "d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/files/e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a",
+      "sha256": "e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/lock.yaml",
+      "sha256": "ad7c8644070f141ae9c132aaa25b712cd8587b779e9a7d1751bde5d1ff767980"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/manifest.yaml",
+      "sha256": "6e71411388b2feee086efb726d64d516e4d3218e35f5157c45b8503220a3cfef"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/patch.diff",
+      "sha256": "e94a49b91ddfffb6aeddfd54e5e1978db126d31c57a5863e1ecbdd4c28c43bd7"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/run.json",
+      "sha256": "48d532b72add22e4d5e5357843e6c74e2407181c000c66d3b46b708fce6a3774"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/run/stdout.log",
+      "sha256": "d257f57676cbc8e6473d21924036446862b074c9f355c748bf4e38a5c0e33fab"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/roundtrip/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/REPRODUCIBILITY.md",
+      "sha256": "cab2dbf4817679a29a889aa1ca567a2885b92ff51576a203ec4056d8efacb140"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/controller.json",
+      "sha256": "b428b4e8b20400cb80ec67e7b1d99eb7d837b8192df9e0cee9040bc6a3273b66"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/inputs/.reprollm/project-rules.yaml",
+      "sha256": "b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/inputs/.reprollm/rule-archives/ra-4a9493c39d4f1629.json",
+      "sha256": "435bccd817efc4270304afde8521b79d35050d165d8aac42f9251776593908e1"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/inputs/configuration.json",
+      "sha256": "d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/inputs/fixture.py",
+      "sha256": "a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/inputs/inputs/original-archive.json",
+      "sha256": "c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/inputs/recorder-source.json",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/inputs/reprollm.lock",
+      "sha256": "ef31578aa5ec0953fa6baf688dcbb2c87eb9fb259d9c338be0c3c72b6cdc0e65"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/inputs/reprollm.yaml",
+      "sha256": "4007369988bff5724449caea3c003339cb0f92fc8381fc605b8acb6d74752109"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/outputs/.reprollm/rule-archives/ra-4a9493c39d4f1629.json",
+      "sha256": "435bccd817efc4270304afde8521b79d35050d165d8aac42f9251776593908e1"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/outputs/raw/result.json",
+      "sha256": "db2de29c819e0ae6d8150e5a15e330a8bc9e28b9728a816d58ffe78ad65d5c72"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/outputs/raw/snapshots/archive-input.json",
+      "sha256": "435bccd817efc4270304afde8521b79d35050d165d8aac42f9251776593908e1"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/outputs/raw/snapshots/before-lock.json",
+      "sha256": "ef31578aa5ec0953fa6baf688dcbb2c87eb9fb259d9c338be0c3c72b6cdc0e65"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/outputs/raw/snapshots/before-rules.yaml",
+      "sha256": "b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/outputs/raw/snapshots/final-lock.json",
+      "sha256": "ef31578aa5ec0953fa6baf688dcbb2c87eb9fb259d9c338be0c3c72b6cdc0e65"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/outputs/raw/snapshots/final-rules.yaml",
+      "sha256": "b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "sha256": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/files/435bccd817efc4270304afde8521b79d35050d165d8aac42f9251776593908e1",
+      "sha256": "435bccd817efc4270304afde8521b79d35050d165d8aac42f9251776593908e1"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/files/a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+      "sha256": "a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/files/b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996",
+      "sha256": "b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/files/c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092",
+      "sha256": "c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/files/d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+      "sha256": "d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/lock.yaml",
+      "sha256": "ef31578aa5ec0953fa6baf688dcbb2c87eb9fb259d9c338be0c3c72b6cdc0e65"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/manifest.yaml",
+      "sha256": "4007369988bff5724449caea3c003339cb0f92fc8381fc605b8acb6d74752109"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/run.json",
+      "sha256": "67a59f577dc0aa329be2126c4293eb629ebf892ec81801d14e3e3b38de55abb6"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/run/stdout.log",
+      "sha256": "ecf68e8a353a5086a8c07d6b5a400c18cfe22805fc304099f7aab6821c2b2b84"
+    },
+    {
+      "path": "evidence/rule-lifecycle-validation/tampered/runtime-witness.json",
+      "sha256": "9b9cc6dfdb81527580240033a0f0a04c87cc164c81852315b056735e3157bc9f"
+    }
+  ],
+  "new_gpu_captures": 0,
+  "new_model_generations": 0,
+  "original_run_directory_bytes_unchanged": true,
+  "schema_version": 1,
+  "selected_cpu_recordings": 3,
+  "verification": {
+    "all_passed": true,
+    "cpu_recordings": 3,
+    "new_model_generations": 0,
+    "records": [
+      {
+        "all_passed": true,
+        "commands_checked": 14,
+        "expected_input_changes": [
+          "reprollm.lock"
+        ],
+        "new_model_generations": 0,
+        "run_id": "20261105T014416Z-fe6ffb",
+        "scenario": "roundtrip"
+      },
+      {
+        "all_passed": true,
+        "commands_checked": 4,
+        "expected_input_changes": [],
+        "new_model_generations": 0,
+        "run_id": "20261105T014427Z-898823",
+        "scenario": "conflict"
+      },
+      {
+        "all_passed": true,
+        "commands_checked": 2,
+        "expected_input_changes": [],
+        "new_model_generations": 0,
+        "run_id": "20261105T014422Z-8b43f9",
+        "scenario": "tampered"
+      }
+    ]
+  }
+}

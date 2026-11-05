@@ -1,0 +1,124 @@
+{
+  "all_passed": true,
+  "archive_id": "ra-4a9493c39d4f1629",
+  "commands": [
+    {
+      "actual_exit": 0,
+      "argv": [
+        "reprollm",
+        "rules",
+        "list",
+        "--json"
+      ],
+      "duration_seconds": 8.073991,
+      "expected_exit": 0,
+      "label": "before-list",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "[\n  {\n    \"id\": \"project.scenario\",\n    \"field\": \"custom.scenario\",\n    \"severity\": \"CRITICAL\",\n    \"reason\": \"Bind the controlled scenario.\",\n    \"source\": \"manual\",\n    \"candidate_id\": null,\n    \"accepted_at\": \"2026-11-05T01:43:52Z\",\n    \"bindings\": {\n      \"cli\": \"--scenario\",\n      \"config\": null,\n      \"env\": null\n    }\n  },\n  {\n    \"id\": \"project.defense\",\n    \"field\": \"custom.defense\",\n    \"severity\": \"WARNING\",\n    \"reason\": \"A different active declaration.\",\n    \"source\": \"manual\",\n    \"candidate_id\": null,\n    \"accepted_at\": \"2026-11-05T01:44:09Z\",\n    \"bindings\": {\n      \"cli\": \"--defense\",\n      \"config\": \"configuration.json:settings.defense\",\n      \"env\": \"RULE_CHECK_DEFENSE\"\n    }\n  }\n]\n",
+      "stdout_sha256": "f3890ab49e1233bf825581d4bd6ef59643b064ae64bed18d71f7393dca391411"
+    },
+    {
+      "actual_exit": 2,
+      "argv": [
+        "reprollm",
+        "rules",
+        "restore",
+        "ra-4a9493c39d4f1629"
+      ],
+      "duration_seconds": 4.465289,
+      "expected_exit": 2,
+      "label": "restore-refused",
+      "stderr": "error: cannot restore ra-4a9493c39d4f1629: its rule id or candidate id is already active; inspect `reprollm rules list` before changing it\n",
+      "stderr_sha256": "e7b3900b93ab6b1b77408d94cf032ed4c03d345af1d462a0075ab06736ce6bc7",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "actual_exit": 2,
+      "argv": [
+        "reprollm",
+        "rules",
+        "remove",
+        "model.revision_pinned",
+        "--reason",
+        "Synthetic refusal check."
+      ],
+      "duration_seconds": 4.018107,
+      "expected_exit": 2,
+      "label": "builtin-remove-refused",
+      "stderr": "error: unknown active rule id; inspect `reprollm rules list`\n",
+      "stderr_sha256": "079135f535505ace44f2948b761a23126899e3c6232da3cc348bb93185dea380",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "actual_exit": 0,
+      "argv": [
+        "reprollm",
+        "rules",
+        "show",
+        "ra-4a9493c39d4f1629"
+      ],
+      "duration_seconds": 4.065419,
+      "expected_exit": 0,
+      "label": "conflict-show",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\n  \"kind\": \"archive\",\n  \"archive\": {\n    \"schema_version\": 1,\n    \"archive_id\": \"ra-4a9493c39d4f1629\",\n    \"archived_at\": \"2026-11-05T01:44:04Z\",\n    \"reason\": \"Retire the synthetic defense rule.\",\n    \"rule\": {\n      \"id\": \"project.defense\",\n      \"field\": \"custom.defense\",\n      \"severity\": \"CRITICAL\",\n      \"reason\": \"Bind the declared defense to observed values.\",\n      \"source\": \"manual\",\n      \"candidate_id\": null,\n      \"accepted_at\": \"2026-11-05T01:43:58Z\",\n      \"bindings\": {\n        \"cli\": \"--defense\",\n        \"config\": \"configuration.json:settings.defense\",\n        \"env\": \"RULE_CHECK_DEFENSE\"\n      }\n    }\n  },\n  \"source\": \".reprollm/rule-archives/ra-4a9493c39d4f1629.json\",\n  \"state\": \"conflict\",\n  \"note\": \"Archive is a recovery copy; state is derived from current project rules.\"\n}\n",
+      "stdout_sha256": "3459314c9f03b8ad66cb2b11b2ab04a920626b058a557de5c4be00bb4a801f4b"
+    }
+  ],
+  "consumed_values": {
+    "cli": "D0",
+    "config": "D0",
+    "env": "D0"
+  },
+  "immutable_input_hashes": {
+    "configuration.json": "d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+    "fixture.py": "a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+    "recorder-source.json": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+    "reprollm.yaml": "17e01a6e7e450df05a219c286751392286cdf1d24aa680904af2a52f4b36e2b3"
+  },
+  "new_model_generations": 0,
+  "original_rule": {
+    "accepted_at": "2026-11-05T01:43:58Z",
+    "bindings": {
+      "cli": "--defense",
+      "config": "configuration.json:settings.defense",
+      "env": "RULE_CHECK_DEFENSE"
+    },
+    "candidate_id": null,
+    "field": "custom.defense",
+    "id": "project.defense",
+    "reason": "Bind the declared defense to observed values.",
+    "severity": "CRITICAL",
+    "source": "manual"
+  },
+  "output_normalization": "Workspace root replaced with <workspace>; original output digests and private command outputs retained.",
+  "reprollm_run_id": "20261105T014427Z-898823",
+  "scenario": "conflict",
+  "schema_version": 1,
+  "snapshots": {
+    "archive-input.json": {
+      "path": "raw/snapshots/archive-input.json",
+      "sha256": "c8f7abf4414b911cb3d55e5b0490f3f952ad6c66e0f9b7e4b7c724ac7c8c5092"
+    },
+    "before-lock.json": {
+      "path": "raw/snapshots/before-lock.json",
+      "sha256": "2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5"
+    },
+    "before-rules.yaml": {
+      "path": "raw/snapshots/before-rules.yaml",
+      "sha256": "553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699"
+    },
+    "final-lock.json": {
+      "path": "raw/snapshots/final-lock.json",
+      "sha256": "2327b2d3d78f35c4ba8a6c03f71177af037564ae8b5e786aeb027b3b155a90d5"
+    },
+    "final-rules.yaml": {
+      "path": "raw/snapshots/final-rules.yaml",
+      "sha256": "553b470267aedbde811dd49a5cd4c56eebddc3e82e06d945c0db667d4014b699"
+    }
+  }
+}

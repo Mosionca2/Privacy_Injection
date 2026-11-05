@@ -1,0 +1,332 @@
+{
+  "artifacts": [
+    {
+      "path": ".reprollm/rule-archives/ra-fba7154dbdba1222.json",
+      "sha256": "sha256:935db0854e5dc9ca5d7536aa132ed97642dd90688cd60109caac0980263dcd22",
+      "size_bytes": 556
+    },
+    {
+      "path": "raw/result.json",
+      "sha256": "sha256:330c34acde84ded216562d01556d1baa35f3624b3c199ff5d21a3c1430f414b5",
+      "size_bytes": 13710
+    },
+    {
+      "path": "raw/snapshots/archive-original.json",
+      "sha256": "sha256:935db0854e5dc9ca5d7536aa132ed97642dd90688cd60109caac0980263dcd22",
+      "size_bytes": 556
+    },
+    {
+      "path": "raw/snapshots/before-lock.json",
+      "sha256": "sha256:ad7c8644070f141ae9c132aaa25b712cd8587b779e9a7d1751bde5d1ff767980",
+      "size_bytes": 1347
+    },
+    {
+      "path": "raw/snapshots/before-rules.yaml",
+      "sha256": "sha256:e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a",
+      "size_bytes": 602
+    },
+    {
+      "path": "raw/snapshots/final-lock.json",
+      "sha256": "sha256:e2b113de5a87e25506575c37b3cbeae2b0944e590c72ded8af1b56c83f020c5b",
+      "size_bytes": 1347
+    },
+    {
+      "path": "raw/snapshots/final-rules.yaml",
+      "sha256": "sha256:e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a",
+      "size_bytes": 602
+    },
+    {
+      "path": "raw/snapshots/inactive-lock.json",
+      "sha256": "sha256:2460ec03814331c138a6c37eac1da98210ade3ec9e0b47abd7023068fff8da54",
+      "size_bytes": 1347
+    },
+    {
+      "path": "raw/snapshots/removed-rules.yaml",
+      "sha256": "sha256:b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996",
+      "size_bytes": 296
+    },
+    {
+      "path": "raw/snapshots/restored-rules.yaml",
+      "sha256": "sha256:e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a",
+      "size_bytes": 602
+    }
+  ],
+  "bindings_observed": {
+    "custom.defense": [
+      {
+        "source": {
+          "key": "--defense",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "D0"
+      },
+      {
+        "source": {
+          "key": "settings.defense",
+          "path": "configuration.json",
+          "type": "config"
+        },
+        "value": "D0"
+      },
+      {
+        "source": {
+          "key": "RULE_CHECK_DEFENSE",
+          "path": null,
+          "type": "env"
+        },
+        "value": "D0"
+      }
+    ],
+    "custom.scenario": [
+      {
+        "source": {
+          "key": "--scenario",
+          "path": null,
+          "type": "cli"
+        },
+        "value": "roundtrip"
+      }
+    ]
+  },
+  "code": {
+    "branch": "master",
+    "commit": "780ef8284c88aab5aefdaf6cd51cca2172078d1c",
+    "dirty": true,
+    "modified_count": 1,
+    "patch_file": "patch.diff",
+    "patch_sha256": "sha256:e94a49b91ddfffb6aeddfd54e5e1978db126d31c57a5863e1ecbdd4c28c43bd7",
+    "remote": null,
+    "untracked_count": 1
+  },
+  "command": {
+    "argv": [
+      "python",
+      "fixture.py",
+      "--scenario",
+      "roundtrip",
+      "--defense",
+      "D0"
+    ],
+    "cwd": ".",
+    "redactions": 0
+  },
+  "duration_seconds": 69.835913,
+  "ended_at": "2026-11-05T01:45:26Z",
+  "environment": {
+    "env": {
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HUB_OFFLINE": "1",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "LC_CTYPE": "C.UTF-8",
+      "PATH": "<REDACTED:path>",
+      "PYTHONPATH": "assets/recorder-source",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "TRANSFORMERS_OFFLINE": "1"
+    },
+    "env_capture": "allowlist",
+    "hostname_sha256": "sha256:32e83e92d45d71f69dcf9d214688f0375542108631b45d344e5df2eb91c11566",
+    "os": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "accelerate": "1.12.0",
+      "bitsandbytes": "0.49.2",
+      "datasets": "4.6.1",
+      "evaluate": "0.4.6",
+      "lm_eval": "0.4.11",
+      "numpy": "2.2.6",
+      "openai": "2.24.0",
+      "peft": "0.18.1",
+      "safetensors": "0.7.0",
+      "sentencepiece": "0.2.1",
+      "tokenizers": "0.22.2",
+      "torch": "2.5.1+cu121",
+      "transformers": "5.2.0"
+    },
+    "platform": "linux",
+    "python": "3.10.19"
+  },
+  "exit_code": 0,
+  "files": [
+    {
+      "origin": "declared",
+      "path": ".reprollm/project-rules.yaml",
+      "redacted": false,
+      "sha256": "sha256:e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a",
+      "size_bytes": 602,
+      "snapshot": "files/e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a"
+    },
+    {
+      "origin": "declared",
+      "path": "configuration.json",
+      "redacted": false,
+      "sha256": "sha256:d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+      "size_bytes": 44,
+      "snapshot": "files/d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3"
+    },
+    {
+      "origin": "declared",
+      "path": "fixture.py",
+      "redacted": false,
+      "sha256": "sha256:a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+      "size_bytes": 7534,
+      "snapshot": "files/a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b"
+    },
+    {
+      "origin": "declared",
+      "path": "recorder-source.json",
+      "redacted": false,
+      "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+      "size_bytes": 24152,
+      "snapshot": "files/13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213"
+    }
+  ],
+  "hardware": {
+    "cpu_count": 128,
+    "cuda_driver_max": "13.0",
+    "driver": "580.178.04",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:b77fcc7a2e1a4023818a073834292073f171fd266f8728642c58ab76b8a00474"
+      },
+      {
+        "index": 1,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:6bf6ca98feeeb523c3a0618bc893039e071d13bb6c9304ced089fc7ad18e3e9f"
+      },
+      {
+        "index": 2,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:cb5f06cdb7d0686193268437b847b20606aaa98bc7ff5cb138ecad1e1b2e42fb"
+      },
+      {
+        "index": 3,
+        "memory_mib": 81920,
+        "name": "NVIDIA A100-SXM4-80GB",
+        "uuid_sha256": "sha256:a6ba9cf25912f91d84baab1d169fd6446de16b53a3cd655596bb5a24b377b7a1"
+      }
+    ],
+    "source": "nvidia_smi"
+  },
+  "input_capture": {
+    "baseline_phase": "pre_child",
+    "check_phase": "post_child",
+    "checks": [
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a",
+          "size_bytes": 602
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:e045a0fbaa725bba96811017f7c5798ce6e13e98bb602082818ad796c3d4368a",
+          "size_bytes": 602
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": ".reprollm/project-rules.yaml"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+          "size_bytes": 44
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+          "size_bytes": 44
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "configuration.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+          "size_bytes": 7534
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+          "size_bytes": 7534
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "fixture.py"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+          "size_bytes": 24152
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+          "size_bytes": 24152
+        },
+        "change": "unchanged",
+        "origin": "declared",
+        "path": "recorder-source.json"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:e2b113de5a87e25506575c37b3cbeae2b0944e590c72ded8af1b56c83f020c5b",
+          "size_bytes": 1347
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:ad7c8644070f141ae9c132aaa25b712cd8587b779e9a7d1751bde5d1ff767980",
+          "size_bytes": 1347
+        },
+        "change": "changed",
+        "origin": "lock",
+        "path": "reprollm.lock"
+      },
+      {
+        "after": {
+          "availability": "present",
+          "sha256": "sha256:6e71411388b2feee086efb726d64d516e4d3218e35f5157c45b8503220a3cfef",
+          "size_bytes": 820
+        },
+        "before": {
+          "availability": "present",
+          "sha256": "sha256:6e71411388b2feee086efb726d64d516e4d3218e35f5157c45b8503220a3cfef",
+          "size_bytes": 820
+        },
+        "change": "unchanged",
+        "origin": "manifest",
+        "path": "reprollm.yaml"
+      }
+    ],
+    "consumption": "unverified"
+  },
+  "lock": {
+    "path": "reprollm.lock",
+    "sha256": "sha256:ad7c8644070f141ae9c132aaa25b712cd8587b779e9a7d1751bde5d1ff767980",
+    "snapshot": "lock.yaml"
+  },
+  "manifest": {
+    "path": "reprollm.yaml",
+    "sha256": "sha256:6e71411388b2feee086efb726d64d516e4d3218e35f5157c45b8503220a3cfef",
+    "snapshot": "manifest.yaml"
+  },
+  "name": "roundtrip",
+  "reprollm_version": "0.7.0",
+  "run_id": "20261105T014416Z-fe6ffb",
+  "scheduler": null,
+  "schema_version": 2,
+  "started_at": "2026-11-05T01:44:16Z",
+  "status": "completed",
+  "warnings": []
+}

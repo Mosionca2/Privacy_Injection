@@ -1,0 +1,90 @@
+{
+  "all_passed": true,
+  "archive_id": "ra-4a9493c39d4f1629",
+  "commands": [
+    {
+      "actual_exit": 0,
+      "argv": [
+        "reprollm",
+        "rules",
+        "list",
+        "--json"
+      ],
+      "duration_seconds": 4.608186,
+      "expected_exit": 0,
+      "label": "before-list",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "[\n  {\n    \"id\": \"project.scenario\",\n    \"field\": \"custom.scenario\",\n    \"severity\": \"CRITICAL\",\n    \"reason\": \"Bind the controlled scenario.\",\n    \"source\": \"manual\",\n    \"candidate_id\": null,\n    \"accepted_at\": \"2026-11-05T01:43:52Z\",\n    \"bindings\": {\n      \"cli\": \"--scenario\",\n      \"config\": null,\n      \"env\": null\n    }\n  }\n]\n",
+      "stdout_sha256": "d7a12b37b167dbbe48668419ff58af115e68202a81479bd54799889a60ddc5f0"
+    },
+    {
+      "actual_exit": 2,
+      "argv": [
+        "reprollm",
+        "rules",
+        "restore",
+        "ra-4a9493c39d4f1629"
+      ],
+      "duration_seconds": 7.983957,
+      "expected_exit": 2,
+      "label": "restore-refused",
+      "stderr": "error: archive ra-4a9493c39d4f1629 content does not match its id; recover the original archive\n",
+      "stderr_sha256": "179f74f7f3f77c91157bcbfa89662ff898b3e0ebf1c678bac23cbbb1d9cebdf0",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "consumed_values": {
+    "cli": "D0",
+    "config": "D0",
+    "env": "D0"
+  },
+  "immutable_input_hashes": {
+    "configuration.json": "d4c0bf5dbdc6dbc856893c33f506500736b1deb39acc6d154718733dbffbddf3",
+    "fixture.py": "a314d0524ab01aee8bb921109ef2f398d7fb66f5b241c2717ef3c230f0909c7b",
+    "recorder-source.json": "13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213",
+    "reprollm.yaml": "4007369988bff5724449caea3c003339cb0f92fc8381fc605b8acb6d74752109"
+  },
+  "new_model_generations": 0,
+  "original_rule": {
+    "accepted_at": "2026-11-05T01:43:58Z",
+    "bindings": {
+      "cli": "--defense",
+      "config": "configuration.json:settings.defense",
+      "env": "RULE_CHECK_DEFENSE"
+    },
+    "candidate_id": null,
+    "field": "custom.defense",
+    "id": "project.defense",
+    "reason": "Bind the declared defense to observed values.",
+    "severity": "CRITICAL",
+    "source": "manual"
+  },
+  "output_normalization": "Workspace root replaced with <workspace>; original output digests and private command outputs retained.",
+  "reprollm_run_id": "20261105T014422Z-8b43f9",
+  "scenario": "tampered",
+  "schema_version": 1,
+  "snapshots": {
+    "archive-input.json": {
+      "path": "raw/snapshots/archive-input.json",
+      "sha256": "435bccd817efc4270304afde8521b79d35050d165d8aac42f9251776593908e1"
+    },
+    "before-lock.json": {
+      "path": "raw/snapshots/before-lock.json",
+      "sha256": "ef31578aa5ec0953fa6baf688dcbb2c87eb9fb259d9c338be0c3c72b6cdc0e65"
+    },
+    "before-rules.yaml": {
+      "path": "raw/snapshots/before-rules.yaml",
+      "sha256": "b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996"
+    },
+    "final-lock.json": {
+      "path": "raw/snapshots/final-lock.json",
+      "sha256": "ef31578aa5ec0953fa6baf688dcbb2c87eb9fb259d9c338be0c3c72b6cdc0e65"
+    },
+    "final-rules.yaml": {
+      "path": "raw/snapshots/final-rules.yaml",
+      "sha256": "b73e61a2bcc0324f51fe85f2b6c89ee25db76170ef29c8f214aeb0a0a1a0a996"
+    }
+  }
+}

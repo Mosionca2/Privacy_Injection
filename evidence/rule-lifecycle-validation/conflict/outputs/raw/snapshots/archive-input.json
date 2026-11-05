@@ -1,0 +1,20 @@
+{
+  "archive_id": "ra-4a9493c39d4f1629",
+  "archived_at": "2026-11-05T01:44:04Z",
+  "reason": "Retire the synthetic defense rule.",
+  "rule": {
+    "accepted_at": "2026-11-05T01:43:58Z",
+    "bindings": {
+      "cli": "--defense",
+      "config": "configuration.json:settings.defense",
+      "env": "RULE_CHECK_DEFENSE"
+    },
+    "candidate_id": null,
+    "field": "custom.defense",
+    "id": "project.defense",
+    "reason": "Bind the declared defense to observed values.",
+    "severity": "CRITICAL",
+    "source": "manual"
+  },
+  "schema_version": 1
+}

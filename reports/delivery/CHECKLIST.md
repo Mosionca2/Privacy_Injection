@@ -48,4 +48,4 @@ The required source commit is `f7bd2ad7686ff603f8508d9eedfb919d35edb8e9`. The co
 
 ## New user-directed extension
 
-On 2026-11-05, a separately scoped [project-rule lifecycle validation](../rule-lifecycle-validation/protocol.json) was defined. It covers removal, recovery archives, restoration, refusal behavior and lock freshness using CPU fixtures. Its execution evidence is pending; it adds no planned model inference and does not reopen the completed scientific study.
+On 2026-11-05, a separately scoped [project-rule lifecycle validation](../rule-lifecycle-validation/protocol.json) was defined. It covers removal, recovery archives, restoration, refusal behavior and lock freshness using CPU fixtures. The [completed validation](../rule-lifecycle-validation/REPORT.md) retains three actual source CPU recordings, twenty inner CLI commands and the released-capability boundary. All 62 local tests pass. It adds no model responses and preserves the completed scientific study.

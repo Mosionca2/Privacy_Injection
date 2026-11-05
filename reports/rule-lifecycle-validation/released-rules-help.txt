@@ -1,0 +1,14 @@
+Usage: reprollm rules [OPTIONS] COMMAND [ARGS]...
+
+ Manage project-specific rules.
+
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────╮
+│ list    List accepted project rules (pending discover candidates arrive in   │
+│         M7-T04).                                                             │
+│ add     Append a manual project rule to .reprollm/project-rules.yaml.        │
+│ accept  Accept a discovered candidate as a project rule (source: discover).  │
+│ ignore  Record a candidate as ignored so future discoveries mark it.         │
+╰──────────────────────────────────────────────────────────────────────────────╯

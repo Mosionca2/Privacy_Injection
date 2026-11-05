@@ -79,3 +79,7 @@ The later [GPU child-kill and tail-recovery stage](../gpu-tail-recovery-validati
 - Original environment and completed-condition-skip receipts describe their historical checkpoints. Their initial pending/untested labels remain intact; the later version-scoped receipts establish the subsequent results.
 
 The main two-snapshot comparison, recorded functional checks, fresh repeats, controlled recovery and accepted documentation contribution now have linked completion evidence. The boundaries above remain explicit rather than being counted as completed extensions.
+
+## Later user-directed rule lifecycle extension
+
+The [2026-11-05 consumer extension](../rule-lifecycle-validation/REPORT.md) adds three selected CPU recordings and twenty inner CLI operations for rule removal, immutable recovery copies, restoration, lock freshness and expected refusals. It retains all CLI/config/environment bindings and the real recorded Git state. The complete local suite passes 62 tests; CI additionally exercises fresh lifecycle cases. No model-response or GPU-capture totals change.

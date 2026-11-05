@@ -1,0 +1,18 @@
+{
+  "all_passed": true,
+  "archive_id": "ra-fba7154dbdba1222",
+  "child_exit_code": 0,
+  "commands": 14,
+  "committed_input_snapshots_verified": true,
+  "expected_input_changes": [
+    "reprollm.lock"
+  ],
+  "new_model_generations": 0,
+  "pre_run_git_clean": true,
+  "recorded_git_dirty": true,
+  "recorder_version": "0.7.0",
+  "run_id": "20261105T014416Z-fe6ffb",
+  "run_schema_version": 2,
+  "scenario": "roundtrip",
+  "status": "completed"
+}

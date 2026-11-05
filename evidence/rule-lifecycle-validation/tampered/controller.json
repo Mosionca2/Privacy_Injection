@@ -1,0 +1,16 @@
+{
+  "all_passed": true,
+  "archive_id": "ra-4a9493c39d4f1629",
+  "child_exit_code": 0,
+  "commands": 2,
+  "committed_input_snapshots_verified": true,
+  "expected_input_changes": [],
+  "new_model_generations": 0,
+  "pre_run_git_clean": true,
+  "recorded_git_dirty": false,
+  "recorder_version": "0.7.0",
+  "run_id": "20261105T014422Z-8b43f9",
+  "run_schema_version": 2,
+  "scenario": "tampered",
+  "status": "completed"
+}

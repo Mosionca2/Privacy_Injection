@@ -1,0 +1,25 @@
+schema_version: 1
+rules:
+- id: project.scenario
+  field: custom.scenario
+  severity: CRITICAL
+  reason: Bind the controlled scenario.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-05T01:43:52Z'
+  bindings:
+    cli: --scenario
+    config: null
+    env: null
+- id: project.defense
+  field: custom.defense
+  severity: WARNING
+  reason: A different active declaration.
+  source: manual
+  candidate_id: null
+  accepted_at: '2026-11-05T01:44:09Z'
+  bindings:
+    cli: --defense
+    config: configuration.json:settings.defense
+    env: RULE_CHECK_DEFENSE
+ignored_candidates: []

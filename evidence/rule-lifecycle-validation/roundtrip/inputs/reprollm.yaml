@@ -1,0 +1,40 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/result.json",
+      "raw/snapshots/*",
+      ".reprollm/rule-archives/*.json"
+    ]
+  },
+  "bindings": {
+    "custom.defense": {
+      "cli": "--defense",
+      "config": "configuration.json:settings.defense",
+      "env": "RULE_CHECK_DEFENSE"
+    },
+    "custom.scenario": {
+      "cli": "--scenario"
+    }
+  },
+  "custom": {
+    "defense": "D0",
+    "scenario": "roundtrip"
+  },
+  "execution": {
+    "command": "python fixture.py --scenario roundtrip --defense D0",
+    "config_files": [
+      "fixture.py",
+      "configuration.json",
+      "recorder-source.json",
+      ".reprollm/project-rules.yaml"
+    ]
+  },
+  "experiment": {
+    "name": "roundtrip",
+    "profiles": []
+  },
+  "project": {
+    "name": "project_rule_lifecycle_consumer"
+  },
+  "schema_version": 1
+}

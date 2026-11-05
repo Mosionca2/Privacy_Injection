@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "outputs": [
+      "raw/result.json",
+      "raw/snapshots/*",
+      ".reprollm/rule-archives/*.json"
+    ]
+  },
+  "bindings": {
+    "custom.defense": {
+      "cli": "--defense",
+      "config": "configuration.json:settings.defense",
+      "env": "RULE_CHECK_DEFENSE"
+    },
+    "custom.scenario": {
+      "cli": "--scenario"
+    }
+  },
+  "custom": {
+    "defense": "D0",
+    "scenario": "tampered"
+  },
+  "execution": {
+    "command": "python fixture.py --scenario tampered --defense D0",
+    "config_files": [
+      "fixture.py",
+      "configuration.json",
+      "recorder-source.json",
+      ".reprollm/project-rules.yaml",
+      "inputs/original-archive.json",
+      ".reprollm/rule-archives/ra-4a9493c39d4f1629.json"
+    ]
+  },
+  "experiment": {
+    "name": "tampered",
+    "profiles": []
+  },
+  "project": {
+    "name": "project_rule_lifecycle_consumer"
+  },
+  "schema_version": 1
+}
