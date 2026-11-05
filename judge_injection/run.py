@@ -1,5 +1,6 @@
 """Actual local judge inference, with independent identities and strict resume checks."""
 import argparse,json,os,time
+from importlib import metadata
 from pathlib import Path
 from privacy_study import core as c
 from judge_injection import core as j
@@ -12,7 +13,15 @@ def main():
  a=p.parse_args()
  if a.judge_temperature!=0 or a.judge_repetitions<1:raise ValueError('This protocol requires greedy generation and positive repetitions.')
  source=[json.loads(x) for x in Path(a.inputs).read_text().splitlines()]
+ condition=c.read_json('condition.json')
+ expected_prompt=j.J0 if a.judge_guard=='J0' else j.J1
+ if Path('prompts/judge.txt').read_text().strip()!=expected_prompt:raise ValueError('Declared prompt mismatch.')
+ if condition['phase']=='test':
+  frozen=c.read_json('protocol.freeze.json')
+  for name,digest in frozen['files'].items():
+   if c.digest(name)!=digest:raise ValueError('Formal frozen input changed: '+name)
  identity=dict(schema_version=1,input_sha256=c.digest(a.inputs),model=c.read_json('model.identity.json'),
+  versions={n:metadata.version(n) for n in ['torch','transformers','accelerate','tokenizers','safetensors','reprollm']},
   guard=a.judge_guard,max_tokens=a.judge_max_tokens,repetitions=a.judge_repetitions,batch_size=a.batch_size,
   code={str(f):c.digest(f) for f in sorted(Path('judge_injection').glob('*.py'))})
  out=Path(a.output);out.parent.mkdir(exist_ok=True)
