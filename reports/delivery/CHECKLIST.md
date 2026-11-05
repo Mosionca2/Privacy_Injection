@@ -45,3 +45,7 @@ python tools/ci_verify.py --consumer-source /path/to/pinned-reprollm --output ra
 ```
 
 The required source commit is `f7bd2ad7686ff603f8508d9eedfb919d35edb8e9`. The command verifies the existing evidence and invokes the actual pinned ReproLLM reader on both archive schemas. It preserves archived bytes and performs no model inference. The GitHub workflow additionally runs the CPU tests and termination/repair matrices on every main push.
+
+## New user-directed extension
+
+On 2026-11-05, a separately scoped [project-rule lifecycle validation](../rule-lifecycle-validation/protocol.json) was defined. It covers removal, recovery archives, restoration, refusal behavior and lock freshness using CPU fixtures. Its execution evidence is pending; it adds no planned model inference and does not reopen the completed scientific study.

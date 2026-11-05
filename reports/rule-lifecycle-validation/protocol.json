@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "validation_id": "rule-lifecycle-v1",
+  "scope": "User-requested CPU-only validation of project-rule removal, immutable recovery archives, restoration and lock freshness; separate from the completed model study.",
+  "source_commit": "f7bd2ad7686ff603f8508d9eedfb919d35edb8e9",
+  "source_module_version": "0.7.0",
+  "installed_distribution_version": "0.6.1",
+  "expected_source_cpu_recordings": 3,
+  "new_model_generations": 0,
+  "new_gpu_captures": 0,
+  "scenarios": {
+    "roundtrip": "Remove the active rule, retain its complete archive, observe stale lock, refresh the inactive-rule lock, restore the original rule, observe stale lock again, refuse a duplicate restore, then refresh the lock.",
+    "conflict": "With a different active rule under the original ID, refuse restoration with exit 2 and preserve the active rules, recovery archive, manifest, configuration and experiment code.",
+    "tampered": "On an isolated controlled copy with a preserved original archive, change the archive reason without updating its content ID. Refuse restoration with exit 2 and preserve both the damaged copy and current rules."
+  },
+  "acceptance": [
+    "Use the actual pinned source CLI in isolated committed CPU fixtures, with a runtime import witness and independent package-file identity verification. Keep installed packages unchanged.",
+    "Preserve ID, field, severity, original reason, source, optional candidate ID, approval timestamp and all CLI/config/environment bindings semantically. The contract does not promise original YAML formatting.",
+    "Independently recompute each recovery archive content ID according to specification section 7.2. A recovery archive is not by itself evidence that removal completed.",
+    "Exercise CLI, config and environment observations for the same declared synthetic defense value. The recorder consumption field remains unverified.",
+    "For roundtrip, compare lock bytes before and after freshness checks. Refresh while the rule is inactive before testing restored-rule staleness; restoration to the original rules may legitimately match an older lock.",
+    "Derive expected input changes from independent before/after byte inventories. Pre/post capture is not continuous monitoring: transient changes restored before the final check may not be visible.",
+    "Keep per-command arguments, actual/expected exits and normalized public output with original output digests. Expected inner CLI refusals do not require the outer validation driver to fail.",
+    "Retain original recorder directories, selected-run exports, independent intermediate rule/lock snapshots and archive backups. Inspection and expected refusals must not rewrite captured history.",
+    "Probe released CLI capabilities explicitly; unavailable source-only commands are not failed released-product behavior.",
+    "All existing scientific inputs, model-response accounting and prior records remain unchanged. Publish only reviewed portable fixture data; retain machine paths and private configuration outside the public repository."
+  ],
+  "specification": "https://github.com/EnumaElish123/ReproLLM/blob/f7bd2ad7686ff603f8508d9eedfb919d35edb8e9/docs/plan/01_specification.md#7-project-rules-schema--reprollmproject-rulesyaml",
+  "limits": [
+    "No model inference, paid endpoint, discovery model call, resource qualification or cross-process concurrency guarantee.",
+    "The tampered archive is deliberately constructed; no real data loss, power failure or malicious credential extraction is tested.",
+    "This is one consumer project; a product change or upstream Issue/PR requires a concrete reproducible defect or reusable improvement."
+  ]
+}
