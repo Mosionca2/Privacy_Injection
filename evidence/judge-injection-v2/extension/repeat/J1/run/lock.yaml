@@ -1,0 +1,150 @@
+schema_version: 1
+reprollm_version: 0.7.0
+generated_at: '2026-11-05T04:20:53Z'
+manifest_sha256: sha256:0434d1d9667186f9646025fe88b9bde6633a2f9259ebec74a87f527f9d8d68fd
+project_rules_sha256: sha256:b1d7ca26dd0049763c8bdef140731364f25224d652f4d4cf4b6fd65b5bb377de
+resolution:
+  mode: offline
+models:
+  judge:
+    provider: local
+    id: assets/judge
+    pinnability: exact
+    revision:
+      value: sha256:54b9259d64ca9c410c55e276443b52164cef93f1d76cae3c072ef4112bc76ccb
+      source: filesystem
+      confidence: exact
+      resolved_at: '2026-11-05T04:20:53Z'
+      note: null
+    observed_at: null
+    tokenizer: null
+    chat_template:
+      sha256:
+        value: sha256:a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8
+        source: filesystem:tokenizer_config.json
+        confidence: exact
+        resolved_at: '2026-11-05T04:20:53Z'
+        note: null
+      status: present
+    config_sha256: null
+    adapter: null
+    local:
+      path: assets/judge
+      config_sha256:
+        value: sha256:54b9259d64ca9c410c55e276443b52164cef93f1d76cae3c072ef4112bc76ccb
+        source: filesystem:config_files
+        confidence: exact
+        resolved_at: '2026-11-05T04:20:53Z'
+        note: config.json, tokenizer_config.json, tokenizer.json
+      weights:
+        hashed: false
+        total_size_bytes: 4063515592
+        sha256: null
+    dtype: float16
+    quantization: none
+    trust_remote_code: false
+datasets:
+  eval:
+    provider: local
+    id: judge-injection-v2
+    revision:
+      value: null
+      source: filesystem
+      confidence: exact
+      resolved_at: '2026-11-05T04:20:53Z'
+      note: null
+    subset: null
+    split: dev
+    content_fingerprint:
+      status: not_computed
+    files:
+    - path: data/inputs.jsonl
+      sha256: sha256:14af18d27822e795ca83a5c6b963c480e54fd100ec33c7704ccc1a52e71f9785
+      size_bytes: 9344
+prompts:
+  judge:
+    path: prompts/judge.txt
+    sha256: sha256:45a7e15871070b01076f04918fddbb0fcd5d8411a1fe40aa282f7a85a8310ecf
+    size_bytes: 261
+    text_sha256: null
+files:
+- path: condition.json
+  sha256: sha256:5155b8087afc45166c9dfa9b5ed59626532a285a3de808d8ced3179a2a21f401
+  size_bytes: 106
+- path: judge_injection_v2/core.py
+  sha256: sha256:ceb4435e94fd6fdd57d5bf93016526155ed9b3f714cb55605139908f0da0b8a4
+  size_bytes: 3425
+- path: judge_injection_v2/run.py
+  sha256: sha256:a35d05e5895c60227f628d6121edff43e27411c03d2b2e55d434c4331312b372
+  size_bytes: 5265
+- path: model.identity.json
+  sha256: sha256:a48895b5dd6c579187a6443cdc7483bf8e9e5d2255ef60afcc11991f85ace367
+  size_bytes: 1710
+- path: recorder-source.json
+  sha256: sha256:13c174113d0584aef0869121aec2cbe688b04b56c75ae7560592debab88c2213
+  size_bytes: 24152
+- path: requirements.txt
+  sha256: sha256:8d3c6c7e8a02f0dec2063aeca8ff3c4d731316ab5bfcaa7d8d29b540ed554138
+  size_bytes: 171
+generation: null
+inference: null
+training: null
+evaluation:
+  metrics:
+  - name: false_safe
+    implementation: judge_injection_v2/core.py
+    implementation_sha256: sha256:ceb4435e94fd6fdd57d5bf93016526155ed9b3f714cb55605139908f0da0b8a4
+    implementation_version: null
+  - name: false_alarm
+    implementation: judge_injection_v2/core.py
+    implementation_sha256: sha256:ceb4435e94fd6fdd57d5bf93016526155ed9b3f714cb55605139908f0da0b8a4
+    implementation_version: null
+  - name: correct
+    implementation: judge_injection_v2/core.py
+    implementation_sha256: sha256:ceb4435e94fd6fdd57d5bf93016526155ed9b3f714cb55605139908f0da0b8a4
+    implementation_version: null
+  - name: valid
+    implementation: judge_injection_v2/core.py
+    implementation_sha256: sha256:ceb4435e94fd6fdd57d5bf93016526155ed9b3f714cb55605139908f0da0b8a4
+    implementation_version: null
+  - name: private_echo
+    implementation: judge_injection_v2/core.py
+    implementation_sha256: sha256:ceb4435e94fd6fdd57d5bf93016526155ed9b3f714cb55605139908f0da0b8a4
+    implementation_version: null
+  aggregation: Paired base-case clusters; gold classes and views retained.
+  repetitions: 1
+  thresholds: null
+  definitions: null
+  query_budget: null
+  judge:
+    model_ref: judge
+    prompt_ref: judge
+    params:
+      temperature: 0.0
+      top_p: null
+      max_tokens: 16
+      seed: 90217
+    repetitions: 3
+    parser: judge_injection_v2/core.py
+privacy: null
+environment:
+  python: 3.10.19
+  platform: linux
+  packages:
+    accelerate: 1.12.0
+    bitsandbytes: 0.49.2
+    datasets: 4.6.1
+    evaluate: 0.4.6
+    lm_eval: 0.4.11
+    numpy: 2.2.6
+    openai: 2.24.0
+    peft: 0.18.1
+    safetensors: 0.7.0
+    sentencepiece: 0.2.1
+    tokenizers: 0.22.2
+    torch: 2.5.1+cu121
+    transformers: 5.2.0
+  gpu:
+    driver: 580.178.04
+    cuda_driver_max: '13.0'
+    source: nvidia_smi

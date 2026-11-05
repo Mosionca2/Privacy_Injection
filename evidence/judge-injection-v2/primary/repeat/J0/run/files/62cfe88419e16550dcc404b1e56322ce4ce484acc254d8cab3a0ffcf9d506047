@@ -1,0 +1,7 @@
+{
+  "expected": 96,
+  "guard": "J0",
+  "model": "primary",
+  "phase": "repeat",
+  "schema_version": 1
+}
