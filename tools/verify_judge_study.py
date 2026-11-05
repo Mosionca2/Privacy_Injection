@@ -16,7 +16,9 @@ def verify(root=ROOT,allow_partial=False):
   require(run['status']=='completed' and run['exit_code']==0 and run['schema_version']==2,'Unsuccessful judge capture.')
   check_input_capture(run,[])
   for item in [run['manifest'],run['lock'],*run['files']]:
-   require(item['sha256']=='sha256:'+c.digest(local_file(out/'run',item['snapshot'])),'Judge input snapshot hash mismatch.')
+   if item['snapshot'] is None:
+    require(item['path']=='data/inputs.jsonl','Unexpected omitted judge input snapshot.')
+   else:require(item['sha256']=='sha256:'+c.digest(local_file(out/'run',item['snapshot'])),'Judge input snapshot hash mismatch.')
   manifest=c.read_json(out/'run'/run['manifest']['snapshot'])
   require(manifest['experiment']['profiles']==['judge_only'] and 'primary' not in manifest['models'] and 'judge' in manifest['models'],'Wrong judge-only model roles.')
   for field,value in [('evaluation.judge.params.max_tokens',16),('evaluation.judge.params.temperature',0),('evaluation.judge.repetitions',3 if cond['phase']=='repeat' else 1)]:
@@ -31,6 +33,8 @@ def verify(root=ROOT,allow_partial=False):
    inputs=[r for r in inputs if r['case_id'] in ids and (r['view']=='clean' or (r['view']=='attack' and r['family']=='override' and r['position']=='suffix'))]
   encoded=''.join(json.dumps(r,sort_keys=True)+'\n' for r in inputs)
   require(j.digest_text(encoded)==identity['input_sha256'],'Judge dataset identity mismatch.')
+  captured=next(v for v in run['files'] if v['path']=='data/inputs.jsonl')
+  require(captured['sha256']=='sha256:'+j.digest_text(encoded) and captured['size_bytes']==len(encoded.encode()),'Captured judge data differs from published full inputs.')
   reps=3 if cond['phase']=='repeat' else 1;expected={r['id']+':'+str(k):(r,k) for r in inputs for k in range(reps)}
   require(len(rows)==len(expected)==cond['expected'] and {r['id'] for r in rows}==set(expected),'Judge response coverage mismatch.')
   for row in rows:

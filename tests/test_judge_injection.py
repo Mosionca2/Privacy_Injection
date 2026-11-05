@@ -54,3 +54,31 @@ class JudgeProtocolGuards(unittest.TestCase):
     if item['path']=='raw/judge-predictions.jsonl':item['sha256']='sha256:'+c.digest(raw)
    c.write_json(file,run)
    with self.assertRaisesRegex(ValueError,'gold, score'):verify(tmp,allow_partial=True)
+ def test_large_formal_input_verified_from_published_full_bytes(self):
+  from tools.verify_judge_study import verify
+  from pathlib import Path
+  import tempfile,shutil,json
+  root=Path(__file__).resolve().parents[1]
+  with tempfile.TemporaryDirectory() as tmp:
+   tmp=Path(tmp);relative=Path('evidence/judge-injection-v1/primary/test/J0')
+   shutil.copytree(root/relative,tmp/relative);shutil.copytree(root/'studies/judge-injection-v1/inputs',tmp/'studies/judge-injection-v1/inputs')
+   run=json.loads((tmp/relative/'run/run.json').read_text())
+   self.assertIsNone(next(v for v in run['files'] if v['path']=='data/inputs.jsonl')['snapshot'])
+   with self.assertRaisesRegex(ValueError,'token lengths'):verify(tmp,allow_partial=True)
+   path=tmp/'studies/judge-injection-v1/inputs/primary-test.jsonl';text=path.read_text();path.write_text(text.replace('A notebook','A changed notebook',1))
+   with self.assertRaisesRegex(ValueError,'dataset identity'):verify(tmp,allow_partial=True)
+
+ def test_corrected_length_uses_ids_not_mapping_size(self):
+  from judge_injection_v2 import core as fixed
+  class Tokenizer:
+   def apply_chat_template(self,messages,tokenize,**kwargs):
+    text=' '.join(v['content'] for v in messages)
+    return {'input_ids':text.split(),'attention_mask':[1]*len(text.split())} if tokenize else text
+   def __call__(self,text,**kwargs):return {'input_ids':text.split()}
+  tokenizer=Tokenizer();self.assertGreater(fixed.encoded_length(tokenizer,'TARGET','one two','J0'),2)
+  rows=fixed.prepare_inputs(tokenizer,'dev',2);pairs={}
+  for row in rows:
+   if row['view']!='clean':pairs.setdefault((row['answer_id'],row['family'],row['position']),{})[row['view']]=row
+  for pair in pairs.values():
+   for guard in ('J0','J1'):
+    a,b=pair['attack'],pair['neutral'];self.assertEqual(fixed.encoded_length(tokenizer,a['target'],a['candidate'],guard),fixed.encoded_length(tokenizer,b['target'],b['candidate'],guard))

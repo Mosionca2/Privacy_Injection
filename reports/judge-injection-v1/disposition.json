@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "status": "diagnostic_only_invalid_length_control",
+  "eligible_for_confirmatory_analysis": false,
+  "completed_judge_outputs": 12928,
+  "gpu_captures": 14,
+  "new_victim_generations": 0,
+  "reason": "V1 used len(BatchEncoding) as sequence length and failed the recorded-token pairing check. Preserve all V1 runs as diagnostic, non-confirmatory evidence. V2 keeps judge prompts and attack templates fixed, repairs only length measurement, uses fresh base cases and freezes all new inputs before held-out inference.",
+  "replacement": "judge-injection-v2"
+}
