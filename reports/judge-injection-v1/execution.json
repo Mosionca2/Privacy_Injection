@@ -1,5 +1,5 @@
 {
-  "completed_judge_outputs": 12544,
+  "completed_judge_outputs": 12928,
   "completed_phases": [
     "pilot",
     "pilot",
@@ -10,7 +10,11 @@
     "test",
     "test",
     "test",
-    "test"
+    "test",
+    "repeat",
+    "repeat",
+    "repeat",
+    "repeat"
   ],
   "new_victim_generations": 0,
   "records": [
@@ -173,6 +177,70 @@
       "model": "extension",
       "phase": "test",
       "run_id": "20261105T035348Z-60b2dd"
+    },
+    {
+      "completion": {
+        "expected": 96,
+        "new_judge_outputs": 96,
+        "peak_reserved_gib": 17.28125,
+        "reprollm_run_id": "20261105T035732Z-80e4c7",
+        "schema_version": 1,
+        "seconds": 2.1083715483546257
+      },
+      "evidence": "evidence/judge-injection-v1/primary/repeat/J0",
+      "guard": "J0",
+      "judge_outputs": 96,
+      "model": "primary",
+      "phase": "repeat",
+      "run_id": "20261105T035732Z-80e4c7"
+    },
+    {
+      "completion": {
+        "expected": 96,
+        "new_judge_outputs": 96,
+        "peak_reserved_gib": 17.603515625,
+        "reprollm_run_id": "20261105T035732Z-a53576",
+        "schema_version": 1,
+        "seconds": 2.1697026593610644
+      },
+      "evidence": "evidence/judge-injection-v1/primary/repeat/J1",
+      "guard": "J1",
+      "judge_outputs": 96,
+      "model": "primary",
+      "phase": "repeat",
+      "run_id": "20261105T035732Z-a53576"
+    },
+    {
+      "completion": {
+        "expected": 96,
+        "new_judge_outputs": 96,
+        "peak_reserved_gib": 4.107421875,
+        "reprollm_run_id": "20261105T035732Z-4dce97",
+        "schema_version": 1,
+        "seconds": 1.9527801172807813
+      },
+      "evidence": "evidence/judge-injection-v1/extension/repeat/J0",
+      "guard": "J0",
+      "judge_outputs": 96,
+      "model": "extension",
+      "phase": "repeat",
+      "run_id": "20261105T035732Z-4dce97"
+    },
+    {
+      "completion": {
+        "expected": 96,
+        "new_judge_outputs": 96,
+        "peak_reserved_gib": 4.154296875,
+        "reprollm_run_id": "20261105T035732Z-de0842",
+        "schema_version": 1,
+        "seconds": 1.9592099664732814
+      },
+      "evidence": "evidence/judge-injection-v1/extension/repeat/J1",
+      "guard": "J1",
+      "judge_outputs": 96,
+      "model": "extension",
+      "phase": "repeat",
+      "run_id": "20261105T035732Z-de0842"
     }
   ],
   "schema_version": 1
