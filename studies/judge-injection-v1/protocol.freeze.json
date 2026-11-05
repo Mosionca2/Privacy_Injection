@@ -1,0 +1,20 @@
+{
+  "batch_sizes": {
+    "extension": 16,
+    "primary": 64
+  },
+  "files": {
+    "judge_injection/__init__.py": "872cc494b9ee9d62a0dd03a050d53ecd2e06f37479f173792c90356eeed1228c",
+    "judge_injection/analyze.py": "08274ac48727ddc4ed5914ed9ae03c1f233d8f7c2a2d97d7b89fde62d2f16953",
+    "judge_injection/core.py": "111499b07e0db2d770be75a848d8879de52578456d41a0b74c4e21b012e126aa",
+    "judge_injection/run.py": "050a08f7e603b38f362b753981814dee8c1aa0183b6b733d6951fd8e13e5e153",
+    "studies/judge-injection-v1/inputs/extension-dev.jsonl": "debcc0c5b2d6d13aef84367373471b2fec69becd074d5c37c5db50397f220057",
+    "studies/judge-injection-v1/inputs/extension-test.jsonl": "f74a16cc3e90a85fcdcdbed54d98b1dfe27bfd4d72c7b30782c0957841b3fd58",
+    "studies/judge-injection-v1/inputs/primary-dev.jsonl": "debcc0c5b2d6d13aef84367373471b2fec69becd074d5c37c5db50397f220057",
+    "studies/judge-injection-v1/inputs/primary-test.jsonl": "f74a16cc3e90a85fcdcdbed54d98b1dfe27bfd4d72c7b30782c0957841b3fd58",
+    "studies/judge-injection-v1/protocol.json": "908487a2ddd1622f55286f6ab443bd56e0a69f30ac4b7b10c57fe272fef44438"
+  },
+  "max_tokens": 16,
+  "schema_version": 1,
+  "thinking": false
+}
