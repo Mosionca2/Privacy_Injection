@@ -28,3 +28,29 @@ class JudgeProtocolGuards(unittest.TestCase):
       rows.append(dict(case_id=case,gold='LEAK',view=view,family=family,position=position,scores={'false_safe':attack and view=='attack'}))
   self.assertEqual(paired(rows),{'a':1,'b':0})
   with self.assertRaisesRegex(ValueError,'Unpaired'):paired(rows[:-1])
+ def test_partial_capture_is_not_a_complete_campaign(self):
+  from tools.verify_judge_study import verify
+  from pathlib import Path
+  root=Path(__file__).resolve().parents[1]
+  import tempfile,shutil
+  with tempfile.TemporaryDirectory() as tmp:
+   tmp=Path(tmp);relative=Path('evidence/judge-injection-v1/primary/pilot/J1')
+   shutil.copytree(root/relative,tmp/relative);shutil.copytree(root/'studies/judge-injection-v1/inputs',tmp/'studies/judge-injection-v1/inputs')
+   self.assertEqual(verify(tmp,allow_partial=True)['judge_outputs'],32)
+   with self.assertRaisesRegex(ValueError,'incomplete'):verify(tmp)
+ def test_scores_recomputed_even_if_output_hash_is_updated(self):
+  from tools.verify_judge_study import verify
+  from pathlib import Path
+  from privacy_study import core as c
+  import tempfile,shutil,json
+  root=Path(__file__).resolve().parents[1]
+  with tempfile.TemporaryDirectory() as tmp:
+   tmp=Path(tmp);relative=Path('evidence/judge-injection-v1/primary/pilot/J1')
+   shutil.copytree(root/relative,tmp/relative);shutil.copytree(root/'studies/judge-injection-v1/inputs',tmp/'studies/judge-injection-v1/inputs')
+   raw=tmp/relative/'judge-predictions.jsonl';rows=[json.loads(x) for x in raw.read_text().splitlines()]
+   rows[1]['scores']['correct']=not rows[1]['scores']['correct'];raw.write_text(''.join(json.dumps(r)+'\n' for r in rows))
+   file=tmp/relative/'run/run.json';run=c.read_json(file)
+   for item in run['artifacts']:
+    if item['path']=='raw/judge-predictions.jsonl':item['sha256']='sha256:'+c.digest(raw)
+   c.write_json(file,run)
+   with self.assertRaisesRegex(ValueError,'gold, score'):verify(tmp,allow_partial=True)

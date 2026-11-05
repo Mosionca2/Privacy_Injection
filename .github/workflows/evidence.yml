@@ -45,7 +45,7 @@ jobs:
           PYTHONPATH: tests
         run: |
           mkdir -p raw/ci
-          python -m unittest -v test_ci test_core test_evidence test_gpu_resume test_source_recorder test_termination test_tail_ablation test_tail_repair test_rule_lifecycle 2>&1 | tee raw/ci/unit-tests.log
+          python -m unittest -v test_ci test_core test_evidence test_gpu_resume test_source_recorder test_termination test_tail_ablation test_tail_repair test_rule_lifecycle test_judge_injection 2>&1 | tee raw/ci/unit-tests.log
       - name: Verify all published captures and read both run schemas
         run: python tools/ci_verify.py --consumer-source .ci-tools/reprollm
       - name: Exercise owned CPU termination boundaries
